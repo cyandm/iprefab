@@ -1,1 +1,57 @@
 @use '../utils/index' as *;
+
+[class*='btn'] {
+	@include fs('h4');
+	outline: none;
+	text-transform: capitalize;
+	padding: 0;
+	cursor: pointer;
+	padding: $s_2 $s_6;
+
+	border-radius: $s_10;
+	transition: filter 0.3s ease-in;
+
+	&:hover {
+		filter: brightness(0.9);
+	}
+}
+
+.btn {
+	&-primary {
+		background-color: $c_se_dark;
+		color: $c_se_text_contrast;
+
+		border: 1px solid;
+
+		&-icon {
+			&-start {
+				padding-inline-start: $s_5;
+			}
+
+			&-end {
+				padding-inline-end: $s_5;
+			}
+		}
+	}
+
+	&-secondary {
+		color: $c_t_dark;
+		border: 1px solid $c_t_dark;
+
+		&-icon {
+			&-start {
+				padding-inline-start: $s_5;
+			}
+
+			&-end {
+				padding-inline-end: $s_5;
+			}
+		}
+	}
+
+	&-icon {
+		padding: $s_2 $s_4;
+		color: $c_t_dark;
+		border: 1px solid $c_t_dark;
+	}
+}

@@ -1,4 +1,27 @@
-.container{
-    max-width: 1440px;
-    padding-inline: 1rem;
+@use '../utils/index' as *;
+
+.container {
+	max-width: 1440px;
+	padding-inline: 1rem;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.space-between {
+	justify-content: space-between;
+}
+
+@for $i from 1 through 80 {
+	@if ($i % 4 == 0) {
+		.clear-fix-#{$i} {
+			padding-block-start: #{$i/2}px;
+			padding-block-end: #{$i/2}px;
+		}
+	}
+}
+
+hr {
+	border-color: $b_1;
 }

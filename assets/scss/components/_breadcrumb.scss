@@ -1,0 +1,35 @@
+@use '../utils' as *;
+
+.breadcrumb {
+	width: 100%;
+	border-bottom: $b_1;
+	@include fs('body-s');
+
+	&-container {
+		@include d_flex($gap: $s_2);
+		padding: $s_4 $s_5;
+	}
+
+	&-item {
+		color: $c_n_400;
+		text-transform: capitalize;
+
+		&[data-active='true'] {
+			color: $c_p_dark;
+		}
+
+		&:not(:last-child) {
+			@include make_icon('\ea95') {
+				margin-inline-start: $s_2;
+				color: $c_se_dark;
+			}
+		}
+	}
+
+	a {
+		transition: color 0.3s ease;
+		&:hover {
+			color: $c_se_dark;
+		}
+	}
+}

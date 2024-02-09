@@ -1,5 +1,5 @@
-<footer>
-
+<footer class="development">
+	FOOTER
 </footer>
 
 <div class="wp-scripts">
