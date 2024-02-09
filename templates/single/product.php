@@ -29,6 +29,13 @@
 
 	<?php get_template_part( '/templates/single/product/product', 'description' ) ?>
 
+	<div class="clear-fix-64"></div>
+
+	<?php get_template_part( '/templates/single/product/product', 'company' ) ?>
+
+	<div class="clear-fix-64"></div>
+
+
 
 </main>
 

@@ -15,8 +15,30 @@
 	}
 
 	&-company {
+		hr {
+			margin-block: $s_4 $s_6;
+		}
+
 		&-logo {
 			display: flex;
+		}
+
+		&-wrapper {
+			@include d_flex(row, center, center, $gap: $s_4);
+
+			> * {
+				flex: 1;
+			}
+
+			.product-company-logo {
+				@include d_flex(row, center, center);
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		&-description {
+			flex: 3;
 		}
 	}
 
