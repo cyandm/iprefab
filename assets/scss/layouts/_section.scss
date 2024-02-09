@@ -1,0 +1,15 @@
+@use '../utils' as *;
+
+.section {
+	&-card {
+		&-title {
+			&-wrapper {
+				@include d_flex(row, space-between, center);
+			}
+		}
+
+		hr {
+			margin-block: $s_3;
+		}
+	}
+}

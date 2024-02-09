@@ -185,6 +185,20 @@ h6,
   justify-content: space-between;
 }
 
+@media screen and (max-width: 768px) {
+  .only-desktop {
+    display: none !important;
+  }
+}
+.only-mobile {
+  display: none !important;
+}
+@media screen and (max-width: 768px) {
+  .only-mobile {
+    display: inherit !important;
+  }
+}
+
 .clear-fix-4 {
   padding-block-start: 2px;
   padding-block-end: 2px;
@@ -288,6 +302,18 @@ h6,
 hr {
   border-top: 1px solid #949494;
   border-inline: 0;
+}
+
+.section-card-title-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.section-card hr {
+  margin-block: 0.75rem;
 }
 
 .breadcrumb {

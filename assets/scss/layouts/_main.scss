@@ -13,6 +13,22 @@
 	justify-content: space-between;
 }
 
+.only {
+	&-desktop {
+		@include mq('md') {
+			display: none !important;
+		}
+	}
+
+	&-mobile {
+		display: none !important;
+
+		@include mq('md') {
+			display: inherit !important;
+		}
+	}
+}
+
 @for $i from 1 through 80 {
 	@if ($i % 4 == 0) {
 		.clear-fix-#{$i} {
