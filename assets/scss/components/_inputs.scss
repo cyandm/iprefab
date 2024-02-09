@@ -1,0 +1,19 @@
+@use '../utils' as *;
+
+input {
+	accent-color: $c_se_dark;
+	cursor: pointer;
+}
+
+.input {
+	&-wrapper {
+		&-checkbox {
+			@include d_flex(row, flex-start, center, nowrap, false, $s_2);
+		}
+	}
+
+	&-medium {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+}

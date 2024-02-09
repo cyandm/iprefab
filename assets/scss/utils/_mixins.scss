@@ -29,7 +29,7 @@
 			'h5': make_font_list(20px, 400, 26px),
 			'h6': make_font_list(16px, 400, 32px),
 			'body': make_font_list(16px, 400, 32px),
-			'body-s': make_font_list(16px, 400, 32px),
+			'body-s': make_font_list(20px, 300, 36px),
 		),
 		$type
 	);
@@ -96,8 +96,8 @@
 //#region d-flex
 @mixin d_flex(
 	$dir: row,
-	$j_c: start,
-	$a_i: start,
+	$j_c: flex-start,
+	$a_i: flex-start,
 	$wrap: wrap,
 	$even_column: false,
 	$gap: 0

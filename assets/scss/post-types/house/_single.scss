@@ -39,6 +39,15 @@
 		@include d_flex(column, $gap: $s_3);
 	}
 
+	&-details {
+		display: grid;
+		gap: $s_4;
+
+		&-wrapper {
+			@include d_flex($gap: $s_4);
+		}
+	}
+
 	&-table {
 		&-primary {
 			@include d_flex(row, space-between, center, $even_column: true);
@@ -47,6 +56,33 @@
 			padding: $s_4 $s_6;
 			box-shadow: $shadow_1;
 			text-transform: capitalize;
+		}
+		&-secondary {
+			border: $b_1;
+			border-radius: $s_4;
+			flex: 1;
+
+			&-row {
+				@include d_flex(row, space-between, center, nowrap, true);
+				text-transform: capitalize;
+
+				&:nth-child(2n) {
+					background-color: rgba($c_n_100, 0.04);
+					color: $c_p_light;
+				}
+
+				> * {
+					@include d_flex(row, flex-start, center);
+					min-height: 4rem;
+					padding: $s_3;
+				}
+			}
+
+			&-value {
+				width: 100%;
+				height: 100%;
+				border-inline-start: $b_1;
+			}
 		}
 	}
 
@@ -62,6 +98,21 @@
 		}
 		&-value {
 			@include fs('h5');
+		}
+	}
+
+	&-cta {
+		@include d_flex(row, flex-start, center);
+		width: 390px;
+		height: 100%;
+		background-color: $c_n_200;
+		border-radius: $s_3;
+		padding: $s_4;
+		color: $c_a_text_contrast;
+
+		.img-wrapper {
+			@include d_flex(row, center, center);
+			width: 100%;
 		}
 	}
 }

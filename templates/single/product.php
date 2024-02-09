@@ -21,7 +21,13 @@
 
 	<?php get_template_part( '/templates/single/product/product', 'primary-info' ) ?>
 
+	<div class="clear-fix-24"></div>
 
+	<?php get_template_part( '/templates/single/product/product', 'details' ) ?>
+
+	<div class="clear-fix-24"></div>
+
+	<?php get_template_part( '/templates/single/product/product', 'description' ) ?>
 
 
 </main>

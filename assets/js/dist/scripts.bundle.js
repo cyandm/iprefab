@@ -20,6 +20,21 @@
   };
   var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 
+  // assets/js/modules/product-cta.js
+  var ProductCTA = () => {
+    const productCtaGroup = document.querySelectorAll(".product-cta");
+    if (!productCtaGroup)
+      return;
+    productCtaGroup.forEach((el) => {
+      const checkbox = el.querySelector("input");
+      const button = el.querySelector(".btn-primary");
+      checkbox.addEventListener("change", () => {
+        button.toggleAttribute("disabled", !checkbox.checked);
+      });
+    });
+  };
+  ProductCTA();
+
   // node_modules/swiper/shared/ssr-window.esm.mjs
   function isObject(obj) {
     return obj !== null && typeof obj === "object" && "constructor" in obj && obj.constructor === Object;
