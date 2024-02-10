@@ -1,4 +1,5 @@
 @use '../utils/index' as *;
+@use 'sass:math';
 
 .container {
 	max-width: 1440px;
@@ -32,8 +33,8 @@
 @for $i from 1 through 80 {
 	@if ($i % 4 == 0) {
 		.clear-fix-#{$i} {
-			padding-block-start: #{$i/2}px;
-			padding-block-end: #{$i/2}px;
+			padding-block-start: #{math.div($i, 2)}px;
+			padding-block-end: #{math.div($i, 2)}px;
 		}
 	}
 }

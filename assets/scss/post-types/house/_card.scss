@@ -1,0 +1,45 @@
+@use '../../utils' as *;
+
+.product-card {
+	background-color: $c_bg_paper;
+	box-shadow: $shadow_1;
+	border-radius: $s_4;
+	overflow: hidden;
+
+	&-image {
+		position: relative;
+
+		.img-wrapper {
+			--max-height: 300px;
+		}
+
+		.company-logo {
+			position: absolute;
+			top: $s_4;
+			left: $s_4;
+
+			img {
+				height: 60px;
+				object-fit: contain;
+				object-position: left top;
+			}
+		}
+	}
+
+	&-content {
+		padding: $s_4;
+	}
+
+	&-title {
+		text-transform: capitalize;
+		@include d_flex(row, space-between);
+	}
+
+	&-items {
+		@include d_flex($gap: $s_3);
+	}
+
+	&-price {
+		@include fs('h4');
+	}
+}

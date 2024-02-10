@@ -37,6 +37,12 @@
 
 	<?php get_template_part( '/templates/single/product/product', 'recommend-lands' ) ?>
 
+	<div class="clear-fix-64"></div>
+
+	<?php get_template_part( '/templates/single/product/product', 'recommended' ) ?>
+
+
+
 
 </main>
 

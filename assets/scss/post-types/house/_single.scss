@@ -134,8 +134,14 @@
 
 		.img-wrapper {
 			@include d_flex(row, center, center);
+			--max-height: 320px;
+			object-fit: contain;
 			width: 100%;
 		}
+	}
+
+	&-recommended {
+		--min-width: 360px;
 	}
 }
 
