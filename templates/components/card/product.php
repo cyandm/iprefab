@@ -11,8 +11,9 @@ $company_logo = wp_get_attachment_image(
 
 ?>
 
-<div class="product-card"
-	 data-id="<?= $post_id ?>">
+<a href="<?= get_permalink( $post_id ) ?>"
+   class="product-card"
+   data-id="<?= $post_id ?>">
 
 	<div class="product-card-image">
 		<?php cyn_render_image( $thumb_id, [ 400, 400 ] ) ?>
@@ -42,4 +43,4 @@ $company_logo = wp_get_attachment_image(
 		</div>
 	</div>
 
-</div>
+</a>

@@ -41,8 +41,9 @@
 
 	<?php get_template_part( '/templates/single/product/product', 'recommended' ) ?>
 
+	<div class="clear-fix-64"></div>
 
-
+	<?php get_template_part( '/templates/single/product/product', 'recommend-by-company' ) ?>
 
 </main>
 

@@ -1,22 +1,28 @@
 <?php
 
-$products = new WP_Query( [ 
-	'post_type' => 'product',
-	'posts_per_page' => 2
-] );
-
+$related_houses = get_field( 'related_houses' );
 $product_ids = [];
 
-foreach ( $products->posts as $post ) {
-	array_push( $product_ids, $post->ID );
+if ( ! $related_houses ) {
+	$products = new WP_Query( [ 
+		'post_type' => 'product',
+		'posts_per_page' => 3
+	] );
+
+
+	foreach ( $products->posts as $post ) {
+		array_push( $product_ids, $post->ID );
+	}
+} else {
+	$product_ids = $related_houses;
 }
 
-array_push( $product_ids, 2779 );
+
 
 
 cyn_render_section_card( 'you might like',
 	[ 
-		'link' => '#',
+		'link' => get_post_type_archive_link( 'product' ),
 		'title' => 'view all',
 		'icon' => 'eye'
 	], $product_ids, 'product', 'product-recommended' );

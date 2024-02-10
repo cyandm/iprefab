@@ -3,7 +3,11 @@
 
 .container {
 	max-width: 1440px;
-	padding-inline: 1rem;
+	margin-inline: auto;
+
+	@include mq('md') {
+		padding-inline: 1rem;
+	}
 }
 
 .d-flex {

@@ -1,0 +1,32 @@
+<?php
+$company = get_the_terms( get_queried_object_id(), 'company' )[0];
+
+$products = new WP_Query( [ 
+	'post_type' => 'product',
+	'tax_query' => [ 
+		[ 
+			'taxonomy' => 'company',
+			'field' => 'term_id',
+			'terms' => $company->term_id,
+		]
+	],
+	'posts_per_page' => 3,
+] );
+
+$product_ids = [];
+
+foreach ( $products->posts as $post ) {
+	array_push( $product_ids, $post->ID );
+}
+
+
+
+
+cyn_render_section_card( 'from this supplier',
+	[ 
+		'link' => get_term_link( $company ),
+		'title' => 'view all',
+		'icon' => 'eye'
+	], $product_ids, 'product', 'product-recommended' );
+
+

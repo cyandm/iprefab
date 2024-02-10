@@ -2,12 +2,6 @@
 @use './functions' as *;
 @use './mixins' as *;
 
-.container {
-	max-width: 1440px;
-	margin-inline: auto;
-	padding-inline: px_to_rem(16);
-}
-
 .even-columns {
 	--min-width: 200px;
 
