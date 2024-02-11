@@ -2,6 +2,7 @@
 global $post_type;
 
 
+
 ?>
 
 
@@ -13,15 +14,18 @@ global $post_type;
 				Homepage
 			</a>
 		</li>
-		<li class="breadcrumb-item">
+		<li class="breadcrumb-item"
+			data-active="<?= is_archive() ? 'true' : 'false' ?>">
 			<a href="<?= get_post_type_archive_link( $post_type ) ?>">
 				<?= get_post_type_object( $post_type )->label ?>
 			</a>
 		</li>
-		<li class="breadcrumb-item"
-			data-active="true">
-			<?= get_the_title() ?>
-		</li>
+		<?php if ( ! is_archive() ) : ?>
+			<li class="breadcrumb-item"
+				data-active="true">
+				<?= get_the_title() ?>
+			</li>
+		<?php endif; ?>
 	</ul>
 
 
