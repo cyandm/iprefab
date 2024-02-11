@@ -35,6 +35,10 @@
 				width: 100%;
 				height: 100%;
 			}
+
+			@include mq('md') {
+				flex-direction: column;
+			}
 		}
 
 		&-description {
@@ -45,15 +49,34 @@
 	&-main-info {
 		display: flex;
 		justify-content: space-between;
+		@include mq('md') {
+			flex-direction: column;
+			gap: $s_3;
+		}
 
 		.product-info-short {
 			padding: 0;
+			@include mq('md') {
+				display: none;
+			}
 		}
 	}
 
 	&-title {
 		&-wrapper {
 			@include d_flex($gap: $s_3);
+			@include mq('md') {
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
+	}
+
+	&-actions {
+		&-primary {
+			@include mq('md') {
+				@include d_flex(row, space-between, center, nowrap, false, $s_2);
+			}
 		}
 	}
 
@@ -67,6 +90,11 @@
 
 		&-wrapper {
 			@include d_flex($gap: $s_4);
+
+			@include mq('md') {
+				flex-direction: column;
+				flex-wrap: nowrap;
+			}
 		}
 	}
 
@@ -78,11 +106,17 @@
 			padding: $s_4 $s_6;
 			box-shadow: $shadow_1;
 			text-transform: capitalize;
+
+			@include mq('md') {
+				flex-direction: column;
+				align-items: flex-start;
+			}
 		}
+
 		&-secondary {
 			border: $b_1;
 			border-radius: $s_4;
-			flex: 1;
+			flex: 3;
 
 			&-row {
 				@include d_flex(row, space-between, center, nowrap, true);
@@ -98,12 +132,38 @@
 					min-height: 4rem;
 					padding: $s_3;
 				}
+
+				@include mq('md') {
+					flex-direction: column;
+					align-items: flex-start;
+					padding: $s_3;
+
+					> * {
+						min-height: auto;
+						padding: 0;
+					}
+				}
+			}
+
+			&-name {
+				@include mq('md') {
+					color: $c_p_main;
+				}
 			}
 
 			&-value {
 				width: 100%;
 				height: 100%;
 				border-inline-start: $b_1;
+
+				@include mq('md') {
+					border-inline-start: none;
+					color: $c_n_100;
+				}
+			}
+
+			@include mq('md') {
+				width: 100%;
 			}
 		}
 	}
@@ -113,6 +173,18 @@
 			padding-inline-start: $s_8;
 			&:not(:first-child) {
 				border-inline-start: $b_2;
+			}
+
+			@include mq('md') {
+				border-inline-start: none !important;
+				padding: 0;
+
+				padding-block: $s_4;
+				width: 100%;
+
+				&:not(:last-child) {
+					border-block-end: $b_2;
+				}
 			}
 		}
 		&-top {
@@ -125,7 +197,7 @@
 
 	&-cta {
 		@include d_flex(row, flex-start, center);
-		width: 390px;
+		flex: 1;
 		height: 100%;
 		background-color: $c_n_200;
 		border-radius: $s_3;
@@ -138,10 +210,20 @@
 			object-fit: contain;
 			width: 100%;
 		}
+
+		@include mq('md') {
+			p {
+				margin-block: $s_4;
+			}
+		}
 	}
 
 	&-recommended {
 		--min-width: 360px;
+
+		@include mq('md') {
+			--min-width: 260px;
+		}
 	}
 }
 
@@ -169,6 +251,12 @@
 					border-radius: $s_3;
 				}
 			}
+
+			@include mq('md') {
+				img {
+					max-height: 12.5rem;
+				}
+			}
 		}
 
 		&-thumbnails {
@@ -177,6 +265,10 @@
 				object-fit: cover;
 				height: 200px;
 				border-radius: $s_2;
+
+				@include mq('md') {
+					max-height: 4rem;
+				}
 			}
 
 			.swiper-slide {

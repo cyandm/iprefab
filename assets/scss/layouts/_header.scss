@@ -1,1 +1,46 @@
 @use '../utils/' as *;
+
+.header {
+	&-site {
+		@include d_flex(row, space-between, center);
+		border-block-end: $b_2;
+		margin-block: $s_6 $s_4;
+	}
+
+	&-logo {
+		img {
+			max-width: 130px;
+			max-height: 60px;
+			object-fit: contain;
+			object-position: center center;
+			filter: grayscale(1);
+		}
+	}
+
+	&-desktop-menu {
+		ul.menu {
+			@include d_flex($gap: $s_11);
+			@include fs('h5');
+
+			> li {
+				@include pseudo(0 0 0 0, 100%) {
+					height: 1px;
+					top: unset;
+					background-color: $c_n_100;
+					bottom: -$s_6;
+					transform: scaleX(0);
+					transition: transform 0.3s ease-in;
+					transform-origin: left;
+				}
+
+				&.current-menu-item,
+				&:hover {
+					&:after {
+						transform: scaleX(1);
+						transform-origin: right;
+					}
+				}
+			}
+		}
+	}
+}

@@ -19,7 +19,9 @@ global $post_type;
 			</a>
 		</li>
 		<li class="breadcrumb-item"
-			data-active="true">My House</li>
+			data-active="true">
+			<?= get_the_title() ?>
+		</li>
 	</ul>
 
 

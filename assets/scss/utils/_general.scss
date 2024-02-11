@@ -27,3 +27,13 @@ h6,
 .h6 {
 	text-transform: capitalize;
 }
+
+.unit {
+	text-transform: lowercase !important;
+	margin-inline-start: $s_1;
+	display: inline-block;
+}
+
+sup {
+	font-size: 60%;
+}

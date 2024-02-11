@@ -12,8 +12,10 @@ $company_logo = wp_get_attachment_image(
 <div class="product-info">
 	<div class="product-info-wrapper | h2">
 		<span class="product-meterage">
-			<?= $total_area ?>
-			<span class="product-meterage-unit">
+			<span>
+				<?= $total_area ?>
+			</span>
+			<span class="unit">
 				m<sup>2</sup>
 			</span>
 		</span>

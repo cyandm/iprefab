@@ -13,12 +13,12 @@ $primary_data = [
 	[ 
 		'icon' => 'home-2',
 		'text' => 'house area',
-		'value' => get_field( 'apartment_area' ) . 'm<sup>2</sup>',
+		'value' => '<span>' . get_field( 'apartment_area' ) . '</span>' . '<span class="unit">m<sup>2</sup></span>',
 	],
 	[ 
 		'icon' => 'size',
 		'text' => 'total area',
-		'value' => get_field( 'total_area' ) . 'm<sup>2</sup>',
+		'value' => '<span>' . get_field( 'total_area' ) . '</span>' . '<span class="unit">m<sup>2</sup></span>',
 	],
 	[ 
 		'icon' => 'box-x',

@@ -20,5 +20,9 @@
 				minmax(var(--min-width, 250px), 1fr)
 			);
 		}
+
+		a.only-mobile {
+			margin-block-start: $s_4;
+		}
 	}
 }

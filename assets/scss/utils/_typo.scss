@@ -8,11 +8,19 @@ body {
 h1,
 .h1 {
 	@include fs('h1');
+
+	@include mq('md') {
+		@include fs('h3');
+	}
 }
 
 h2,
 .h2 {
 	@include fs('h2');
+
+	@include mq('md') {
+		@include fs('h4');
+	}
 }
 
 h3,
