@@ -13,6 +13,8 @@
 
 		<header class="header-site container">
 
+			<?php get_template_part( '/templates/components/mobile-menu' ) ?>
+
 			<div class="header-logo">
 				<?php the_custom_logo() ?>
 			</div>
@@ -30,7 +32,9 @@
 				   class="btn-secondary btn-icon-start">
 					<i class="iconsax"
 					   icon-name="user-1"></i>
-					profile
+					<span>
+						profile
+					</span>
 				</a>
 			</div>
 		</header>

@@ -5,6 +5,12 @@
 		@include d_flex(row, space-between, center);
 		border-block-end: $b_2;
 		margin-block: $s_6 $s_4;
+
+		@include mq('xl') {
+			> * {
+				flex: 1;
+			}
+		}
 	}
 
 	&-logo {
@@ -15,9 +21,15 @@
 			object-position: center center;
 			filter: grayscale(1);
 		}
+		@include mq('xl') {
+			text-align: center;
+		}
 	}
 
 	&-desktop-menu {
+		@include mq('xl') {
+			display: none;
+		}
 		ul.menu {
 			@include d_flex($gap: $s_11);
 			@include fs('h5');
@@ -40,6 +52,43 @@
 						transform-origin: right;
 					}
 				}
+			}
+		}
+	}
+
+	&-cta {
+		text-align: end;
+
+		@include mq('md') {
+			span {
+				display: none;
+			}
+
+			a {
+				padding: 0.25rem 0.5rem;
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	&-mobile-menu {
+		display: none;
+
+		@include mq('xl') {
+			display: block;
+		}
+
+		> i {
+			padding: 0;
+			font-size: 1.5rem;
+			width: 2.5rem;
+			height: 2.5rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&::before {
+				transform: translateY(1px);
 			}
 		}
 	}
