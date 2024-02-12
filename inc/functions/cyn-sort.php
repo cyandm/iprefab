@@ -91,8 +91,35 @@ function cyn_filter_products( $query ) {
 	add_to_meta_query( [ 'priceMin', 'priceMax' ], 'helsinki_price', 'numeric', 'between', true, $meta_query, $filters );
 
 
-
 	$query->set( 'meta_query', $meta_query );
+
+
+	if ( 'null' !== $filters['originCompany'] ) {
+		$companies = get_terms( [ 
+			'taxonomy' => 'company',
+			'meta_query' => [ 
+				[ 
+					'key' => 'origin_of_company',
+					'value' => $filters['originCompany'],
+					'compare' => '='
+				]
+			]
+		] );
+
+		$companies_slug = [];
+
+		foreach ( $companies as $company ) {
+			array_push( $companies_slug, $company->slug );
+		}
+		$query->set( 'tax_query', [ 
+			[ 
+				'taxonomy' => 'company',
+				'field' => 'slug',
+				'terms' => $companies_slug,
+			]
+		] );
+	}
+
 
 }
 

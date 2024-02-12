@@ -1,6 +1,20 @@
 <?php
 $filters = cyn_get_filters();
 
+$companies = get_terms( [ 
+	'taxonomy' => 'company'
+] );
+$countries = [];
+
+foreach ( $companies as $company ) {
+	$origin = get_field( 'origin_of_company', 'company_' . $company->term_id );
+
+	array_push( $countries, $origin );
+}
+
+$countries = array_filter( $countries );
+
+
 ?>
 
 <form action="<?= get_post_type_archive_link( 'product' ) ?>"
@@ -19,12 +33,21 @@ $filters = cyn_get_filters();
 				doesn't matter
 			</option>
 
-			<option value="iran">
-				iran
-			</option>
-			<option value="finland">
-				finland
-			</option>
+			<?php foreach ( $countries as $country ) : ?>
+
+				<option value="<?= $country ?>"
+						<?php
+						if (
+							isset( $filters['originCompany'] ) &&
+							$filters['originCompany'] === $country
+						) {
+							echo 'selected';
+						}
+						?>>
+					<?= $country ?>
+				</option>
+
+			<?php endforeach; ?>
 		</select>
 
 		<span class="input-action">
