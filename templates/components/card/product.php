@@ -37,7 +37,7 @@ $company_logo = wp_get_attachment_image(
 		<div class="product-card-items">
 			<?php
 			cyn_render_icon_box( 'home-2', get_field( 'apartment_area', $post_id ), '<span>m2</span>' );
-			cyn_render_icon_box( 'box-x', get_field( 'rooms', $post_id ) );
+			cyn_render_icon_box( 'lamp-1', get_field( 'rooms', $post_id ) );
 			cyn_render_icon_box( 'layers-1', get_field( 'number_of_floors', $post_id ) );
 			?>
 		</div>

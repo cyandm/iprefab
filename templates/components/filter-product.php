@@ -14,6 +14,11 @@ $filters = cyn_get_filters();
 		</span>
 		<select name="originCompany"
 				id="originCompany">
+
+			<option value="null">
+				doesn't matter
+			</option>
+
 			<option value="iran">
 				iran
 			</option>
@@ -93,6 +98,62 @@ $filters = cyn_get_filters();
 
 		<span class="input-action">
 			€
+		</span>
+	</label>
+
+	<label for="rooms"
+		   class="input-wrapper">
+		<span class="input-label">
+			rooms
+		</span>
+		<select name="rooms"
+				id="rooms">
+			<option value="null">
+				doesn't matter
+			</option>
+			<?php for ( $i = 1; $i <= 8; $i++ ) : ?>
+				<option value="<?= $i ?>"
+						<?php
+						if ( isset( $filters['rooms'] ) && (int) $filters['rooms'] === $i ) {
+							echo 'selected';
+						}
+						?>>
+					<?= $i ?>
+				</option>
+			<?php endfor; ?>
+		</select>
+
+		<span class="input-action">
+			<i class="iconsax"
+			   icon-name="chevron-down"></i>
+		</span>
+	</label>
+
+	<label for="floors"
+		   class="input-wrapper">
+		<span class="input-label">
+			floors
+		</span>
+		<select name="floors"
+				id="floors">
+			<option value="null">
+				doesn't matter
+			</option>
+			<?php for ( $i = 1; $i <= 3; $i++ ) : ?>
+				<option value="<?= $i ?>"
+						<?php
+						if ( isset( $filters['floors'] ) && (int) $filters['floors'] === $i ) {
+							echo 'selected';
+						}
+						?>>
+					<?= $i ?>
+				</option>
+			<?php endfor; ?>
+		</select>
+
+		<span class="input-action">
+			<i class="iconsax"
+			   icon-name="chevron-down"></i>
 		</span>
 	</label>
 

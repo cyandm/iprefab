@@ -12,6 +12,7 @@ export const productThumbnailSwiper = new Swiper('#productThumbnailSwiper', {
 export const productMainSwiper = new Swiper('#productMainSwiper', {
 	modules: [Thumbs, Pagination],
 	spaceBetween: 12,
+	autoHeight: true,
 	thumbs: {
 		swiper: productThumbnailSwiper,
 	},

@@ -5157,6 +5157,7 @@
   var productMainSwiper = new Swiper("#productMainSwiper", {
     modules: [Thumb, Pagination],
     spaceBetween: 12,
+    autoHeight: true,
     thumbs: {
       swiper: productThumbnailSwiper
     },

@@ -21,7 +21,7 @@ $primary_data = [
 		'value' => '<span>' . get_field( 'total_area' ) . '</span>' . '<span class="unit">m<sup>2</sup></span>',
 	],
 	[ 
-		'icon' => 'box-x',
+		'icon' => 'lamp-1',
 		'text' => 'rooms',
 		'value' => get_field( 'rooms' ),
 	],

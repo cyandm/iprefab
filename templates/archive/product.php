@@ -5,6 +5,10 @@ $img_url = get_option( 'cyn_product_archive_image' );
 $filters = cyn_get_filters();
 
 
+// echo '<pre dir="ltr">';
+// var_export( $wp_query );
+// echo '</pre>';
+// wp_die();
 ?>
 
 <?php get_header() ?>
@@ -28,7 +32,7 @@ $filters = cyn_get_filters();
 				<a href="#"
 				   class="btn-secondary ">
 					<i class="iconsax"
-					   icon-name="sort"></i>
+					   icon-name="arrow-up-down"></i>
 					sort by
 
 					<div class="product-archive-sort-panel">
