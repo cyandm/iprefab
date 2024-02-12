@@ -47,4 +47,5 @@
 
 </main>
 
+<?php get_template_part( '/templates/single/product/product', 'bottom-cta' ) ?>
 <?php get_footer() ?>

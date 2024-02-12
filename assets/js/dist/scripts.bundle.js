@@ -5254,4 +5254,27 @@
     });
   };
   ProductFilter();
+
+  // assets/js/modules/fixed-bottom-cta.js
+  var fixedBottomCta = () => {
+    const trigger = document.querySelector(".product-actions-primary");
+    const cta = document.querySelector("#bottomCta");
+    if (!cta || !trigger)
+      return;
+    const handleObserver = (entries) => {
+      if (entries[0].isIntersecting === true || //not showing in page
+      entries[0].boundingClientRect.top > 0) {
+        deActivateEl(cta);
+        return;
+      }
+      activateEl(cta);
+    };
+    const observer = new IntersectionObserver(handleObserver, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 1
+    });
+    observer.observe(trigger);
+  };
+  fixedBottomCta();
 })();

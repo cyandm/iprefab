@@ -225,6 +225,49 @@
 			--min-width: 260px;
 		}
 	}
+
+	&-bottom-cta {
+		@include d_flex(row, space-between, center);
+		position: fixed;
+		inset: 0;
+		top: unset;
+		background-color: $c_bg_default;
+		padding: $s_9 $s_8;
+		border: $b_1;
+		border-color: $c_p_dark;
+		transition: transform 0.3s ease;
+		transform: translateY(100%);
+		z-index: 500;
+
+		&[data-active='true'] {
+			transform: translateY(0);
+		}
+
+		&-company {
+			@include d_flex(row, flex-start, center, nowrap, false, $s_4);
+			text-transform: capitalize;
+
+			&-name {
+				@include fs('h4');
+				min-width: max-content;
+			}
+
+			&-origin {
+				color: $c_t_main;
+			}
+		}
+
+		@include mq('md') {
+			padding: $s_4 $s_4;
+			&-company {
+				display: none;
+			}
+
+			.product-actions-primary {
+				width: 100%;
+			}
+		}
+	}
 }
 
 .swiper {
