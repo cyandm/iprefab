@@ -139,7 +139,7 @@
       back() {
       }
     },
-    CustomEvent: function CustomEvent() {
+    CustomEvent: function CustomEvent2() {
       return this;
     },
     addEventListener() {
@@ -5165,4 +5165,54 @@
       type: "fraction"
     }
   });
+
+  // assets/js/utils/custom-events.js
+  var cynActivate = new CustomEvent("cynActivate", { bubbles: true });
+
+  // assets/js/utils/functions.js
+  var setCookie = (cookieName, cookieValue, expireDays) => {
+    const d = /* @__PURE__ */ new Date();
+    d.setTime(d.getTime() + expireDays * 24 * 60 * 60 * 1e3);
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cookieName + "=" + JSON.stringify(cookieValue) + ";" + expires + ";path=/";
+  };
+  var getCookie = (cookieName) => {
+    let name = cookieName + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(";");
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == " ") {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return JSON.parse(c.substring(name.length, c.length));
+      }
+    }
+    return JSON.parse("{}");
+  };
+
+  // assets/js/modules/product-filter.js
+  var ProductFilter = () => {
+    const cookie = getCookie("cyn-filters");
+    filtersForm = document.querySelector("#filtersForm");
+    sortForm = document.querySelector("#sortForm");
+    const addFormElementsToCookie = (formEl) => {
+      if (!formEl)
+        return;
+      const inputs = formEl.querySelectorAll("input");
+      const selects = formEl.querySelectorAll("select");
+      [inputs, selects].map((groupEl) => {
+        groupEl.forEach((filter) => {
+          filter.addEventListener("change", ({ target: { value } }) => {
+            cookie[filter.name] = value;
+            setCookie("cyn-filters", cookie);
+          });
+        });
+      });
+    };
+    addFormElementsToCookie(filtersForm);
+    addFormElementsToCookie(sortForm);
+  };
+  ProductFilter();
 })();

@@ -1,14 +1,122 @@
 @use '../utils' as *;
 
-input {
+input,
+select {
 	accent-color: $c_se_dark;
 	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	width: 100%;
+	text-transform: capitalize;
+	-moz-appearance: none;
+	appearance: none;
+
+	&:focus {
+		border: none;
+		outline: none;
+	}
+
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
 }
 
 .input {
 	&-wrapper {
+		@include d_flex(column);
+		border: $b_1;
+		border-radius: 100vmax;
+		position: relative;
+		width: 100%;
+		margin-block-end: $s_4;
+		transition: border-color 0.2s ease;
+
+		input,
+		select {
+			padding: $s_4 $s_6;
+			@include fs('body');
+		}
+
+		select:focus + .input-action {
+			transform: translateY(-50%) rotate(180deg);
+		}
+
+		&:has(input:focus),
+		&:has(input:focus-visible),
+		&:has(select:focus),
+		&:has(select:focus-visible) {
+			border-color: $c_p_dark;
+		}
+
 		&-checkbox {
 			@include d_flex(row, flex-start, center, nowrap, false, $s_2);
+		}
+	}
+
+	&-label {
+		position: absolute;
+		top: 0;
+		left: $s_4;
+		transform: translateY(calc(-1 * $s_3 - 4px));
+		background: $c_bg_default;
+		padding-inline: $s_2;
+		text-transform: capitalize;
+		border-radius: 100vmax;
+		color: $c_p_main;
+	}
+
+	&-action {
+		position: absolute;
+		right: $s_4;
+		top: 50%;
+		transform: translateY(-50%);
+		color: $c_se_dark;
+		transition: transform 0.3s ease;
+
+		&:has(sup) {
+			transform: translateY(-60%);
+		}
+	}
+
+	&-group {
+		&-wrapper {
+			@include d_flex($gap: $s_4);
+			text-transform: capitalize;
+
+			label {
+				@include d_flex(row, center, center, $gap: $s_1);
+
+				input {
+					appearance: unset;
+					background-color: #fff;
+					width: $s_5;
+					height: $s_5;
+					border-radius: 50%;
+					border: $b_2;
+
+					@include pseudo(0, $s_3) {
+						top: 50%;
+						left: 50%;
+						border-radius: 50%;
+						box-shadow: inset 1em 1em $c_se_dark;
+						transform: translate(-50%, -50%) scale(0);
+						transition: 120ms transform ease-in-out;
+					}
+
+					&:checked {
+						border-color: $c_se_dark;
+						&::after {
+							transform: translate(-50%, -50%) scale(1);
+						}
+					}
+				}
+			}
+		}
+
+		&-label {
+			color: $c_p_main;
 		}
 	}
 

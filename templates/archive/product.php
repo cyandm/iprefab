@@ -2,11 +2,13 @@
 
 global $wp_query;
 $img_url = get_option( 'cyn_product_archive_image' );
+$filters = cyn_get_filters();
 
 
 ?>
 
 <?php get_header() ?>
+
 
 <main class="container product-archive">
 	<?php get_template_part( '/templates/components/breadcrumb' ) ?>
@@ -18,7 +20,8 @@ $img_url = get_option( 'cyn_product_archive_image' );
 
 	<section class="product-archive-content">
 		<aside class="product-archive-filter">
-
+			<h3>Filters</h3>
+			<?php get_template_part( '/templates/components/filter-product' ) ?>
 		</aside>
 		<div class="product-archive-posts-wrapper">
 			<div class="product-archive-sort">
@@ -30,26 +33,42 @@ $img_url = get_option( 'cyn_product_archive_image' );
 
 					<div class="product-archive-sort-panel">
 						<form action="<?= get_post_type_archive_link( 'product' ) ?>"
-							  method="get">
-							<label for="priceLowest">
-								<input type="radio"
-									   name="price-sort"
-									   id="priceLowest"
-									   value="lowest"
-									   <?= $_GET['price-sort'] == 'lowest' ? 'checked' : '' ?>>
-								price - lowest
+							  method="post"
+							  id="sortForm">
+							<div class="input-group">
+								<span class="input-group-label">Price Sort</span>
+								<div class="input-group-wrapper">
+									<label for="priceLowest">
+										<input type="radio"
+											   name="price-sort"
+											   id="priceLowest"
+											   value="lowest"
+											   <?=
+											   	isset( $filters['price-sort'] ) &&
+											   	$filters['price-sort'] == 'lowest' ?
+											   	'checked' : '' ?>>
+										<span>
+											lowest
+										</span>
 
-							</label>
+									</label>
 
-							<label for="priceHighest">
-								<input type="radio"
-									   id="priceHighest"
-									   name="price-sort"
-									   value="highest"
-									   <?= $_GET['price-sort'] == 'highest' ? 'checked' : '' ?>>
-								price - highest
+									<label for="priceHighest">
+										<input type="radio"
+											   id="priceHighest"
+											   name="price-sort"
+											   value="highest"
+											   <?=
+											   	isset( $filters['price-sort'] ) &&
+											   	$filters['price-sort'] == 'highest' ?
+											   	'checked' : '' ?>>
+										<span>
+											highest
+										</span>
 
-							</label>
+									</label>
+								</div>
+							</div>
 
 							<button class="btn-primary"
 									type="submit">
