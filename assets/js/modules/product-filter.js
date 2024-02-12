@@ -1,8 +1,15 @@
-import { getCookie, setCookie } from '../utils/functions';
+import {
+	activateEl,
+	deActivateEl,
+	definePopUp,
+	getCookie,
+	setCookie,
+	toggleActivateEl,
+} from '../utils/functions';
 
 const ProductFilter = () => {
 	const cookie = getCookie('cyn-filters');
-	filtersForm = document.querySelector('#filtersForm');
+	filtersForm = document.querySelectorAll('#filtersForm');
 	sortForm = document.querySelector('#sortForm');
 
 	const addFormElementsToCookie = (formEl) => {
@@ -20,8 +27,28 @@ const ProductFilter = () => {
 		});
 	};
 
-	addFormElementsToCookie(filtersForm);
+	filtersForm.forEach((el) => {
+		addFormElementsToCookie(el);
+	});
 	addFormElementsToCookie(sortForm);
+
+	const filterBtn = document.querySelector('.filter-btn');
+	const filterPopUp = document.querySelector('#filtersPopUp');
+	const filtersPopUpCloser = document.querySelector('#filtersPopUpCloser');
+
+	if (!filterBtn) return;
+	if (!filterPopUp) return;
+	if (!filtersPopUpCloser) return;
+
+	definePopUp(filterPopUp);
+
+	filterBtn.addEventListener('click', () => {
+		activateEl(filterPopUp);
+	});
+
+	filtersPopUpCloser.addEventListener('click', () => {
+		deActivateEl(filterPopUp);
+	});
 };
 
 ProductFilter();

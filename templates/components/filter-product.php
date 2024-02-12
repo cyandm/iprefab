@@ -212,8 +212,8 @@ $countries = array_filter( $countries );
 		</div>
 	</div>
 
-	<button class="btn-primary"
+	<button class="btn-primary btn-full"
 			type="submit">
-		submit
+		apply filter
 	</button>
 </form>

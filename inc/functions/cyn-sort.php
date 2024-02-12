@@ -94,7 +94,7 @@ function cyn_filter_products( $query ) {
 	$query->set( 'meta_query', $meta_query );
 
 
-	if ( 'null' !== $filters['originCompany'] ) {
+	if ( isset( $filters['originCompany'] ) && 'null' !== $filters['originCompany'] ) {
 		$companies = get_terms( [ 
 			'taxonomy' => 'company',
 			'meta_query' => [ 

@@ -29,8 +29,16 @@ $filters = cyn_get_filters();
 		</aside>
 		<div class="product-archive-posts-wrapper">
 			<div class="product-archive-sort">
+
 				<a href="#"
-				   class="btn-secondary ">
+				   class="btn-secondary filter-btn">
+					<i class="iconsax"
+					   icon-name="filter"></i>
+					filters
+				</a>
+
+				<a href="#"
+				   class="btn-secondary sort-btn">
 					<i class="iconsax"
 					   icon-name="arrow-up-down"></i>
 					sort by
@@ -109,5 +117,18 @@ $filters = cyn_get_filters();
 	</section>
 
 </main>
+
+<div class="product-archive-filters"
+	 id="filtersPopUp"
+	 data-active="false">
+	<div class="product-archive-filters-title">
+		<i class="iconsax"
+		   id="filtersPopUpCloser"
+		   icon-name="x-circle"></i>
+		<h3>filters</h3>
+	</div>
+
+	<?= get_template_part( '/templates/components/filter-product' ) ?>
+</div>
 
 <?php get_footer() ?>

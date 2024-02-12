@@ -5171,6 +5171,26 @@
   var cynActivate = new CustomEvent("cynActivate", { bubbles: true });
 
   // assets/js/utils/functions.js
+  var deActivateEl = (nodeEl) => {
+    nodeEl.setAttribute("data-active", "false");
+    nodeEl.dispatchEvent(cynActivate);
+  };
+  var activateEl = (nodeEl) => {
+    nodeEl.setAttribute("data-active", "true");
+    nodeEl.dispatchEvent(cynActivate);
+  };
+  var definePopUp = (nodeEl) => {
+    nodeEl.addEventListener("cynActivate", (e) => {
+      if (e.target != nodeEl)
+        return;
+      document.body.setAttribute("data-popup-open", e.target.dataset.active);
+    });
+    nodeEl.addEventListener("click", (e) => {
+      if (e.target != nodeEl)
+        return;
+      deActivateEl(nodeEl);
+    });
+  };
   var setCookie = (cookieName, cookieValue, expireDays) => {
     const d = /* @__PURE__ */ new Date();
     d.setTime(d.getTime() + expireDays * 24 * 60 * 60 * 1e3);
@@ -5196,7 +5216,7 @@
   // assets/js/modules/product-filter.js
   var ProductFilter = () => {
     const cookie = getCookie("cyn-filters");
-    filtersForm = document.querySelector("#filtersForm");
+    filtersForm = document.querySelectorAll("#filtersForm");
     sortForm = document.querySelector("#sortForm");
     const addFormElementsToCookie = (formEl) => {
       if (!formEl)
@@ -5212,8 +5232,26 @@
         });
       });
     };
-    addFormElementsToCookie(filtersForm);
+    filtersForm.forEach((el) => {
+      addFormElementsToCookie(el);
+    });
     addFormElementsToCookie(sortForm);
+    const filterBtn = document.querySelector(".filter-btn");
+    const filterPopUp = document.querySelector("#filtersPopUp");
+    const filtersPopUpCloser = document.querySelector("#filtersPopUpCloser");
+    if (!filterBtn)
+      return;
+    if (!filterPopUp)
+      return;
+    if (!filtersPopUpCloser)
+      return;
+    definePopUp(filterPopUp);
+    filterBtn.addEventListener("click", () => {
+      activateEl(filterPopUp);
+    });
+    filtersPopUpCloser.addEventListener("click", () => {
+      deActivateEl(filterPopUp);
+    });
   };
   ProductFilter();
 })();

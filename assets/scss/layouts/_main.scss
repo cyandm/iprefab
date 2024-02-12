@@ -47,3 +47,17 @@ hr {
 	border-top: $b_1;
 	border-inline: 0;
 }
+
+body {
+	@include pseudo(0, 100%, 50) {
+		transition: background-color 0.3s ease;
+		pointer-events: none;
+	}
+
+	&[data-popup-open='true'] {
+		overflow: hidden;
+		&::after {
+			background-color: rgba($c_n_100, 0.3);
+		}
+	}
+}
