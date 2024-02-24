@@ -61,3 +61,11 @@ body {
 		}
 	}
 }
+
+.grid-col-3 {
+	--min-width: 360px;
+
+	@include mq('md') {
+		--min-width: 260px;
+	}
+}

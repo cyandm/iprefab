@@ -36,28 +36,5 @@ $primary_data = [
 
 
 
-?>
+get_template_part( '/templates/single/general/primary-info', null, [ 'primary_data' => $primary_data ] );
 
-
-<div class="product-primary-info">
-
-	<p class="h4">
-		Primary
-	</p>
-
-	<div class="product-table-primary">
-		<?php foreach ( $primary_data as $key => $data ) : ?>
-			<div class="product-feature-box">
-				<div class="product-feature-top">
-					<i class="iconsax"
-					   icon-name="<?= $data['icon'] ?>"></i>
-					<span class="caption"><?= $data['text'] ?></span>
-				</div>
-				<div class="product-feature-value">
-					<span class="caption"><?= $data['value'] ?></span>
-				</div>
-			</div>
-		<?php endforeach; ?>
-	</div>
-
-</div>

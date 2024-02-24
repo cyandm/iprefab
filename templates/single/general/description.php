@@ -2,7 +2,7 @@
 
 	<h4>Description</h4>
 
-	<p class="product-description">
+	<p class="general-description">
 		<?php the_content() ?>
 	</p>
 

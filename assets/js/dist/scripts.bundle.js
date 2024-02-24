@@ -5147,19 +5147,19 @@
   }
 
   // assets/js/modules/swiper.js
-  var productThumbnailSwiper = new Swiper("#productThumbnailSwiper", {
+  var generalThumbnailSwiper = new Swiper("#generalThumbnailSwiper", {
     modules: [freeMode, Thumb],
     slidesPerView: 3,
     spaceBetween: 12,
     freeMode: true,
     watchSlidesProgress: true
   });
-  var productMainSwiper = new Swiper("#productMainSwiper", {
+  var generalMainSwiper = new Swiper("#generalMainSwiper", {
     modules: [Thumb, Pagination],
     spaceBetween: 12,
     autoHeight: true,
     thumbs: {
-      swiper: productThumbnailSwiper
+      swiper: generalThumbnailSwiper
     },
     pagination: {
       el: ".swiper-pagination",
@@ -5255,26 +5255,74 @@
   };
   ProductFilter();
 
+  // assets/js/modules/variable.js
+  var rootEl = document.querySelector(":root");
+  var containerEL = document.querySelector(".container");
+  var headerEl = document.querySelector("header");
+  var footerEl = document.querySelector("footer");
+  var headerHeight;
+  var marginFromSide;
+  var footerHeight;
+  var makeKebab = (str) => str.replace(
+    /[A-Z]+(?![a-z])|[A-Z]/g,
+    ($, ofs) => (ofs ? "-" : "") + $.toLowerCase()
+  );
+  var setCssVariable = (value, name, parent = rootEl, prefix = "px") => {
+    const kebabName = makeKebab(name);
+    parent.style.setProperty("--".concat(kebabName), value + prefix);
+  };
+  var setCssVariableGroup = () => {
+    headerHeight = headerEl.getClientRects()[0].height;
+    if (footerEl) {
+      footerHeight = footerEl.getClientRects()[0].height;
+    } else {
+      footerHeight = 0;
+    }
+    const containerWidth = containerEL.clientWidth;
+    marginFromSide = (window.innerWidth - containerWidth) / 2;
+    setCssVariable(headerHeight, "headerHeight");
+    setCssVariable(marginFromSide, "marginFromSide");
+    setCssVariable(footerHeight, "footerHeight");
+  };
+  window.addEventListener("load", setCssVariableGroup);
+  window.addEventListener("resize", setCssVariableGroup);
+
   // assets/js/modules/fixed-bottom-cta.js
-  var fixedBottomCta = () => {
-    const trigger = document.querySelector(".product-actions-primary");
-    const cta = document.querySelector("#bottomCta");
-    if (!cta || !trigger)
+  var fixedBottomCta = (trigger, cta) => {
+    const triggerEl = document.querySelector(trigger);
+    const ctaEl = document.querySelector(cta);
+    if (!ctaEl || !triggerEl)
       return;
     const handleObserver = (entries) => {
       if (entries[0].isIntersecting === true || //not showing in page
       entries[0].boundingClientRect.top > 0) {
-        deActivateEl(cta);
+        deActivateEl(ctaEl);
         return;
       }
-      activateEl(cta);
+      activateEl(ctaEl);
     };
     const observer = new IntersectionObserver(handleObserver, {
       root: null,
       rootMargin: "0px",
       threshold: 1
     });
-    observer.observe(trigger);
+    observer.observe(triggerEl);
+    const footerEl2 = document.querySelector("footer.site-footer");
+    if (!footerEl2)
+      return;
+    setCssVariable(ctaEl.getClientRects()[0].height, "ctaHeight", footerEl2);
   };
-  fixedBottomCta();
+  fixedBottomCta(".general-actions-primary", "#bottomCta");
+
+  // assets/js/modules/share.js
+  var btnShare = document.getElementById("btnShare");
+  var titlePageEl = document.getElementById("title");
+  if (btnShare && titlePageEl) {
+    btnShare.addEventListener("click", () => {
+      navigator.share({
+        url: window.location.href,
+        title: titlePageEl.textContent
+      });
+    });
+  }
 })();

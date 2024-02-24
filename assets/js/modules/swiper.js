@@ -1,7 +1,7 @@
 import { Swiper } from 'swiper';
 import { FreeMode, Thumbs, Pagination } from 'swiper/modules';
 
-export const productThumbnailSwiper = new Swiper('#productThumbnailSwiper', {
+export const generalThumbnailSwiper = new Swiper('#generalThumbnailSwiper', {
 	modules: [FreeMode, Thumbs],
 	slidesPerView: 3,
 	spaceBetween: 12,
@@ -9,12 +9,12 @@ export const productThumbnailSwiper = new Swiper('#productThumbnailSwiper', {
 	watchSlidesProgress: true,
 });
 
-export const productMainSwiper = new Swiper('#productMainSwiper', {
+export const generalMainSwiper = new Swiper('#generalMainSwiper', {
 	modules: [Thumbs, Pagination],
 	spaceBetween: 12,
 	autoHeight: true,
 	thumbs: {
-		swiper: productThumbnailSwiper,
+		swiper: generalThumbnailSwiper,
 	},
 	pagination: {
 		el: '.swiper-pagination',

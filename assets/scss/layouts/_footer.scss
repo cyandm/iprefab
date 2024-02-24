@@ -2,7 +2,7 @@
 
 .site-footer {
 	@include d_flex(row, space-between, center, $gap: $s_4);
-	margin-block: px_to_rem(120) px_to_rem(60);
+	margin-block: px_to_rem(120) calc(px_to_rem(60) + var(--cta-height, 0));
 	background-color: $c_p_dark;
 	color: $c_p_text_contrast;
 	border-radius: $s_3;

@@ -1,21 +1,22 @@
 import { activateEl, deActivateEl } from '../utils/functions';
+import { setCssVariable } from './variable';
 
 const fixedBottomCta = (trigger, cta) => {
-	const trigger = document.querySelector(trigger);
-	const cta = document.querySelector(cta);
+	const triggerEl = document.querySelector(trigger);
+	const ctaEl = document.querySelector(cta);
 
-	if (!cta || !trigger) return;
+	if (!ctaEl || !triggerEl) return;
 
 	const handleObserver = (entries) => {
 		if (
 			entries[0].isIntersecting === true || //not showing in page
 			entries[0].boundingClientRect.top > 0 //after target
 		) {
-			deActivateEl(cta);
+			deActivateEl(ctaEl);
 			return;
 		}
 
-		activateEl(cta);
+		activateEl(ctaEl);
 	};
 
 	const observer = new IntersectionObserver(handleObserver, {
@@ -24,8 +25,12 @@ const fixedBottomCta = (trigger, cta) => {
 		threshold: 1.0,
 	});
 
-	observer.observe(trigger);
+	observer.observe(triggerEl);
+
+	const footerEl = document.querySelector('footer.site-footer');
+	if (!footerEl) return;
+
+	setCssVariable(ctaEl.getClientRects()[0].height, 'ctaHeight', footerEl);
 };
 
-fixedBottomCta('.product-actions-primary', '#bottomCta');
-l;
+fixedBottomCta('.general-actions-primary', '#bottomCta');

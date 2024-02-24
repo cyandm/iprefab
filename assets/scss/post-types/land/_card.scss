@@ -1,0 +1,7 @@
+@use '../../utils' as *;
+
+.land-card {
+	&-items {
+		@include d_flex(row, space-between, center);
+	}
+}

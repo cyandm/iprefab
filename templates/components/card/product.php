@@ -12,10 +12,10 @@ $company_logo = wp_get_attachment_image(
 ?>
 
 <a href="<?= get_permalink( $post_id ) ?>"
-   class="product-card"
+   class="general-card"
    data-id="<?= $post_id ?>">
 
-	<div class="product-card-image">
+	<div class="general-card-image">
 		<?php cyn_render_image( $thumb_id, [ 400, 400 ] ) ?>
 
 		<div class="company-logo">
@@ -23,13 +23,13 @@ $company_logo = wp_get_attachment_image(
 		</div>
 	</div>
 
-	<div class="product-card-content">
-		<div class="product-card-title">
+	<div class="general-card-content">
+		<div class="general-card-title">
 			<span>
 				<?= get_the_title( $post_id ); ?>
 			</span>
 
-			<span class="product-card-price">
+			<span class="general-card-price">
 				€ <span><?= number_format( get_field( 'helsinki_price', $post_id ) ) ?></span>
 			</span>
 		</div>

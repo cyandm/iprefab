@@ -40,7 +40,7 @@ function cyn_render_section_card( $title, $btn, $items, $post_type, $additional_
 		</div>
 		<hr>
 
-		<div class="section-card-items">
+		<div class="section-card-items | grid-col-3">
 			<?php
 			foreach ( $items as $item_id ) {
 				get_template_part( '/templates/components/card/' . $post_type, null, [ 'post_id' => $item_id ] );

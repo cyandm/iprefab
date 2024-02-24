@@ -13,6 +13,8 @@ require_once( __DIR__ . '/inc/functions/cyn-acf.php' );
 require_once( __DIR__ . '/inc/functions/cyn-general.php' );
 require_once( __DIR__ . '/inc/functions/cyn-render.php' );
 require_once( __DIR__ . '/inc/functions/cyn-sort.php' );
+require_once( __DIR__ . '/inc/functions/cyn-update-checker.php' );
+
 
 //Classes
 require_once( __DIR__ . '/inc/class/cyn-upload-excel.php' );

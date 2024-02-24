@@ -5,25 +5,25 @@ $company_logo = wp_get_attachment_image(
 	[ 300, 300 ] );
 ?>
 
-<div class="product-bottom-cta"
+<div class="general-bottom-cta"
 	 id="bottomCta">
 
-	<div class="product-bottom-cta-company">
+	<div class="general-bottom-cta-company">
 		<div class="img-wrapper">
 			<?= $company_logo ?>
 		</div>
 
 		<div>
-			<div class="product-bottom-cta-company-name">
+			<div class="general-bottom-cta-company-name">
 				<?= $company->name ?>
 			</div>
-			<div class="product-bottom-cta-company-origin">
+			<div class="general-bottom-cta-company-origin">
 				<?= get_field( 'origin_of_company', 'company_' . $company->term_id ) ?>
 			</div>
 		</div>
 	</div>
 
-	<div class="product-actions-primary">
+	<div class="general-actions-primary">
 		<button class="btn-secondary-icon-start">
 			<i class="iconsax"
 			   icon-name="book-with-bookmark"></i>

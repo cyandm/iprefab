@@ -1,6 +1,6 @@
 <?php
-$total_area = get_field( 'total_area' );
-$helsinki_price = get_field( 'helsinki_price' );
+$area = isset( $args['area'] ) ? $args['area'] : 0;
+$price = isset( $args['price'] ) ? $args['price'] : 0;
 
 $company = get_the_terms( get_queried_object_id(), 'company' )[0];
 $company_logo = wp_get_attachment_image(
@@ -9,27 +9,27 @@ $company_logo = wp_get_attachment_image(
 
 ?>
 
-<div class="product-info">
-	<div class="product-info-wrapper | h2">
-		<span class="product-meterage">
+<div class="general-info">
+	<div class="general-info-wrapper | h2">
+		<span class="general-meterage">
 			<span>
-				<?= $total_area ?>
+				<?= $area ?>
 			</span>
 			<span class="unit">
 				m<sup>2</sup>
 			</span>
 		</span>
 		•
-		<span class="product-price-wrapper">
-			<span class="product-price-symbol">
+		<span class="general-price-wrapper">
+			<span class="general-price-symbol">
 				€
 			</span>
-			<span class="product-price">
-				<?= number_format( $helsinki_price ) ?>
+			<span class="general-price">
+				<?= number_format( $price ) ?>
 			</span>
 		</span>
 	</div>
-	<div class="product-company-logo">
+	<div class="general-company-logo">
 		<?= $company_logo ?>
 	</div>
 </div>
@@ -37,6 +37,6 @@ $company_logo = wp_get_attachment_image(
 <div class="clear-fix-12"> </div>
 
 
-<div class="product-info-short">
+<div class="general-info-short">
 	Lorem ipsum dolor sit, amet consectetur • adipisicing elit. Atque enim laudantium fugit!
 </div>

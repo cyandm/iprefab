@@ -1,8 +1,9 @@
 <?php
+$post_type = isset( $args['post_type'] ) ? $args['post_type'] : 'product';
 $company = get_the_terms( get_queried_object_id(), 'company' )[0];
 
 $products = new WP_Query( [ 
-	'post_type' => 'product',
+	'post_type' => $post_type,
 	'tax_query' => [ 
 		[ 
 			'taxonomy' => 'company',
@@ -27,6 +28,6 @@ cyn_render_section_card( 'from this supplier',
 		'link' => get_term_link( $company ),
 		'title' => 'view all',
 		'icon' => 'eye'
-	], $product_ids, 'product', 'product-recommended' );
+	], $product_ids, $post_type, $post_type . '-recommended' );
 
 

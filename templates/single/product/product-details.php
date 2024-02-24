@@ -63,50 +63,9 @@ $product_details = [
 	],
 ];
 
-?>
+get_template_part(
+	'/templates/single/general/details',
+	null,
+	[ 'product_details' => $product_details ] );
 
 
-<div class="product-details">
-	<h4>Details</h4>
-
-	<div class="product-details-wrapper">
-		<div class="product-table-secondary">
-			<?php foreach ( $product_details as $row ) : ?>
-				<div class="product-table-secondary-row">
-					<div class="product-table-secondary-name">
-						<?= $row['name'] ?>
-					</div>
-					<div class="product-table-secondary-value">
-						<?= $row['value'] ?>
-					</div>
-				</div>
-			<?php endforeach; ?>
-		</div>
-
-		<div class="product-cta">
-			<h4>forward to bank</h4>
-			<div class="img-wrapper">
-				<img src="<?= get_stylesheet_directory_uri() . '/assets/imgs/bank.png' ?>"
-					 alt="bank">
-			</div>
-			<p class="product-cta-description | body-s">
-				Designed to be open and spacious, the impressive hillside house sits diagonally to the slope, which
-				creates an architecturally individual and fascinating look for the home. The entrance to the home is on
-				the side of the upper slope.
-			</p>
-
-			<div class="input-wrapper-checkbox">
-				<input type="checkbox"
-					   class="input-medium">
-				<p>
-					I accept have a land for this house
-				</p>
-			</div>
-
-			<button class="btn-primary btn-full"
-					disabled>
-				Order a bank request
-			</button>
-		</div>
-	</div>
-</div>

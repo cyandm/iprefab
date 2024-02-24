@@ -15,10 +15,10 @@ function cyn_render_images( $images ) {
 
 ?>
 
-<div class="product-images">
+<div class="general-images">
 
-	<div class="swiper swiper-product-main"
-		 id="productMainSwiper">
+	<div class="swiper swiper-general-main"
+		 id="generalMainSwiper">
 		<div class="swiper-wrapper">
 			<?php cyn_render_images( $images ) ?>
 
@@ -31,8 +31,8 @@ function cyn_render_images( $images ) {
 	</div>
 
 	<div thumbsSlider
-		 class="swiper swiper-product-thumbnails"
-		 id="productThumbnailSwiper">
+		 class="swiper swiper-general-thumbnails"
+		 id="generalThumbnailSwiper">
 		<div class="swiper-wrapper">
 			<?php cyn_render_images( $images ) ?>
 		</div>

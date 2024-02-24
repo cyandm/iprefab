@@ -3,6 +3,6 @@
 	src: url(../fonts/poppins/400/Poppins-Regular.woff);
 }
 
-*:not(i, .ab-icon) {
+*:not(i, .ab-icon, .dashicons) {
 	font-family: 'Poppins' !important;
 }
