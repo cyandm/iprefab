@@ -5,7 +5,7 @@ use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 $myUpdateChecker = PucFactory::buildUpdateChecker(
 	'https://github.com/cyandm/iprefab/', //github theme
 	get_stylesheet_directory(),
-	'iprefab' //theme slug
+	'cyandm' //theme slug
 );
 
 //Set the branch that contains the stable release.
