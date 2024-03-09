@@ -1,5 +1,5 @@
 const ProductCTA = () => {
-	const productCtaGroup = document.querySelectorAll('.product-cta');
+	const productCtaGroup = document.querySelectorAll('.general-cta');
 	if (!productCtaGroup) return;
 
 	productCtaGroup.forEach((el) => {

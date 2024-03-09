@@ -42,8 +42,9 @@
 
 	&-actions {
 		&-primary {
+			@include d_flex(row, center, center, nowrap, false, $s_2);
 			@include mq('md') {
-				@include d_flex(row, space-between, center, nowrap, false, $s_2);
+				justify-content: space-between;
 			}
 		}
 	}
@@ -182,6 +183,24 @@
 		@include mq('md') {
 			p {
 				margin-block: $s_4;
+			}
+		}
+	}
+
+	&-company {
+		&-logo {
+			@include d_flex($gap: $s_2);
+
+			div {
+				@include d_flex();
+
+				img {
+					height: 45px;
+					width: 150px;
+					object-fit: contain;
+					background-color: var(--logo-color);
+					border-radius: 0.5rem;
+				}
 			}
 		}
 	}

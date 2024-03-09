@@ -1,13 +1,11 @@
 <?php
 
-$related_houses = get_field( 'related_houses' );
+$related_houses = get_field( 'related_house_and_lands' );
 $product_ids = [];
-
-
 
 if ( ! $related_houses ) {
 	$products = new WP_Query( [ 
-		'post_type' => 'house',
+		'post_type' => 'house-and-land',
 		'posts_per_page' => 3
 	] );
 
@@ -20,14 +18,11 @@ if ( ! $related_houses ) {
 }
 
 
-
-
-
-cyn_render_section_card( 'houses that are suitable for the land',
+cyn_render_section_card( 'you might like',
 	[ 
-		'link' => get_post_type_archive_link( 'land' ),
+		'link' => get_post_type_archive_link( 'house-and-land' ),
 		'title' => 'view all',
 		'icon' => 'eye'
-	], $product_ids, 'land', 'land-recommended' );
+	], $product_ids, 'house-and-land', 'house-and-land-recommended', 2 );
 
 

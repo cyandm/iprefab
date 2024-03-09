@@ -26,7 +26,7 @@ function cyn_render_btn( $btn, $is_desktop ) { ?>
  * @param string $post_type is a wp post type
  * @return void 
  */
-function cyn_render_section_card( $title, $btn, $items, $post_type, $additional_class = '' ) {
+function cyn_render_section_card( $title, $btn, $items, $post_type, $additional_class = '', $col = '3' ) {
 	?>
 
 	<section class="section-card <?= $additional_class ?>">
@@ -40,7 +40,7 @@ function cyn_render_section_card( $title, $btn, $items, $post_type, $additional_
 		</div>
 		<hr>
 
-		<div class="section-card-items | grid-col-3">
+		<div class="section-card-items | grid-col-<?= $col ?>">
 			<?php
 			foreach ( $items as $item_id ) {
 				get_template_part( '/templates/components/card/' . $post_type, null, [ 'post_id' => $item_id ] );

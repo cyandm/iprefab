@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-<main class="single-product container">
+<main class="single-house container">
 	<?php get_template_part( '/templates/components/breadcrumb' ); ?>
 
 	<div class="clear-fix-24"> </div>
@@ -10,7 +10,7 @@
 		, null,
 		[ 
 			'area' => get_field( 'total_area' ),
-			'price' => get_field( 'helsinki_price' ),
+			'price' => get_field( 'price' ),
 		] ) ?>
 
 	<div class="clear-fix-24"></div>
@@ -30,11 +30,11 @@
 		<hr />
 	</div>
 
-	<?php get_template_part( '/templates/single/product/product', 'primary-info' ) ?>
+	<?php get_template_part( '/templates/single/house/house', 'primary-info' ) ?>
 
 	<div class="clear-fix-24"></div>
 
-	<?php get_template_part( '/templates/single/product/product', 'details' ) ?>
+	<?php get_template_part( '/templates/single/house/house', 'details' ) ?>
 
 	<div class="clear-fix-24"></div>
 
@@ -47,17 +47,17 @@
 
 	<div class="clear-fix-64"></div>
 
-	<?php get_template_part( '/templates/single/product/product', 'recommend-lands' ) ?>
+	<?php get_template_part( '/templates/single/house/house', 'recommend-lands' ) ?>
 
 	<div class="clear-fix-64"></div>
 
-	<?php get_template_part( '/templates/single/product/product', 'recommended' ) ?>
+	<?php get_template_part( '/templates/single/house/house', 'recommended' ) ?>
 
 	<div class="clear-fix-64"></div>
 
 	<?php get_template_part(
 		'/templates/single/general/recommend-by-company', null,
-		[ 'post_type' => 'product' ] ) ?>
+		[ 'post_type' => 'house' ] ) ?>
 
 </main>
 

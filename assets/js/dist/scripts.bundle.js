@@ -22,7 +22,7 @@
 
   // assets/js/modules/product-cta.js
   var ProductCTA = () => {
-    const productCtaGroup = document.querySelectorAll(".product-cta");
+    const productCtaGroup = document.querySelectorAll(".general-cta");
     if (!productCtaGroup)
       return;
     productCtaGroup.forEach((el) => {

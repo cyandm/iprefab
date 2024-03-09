@@ -24,8 +24,10 @@
 			</a>
 		</div>
 	</footer>
-
 </div>
+
+<div class="clear-fix-40"> </div>
+
 
 <div class="wp-scripts">
 	<?php wp_footer() ?>

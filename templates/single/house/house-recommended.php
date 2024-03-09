@@ -5,7 +5,7 @@ $product_ids = [];
 
 if ( ! $related_houses ) {
 	$products = new WP_Query( [ 
-		'post_type' => 'product',
+		'post_type' => 'house',
 		'posts_per_page' => 3
 	] );
 
@@ -22,9 +22,9 @@ if ( ! $related_houses ) {
 
 cyn_render_section_card( 'you might like',
 	[ 
-		'link' => get_post_type_archive_link( 'product' ),
+		'link' => get_post_type_archive_link( 'house' ),
 		'title' => 'view all',
 		'icon' => 'eye'
-	], $product_ids, 'product', 'product-recommended' );
+	], $product_ids, 'house', 'product-recommended' );
 
 

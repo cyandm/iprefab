@@ -7,32 +7,19 @@ add_action( 'init', 'cyn_page_register' );
 
 
 function cyn_post_type_register() {
+	cyn_make_post_type( 'Land', 'land', 'dashicons-flag' );
+	cyn_make_post_type( 'House', 'house', 'dashicons-admin-home' );
+	cyn_make_post_type( 'House + Land', 'house-and-land', 'dashicons-admin-home' );
 }
-
 
 function cyn_taxonomy_register() {
+	cyn_make_taxonomy( 'company', 'company', [ 'house', 'land' ] );
 }
 
-//make_taxonomy('دسته‌بندی پروژه', 'project-type', ['project']);
 function cyn_make_post_type( $name, $slug, $icon, $menu = true ) {
-	$labels = [ 
-		'name' => $name,
-		'singular_name' => $name,
-		'menu_name' => $name . '‌' . 'ها',
-		'name_admin_bar' => $name,
-		'add_new' => 'افزودن ' . $name,
-		'add_new_item' => 'افزودن ' . $name . ' جدید',
-		'new_item' => $name . ' جدید',
-		'edit_item' => 'ویرایش ' . $name,
-		'view_item' => 'دیدن ' . $name,
-		'all_items' => 'همه ' . $name . ' ها',
-		'search_items' => 'جستجو ' . $name,
-		'not_found' => $name . '‌ای پیدا نشد',
-		'not_found_in_trash' => $name . ' پیدا نشد'
-	];
 
 	$args = [ 
-		'labels' => $labels,
+		'label' => $name,
 		'public' => true,
 		'publicly_queryable' => true,
 		'show_ui' => true,
@@ -44,31 +31,20 @@ function cyn_make_post_type( $name, $slug, $icon, $menu = true ) {
 		'hierarchical' => false,
 		'menu_position' => null,
 		'menu_icon' => $icon,
-		'supports' => [ 'title', 'thumbnail' ],
+		'supports' => [ 'title', 'thumbnail', 'editor' ],
 
 	];
 
 	register_post_type( $slug, $args );
-	make_post_type( 'house', 'product', 'dashicons-layout' );
+
 
 }
 
 function cyn_make_taxonomy( $name, $slug, $post_types, $is_hierarchical = true ) {
-	$labels = [ 
-		'name' => $name . '‌ها',
-		'singular_name' => $name,
-		'search_items' => 'ها' . $name . 'جستجو در',
-		'all_items' => 'همه ' . $name . '‌ ها',
-		'edit_item' => ' ویرایش ' . $name,
-		'update_item' => 'به روز رسانی' . $name,
-		'add_new_item' => 'افزودن ' . $name . ' جدید',
-		'new_item_name' => $name . ' جدید',
-		'menu_name' => $name,
-	];
+
 
 	$args = [ 
 		'hierarchical' => $is_hierarchical,
-		'labels' => $labels,
 		'show_ui' => true,
 		'show_admin_column' => true,
 		'query_var' => true,

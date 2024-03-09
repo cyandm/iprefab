@@ -23,6 +23,40 @@ select {
 	}
 }
 
+input[type='checkbox'] {
+	background-color: $c_bg_default;
+	border-radius: 0.25rem;
+	overflow: hidden;
+
+	@include pseudo(0) {
+		left: 38%;
+		top: 48%;
+		width: 5px;
+		height: 8px;
+		border: solid white;
+		border-width: 0 2px 2px 0;
+		transform: rotate(35deg) translate(-50%, -50%) scale(0);
+		transition: transform 0.3s 0.15s ease;
+	}
+
+	@include pseudo(0, 100%, -1, before) {
+		background-color: $c_se_dark;
+		transform: scale(0);
+		border-radius: 50%;
+		transition: transform 0.3s;
+	}
+
+	&:checked {
+		&::after {
+			transform: rotate(35deg) translate(-50%, -50%) scale(1.5);
+		}
+
+		&::before {
+			transform: scale(2);
+		}
+	}
+}
+
 .input {
 	&-wrapper {
 		@include d_flex(column);

@@ -40,6 +40,11 @@
 		border: 1px solid $c_t_dark;
 	}
 
+	&-accent {
+		color: $c_a_main;
+		border: 1px solid $c_a_main;
+	}
+
 	&-icon {
 		padding: $s_2 $s_4;
 		color: $c_t_dark;
@@ -57,5 +62,20 @@
 	&-full {
 		width: 100%;
 		text-align: center;
+	}
+
+	&-small {
+		@include fs();
+		padding: $s_1 $s_5;
+	}
+
+	&-horizontal {
+		@include d_flex(column, flex-start, center);
+		font-size: 16px;
+		border-radius: 0.5rem;
+
+		i {
+			font-size: 1.75rem;
+		}
 	}
 }

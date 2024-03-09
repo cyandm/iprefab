@@ -1,12 +1,13 @@
 <?php
 $primary_data = isset( $args['primary_data'] ) ? $args['primary_data'] : [];
+$title = $args['title'] ?? 'Primary';
 ?>
 
 <?php if ( count( $primary_data ) > 0 ) : ?>
 	<div class="general-primary-info">
 
 		<p class="h4">
-			Primary
+			<?= $title ?>
 		</p>
 
 		<div class="general-table-primary">

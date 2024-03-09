@@ -1,6 +1,6 @@
 @use '../../utils/' as *;
 
-.product {
+.house {
 	&-company {
 		hr {
 			margin-block: $s_4 $s_6;
@@ -11,16 +11,30 @@
 		}
 
 		&-wrapper {
-			@include d_flex(row, center, center, $gap: $s_4);
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: $s_4;
 
 			> * {
 				flex: 1;
 			}
 
-			.product-company-logo {
+			.house-company-logo {
 				@include d_flex(row, center, center);
 				width: 100%;
 				height: 100%;
+				grid-column: 1 / 2;
+				background-color: var(--company-color);
+				border-radius: $r_1;
+				img {
+					height: 45%;
+					width: 80%;
+					object-fit: contain;
+				}
+			}
+
+			.house-company-description {
+				grid-column: 2 / 5;
 			}
 
 			@include mq('md') {

@@ -20,3 +20,6 @@ require_once( __DIR__ . '/inc/functions/cyn-update-checker.php' );
 require_once( __DIR__ . '/inc/class/cyn-upload-excel.php' );
 
 $cyn_upload_excel = new cyn_upload_excel();
+
+
+

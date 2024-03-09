@@ -3,6 +3,7 @@
 $related_lands = get_field( 'related_lands' );
 $lands_ids = [];
 
+
 if ( ! $related_lands ) {
 	$lands = new WP_Query( [ 
 		'post_type' => 'land',

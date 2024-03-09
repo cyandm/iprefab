@@ -4,14 +4,20 @@ $company_logo = wp_get_attachment_image(
 	get_field( 'logo', 'company_' . $company->term_id ),
 	[ 300, 300 ] );
 
+
+$age = intval( date( 'Y' ) ) - intval( get_field( 'established_year', 'company_' . $company->term_id ) );
+
+
+
+
 $product_details = [ 
 	[ 
 		'name' => 'company verification type',
-		'value' => ''
+		'value' => get_field( 'type' )
 	],
 	[ 
 		'name' => 'age of compony',
-		'value' => ''
+		'value' => $age
 	],
 	[ 
 		'name' => 'logo',
@@ -23,43 +29,47 @@ $product_details = [
 	],
 	[ 
 		'name' => 'total area',
-		'value' => ''
+		'value' => get_field( 'total_area' ) . '<span class="unit">m<sup>2</sup></span>',
 	],
 	[ 
 		'name' => 'house area',
-		'value' => ''
+		'value' => get_field( 'house_area' ) . '<span class="unit">m<sup>2</sup></span>',
 	],
 	[ 
 		'name' => 'storage',
-		'value' => ''
+		'value' => get_field( 'storage' ) ? 'yes' : 'no'
 	],
 	[ 
 		'name' => 'balcony',
-		'value' => ''
+		'value' => get_field( 'balcony' ) ? 'yes' : 'no'
 	],
 	[ 
 		'name' => 'garage',
-		'value' => ''
+		'value' => get_field( 'garage' ) ? 'yes' : 'no'
+	],
+	[ 
+		'name' => 'sauna',
+		'value' => get_field( 'sauna' ) ? 'yes' : 'no'
 	],
 	[ 
 		'name' => 'kitchen appliances',
-		'value' => ''
+		'value' => get_field( 'kitchen_appliances' ) ? 'yes' : 'no'
 	],
 	[ 
 		'name' => 'bathroom appliances',
-		'value' => ''
+		'value' => get_field( 'bathroom_appliances' ) ? 'yes' : 'no'
 	],
 	[ 
 		'name' => 'celling style',
-		'value' => ''
+		'value' => get_field( 'celling_style' )
 	],
 	[ 
 		'name' => 'façade / material',
-		'value' => ''
+		'value' => get_field( 'facade_material' )
 	],
 	[ 
 		'name' => 'garage (open or close)',
-		'value' => ''
+		'value' => get_field( 'garage_mode' )
 	],
 ];
 

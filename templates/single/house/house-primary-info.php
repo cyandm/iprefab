@@ -3,7 +3,7 @@ $primary_data = [
 	[ 
 		'icon' => 'money-4',
 		'text' => 'fee',
-		'value' => '€' . number_format( get_field( 'helsinki_price' ) ),
+		'value' => '€' . number_format( get_field( 'price' ) ),
 	],
 	[ 
 		'icon' => 'location',
@@ -13,7 +13,7 @@ $primary_data = [
 	[ 
 		'icon' => 'home-2',
 		'text' => 'house area',
-		'value' => '<span>' . get_field( 'apartment_area' ) . '</span>' . '<span class="unit">m<sup>2</sup></span>',
+		'value' => '<span>' . get_field( 'house_area' ) . '</span>' . '<span class="unit">m<sup>2</sup></span>',
 	],
 	[ 
 		'icon' => 'size',

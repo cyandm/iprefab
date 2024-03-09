@@ -1,6 +1,6 @@
 <?php
-$post_type = isset( $args['post_type'] ) ? $args['post_type'] : 'product';
-$company = get_the_terms( get_queried_object_id(), 'company' )[0];
+$post_type = $args['post_type'] ?? 'product';
+$company = $args['company'] ?? get_the_terms( get_queried_object_id(), 'company' )[0];
 
 $products = new WP_Query( [ 
 	'post_type' => $post_type,
