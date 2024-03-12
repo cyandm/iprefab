@@ -1,11 +1,13 @@
 <?php
-$post_id = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
+$post_id = $args['post_id'] ?? get_the_ID();
 $thumb_id = get_post_thumbnail_id( $post_id );
 
-$company = get_the_terms( $post_id, 'company' )[0];
-$company_logo = wp_get_attachment_image(
+$company = get_the_terms( $post_id, 'company' );
+$company = $company ? $company[0] : null;
+
+$company_logo = isset( $company ) ? wp_get_attachment_image(
 	get_field( 'logo', 'company_' . $company->term_id ),
-	[ 300, 300 ] );
+	[ 300, 300 ] ) : '';
 
 
 

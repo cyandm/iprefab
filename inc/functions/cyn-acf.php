@@ -12,6 +12,14 @@ add_filter( 'acf/settings/show_updates', '__return_false', 100 );
 
 add_action( 'acf/include_fields', 'cyn_register_acf' );
 
+$i = 0;
+function cyn_acf_unique_id() {
+	global $i;
+	$i++;
+	return "field_$i";
+}
+
+
 function cyn_register_acf() {
 	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
 		return;
@@ -21,6 +29,7 @@ function cyn_register_acf() {
 	cyn_register_acf_lands_settings();
 	cyn_register_acf_house_settings();
 	cyn_register_acf_house_plus_land();
+	cyn_acf_register_exhibition();
 	cyn_acf_register_gallery();
 }
 
@@ -35,6 +44,7 @@ function cyn_register_acf_company_settings() {
 		cyn_acf_add_options( 'verified_type', 'Verified Type', [ 'star-supplier', 'supplier' ] ),
 		cyn_acf_add_url( 'website', 'website' ),
 		cyn_acf_add_color( 'color', 'Color' ),
+
 	];
 	$location = [ 
 		[ 
@@ -239,6 +249,13 @@ function cyn_acf_register_gallery() {
 				'operator' => '==',
 				'value' => 'land',
 			],
+		],
+		[ 
+			[ 
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'exhibition',
+			],
 		]
 	];
 
@@ -249,12 +266,39 @@ function cyn_acf_register_gallery() {
 		, $location );
 }
 
+function cyn_acf_register_exhibition() {
+	$location = [ 
+		[ 
+			[ 
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'exhibition',
+			],
+		],
+	];
+
+	cyn_register_acf_group( 'Exhibition Settings',
+		[ 
+			cyn_acf_add_time_picker( 'begin_time', 'Begin Time', 50 ),
+			cyn_acf_add_time_picker( 'end_time', 'End Time', 50 ),
+			cyn_acf_add_date_picker( 'date', 'Date' ),
+			cyn_acf_add_text( 'address', 'Address' ),
+			cyn_acf_add_text( 'guidance_text', 'Guidance Text', 0, 33 ),
+			cyn_acf_add_text( 'guidance_link', 'Guidance Link', 0, 33 ),
+			cyn_acf_add_text( 'collection', 'Collection', 0, 33 ),
+			cyn_acf_add_google_map( 'location', 'Location' )
+
+
+		]
+		, $location );
+}
+
 
 #region  general acf
 function cyn_register_acf_group( $label, $fields = [], $location = [] ) {
 	acf_add_local_field_group(
 		[ 
-			'key' => md5( $label ),
+			'key' => cyn_acf_unique_id(),
 			'title' => $label,
 			'fields' => $fields,
 			'location' => $location,
@@ -273,7 +317,7 @@ function cyn_register_acf_group( $label, $fields = [], $location = [] ) {
 
 function cyn_acf_add_post_object( $name, $label, $post_type, $width = '', $multiple = 0 ) {
 	return [ 
-		'key' => 'key_' . md5( $name ),
+		'key' => cyn_acf_unique_id(),
 		'label' => $label,
 		'name' => $name,
 		'type' => 'post_object',
@@ -290,7 +334,7 @@ function cyn_acf_add_post_object( $name, $label, $post_type, $width = '', $multi
 
 function cyn_acf_add_image( $name, $label ) {
 	return [ 
-		'key' => 'key_' . md5( $name ),
+		'key' => 'filed_' . cyn_acf_unique_id(),
 		'label' => $label,
 		'name' => $name,
 		'type' => 'image',
@@ -303,7 +347,7 @@ function cyn_acf_add_image( $name, $label ) {
 
 function cyn_acf_add_color( $name, $label ) {
 	return [ 
-		'key' => 'key_' . md5( $name ),
+		'key' => 'filed_' . cyn_acf_unique_id(),
 		'label' => $label,
 		'name' => $name,
 		'type' => 'color_picker',
@@ -317,7 +361,7 @@ function cyn_acf_add_color( $name, $label ) {
 function cyn_acf_add_options(
 	$name, $label, $choices, $multiple = 0, $return_format = 'value', $allow_null = 1, $width = '' ) {
 	return [ 
-		'key' => md5( $name ),
+		'key' => cyn_acf_unique_id(),
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -343,7 +387,7 @@ function cyn_acf_add_options(
 
 function cyn_acf_add_text( $name, $label, $required = 0, $width = '' ) {
 	return [ 
-		'key' => md5( $name ),
+		'key' => cyn_acf_unique_id(),
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -366,7 +410,7 @@ function cyn_acf_add_text( $name, $label, $required = 0, $width = '' ) {
 
 function cyn_acf_add_url( $name, $label, $required = 0, $width = '' ) {
 	return [ 
-		'key' => md5( $name ),
+		'key' => 'filed_' . cyn_acf_unique_id(),
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -389,7 +433,7 @@ function cyn_acf_add_url( $name, $label, $required = 0, $width = '' ) {
 
 function cyn_acf_add_number( $name, $label, $required = 0, $width = '', $append = '' ) {
 	return [ 
-		'key' => md5( $name ),
+		'key' => 'filed_' . cyn_acf_unique_id(),
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -414,7 +458,7 @@ function cyn_acf_add_number( $name, $label, $required = 0, $width = '', $append 
 
 function cyn_acf_add_tab( $label ) {
 	return [ 
-		'key' => md5( $label ),
+		'key' => 'filed_' . cyn_acf_unique_id(),
 		'label' => $label,
 		'name' => '',
 		'aria-label' => '',
@@ -429,7 +473,7 @@ function cyn_acf_add_tab( $label ) {
 
 function cyn_acf_add_google_map( $name, $label, $width = '' ) {
 	return [ 
-		'key' => md5( $name ),
+		'key' => cyn_acf_unique_id(),
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -451,7 +495,7 @@ function cyn_acf_add_google_map( $name, $label, $width = '' ) {
 
 function cyn_acf_add_boolean( $name, $label, $width = '' ) {
 	return [ 
-		'key' => md5( $name ),
+		'key' => 'filed_' . cyn_acf_unique_id(),
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -474,7 +518,7 @@ function cyn_acf_add_boolean( $name, $label, $width = '' ) {
 
 function cyn_acf_add_wysiwyg( $name, $label, $width = '' ) {
 	return [ 
-		'key' => md5( $name ),
+		'key' => 'filed_' . cyn_acf_unique_id(),
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -497,7 +541,7 @@ function cyn_acf_add_wysiwyg( $name, $label, $width = '' ) {
 
 function cyn_acf_add_file( $name, $label, $width = '' ) {
 	return [ 
-		'key' => md5( $name ),
+		'key' => 'filed_' . cyn_acf_unique_id(),
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -518,9 +562,50 @@ function cyn_acf_add_file( $name, $label, $width = '' ) {
 	];
 }
 
+function cyn_acf_add_time_picker( $name, $label, $width = '' ) {
+	return [ 
+		'key' => 'filed_' . cyn_acf_unique_id(),
+		'label' => $label,
+		'name' => $name,
+		'aria-label' => '',
+		'type' => 'time_picker',
+		'instructions' => '',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'wrapper' => [ 
+			'width' => $width,
+			'class' => '',
+			'id' => '',
+		],
+		'display_format' => 'H:i',
+		'return_format' => 'H:i',
+	];
+}
+
+function cyn_acf_add_date_picker( $name, $label, $width = '' ) {
+	return [ 
+		'key' => 'filed_' . cyn_acf_unique_id() . '_' . current_time( 'timestamp' ),
+		'label' => $label,
+		'name' => $name,
+		'aria-label' => '',
+		'type' => 'date_picker',
+		'instructions' => '',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'wrapper' => [ 
+			'width' => $width,
+			'class' => '',
+			'id' => '',
+		],
+		'display_format' => 'd/m/Y',
+		'return_format' => 'd/m/Y',
+		'first_day' => 1,
+	];
+}
+
 function cyn_acf_add_group( $name, $label, $sub_fields ) {
 	return [ 
-		'key' => md5( $name ),
+		'key' => 'filed_' . cyn_acf_unique_id(),
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => $name,

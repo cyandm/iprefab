@@ -10,10 +10,11 @@ function cyn_post_type_register() {
 	cyn_make_post_type( 'Land', 'land', 'dashicons-flag' );
 	cyn_make_post_type( 'House', 'house', 'dashicons-admin-home' );
 	cyn_make_post_type( 'House + Land', 'house-and-land', 'dashicons-admin-home' );
+	cyn_make_post_type( 'Exhibition', 'exhibition', 'dashicons-tickets-alt' );
 }
 
 function cyn_taxonomy_register() {
-	cyn_make_taxonomy( 'company', 'company', [ 'house', 'land' ] );
+	cyn_make_taxonomy( 'company', 'company', [ 'house', 'land', 'exhibition' ] );
 }
 
 function cyn_make_post_type( $name, $slug, $icon, $menu = true ) {

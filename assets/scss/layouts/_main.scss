@@ -160,3 +160,10 @@ hr {
 		}
 	}
 }
+
+.box {
+	background-color: $c_bg_paper;
+	padding: $s_4 $s_5;
+	box-shadow: 0px 4px 8px 0px #0000000a;
+	border-radius: $r_1;
+}

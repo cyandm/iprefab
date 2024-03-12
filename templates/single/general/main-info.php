@@ -1,6 +1,9 @@
 <?php
-$has_brochure = isset( $args['has_brochure'] ) ? $args['has_brochure'] : false;
+$has_brochure = $args['has_brochure'] ?? false;
 $title = get_the_title();
+
+$is_calender = $args['is_calender'] ?? false;
+
 
 ?>
 
@@ -22,7 +25,7 @@ $title = get_the_title();
 			</div>
 		</div>
 		<div class="general-info-short">
-			4h, avok, kph/khh/wc, upper hall, kph/wc, s
+			<?= get_field( 'address' ) ?>
 		</div>
 	</div>
 
@@ -34,9 +37,30 @@ $title = get_the_title();
 				brochure
 			</button>
 		<?php endif; ?>
-		<button class="btn-primary">
-			call back request
-		</button>
+
+		<?php if ( $is_calender ) : ?>
+
+			<a href="<?=
+				"https://calendar.google.com/calendar/render?action=TEMPLATE&text=" .
+				get_the_title() .
+				"&details=Address: " . get_field( 'address' ) .
+				"&dates=" .
+				get_field( 'date' ) . "T" . str_ireplace( ':', '', get_field( 'begin_time' ) ) . "00/"
+				. get_field( 'date' ) . "T" . str_ireplace( ':', '', get_field( 'end_time' ) ) .
+				"00" ?>"
+			   target="_blank"
+			   class="btn-secondary btn-icon-start">
+				<i class="iconsax"
+				   icon-name="calendar-2"></i>
+				add to calender
+			</a>
+
+		<?php else : ?>
+			<button class="btn-primary">
+				call back request
+			</button>
+
+		<?php endif; ?>
 	</div>
 
 </div>

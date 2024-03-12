@@ -23,7 +23,7 @@ if ( $company_1 !== false ) {
 	$company_color_1 = get_field( 'color', 'company_' . $company_1->term_id );
 }
 
-if ( $company_2 !== false ) {
+if ( isset( $company_2 ) && $company_2 !== false ) {
 	$company_logo_2 = wp_get_attachment_image(
 		get_field( 'logo', 'company_' . $company_2->term_id ),
 		[ 300, 300 ] );

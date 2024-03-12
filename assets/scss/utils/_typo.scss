@@ -33,6 +33,11 @@ h4,
 	@include fs('h4');
 }
 
+h5,
+.h5 {
+	@include fs('h5');
+}
+
 h6,
 .h6 {
 	@include fs('h6');

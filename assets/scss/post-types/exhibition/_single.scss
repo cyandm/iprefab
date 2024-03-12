@@ -1,0 +1,23 @@
+@use '../../utils' as *;
+
+.single-exhibition {
+	&-details {
+		> * {
+			flex: 1;
+		}
+
+		hr {
+			border-color: $c_t_light;
+			opacity: 0.3;
+		}
+
+		.h5 {
+			color: $c_t_main;
+			@include d_flex(row, flex-start, center, $gap: $s_2);
+		}
+	}
+
+	&-time {
+		color: $c_p_main;
+	}
+}

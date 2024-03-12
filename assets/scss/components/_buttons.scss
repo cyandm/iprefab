@@ -45,6 +45,11 @@
 		border: 1px solid $c_a_main;
 	}
 
+	&-link {
+		padding: 0 !important;
+		color: $c_a_main;
+	}
+
 	&-icon {
 		padding: $s_2 $s_4;
 		color: $c_t_dark;

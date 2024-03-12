@@ -1,7 +1,7 @@
 <?php
 global $post_type;
 
-$items = $args['items'];
+$items = $args['items'] ?? null;
 
 ?>
 
@@ -41,7 +41,7 @@ $items = $args['items'];
 			<li class="breadcrumb-item"
 				data-active="<?= is_archive() ? 'true' : 'false' ?>">
 				<a href="<?= get_post_type_archive_link( $post_type ) ?>">
-					<?= get_post_type_object( $post_type )->label ?>
+					<?= get_post_type_object( $post_type )->label . 's' ?>
 				</a>
 			</li>
 
