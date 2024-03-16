@@ -5,6 +5,9 @@
 		@include d_flex(row, space-between, center);
 		border-block-end: $b_2;
 		margin-block: $s_6 $s_4;
+		z-index: 110;
+		position: relative;
+		isolation: isolate;
 
 		@include mq('xl') {
 			> * {

@@ -10,12 +10,10 @@ $company_logo = isset( $company ) ? wp_get_attachment_image(
 	[ 300, 300 ], false,
 	[ 'style' => '--logo-color:' . get_field( 'color', 'company_' . $company->term_id ) ] ) : '';
 
-
-
 ?>
 
 <a href="<?= get_permalink( $post_id ) ?>"
-   class="general-card"
+   class="general-card exhibition-card"
    data-id="<?= $post_id ?>">
 
 	<div class="general-card-image">
@@ -31,18 +29,24 @@ $company_logo = isset( $company ) ? wp_get_attachment_image(
 			<span>
 				<?= get_the_title( $post_id ); ?>
 			</span>
-
-			<span class="general-card-price">
-				€ <span><?= number_format( get_field( 'price', $post_id ) ) ?></span>
-			</span>
 		</div>
 
 		<div class="land-card-items">
-			<?php
-			cyn_render_icon_box( 'home-2', get_field( 'surface', $post_id ), '<span>m2</span>' );
+			<div>
+				<?php
+				cyn_render_icon_box( 'calendar-2', date_format( date_create( get_field( 'date', $post_id ) ), 'm/d' )
+				);
 
-			cyn_render_icon_box( 'star', get_field( 'permit_type', $post_id ) );
-			?>
+				cyn_render_icon_box(
+					'clock',
+					get_field( 'begin_time', $post_id ) . '-' . get_field( 'end_time', $post_id ) );
+				?>
+			</div>
+
+			<div>
+				<?php cyn_render_icon_box( 'location', get_field( 'address', $post_id ) ) ?>
+			</div>
+
 		</div>
 	</div>
 

@@ -4,3 +4,4 @@ import './product-filter';
 import './fixed-bottom-cta';
 import './variable';
 import './share';
+import './mobile-menu';

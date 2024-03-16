@@ -21,7 +21,7 @@
 
 			img {
 				height: 40px;
-				background-color: var(--color-logo);
+				background-color: var(--logo-color);
 				width: 120px;
 				object-fit: contain;
 				object-position: center;
@@ -41,5 +41,12 @@
 
 	&-price {
 		@include fs('h4');
+	}
+
+	&.exhibition-card {
+		.company-logo {
+			top: unset;
+			bottom: $s_4;
+		}
 	}
 }

@@ -41,6 +41,22 @@
 
 	<div class="clear-fix-64"></div>
 
+	<?php get_template_part( '/templates/single/general/company' ) ?>
+
+	<div class="clear-fix-64"></div>
+
+	<?php get_template_part( '/templates/single/exhibition/recommended' ) ?>
+
+	<div class="clear-fix-64"></div>
+
+	<?php get_template_part( '/templates/single/general/recommend-by-company', null,
+		[ 
+			'post_type' => 'exhibition',
+			'col' => 2
+		]
+	) ?>
+
+	<div class="clear-fix-120"></div>
 
 </main>
 

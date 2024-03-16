@@ -21,15 +21,13 @@ if ( $land_ID !== null ) {
 if ( $company_1 !== false ) {
 	$company_logo_1 = wp_get_attachment_image(
 		get_field( 'logo', 'company_' . $company_1->term_id ),
-		[ 300, 300 ], false, [ 'style' => '--color-logo: ' . get_field( 'color', 'company_' . $company_1->term_id ) ] );
-	$company_color_1 = get_field( 'color', 'company_' . $company_1->term_id );
+		[ 300, 300 ], false, [ 'style' => '--logo-color: ' . get_field( 'color', 'company_' . $company_1->term_id ) ] );
 }
 
 if ( $company_2 !== false ) {
 	$company_logo_2 = wp_get_attachment_image(
 		get_field( 'logo', 'company_' . $company_2->term_id ),
-		[ 300, 300 ], false, [ 'style' => '--color-logo: ' . get_field( 'color', 'company_' . $company_2->term_id ) ] );
-	$company_color_2 = get_field( 'color', 'company_' . $company_2->term_id );
+		[ 300, 300 ], false, [ 'style' => '--logo-color: ' . get_field( 'color', 'company_' . $company_2->term_id ) ] );
 }
 
 

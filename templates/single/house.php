@@ -5,6 +5,8 @@
 
 	<div class="clear-fix-24"> </div>
 
+
+
 	<?php get_template_part(
 		'/templates/single/general/info'
 		, null,

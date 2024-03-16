@@ -71,7 +71,13 @@ function cyn_picture_settings( $wp_customize ) {
 	make_customize_option( 'cyn_company_top_archive_image', 'Top', 'image', 'company_archive' );
 	make_customize_option( 'cyn_company_bottom_archive_image', 'Bottom', 'image', 'company_archive' );
 
-
+	$wp_customize->add_section( 'exhibition_archive', [ 
+		'title' => 'Exhibition Archive',
+		'priority' => 1,
+		'panel' => 'pictures'
+	] );
+	make_customize_option( 'cyn_exhibition_archive_top', 'Top', 'image', 'exhibition_archive' );
+	make_customize_option( 'cyn_exhibition_archive_bottom', 'Bottom', 'image', 'exhibition_archive' );
 
 
 }

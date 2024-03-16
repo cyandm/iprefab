@@ -1,11 +1,11 @@
 <?php
 
-$related_posts = get_field( 'related_house_and_lands' );
+$related_posts = get_field( 'related_exhibition' );
 $post_ids = [];
 
 if ( ! $related_posts ) {
 	$products = new WP_Query( [ 
-		'post_type' => 'house-and-land',
+		'post_type' => 'exhibition',
 		'posts_per_page' => 3
 	] );
 
@@ -18,11 +18,11 @@ if ( ! $related_posts ) {
 }
 
 
-cyn_render_section_card( 'you might like',
+cyn_render_section_card( 'Discover Exhibitions',
 	[ 
-		'link' => get_post_type_archive_link( 'house-and-land' ),
+		'link' => get_post_type_archive_link( 'exhibition' ),
 		'title' => 'view all',
 		'icon' => 'eye'
-	], $post_ids, 'house-and-land', 'house-and-land-recommended', 2 );
+	], $post_ids, 'exhibition', 'exhibition-recommended', 2 );
 
 
