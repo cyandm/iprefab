@@ -107,6 +107,7 @@
 		padding: $s_6 $s_4;
 		border: $b_2;
 		border-radius: $s_3;
+		min-width: 30%;
 
 		@include mq('lg') {
 			display: none;
@@ -118,6 +119,12 @@
 
 		h3 {
 			margin-block-end: $s_4;
+		}
+	}
+
+	.grid-col-2 {
+		@include mq('md') {
+			--col: 1;
 		}
 	}
 }

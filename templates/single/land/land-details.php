@@ -2,7 +2,8 @@
 $company = get_the_terms( get_queried_object_id(), 'company' )[0];
 $company_logo = wp_get_attachment_image(
 	get_field( 'logo', 'company_' . $company->term_id ),
-	[ 300, 300 ] );
+	[ 300, 300 ], false,
+	[ 'style' => '--logo-color:' . get_field( 'color', 'company_' . $company->term_id ) ] );
 
 $product_details = [ 
 	[ 

@@ -111,6 +111,14 @@
 				height: 100%;
 				border-inline-start: $b_1;
 
+				img {
+					height: 45px;
+					width: 130px;
+					object-fit: contain;
+					background-color: var(--logo-color);
+					border-radius: 0.5rem;
+				}
+
 				@include mq('md') {
 					border-inline-start: none;
 					color: $c_n_100;
@@ -225,6 +233,14 @@
 		&-company {
 			@include d_flex(row, flex-start, center, nowrap, false, $s_4);
 			text-transform: capitalize;
+
+			img {
+				height: 70px;
+				width: 200px;
+				object-fit: contain;
+				background-color: var(--logo-color);
+				border-radius: 0.5rem;
+			}
 
 			&-name {
 				@include fs('h4');

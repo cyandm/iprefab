@@ -5213,8 +5213,8 @@
     return JSON.parse("{}");
   };
 
-  // assets/js/modules/product-filter.js
-  var ProductFilter = () => {
+  // assets/js/modules/filters.js
+  var Filters = () => {
     const cookie = getCookie("cyn-filters");
     filtersForm = document.querySelectorAll("#filtersForm");
     sortForm = document.querySelector("#sortForm");
@@ -5253,7 +5253,7 @@
       deActivateEl(filterPopUp);
     });
   };
-  ProductFilter();
+  Filters();
 
   // assets/js/modules/variable.js
   var rootEl = document.querySelector(":root");
@@ -5325,4 +5325,20 @@
       });
     });
   }
+
+  // assets/js/modules/mobile-menu.js
+  var mobileMenuHandler = document.querySelector(
+    '.header-mobile-menu i[icon-name="hamburger-menu"]'
+  );
+  var mobileMenuPanel = document.querySelector(".header-mobile-menu-panel");
+  mobileMenuHandler.addEventListener("click", () => {
+    const iconName = mobileMenuHandler.getAttribute("icon-name");
+    if (iconName === "x") {
+      mobileMenuHandler.setAttribute("icon-name", "hamburger-menu");
+    } else {
+      mobileMenuHandler.setAttribute("icon-name", "x");
+    }
+    mobileMenuPanel.classList.toggle("active");
+    document.body.classList.toggle("has-mobile-menu");
+  });
 })();

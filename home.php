@@ -1,7 +1,14 @@
 <?php get_header() ?>
 
 <main class="container">
-	<?php get_template_part( '/templates/components/breadcrumb' ); ?>
+	<?php get_template_part( '/templates/components/breadcrumb', args: [ 
+		'items' => [ 
+			[ 
+				'link' => '#',
+				'label' => 'Blogs'
+			]
+		]
+	] ); ?>
 
 	<div class="clear-fix-60"></div>
 

@@ -17,7 +17,7 @@ $countries = array_filter( $countries );
 
 ?>
 
-<form action="<?= get_post_type_archive_link( 'product' ) ?>"
+<form action="<?= get_post_type_archive_link( 'house' ) ?>"
 	  method="post"
 	  id="filtersForm">
 
@@ -38,7 +38,7 @@ $countries = array_filter( $countries );
 				<option value="<?= $country ?>"
 						<?php
 						if (
-							isset( $filters['originCompany'] ) &&
+							isset ( $filters['originCompany'] ) &&
 							$filters['originCompany'] === $country
 						) {
 							echo 'selected';
@@ -65,7 +65,7 @@ $countries = array_filter( $countries );
 			   name="areaMin"
 			   id="areaMin"
 			   value="<?=
-			   	isset( $filters['areaMin'] ) ? $filters['areaMin'] : ''
+			   	isset ( $filters['areaMin'] ) ? $filters['areaMin'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -82,7 +82,7 @@ $countries = array_filter( $countries );
 			   name="areaMax"
 			   id="areaMax"
 			   value="<?=
-			   	isset( $filters['areaMax'] ) ? $filters['areaMax'] : ''
+			   	isset ( $filters['areaMax'] ) ? $filters['areaMax'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -99,7 +99,7 @@ $countries = array_filter( $countries );
 			   name="priceMin"
 			   id="priceMin"
 			   value="<?=
-			   	isset( $filters['priceMin'] ) ? $filters['priceMin'] : ''
+			   	isset ( $filters['priceMin'] ) ? $filters['priceMin'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -116,7 +116,7 @@ $countries = array_filter( $countries );
 			   name="priceMax"
 			   id="priceMax"
 			   value="<?=
-			   	isset( $filters['priceMax'] ) ? $filters['priceMax'] : ''
+			   	isset ( $filters['priceMax'] ) ? $filters['priceMax'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -137,7 +137,7 @@ $countries = array_filter( $countries );
 			<?php for ( $i = 1; $i <= 8; $i++ ) : ?>
 				<option value="<?= $i ?>"
 						<?php
-						if ( isset( $filters['rooms'] ) && (int) $filters['rooms'] === $i ) {
+						if ( isset ( $filters['rooms'] ) && (int) $filters['rooms'] === $i ) {
 							echo 'selected';
 						}
 						?>>
@@ -165,7 +165,7 @@ $countries = array_filter( $countries );
 			<?php for ( $i = 1; $i <= 3; $i++ ) : ?>
 				<option value="<?= $i ?>"
 						<?php
-						if ( isset( $filters['floors'] ) && (int) $filters['floors'] === $i ) {
+						if ( isset ( $filters['floors'] ) && (int) $filters['floors'] === $i ) {
 							echo 'selected';
 						}
 						?>>
@@ -189,7 +189,7 @@ $countries = array_filter( $countries );
 					   id="saunaNo"
 					   value="no"
 					   <?=
-					   	isset( $filters['sauna'] ) &&
+					   	isset ( $filters['sauna'] ) &&
 					   	$filters['sauna'] == 'no' ?
 					   	'checked' : '' ?>>
 
@@ -203,7 +203,7 @@ $countries = array_filter( $countries );
 					   id="saunaYes"
 					   value="yes"
 					   <?=
-					   	isset( $filters['sauna'] ) &&
+					   	isset ( $filters['sauna'] ) &&
 					   	$filters['sauna'] == 'yes' ?
 					   	'checked' : '' ?>>
 				<span>yes</span>

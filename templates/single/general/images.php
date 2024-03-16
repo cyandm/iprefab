@@ -1,10 +1,10 @@
 <?php
 $images = get_field( 'images' ) ?? [];
+array_unshift( $images, get_post_thumbnail_id() );
 
 
 function cyn_render_images( $images ) {
 	$images = $images !== false ? $images : [];
-	array_unshift( $images, get_post_thumbnail_id() );
 
 	foreach ( $images as $image_id ) {
 		if ( $image_id === false )

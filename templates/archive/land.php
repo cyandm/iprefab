@@ -34,4 +34,17 @@ $filters = cyn_get_filters();
 	<div class="clear-fix-64"></div>
 </main>
 
+<div class="product-archive-filters"
+	 id="filtersPopUp"
+	 data-active="false">
+	<div class="product-archive-filters-title">
+		<i class="iconsax"
+		   id="filtersPopUpCloser"
+		   icon-name="x-circle"></i>
+		<h3>filters</h3>
+	</div>
+
+	<?= get_template_part( '/templates/components/filters/filter', 'land' ) ?>
+</div>
+
 <?php get_footer() ?>

@@ -41,7 +41,7 @@ $items = $args['items'] ?? null;
 			<li class="breadcrumb-item"
 				data-active="<?= is_archive() ? 'true' : 'false' ?>">
 				<a href="<?= get_post_type_archive_link( $post_type ) ?>">
-					<?= get_post_type_object( $post_type )->label . 's' ?>
+					<?= get_post_type_object( $post_type )->label ?>
 				</a>
 			</li>
 

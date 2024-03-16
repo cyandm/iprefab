@@ -1,0 +1,32 @@
+@use '../utils' as *;
+
+.company-card {
+	background-color: $c_bg_paper;
+	box-shadow: $shadow_1;
+	border-radius: 1rem;
+	padding: 1rem;
+
+	@include d_flex(row, flex-start, center, $gap: $s_3);
+
+	&-image {
+		img {
+			display: flex;
+			height: 120px !important;
+			width: 160px;
+			object-fit: contain;
+			background-color: var(--logo-color);
+			border-radius: 0.25rem;
+		}
+	}
+
+	&-content {
+		i {
+			font-size: 1.25rem;
+		}
+
+		.single-company-flag {
+			height: 1.35rem;
+			width: 1.35rem;
+		}
+	}
+}

@@ -1,0 +1,51 @@
+@use '../utils' as *;
+
+.header-mobile-menu {
+	&-panel {
+		background-color: $c_bg_paper;
+		position: fixed;
+		inset: 0 0 auto 0;
+		width: 100%;
+		padding-block-start: var(--header-height);
+		z-index: -10;
+		transition: 0.5s ease;
+		clip-path: inset(0 0 100% 0);
+
+		&.active {
+			clip-path: inset(0 0 0 0);
+		}
+
+		> div {
+			padding: 1rem;
+			padding-block-start: 1.75rem;
+			ul.menu {
+				font-size: 20px;
+				font-weight: 400;
+
+				li {
+					padding: 0.75rem;
+
+					&:not(:last-child) {
+						border-block-end: $b_2;
+						border-color: $c_n_800;
+					}
+				}
+			}
+		}
+	}
+}
+
+body {
+	&.has-mobile-menu {
+		@include pseudo(0) {
+			background-color: rgba(0, 0, 0, 0.75);
+		}
+
+		pointer-events: none;
+		overflow: hidden;
+
+		header {
+			pointer-events: all !important;
+		}
+	}
+}

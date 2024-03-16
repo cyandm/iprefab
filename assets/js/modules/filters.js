@@ -7,7 +7,7 @@ import {
 	toggleActivateEl,
 } from '../utils/functions';
 
-const ProductFilter = () => {
+const Filters = () => {
 	const cookie = getCookie('cyn-filters');
 	filtersForm = document.querySelectorAll('#filtersForm');
 	sortForm = document.querySelector('#sortForm');
@@ -51,4 +51,4 @@ const ProductFilter = () => {
 	});
 };
 
-ProductFilter();
+Filters();

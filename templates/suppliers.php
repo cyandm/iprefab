@@ -21,17 +21,13 @@ $terms = get_terms(
 <?php get_header() ?>
 
 
-<main class="container">
+<main class="container general-archive">
 	<?php get_template_part( '/templates/components/breadcrumb', null, [ 'items' =>
 		[ 
 			[ 
 				'label' => 'suppliers',
 				'link' => '#'
 			],
-			[ 
-				'label' => 'suppliers',
-				'link' => '#'
-			]
 		]
 	] ); ?>
 
@@ -44,8 +40,18 @@ $terms = get_terms(
 
 	<div class="clear-fix-24"></div>
 
-	<!-- exhibitions -->
+	<?php get_template_part( '/templates/single/exhibition/recommended', null, [] ) ?>
+
+	<div class="clear-fix-64"></div>
+
 	<!-- filters -->
+	<h2>
+		All Suppliers
+	</h2>
+	<hr>
+
+	<div class="clear-fix-16"></div>
+
 
 	<div class="grid-col-2 gap-16">
 		<?php

@@ -1,7 +1,7 @@
 <?php
 
 $related_lands = get_field( 'related_lands' );
-$product_ids = [];
+$post_ids = [];
 
 
 
@@ -13,10 +13,10 @@ if ( ! $related_lands ) {
 
 
 	foreach ( $products->posts as $post ) {
-		array_push( $product_ids, $post->ID );
+		array_push( $post_ids, $post->ID );
 	}
 } else {
-	$product_ids = $related_lands;
+	$post_ids = $related_lands;
 }
 
 
@@ -28,6 +28,6 @@ cyn_render_section_card( 'Recommended lands',
 		'link' => get_post_type_archive_link( 'land' ),
 		'title' => 'view all',
 		'icon' => 'eye'
-	], $product_ids, 'land', 'land-recommended' );
+	], $post_ids, 'land', 'land-recommended' );
 
 

@@ -19,9 +19,14 @@ $filters = cyn_get_filters();
 	<section>
 		<div class="clear-fix-24"></div>
 		<div>
-			<?php get_template_part( '/templates/archive/general/sort', null, [ 'post_type' => 'land' ] ) ?>
+
+			<?php get_template_part( '/templates/components/filters/filter', 'house-and-land' ) ?>
+
+			<div class="clear-fix-24"></div>
+
+			<?php get_template_part( '/templates/archive/general/sort', null, [ 'post_type' => 'house-and-land' ] ) ?>
 			<div class="clear-fix-16"></div>
-			<?php get_template_part( '/templates/archive/general/posts', null, [ 'post_type' => 'land' ] ) ?>
+			<?php get_template_part( '/templates/archive/general/posts', null, [ 'post_type' => 'house-and-land' ] ) ?>
 			<div class="clear-fix-24"></div>
 			<?php get_template_part( '/templates/archive/general/pagination' ) ?>
 		</div>

@@ -20,4 +20,10 @@
 	&-time {
 		color: $c_p_main;
 	}
+
+	&-location {
+		background-color: rgba(#000, 0.3);
+		min-height: 450px;
+		border-radius: 1rem;
+	}
 }

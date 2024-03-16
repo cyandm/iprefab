@@ -1,6 +1,9 @@
 <?php
 global $wp_query;
 $post_type = $args['post_type'] ?? 'post';
+
+
+$filters = cyn_get_filters();
 ?>
 
 
@@ -13,8 +16,7 @@ $post_type = $args['post_type'] ?? 'post';
 		filters
 	</a>
 
-	<a href="#"
-	   class="btn-secondary sort-btn">
+	<a class="btn-secondary sort-btn">
 		<i class="iconsax"
 		   icon-name="arrow-up-down"></i>
 		sort by
@@ -31,10 +33,10 @@ $post_type = $args['post_type'] ?? 'post';
 								   name="price-sort"
 								   id="priceLowest"
 								   value="lowest"
-   <?=
-   	isset( $filters['price-sort'] ) &&
-   	$filters['price-sort'] == 'lowest' ?
-   	'checked' : '' ?>>
+								   <?=
+								   	isset ( $filters['price-sort'] ) &&
+								   	$filters['price-sort'] == 'lowest' ?
+								   	'checked' : '' ?>>
 							<span>
 								lowest
 							</span>
@@ -47,7 +49,7 @@ $post_type = $args['post_type'] ?? 'post';
 								   name="price-sort"
 								   value="highest"
 								   <?=
-								   	isset( $filters['price-sort'] ) &&
+								   	isset ( $filters['price-sort'] ) &&
 								   	$filters['price-sort'] == 'highest' ?
 								   	'checked' : '' ?>>
 							<span>

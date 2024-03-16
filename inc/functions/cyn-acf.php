@@ -2,7 +2,7 @@
 
 define( 'CYN_ACF_PATH', get_stylesheet_directory() . '/inc/acf/' );
 define( 'CYN_ACF_URL', get_stylesheet_directory_uri() . '/inc/acf/' );
-include_once( CYN_ACF_PATH . 'acf.php' );
+include_once ( CYN_ACF_PATH . 'acf.php' );
 
 add_filter( 'acf/settings/url', function ($url) {
 	return CYN_ACF_URL;
@@ -99,7 +99,7 @@ function cyn_register_acf_lands_settings() {
 	];
 
 	$fields = [ 
-		cyn_acf_add_options( 'city', 'City', $city_options, width: 50 ),
+		cyn_acf_add_options( 'city', 'City', $city_options, width: 50, key: 'single_land_city' ),
 		cyn_acf_add_options( 'permit_type', 'Permit type', $permit_options, width: 50 ),
 		cyn_acf_add_number( 'surface', 'Surface', 0, 33, 'm2' ),
 		cyn_acf_add_number( 'building_right', 'Building Right', 0, 33, 'm2' ),
@@ -359,9 +359,12 @@ function cyn_acf_add_color( $name, $label ) {
 }
 
 function cyn_acf_add_options(
-	$name, $label, $choices, $multiple = 0, $return_format = 'value', $allow_null = 1, $width = '' ) {
+	$name, $label, $choices, $multiple = 0, $return_format = 'value', $allow_null = 1, $width = '', $key = '' ) {
+	if ( $key === '' ) {
+		$key = cyn_acf_unique_id();
+	}
 	return [ 
-		'key' => cyn_acf_unique_id(),
+		'key' => $key,
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
