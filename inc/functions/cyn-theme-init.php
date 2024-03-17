@@ -10,11 +10,7 @@ add_filter( 'upload_mimes', 'cyn_mime_types' );
 
 
 
-<<<<<<< HEAD
 function cyn_enqueue_files( $build = false, $ver = '0.0.1.3' ) {
-=======
-function cyn_enqueue_files( $build = false, $ver = '0.0.1.2' ) {
->>>>>>> 34e523894afed936671b68190e426ba2c8c92a94
 
 	$css_path = $build ? '/assets/css/final.css' : '/assets/css/compiled.css';
 	$js_path = $build ? '/assets/js/dist/scripts.bundle.min.js' : '/assets/js/dist/scripts.bundle.js';
