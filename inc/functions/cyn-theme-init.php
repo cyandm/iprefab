@@ -10,7 +10,7 @@ add_filter( 'upload_mimes', 'cyn_mime_types' );
 
 
 
-function cyn_enqueue_files( $build = false, $ver = '0.0.1.3' ) {
+function cyn_enqueue_files( $build = false, $ver = '0.0.1.4' ) {
 
 	$css_path = $build ? '/assets/css/final.css' : '/assets/css/compiled.css';
 	$js_path = $build ? '/assets/js/dist/scripts.bundle.min.js' : '/assets/js/dist/scripts.bundle.js';

@@ -79,5 +79,4 @@ function cyn_picture_settings( $wp_customize ) {
 	make_customize_option( 'cyn_exhibition_archive_top', 'Top', 'image', 'exhibition_archive' );
 	make_customize_option( 'cyn_exhibition_archive_bottom', 'Bottom', 'image', 'exhibition_archive' );
 
-
 }

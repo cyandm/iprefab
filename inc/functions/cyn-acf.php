@@ -41,7 +41,9 @@ function cyn_register_acf_company_settings() {
 		cyn_acf_add_text( 'phone', 'phone' ),
 		cyn_acf_add_image( 'flag', 'Flag' ),
 		cyn_acf_add_image( 'logo', 'Logo' ),
-		cyn_acf_add_options( 'verified_type', 'Verified Type', [ 'star-supplier', 'supplier' ] ),
+		cyn_acf_add_options( 'verified_type', 'Verified Type', [ 'star supplier' => 'Star Supplier',
+			'supplier' => 'Supplier'
+		] ),
 		cyn_acf_add_url( 'website', 'website' ),
 		cyn_acf_add_color( 'color', 'Color' ),
 
@@ -157,8 +159,8 @@ function cyn_register_acf_house_settings() {
 		cyn_acf_add_options( 'celling_style', 'Celling Style',
 			[ 
 				'flat' => 'flat',
-				'Single-slope' => 'Single-slope',
-				'Double-slope' => 'Double-slope'
+				'single slope' => 'Single-slope',
+				'double slope' => 'Double-slope'
 			],
 			width: 33 ),
 		cyn_acf_add_options( 'facade_material', 'Façade / Material ',
@@ -169,8 +171,8 @@ function cyn_register_acf_house_settings() {
 			width: 33 ),
 		cyn_acf_add_options( 'garage_mode', 'Garage Mode',
 			[ 
-				'Open Door' => 'Open Door',
-				'Door included' => 'Door included'
+				'open door' => 'Open Door',
+				'door included' => 'Door included'
 			],
 			width: 33 ),
 

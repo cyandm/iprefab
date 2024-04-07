@@ -1,6 +1,7 @@
 <?php
-$product_file = isset( $_GET['product_file'] );
+$house_file = isset( $_GET['house_file'] );
 $land_file = isset( $_GET['land_file'] );
+$company_file = isset( $_GET['company_file'] );
 
 ?>
 
@@ -8,15 +9,21 @@ $land_file = isset( $_GET['land_file'] );
 	Import By Excel
 </h1>
 
-<?php if ( $product_file ) : ?>
+<?php if ( $house_file ) : ?>
 	<div class="notice notice-success is-dismissible">
-		<p>Products Uploaded. <a href="<?= admin_url( 'edit.php?post_type=product' ) ?>">View</a></p>
+		<p>Houses Uploaded. <a href="<?= admin_url( 'edit.php?post_type=house' ) ?>">View</a></p>
 	</div>
 <?php endif; ?>
 
 <?php if ( $land_file ) : ?>
 	<div class="notice notice-success is-dismissible">
 		<p>Lands Uploaded. <a href="<?= admin_url( 'edit.php?post_type=land' ) ?>">View</a></p>
+	</div>
+<?php endif; ?>
+
+<?php if ( $company_file ) : ?>
+	<div class="notice notice-success is-dismissible">
+		<p>Companies Uploaded. <a href="<?= admin_url( 'edit-tags.php?taxonomy=company' ) ?>">View</a></p>
 	</div>
 <?php endif; ?>
 
@@ -38,9 +45,18 @@ $land_file = isset( $_GET['land_file'] );
 			</tr>
 
 			<tr>
-				<th scope="row">Import Products</th>
+				<th scope="row">Import House</th>
 				<td>
-					<input name="products"
+					<input name="house"
+						   type="file"
+						   accept="xlsx" />
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row">Import Company</th>
+				<td>
+					<input name="company"
 						   type="file"
 						   accept="xlsx" />
 				</td>
