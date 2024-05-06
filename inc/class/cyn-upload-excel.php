@@ -65,6 +65,8 @@ if ( ! class_exists( 'cyn_upload_excel' ) ) {
 					$dilapidated = $row[11];
 					$neighborhood = $row[12];
 					$description = $row[13];
+					$feature_image_url = $row[14];
+					$gallery = $row[15];
 
 
 					$new_land = wp_insert_post( [ 
@@ -86,6 +88,21 @@ if ( ! class_exists( 'cyn_upload_excel' ) ) {
 					update_post_meta( $new_land, 'dilapidated', $dilapidated );
 					update_post_meta( $new_land, 'neighborhood', $neighborhood );
 					update_post_meta( $new_land, 'description', $description );
+
+					//upload feature image
+					$feature_image_id = media_sideload_image( $feature_image_url, $new_land, null, 'id' );
+					set_post_thumbnail( $new_land, $feature_image_id );
+
+					$gallery = explode( ';', $gallery );
+
+					if ( count( $gallery ) > 0 ) {
+						foreach ( $gallery as $index => $img_url ) {
+							$index++;
+
+							$gallery_img_id = media_sideload_image( $img_url, $new_land, null, 'id' );
+							update_post_meta( $new_land, "images_img_$index", $gallery_img_id );
+						}
+					}
 
 				}
 			}
@@ -114,6 +131,8 @@ if ( ! class_exists( 'cyn_upload_excel' ) ) {
 					$ceiling_style = $row[16];
 					$facade_material = $row[17];
 					$garage_mode = $row[18];
+					$feature_image_url = $row[19];
+					$gallery = $row[20];
 
 
 					$new_product = wp_insert_post( [ 
@@ -144,6 +163,21 @@ if ( ! class_exists( 'cyn_upload_excel' ) ) {
 					update_field( 'facade_material', $facade_material, $new_product );
 					update_field( 'garage_mode', $garage_mode, $new_product );
 
+					//upload feature image
+					$feature_image_id = media_sideload_image( $feature_image_url, $new_land, null, 'id' );
+					set_post_thumbnail( $new_land, $feature_image_id );
+
+					$gallery = explode( ';', $gallery );
+
+					if ( count( $gallery ) > 0 ) {
+						foreach ( $gallery as $index => $img_url ) {
+							$index++;
+
+							$gallery_img_id = media_sideload_image( $img_url, $new_land, null, 'id' );
+							update_post_meta( $new_land, "images_img_$index", $gallery_img_id );
+						}
+					}
+
 
 
 				}
@@ -163,6 +197,8 @@ if ( ! class_exists( 'cyn_upload_excel' ) ) {
 					$website = $row[6];
 					$color = $row[7];
 					$description = $row[8];
+					$feature_image_url = $row[9];
+					$gallery = $row[10];
 
 					$new_company = wp_insert_term( $name, 'company', [ 
 						'description' => $description
@@ -177,6 +213,21 @@ if ( ! class_exists( 'cyn_upload_excel' ) ) {
 					update_term_meta( $new_company_ID, 'verified_type', $verified_type );
 					update_term_meta( $new_company_ID, 'website', $website );
 					update_term_meta( $new_company_ID, 'color', $color );
+
+					//upload feature image
+					$feature_image_id = media_sideload_image( $feature_image_url, $new_land, null, 'id' );
+					set_post_thumbnail( $new_land, $feature_image_id );
+
+					$gallery = explode( ';', $gallery );
+
+					if ( count( $gallery ) > 0 ) {
+						foreach ( $gallery as $index => $img_url ) {
+							$index++;
+
+							$gallery_img_id = media_sideload_image( $img_url, $new_land, null, 'id' );
+							update_post_meta( $new_land, "images_img_$index", $gallery_img_id );
+						}
+					}
 				}
 			}
 
