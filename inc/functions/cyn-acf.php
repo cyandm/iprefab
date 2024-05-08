@@ -31,6 +31,7 @@ function cyn_register_acf() {
 	cyn_register_acf_house_plus_land();
 	cyn_acf_register_exhibition();
 	cyn_acf_register_gallery();
+	cyn_acf_register_homepage();
 }
 
 function cyn_register_acf_company_settings() {
@@ -294,6 +295,28 @@ function cyn_acf_register_exhibition() {
 		]
 		, $location );
 }
+
+function cyn_acf_register_homepage() {
+	$fields = [ 
+		cyn_acf_add_text( 'hero_title', 'title' ),
+		cyn_acf_add_text( 'hero_description', 'description' ),
+		cyn_acf_add_image( 'hero_image', 'Hero Image' )
+	];
+
+	$location = [ 
+		[ 
+			[ 
+				'param' => 'post_template',
+				'operator' => '==',
+				'value' => 'templates/home-page.php',
+			],
+		],
+	];
+
+	cyn_register_acf_group( 'Home Page Settings', $fields, $location );
+}
+
+
 
 
 #region  general acf

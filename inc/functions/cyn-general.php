@@ -76,3 +76,23 @@ function cyn_convert_to_snake( $inputString ) {
 	$snakeCaseString = trim( $snakeCaseString, '_' );
 	return $snakeCaseString;
 }
+
+/**
+ * Summary of get_page_url_by_template
+ * @param mixed string template name
+ * @return string
+ */
+function get_page_url_by_template( $TEMPLATE_NAME ) {
+	$pages = query_posts( [ 
+		'post_type' => 'page',
+		'meta_key' => '_wp_page_template',
+		'meta_value' => $TEMPLATE_NAME
+	] );
+	$url = '';
+	if ( isset( $pages[0] ) ) {
+		$array = (array) $pages[0];
+		$url = get_page_link( $array['ID'] );
+	}
+
+	return $url;
+}

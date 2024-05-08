@@ -61,15 +61,16 @@ function cyn_term_register() {
 }
 
 function cyn_page_register() {
-	// if ( ! get_option( 'cyn_theme_installed' ) ) {
-	//     wp_insert_post( [ 
-	//         'post_type' => 'page',
-	//         'post_status' => 'publish',
-	//         'post_title' => __( 'درباره ما', 'cyn-dm' ),
-	//         'post_name' => 'about-us',
-	//         'page_template' => 'templates/about.php'
-	//     ] );
+	if ( is_null( get_page_by_path( 'home-page' ) ) ) {
+		$front_page_id = wp_insert_post( [ 
+			'post_type' => 'page',
+			'post_status' => 'publish',
+			'post_title' => 'Home',
+			'post_name' => 'home-page',
+			'page_template' => 'templates/home-page.php'
+		] );
 
-	//     update_option( 'cyn_theme_installed', true );
-	// }
+		update_option( 'show_on_front', 'page' );
+		update_option( 'page_on_front', $front_page_id );
+	}
 }
