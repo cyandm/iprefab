@@ -1,5 +1,11 @@
 import { Swiper } from 'swiper';
-import { FreeMode, Thumbs, Pagination } from 'swiper/modules';
+import {
+	FreeMode,
+	Thumbs,
+	Pagination,
+	Navigation,
+	Autoplay,
+} from 'swiper/modules';
 
 export const generalThumbnailSwiper = new Swiper('#generalThumbnailSwiper', {
 	modules: [FreeMode, Thumbs],
@@ -19,5 +25,22 @@ export const generalMainSwiper = new Swiper('#generalMainSwiper', {
 	pagination: {
 		el: '.swiper-pagination',
 		type: 'fraction',
+	},
+});
+
+export const homePageBrands = new Swiper('#homePageBrands', {
+	modules: [Navigation, Autoplay],
+	slidesPerView: 7,
+	spaceBetween: 12,
+	loop: true,
+	centeredSlides: true,
+	autoplay: {
+		delay: 500,
+		pauseOnMouseEnter: true,
+	},
+
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
 	},
 });

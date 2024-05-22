@@ -11,10 +11,12 @@ function cyn_post_type_register() {
 	cyn_make_post_type( 'House', 'house', 'dashicons-admin-home' );
 	cyn_make_post_type( 'House + Land', 'house-and-land', 'dashicons-admin-home' );
 	cyn_make_post_type( 'Exhibition', 'exhibition', 'dashicons-tickets-alt' );
+	cyn_make_post_type( 'Question', 'faq', 'dashicons-editor-quote' );
 }
 
 function cyn_taxonomy_register() {
 	cyn_make_taxonomy( 'company', 'company', [ 'house', 'land', 'exhibition' ] );
+	cyn_make_taxonomy( 'faq-cat', 'faq-cat', [ 'faq' ] );
 }
 
 function cyn_make_post_type( $name, $slug, $icon, $menu = true ) {

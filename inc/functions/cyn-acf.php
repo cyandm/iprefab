@@ -297,10 +297,33 @@ function cyn_acf_register_exhibition() {
 }
 
 function cyn_acf_register_homepage() {
+
+	//Brands Logo Group
+	$brands_logo_group_fields = [];
+	for ( $i = 1; $i <= 12; $i++ ) {
+		array_push( $brands_logo_group_fields, cyn_acf_add_image( "brand_logo_$i", "Brand Logo $i" ) );
+	}
+
 	$fields = [ 
-		cyn_acf_add_text( 'hero_title', 'title' ),
-		cyn_acf_add_text( 'hero_description', 'description' ),
-		cyn_acf_add_image( 'hero_image', 'Hero Image' )
+		cyn_acf_add_tab( 'Hero' ),
+		cyn_acf_add_text( 'hero_title', 'title', 0, 50 ),
+		cyn_acf_add_text( 'hero_description', 'description', 0, 50 ),
+		cyn_acf_add_image( 'hero_image', 'Hero Image' ),
+		cyn_acf_add_tab( 'Brands' ),
+		cyn_acf_add_text( 'brands_title', 'title' ),
+		cyn_acf_add_group( 'brands_logo_group', 'Brands Logo', $brands_logo_group_fields ),
+		cyn_acf_add_tab( 'Middle Banner' ),
+		cyn_acf_add_image( 'middle_banner', 'Middle Banner' ),
+		cyn_acf_add_tab( 'House + Land' ),
+		cyn_acf_add_post_object( 'house_plus_land', 'House + Land', 'house-and-land', 100, 1 ),
+		cyn_acf_add_tab( 'Companies' ),
+		cyn_acf_add_taxonomy( 'companies', 'Companies', 'company' ),
+		cyn_acf_add_tab( 'Exhibitions' ),
+		cyn_acf_add_post_object( 'exhibitions', 'Exhibitions', 'exhibition', 100, 1 ),
+		cyn_acf_add_tab( 'Blogs' ),
+		cyn_acf_add_post_object( 'blogs', 'Blogs', 'post', 100, 1 ),
+
+
 	];
 
 	$location = [ 
@@ -340,7 +363,7 @@ function cyn_register_acf_group( $label, $fields = [], $location = [] ) {
 	);
 }
 
-function cyn_acf_add_post_object( $name, $label, $post_type, $width = '', $multiple = 0 ) {
+function cyn_acf_add_post_object( $name, $label, $post_type, $width = '', $multiple = 0, $return_format = 'id' ) {
 	return [ 
 		'key' => cyn_acf_unique_id(),
 		'label' => $label,
@@ -350,7 +373,7 @@ function cyn_acf_add_post_object( $name, $label, $post_type, $width = '', $multi
 		'taxonomy' => '',
 		'allow_null' => 0,
 		'multiple' => $multiple,
-		'return_format' => 'id',
+		'return_format' => $return_format,
 		'wrapper' => [ 
 			'width' => $width
 		]
@@ -648,6 +671,34 @@ function cyn_acf_add_group( $name, $label, $sub_fields ) {
 		],
 		'layout' => 'block',
 		'sub_fields' => $sub_fields
+	];
+}
+
+function cyn_acf_add_taxonomy( $name, $label, $taxonomy, $field_type = 'multi_select' ) {
+	return [ 
+		'key' => 'filed_' . cyn_acf_unique_id(),
+		'label' => $label,
+		'name' => $name,
+		'aria-label' => '',
+		'type' => 'taxonomy',
+		'instructions' => '',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'wrapper' => array(
+			'width' => '',
+			'class' => '',
+			'id' => '',
+		),
+		'taxonomy' => $taxonomy,
+		'add_term' => 1,
+		'save_terms' => 0,
+		'load_terms' => 0,
+		'return_format' => 'id',
+		'field_type' => $field_type,
+		'allow_null' => 1,
+		'bidirectional' => 0,
+		'multiple' => $field_type === 'multi_select' ? 1 : 0,
+		'bidirectional_target' => [],
 	];
 }
 #endregion

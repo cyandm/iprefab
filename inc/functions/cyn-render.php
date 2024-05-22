@@ -7,13 +7,13 @@
  * @return void
  */
 function cyn_render_btn( $btn, $is_desktop ) { ?>
-	<a href="<?= $btn['link'] ?>"
+	<a href="<?= $btn['link'] ?? '#' ?>"
 	   class="btn-secondary <?= $is_desktop ? 'only-desktop' : 'only-mobile btn-full' ?> <?= $btn['icon'] ? 'btn-icon-start' : '' ?>">
 		<?php if ( $btn['icon'] !== false ) : ?>
 			<i class="iconsax"
 			   icon-name="<?= $btn['icon'] ?>"></i>
 		<?php endif; ?>
-		<?= $btn['title'] ?>
+		<?= $btn['title'] ?? '' ?>
 	</a>
 <?php }
 

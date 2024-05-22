@@ -45,6 +45,12 @@
 		border: 1px solid $c_a_main;
 	}
 
+	&-cta {
+		background-color: $c_a_main;
+		color: $c_a_text_contrast;
+		font-size: 1rem;
+	}
+
 	&-link {
 		padding: 0 !important;
 		color: $c_a_main;
@@ -62,6 +68,10 @@
 		&-end {
 			padding-inline-end: $s_5;
 		}
+	}
+
+	&-square {
+		border-radius: 12px;
 	}
 
 	&-full {

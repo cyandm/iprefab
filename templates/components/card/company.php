@@ -1,5 +1,6 @@
 <?php
-$term = $args['term'] ?? null;
+$post_id = $args['post_id'] ?? 0;
+$term = $args['term'] ?? get_term( $post_id ) ?? null;
 $company_acf_address = 'company_' . $term->term_id;
 $company_logo = isset( $term ) ? wp_get_attachment_image(
 	get_field( 'logo', $company_acf_address ),

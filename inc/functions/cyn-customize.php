@@ -1,36 +1,36 @@
 <?php
 add_action( 'customize_register', 'cyn_picture_settings' );
+add_action( 'customize_register', 'cyn_footer_settings' );
 
-function cyn_picture_settings( $wp_customize ) {
+function make_customize_option( $name, $label, $type, $section, $place_holder = '' ) {
+	global $wp_customize;
 
-	function make_customize_option( $name, $label, $type, $section, $place_holder = '' ) {
-		global $wp_customize;
+	$options = [ 
+		'label' => $label,
+		'section' => $section,
+		'type' => $type,
+		'settings' => $name,
+	];
 
-		$options = [ 
-			'label' => $label,
-			'section' => $section,
-			'type' => $type,
-			'settings' => $name,
-		];
-
-		if ( $place_holder !== '' ) {
-			$options['description'] = 'for Example: ' . $place_holder;
-		}
-
-		$wp_customize->add_setting(
-			"$name",
-			[ 
-				'type' => 'option'
-			]
-		);
-
-		$wp_customize->add_control( new WP_Customize_Upload_Control(
-			$wp_customize,
-			$name,
-			$options,
-		) );
-
+	if ( $place_holder !== '' ) {
+		$options['description'] = 'for Example: ' . $place_holder;
 	}
+
+	$wp_customize->add_setting(
+		"$name",
+		[ 
+			'type' => 'option'
+		]
+	);
+
+	$wp_customize->add_control( new WP_Customize_Upload_Control(
+		$wp_customize,
+		$name,
+		$options,
+	) );
+
+}
+function cyn_picture_settings( $wp_customize ) {
 
 
 	$wp_customize->add_panel( 'pictures', [ 
@@ -78,5 +78,38 @@ function cyn_picture_settings( $wp_customize ) {
 	] );
 	make_customize_option( 'cyn_exhibition_archive_top', 'Top', 'image', 'exhibition_archive' );
 	make_customize_option( 'cyn_exhibition_archive_bottom', 'Bottom', 'image', 'exhibition_archive' );
+
+}
+
+function cyn_footer_settings( $wp_customize ) {
+	$wp_customize->add_panel( 'footer', [ 
+		'title' => 'CyanTheme - Footer',
+		'priority' => 1
+	] );
+
+
+	$wp_customize->add_section( 'Images', [ 
+		'title' => 'Images',
+		'priority' => 1,
+		'panel' => 'footer'
+	] );
+
+	make_customize_option( 'footer_logo', 'Footer Logo', 'image', 'Images' );
+	make_customize_option( 'footer_image_1', 'Footer Image 1', 'image', 'Images' );
+	make_customize_option( 'footer_image_2', 'Footer Image 2', 'image', 'Images' );
+
+
+	$wp_customize->add_section( 'Socials', [ 
+		'title' => 'Socials',
+		'priority' => 1,
+		'panel' => 'footer'
+	] );
+
+
+	for ( $i = 1; $i <= 5; $i++ ) {
+		make_customize_option( "footer_social_logo_$i", "Footer Social Logo $i", 'image', 'Socials' );
+		make_customize_option( "footer_social_url_$i", "Footer Social URL $i", 'text', 'Socials' );
+	}
+
 
 }

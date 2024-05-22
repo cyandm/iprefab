@@ -1,32 +1,62 @@
-<div class="container">
-	<footer class="site-footer">
-		<div class="site-footer-content">
-			<?php
-			wp_nav_menu( [ 
-				'theme_location' => 'footer'
-			] )
-				?>
+<footer class="site-footer">
+	<div class="site-footer-top | container">
+		<div class="footer-logo">
+			<img src="<?php echo get_option( 'footer_logo' ) ?>"
+				 alt="footer logo">
+
 		</div>
 
-		<div class="site-footer-social-media">
-			<span>
-				follow us
-			</span>
-
-			<a href="#">
-				<i class="iconsax"
-				   icon-name="linkedin"></i>
-			</a>
-
-			<a href="#">
-				<i class="iconsax"
-				   icon-name="instagram"></i>
-			</a>
+		<div class="site-footer-menu">
+			<?php wp_nav_menu( [ 'theme_location' => 'footer' ] ) ?>
 		</div>
-	</footer>
-</div>
+	</div>
 
-<div class="clear-fix-40"> </div>
+	<div class="site-footer-bottom">
+		<div class="container">
+			<div class="site-footer-images">
+				<img src="<?php echo get_option( 'footer_image_1' ) ?>"
+					 alt="footer image 1">
+
+				<img src="<?php echo get_option( 'footer_image_2' ) ?>"
+					 alt="footer image 2">
+			</div>
+
+			<div class="site-footer-buttons">
+				<a href="#"
+				   class="btn-cta btn-square">
+					<?php _e( 'Contact Iprefab', 'cyn-dm' ) ?>
+				</a>
+
+				<div class="site-footer-follow">
+					<span>
+						<?php _e( 'Follow Us', 'cyn-dm' ) ?>
+					</span>
+
+					<div class="site-footer-social">
+						<?php for ( $i = 1; $i <= 5; $i++ ) :
+							$url = get_option( "footer_social_url_$i" );
+							$logo = get_option( "footer_social_logo_$i" );
+
+							if (
+								empty( $url ) ||
+								empty( $logo ) )
+								continue;
+
+							?>
+							<a class="site-footer-social-item"
+							   href="<?php echo $url ?>">
+								<img src="<?php echo $logo ?>">
+							</a>
+						<?php endfor; ?>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</footer>
+
 
 
 <div class="wp-scripts">
