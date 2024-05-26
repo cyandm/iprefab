@@ -20,8 +20,8 @@ cyn_render_section_card(
 	__( 'Blogs', 'cyn-dm' ),
 	[ 
 		'title' => 'view all',
-		'link' => '#',
+		'link' => get_post_type_archive_link( 'post' ),
 		'icon' => 'eye'
 	],
 	$blogs,
-	'post' );
+	'post', 'swiper' );

@@ -75,4 +75,14 @@ function cyn_page_register() {
 		update_option( 'show_on_front', 'page' );
 		update_option( 'page_on_front', $front_page_id );
 	}
+
+	if ( is_null( get_page_by_path( 'suppliers' ) ) ) {
+		wp_insert_post( [ 
+			'post_type' => 'page',
+			'post_status' => 'publish',
+			'post_title' => 'Suppliers',
+			'post_name' => 'suppliers',
+			'page_template' => 'templates/suppliers.php'
+		] );
+	}
 }

@@ -1,5 +1,6 @@
 <?php
 $post_id = $args['post_id'] ?? get_the_ID();
+$class = $args['class'] ?? '';
 $thumb_id = get_post_thumbnail_id( $post_id );
 
 $house_ID = $args['house_ID'] ?? get_field( 'related_house', $post_id );
@@ -35,7 +36,7 @@ if ( $company_2 !== false ) {
 ?>
 
 <a href="<?= get_permalink( $post_id ) ?>"
-   class="general-card"
+   class="<?= "general-card " . $class ?>"
    data-id="<?= $post_id ?>">
 
 	<div class="general-card-image">

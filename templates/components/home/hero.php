@@ -64,7 +64,7 @@ $city_options = [
 
 
 
-		<form class="hero_box_form"
+		<form class="hero_box_form only-desktop"
 			  action="">
 			<div>
 
@@ -110,4 +110,51 @@ $city_options = [
 			</div>
 		</form>
 	</div>
+
+	<form class="hero_box_form only-mobile"
+		  action="">
+		<div>
+
+			<label for="city"
+				   class="input-wrapper">
+
+				<span class="input-label">
+					<?php _e( 'city', 'cyn-dm' ) ?>
+				</span>
+
+				<select name=""
+						id="city">
+					<?php foreach ( $city_options as $value => $text ) : ?>
+						<option value="<?= $value ?>"><?= $text ?></option>
+					<?php endforeach; ?>
+				</select>
+
+				<span class="input-action">
+					<i class="iconsax"
+					   icon-name="chevron-down"></i>
+				</span>
+
+			</label>
+
+
+
+			<label for="areaMin"
+				   class="input-wrapper">
+				<span class="input-label">
+					<?php _e( 'area min', 'cyn-dm' ) ?>
+				</span>
+				<input type="text"
+					   id="areaMin">
+			</label>
+
+
+
+			<button type="submit"
+					class="btn-primary ">
+				<?php _e( 'les’t find a house', 'cyn-theme' ) ?>
+			</button>
+
+		</div>
+	</form>
+
 </section>

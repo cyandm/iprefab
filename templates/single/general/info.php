@@ -49,7 +49,7 @@ if ( isset( $company_2 ) && $company_2 !== false ) {
 				€
 			</span>
 			<span class="general-price">
-				<?= number_format( $price ) ?>
+				<?= number_format( intval( $price ) ) ?>
 			</span>
 		</span>
 	</div>

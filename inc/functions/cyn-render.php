@@ -26,11 +26,12 @@ function cyn_render_btn( $btn, $is_desktop ) { ?>
  * @param string $post_type is a wp post type
  * @return void 
  */
-function cyn_render_section_card( $title, $btn, $items, $post_type, $additional_class = '', $col = '3' ) {
+function cyn_render_section_card( $title, $btn, $items, $post_type, $additional_class = '', $col = '3', $has_swiper = false ) {
 	?>
 
 	<section class="section-card <?= $additional_class ?>">
 		<div class="section-card-title-wrapper">
+
 			<span class="h1">
 				<?= $title ?>
 			</span>
@@ -40,13 +41,29 @@ function cyn_render_section_card( $title, $btn, $items, $post_type, $additional_
 		</div>
 		<hr>
 
-		<div class="section-card-items | grid-col-<?= $col ?>">
-			<?php
-			foreach ( $items as $item_id ) {
-				get_template_part( '/templates/components/card/' . $post_type, null, [ 'post_id' => $item_id ] );
-			}
-			?>
-		</div>
+
+		<?php if ( $has_swiper ) : ?>
+			<div class="section-card-items | swiper">
+				<div class="swiper-wrapper grid-col-<?= $col ?>">
+					<?php
+					foreach ( $items as $item_id ) {
+						get_template_part( '/templates/components/card/' . $post_type, null, [ 'post_id' => $item_id, 'class' => 'swiper-slide' ] );
+					}
+					?>
+				</div>
+			</div>
+
+		<?php else : ?>
+			<div class="section-card-items grid-col-<?= $col ?>">
+				<?php
+				foreach ( $items as $item_id ) {
+					get_template_part( '/templates/components/card/' . $post_type, null, [ 'post_id' => $item_id ] );
+				}
+				?>
+			</div>
+		<?php endif; ?>
+
+
 
 		<?php cyn_render_btn( $btn, false ) ?>
 	</section>

@@ -5,7 +5,7 @@ $primary_data = [
 	[ 
 		'icon' => 'money-4',
 		'text' => 'fee',
-		'value' => '€' . number_format( get_field( 'price', $house_id ) ),
+		'value' => '€' . number_format( intval( get_field( 'price', $house_id ) ) ),
 	],
 	[ 
 		'icon' => 'location',

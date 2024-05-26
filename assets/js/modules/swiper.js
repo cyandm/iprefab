@@ -30,13 +30,20 @@ export const generalMainSwiper = new Swiper('#generalMainSwiper', {
 
 export const homePageBrands = new Swiper('#homePageBrands', {
 	modules: [Navigation, Autoplay],
-	slidesPerView: 7,
+	slidesPerView: 3,
 	spaceBetween: 12,
 	loop: true,
 	centeredSlides: true,
 	autoplay: {
 		delay: 500,
 		pauseOnMouseEnter: true,
+		disableOnInteraction: true,
+	},
+
+	breakpoints: {
+		768: {
+			slidesPerView: 7,
+		},
 	},
 
 	navigation: {
@@ -44,3 +51,21 @@ export const homePageBrands = new Swiper('#homePageBrands', {
 		prevEl: '.swiper-button-prev',
 	},
 });
+
+// export const homePageSections = new Swiper('.section-card-items', {
+// 	modules: [Navigation, Autoplay],
+// 	slidesPerView: 3,
+// 	spaceBetween: 12,
+// 	// loop: true,
+// 	// centeredSlides: true,
+// 	// autoplay: {
+// 	// 	delay: 500,
+// 	// 	pauseOnMouseEnter: true,
+// 	// },
+
+// 	on: {
+// 		init: (swiper) => {
+// 			swiper.destroy(false, true);
+// 		},
+// 	},
+// });

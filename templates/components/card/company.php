@@ -1,5 +1,6 @@
 <?php
 $post_id = $args['post_id'] ?? 0;
+$class = $args['class'] ?? '';
 $term = $args['term'] ?? get_term( $post_id ) ?? null;
 $company_acf_address = 'company_' . $term->term_id;
 $company_logo = isset( $term ) ? wp_get_attachment_image(
@@ -10,7 +11,7 @@ $company_logo = isset( $term ) ? wp_get_attachment_image(
 ?>
 
 <?php if ( $term !== null ) : ?>
-	<div class="company-card">
+	<div class="company-card <?= $class ?> ">
 		<div class="company-card-image">
 			<?= $company_logo ?>
 		</div>

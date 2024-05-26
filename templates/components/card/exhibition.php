@@ -1,6 +1,8 @@
 <?php
 $post_id = $args['post_id'] ?? get_the_ID();
 $thumb_id = get_post_thumbnail_id( $post_id );
+$class = $args['class'] ?? ' ';
+
 
 $company = get_the_terms( $post_id, 'company' );
 $company = $company ? $company[0] : null;
@@ -13,7 +15,7 @@ $company_logo = isset( $company ) ? wp_get_attachment_image(
 ?>
 
 <a href="<?= get_permalink( $post_id ) ?>"
-   class="general-card exhibition-card"
+   class="general-card exhibition-card <?= $class ?>"
    data-id="<?= $post_id ?>">
 
 	<div class="general-card-image">

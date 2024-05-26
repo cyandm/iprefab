@@ -15,8 +15,8 @@ if ( false !== $posts_from_acf ) {
 
 
 cyn_render_section_card( __( 'Investment offers for House + Land', 'cyn-dm' ), [ 
-	'link' => '#', //@TODO link for view button
+	'link' => get_post_type_archive_link( 'house-and-land' ),
 	'title' => 'view all',
 	'icon' => 'eye'
-], $posts, 'house-and-land', '', '2' );
+], $posts, 'house-and-land', 'swiper', '2' );
 

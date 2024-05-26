@@ -20,5 +20,36 @@
 		a.only-mobile {
 			margin-block-start: $s_4;
 		}
+
+		@include mq('md') {
+			&.swiper {
+				.section-card-items {
+					display: flex;
+					overflow-x: scroll;
+					padding-bottom: 12px;
+					scroll-snap-type: x mandatory;
+
+					//Chrome & Safari
+					&::-webkit-scrollbar {
+						height: 2px;
+
+						&-track {
+							background: #f1f1f1;
+						}
+
+						&-thumb {
+							background: $c_se_dark;
+						}
+					}
+
+					> * {
+						min-width: fit-content;
+						max-width: 20vw;
+						display: block;
+						scroll-snap-align: center;
+					}
+				}
+			}
+		}
 	}
 }

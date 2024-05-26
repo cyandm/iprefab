@@ -9,8 +9,12 @@ $faq_cats = get_terms( [
 	<span class="h1">
 		<?php _e( 'Frequently Asked Questions', 'cyn-dm' ) ?>
 	</span>
-	<hr />
 </div>
+<div class="clear-fix-16"></div>
+
+<hr />
+
+<div class="clear-fix-24"></div>
 
 <section class="faq-section">
 

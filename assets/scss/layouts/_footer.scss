@@ -32,6 +32,9 @@
 	}
 
 	&-menu {
+		@include mq('md') {
+			width: 100%;
+		}
 		ul {
 			display: grid;
 			gap: 0.5rem 3rem;
@@ -74,12 +77,19 @@
 		justify-content: center;
 		align-items: center;
 		gap: 1rem;
+
+		@include mq('md') {
+			justify-content: space-between;
+		}
 	}
 
 	&-social {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		@include mq('md') {
+			gap: 0.5rem;
+		}
 
 		&-item {
 			display: flex;

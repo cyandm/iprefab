@@ -5677,13 +5677,19 @@
   });
   var homePageBrands = new Swiper("#homePageBrands", {
     modules: [Navigation, Autoplay],
-    slidesPerView: 7,
+    slidesPerView: 3,
     spaceBetween: 12,
     loop: true,
     centeredSlides: true,
     autoplay: {
       delay: 500,
-      pauseOnMouseEnter: true
+      pauseOnMouseEnter: true,
+      disableOnInteraction: true
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 7
+      }
     },
     navigation: {
       nextEl: ".swiper-button-next",

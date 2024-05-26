@@ -1,5 +1,6 @@
 <?php
 $post_id = $args['post_id'] ?? get_the_ID();
+$class = $args['class'] ?? '';
 $rel = $args['rel'] ?? 'dofollow';
 
 $image = get_the_post_thumbnail( $post_id ) != '' ?
@@ -9,6 +10,7 @@ $image = get_the_post_thumbnail( $post_id ) != '' ?
 ?>
 
 <a href="<?= get_permalink( $post_id ) ?>"
+   class="<?= $class ?>"
    rel="<?= $rel ?>">
 	<article class="post-card">
 		<div class="post-card-thumb">
