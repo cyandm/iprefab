@@ -429,7 +429,7 @@ hr {
   max-width: 1440px;
   margin-inline: auto;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1440px) {
   .container {
     padding-inline: 1rem;
   }
@@ -1223,6 +1223,12 @@ input[type=checkbox]:checked::before {
   font-weight: 400;
   line-height: 32px;
 }
+@media screen and (max-width: 768px) {
+  .input-wrapper input,
+  .input-wrapper select {
+    padding: 0.5rem 1rem;
+  }
+}
 .input-wrapper select:focus + .input-action {
   transform: translateY(-50%) rotate(180deg);
 }
@@ -1236,6 +1242,9 @@ input[type=checkbox]:checked::before {
   align-items: center;
   flex-wrap: nowrap;
   gap: 0.5rem;
+}
+.input-wrapper-checkbox input {
+  border: 1px solid #949494;
 }
 .input-label {
   position: absolute;
@@ -1415,6 +1424,63 @@ body.has-mobile-menu::after {
 }
 body.has-mobile-menu header {
   pointer-events: all !important;
+}
+
+#contactFormPopUp {
+  --padding-inline: 1rem;
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - var(--padding-inline) * 2);
+  background-color: #f8f8f8;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 8px;
+  overflow-y: scroll;
+  max-height: calc(100vh - 3rem);
+  max-width: 420px;
+  transition: opacity 0.3s ease;
+}
+#contactFormPopUp[data-active=true] {
+  opacity: 1;
+  pointer-events: all;
+}
+#contactFormPopUp .form {
+  padding: 24px 20px;
+}
+#contactFormPopUp .form_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#contactFormPopUp .form_header i {
+  font-size: 20px;
+}
+#contactFormPopUp .form_header span {
+  width: 20px;
+}
+#contactFormPopUp .form_section {
+  margin-block-start: 1rem;
+}
+#contactFormPopUp .form_section h4 {
+  margin-block-end: 1rem;
+}
+@media screen and (max-width: 768px) {
+  #contactFormPopUp .form_section h4 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+}
+#contactFormPopUp .form_checklist {
+  padding-block: 0.5rem;
+}
+#contactFormPopUp .form_checklist h3 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
 }
 
 .single-company-logo {

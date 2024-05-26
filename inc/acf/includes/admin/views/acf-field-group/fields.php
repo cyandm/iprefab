@@ -1,11 +1,11 @@
 <?php
 //phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- template include file
-$field_groups     = acf_get_field_groups();
+$field_groups = acf_get_field_groups();
 $num_field_groups = 0;
 if ( is_array( $field_groups ) ) {
 	$num_field_groups = count( $field_groups );
 }
-$is_subfield   = ! empty( $is_subfield );
+$is_subfield = ! empty( $is_subfield );
 $wrapper_class = '';
 if ( $is_subfield ) {
 	$wrapper_class = ' acf-is-subfields';
@@ -28,10 +28,12 @@ if ( $is_subfield ) {
 }
 ?>
 <?php if ( $parent || $is_subfield ) { ?>
-<div class="acf-sub-field-list-header">
-	<h3 class="acf-sub-field-list-title"><?php _e( 'Fields', 'acf' ); ?></h3>
-	<a href="#" class="acf-btn acf-btn-secondary add-field"><i class="acf-icon acf-icon-plus"></i><?php _e( 'Add Field', 'acf' ); ?></a>
-</div>
+	<div class="acf-sub-field-list-header">
+		<h3 class="acf-sub-field-list-title"><?php _e( 'Fields', 'acf' ); ?></h3>
+		<a href="#"
+		   class="acf-btn acf-btn-secondary add-field"><i
+			   class="acf-icon acf-icon-plus"></i><?php _e( 'Add Field', 'acf' ); ?></a>
+	</div>
 <?php } ?>
 <?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- fixed string output ?>
 <div class="acf-field-list-wrap<?php echo $wrapper_class; ?>">
@@ -62,11 +64,13 @@ if ( $is_subfield ) {
 			<div class="no-fields-message-inner">
 				<img src="<?php echo acf_get_url( 'assets/images/empty-group.svg' ); ?>" />
 				<h2><?php _e( 'Add Your First Field', 'acf' ); ?></h2>
-				<p><?php _e( 'Get started creating new custom fields for your posts, pages, custom post types and other WordPress content.', 'acf' ); ?></p>
-				<a href="#" class="acf-btn acf-btn-primary add-field add-first-field
+				<p><?php _e( 'Get started creating new custom fields for your posts, pages, custom post types and other WordPress content.', 'acf' ); ?>
+				</p>
+				<a href="#"
+				   class="acf-btn acf-btn-primary add-field add-first-field
 "><i class="acf-icon acf-icon-plus"></i> <?php _e( 'Add Field', 'acf' ); ?></a>
 				<p class="acf-small">
-				<?php
+					<?php
 					printf(
 						/* translators: %s url to field types list */
 						__( 'Choose from over 30 field types. <a href="%s" target="_blank">Learn more</a>.', 'acf' ),
@@ -80,13 +84,13 @@ if ( $is_subfield ) {
 		<?php
 		if ( $fields ) :
 
-			foreach ( $fields as $i => $field ) :
+			foreach ( $fields as $i => $input ) :
 
 				acf_get_view(
 					'acf-field-group/field',
 					array(
-						'field'            => $field,
-						'i'                => $i,
+						'field' => $input,
+						'i' => $i,
 						'num_field_groups' => $num_field_groups,
 					)
 				);
@@ -100,40 +104,43 @@ if ( $is_subfield ) {
 
 	<ul class="acf-hl acf-tfoot">
 		<li class="acf-fr">
-			<a href="#" class="acf-btn acf-btn-secondary add-field"><i class="acf-icon acf-icon-plus"></i><?php _e( 'Add Field', 'acf' ); ?></a>
+			<a href="#"
+			   class="acf-btn acf-btn-secondary add-field"><i
+				   class="acf-icon acf-icon-plus"></i><?php _e( 'Add Field', 'acf' ); ?></a>
 		</li>
 	</ul>
 
-<?php
-if ( ! $parent ) :
-
-	// get clone
-	$clone = acf_get_valid_field(
-		array(
-			'ID'    => 'acfcloneindex',
-			'key'   => 'acfcloneindex',
-			'label' => __( 'New Field', 'acf' ),
-			'name'  => 'new_field',
-			'type'  => 'text',
-		)
-	);
-
-	?>
-	<script type="text/html" id="tmpl-acf-field">
 	<?php
-	acf_get_view(
-		'acf-field-group/field',
-		array(
-			'field'            => $clone,
-			'i'                => 0,
-			'num_field_groups' => $num_field_groups,
-		)
-	);
-	?>
-	</script>
-	<script type="text/html" id="tmpl-acf-browse-fields-modal">
-		<?php acf_get_view( 'browse-fields-modal' ); ?>
-	</script>
+	if ( ! $parent ) :
+
+		// get clone
+		$clone = acf_get_valid_field(
+			array(
+				'ID' => 'acfcloneindex',
+				'key' => 'acfcloneindex',
+				'label' => __( 'New Field', 'acf' ),
+				'name' => 'new_field',
+				'type' => 'text',
+			)
+		);
+
+		?>
+		<script type="text/html"
+				id="tmpl-acf-field">
+		<?php
+		acf_get_view(
+			'acf-field-group/field',
+			array(
+				'field' => $clone,
+				'i' => 0,
+				'num_field_groups' => $num_field_groups,
+			)
+		);
+		?>
+		</script>
+		<script type="text/html" id="tmpl-acf-browse-fields-modal">
+			<?php acf_get_view( 'browse-fields-modal' ); ?>
+		</script>
 <?php endif; ?>
 
 </div>

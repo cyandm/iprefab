@@ -70,6 +70,10 @@ input[type='checkbox'] {
 		input,
 		select {
 			padding: $s_4 $s_6;
+
+			@include mq('md') {
+				padding: $s_2 $s_4;
+			}
 			@include fs('body');
 		}
 
@@ -86,6 +90,10 @@ input[type='checkbox'] {
 
 		&-checkbox {
 			@include d_flex(row, flex-start, center, nowrap, false, $s_2);
+
+			input {
+				border: 1px solid $c_n_400;
+			}
 		}
 	}
 

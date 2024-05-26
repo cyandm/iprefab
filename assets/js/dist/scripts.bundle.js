@@ -5872,6 +5872,25 @@
     document.body.classList.toggle("has-mobile-menu");
   });
 
+  // assets/js/modules/contactFrom.js
+  function ContactForm() {
+    const contactFormOpener = document.getElementById("contactFormOpener");
+    const contactFormPopUp = document.getElementById("contactFormPopUp");
+    const contactFormPopupCloser = document.getElementById(
+      "contactFormPopupCloser"
+    );
+    if (!contactFormOpener || !contactFormPopUp || !contactFormPopupCloser)
+      return;
+    definePopUp(contactFormPopUp);
+    contactFormOpener.addEventListener("click", () => {
+      activateEl(contactFormPopUp);
+    });
+    contactFormPopupCloser.addEventListener("click", () => {
+      deActivateEl(contactFormPopUp);
+    });
+  }
+  ContactForm();
+
   // assets/js/pages/home.js
   var HomeFaq = () => {
     const faqSectionItems = document.querySelectorAll(

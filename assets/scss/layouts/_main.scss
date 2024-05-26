@@ -24,7 +24,7 @@ hr {
 	max-width: 1440px;
 	margin-inline: auto;
 
-	@include mq('xl') {
+	@include mq('xxl') {
 		padding-inline: 1rem;
 	}
 }

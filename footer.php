@@ -23,6 +23,7 @@
 
 			<div class="site-footer-buttons">
 				<a href="#"
+				   id="contactFormOpener"
 				   class="btn-cta btn-square">
 					<?php _e( 'Contact Iprefab', 'cyn-dm' ) ?>
 				</a>
@@ -56,6 +57,7 @@
 	</div>
 
 </footer>
+<?php get_template_part( '/templates/components/contact-form' ) ?>
 
 
 
