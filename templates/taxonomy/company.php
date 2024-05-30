@@ -40,7 +40,7 @@ $company_acf_address = 'company_' . $current_term->term_id;
 		'/templates/components/breadcrumb', null,
 		[ 'items' => [ 
 			[ 
-				'label' => 'suppliers',
+				'label' => __( 'suppliers', 'cyn-dm' ),
 				'link' => $supplier_page_link
 			],
 			[ 
@@ -98,7 +98,7 @@ $company_acf_address = 'company_' . $current_term->term_id;
 							<i class="iconsax"
 							   icon-name="house-1"></i>
 							<span><?= $wp_query->found_posts ?></span>
-							<span>houses</span>
+							<span><?php _e( 'houses', 'cyn-dm' ) ?></span>
 						</div>
 					</div>
 				</div>
@@ -110,14 +110,14 @@ $company_acf_address = 'company_' . $current_term->term_id;
 			   class="btn-horizontal btn-secondary">
 				<i class="iconsax"
 				   icon-name="eye"></i>
-				visit website
+				<?php _e( 'visit website', 'cyn-dm' ) ?>
 			</a>
 
 			<a href="#"
 			   class="btn-horizontal btn-secondary">
 				<i class="iconsax"
 				   icon-name="mobile"></i>
-				contact info
+				<?php _e( 'contact info', 'cyn-dm' ) ?>
 			</a>
 		</div>
 	</section>
@@ -127,9 +127,9 @@ $company_acf_address = 'company_' . $current_term->term_id;
 	<section class="">
 
 		<div class="d-flex jc-between">
-			<h2 class="h1">about company</h2>
+			<h2 class="h1"><?php _e( 'about company', 'cyn-dm' ) ?></h2>
 			<a href="#"
-			   class="btn-primary">call back request</a>
+			   class="btn-primary"><?php _e( 'call back request', 'cyn-dm' ) ?></a>
 
 		</div>
 
@@ -155,7 +155,7 @@ $company_acf_address = 'company_' . $current_term->term_id;
 
 	<?php
 	cyn_render_section_card(
-		'houses in IPREFAB',
+		__( 'houses in IPREFAB', 'cyn-dm' ),
 		[ 'link' => '#', 'title' => 'view all', 'icon' => 'eye' ],
 		$houses,
 		'house'

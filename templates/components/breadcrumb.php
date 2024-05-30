@@ -11,7 +11,7 @@ $items = $args['items'] ?? null;
 
 		<li class="breadcrumb-item">
 			<a href="<?= site_url() ?>">
-				Homepage
+				<?php _e( 'Homepage', 'cyn-dm' ) ?>
 			</a>
 		</li>
 

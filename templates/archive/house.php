@@ -41,7 +41,7 @@ $filters = cyn_get_filters();
 		<i class="iconsax"
 		   id="filtersPopUpCloser"
 		   icon-name="x-circle"></i>
-		<h3>filters</h3>
+		<h3><?php _e( 'filters', 'cyn-dm' ) ?></h3>
 	</div>
 
 	<?= get_template_part( '/templates/components/filters/filter', 'house' ) ?>

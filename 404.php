@@ -10,11 +10,13 @@
 			 alt="404">
 	</div>
 
-	<h1>oops something went wrong</h1>
+	<h1>
+		<?php _e( 'oops something went wrong', 'cyn-dm' ) ?>
+	</h1>
 
 	<a href="/"
 	   class="btn-secondary">
-		back to homepage
+		<?php _e( 'back to homepage', 'cyn-dm' ) ?>
 	</a>
 
 	<div class="clear-fix-40"></div>

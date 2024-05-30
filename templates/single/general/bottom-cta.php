@@ -34,10 +34,10 @@ $brochure_link = get_field( 'brochure', get_queried_object_id() );
 		   class="btn-secondary btn-icon-start">
 			<i class="iconsax"
 			   icon-name="book-with-bookmark"></i>
-			brochure
+			<?php _e( 'brochure', 'cyn-dm' ) ?>
 		</a>
 		<button class="btn-primary">
-			call back request
+			<?php _e( 'call back request', 'cyn-dm' ) ?>
 		</button>
 	</div>
 </div>

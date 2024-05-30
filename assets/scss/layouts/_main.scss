@@ -76,6 +76,10 @@ hr {
 	&-start {
 		justify-content: flex-start;
 	}
+
+	&-around {
+		justify-content: space-around;
+	}
 }
 
 .ai {

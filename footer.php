@@ -1,9 +1,10 @@
 <footer class="site-footer">
 	<div class="site-footer-top | container">
 		<div class="footer-logo">
-			<img src="<?php echo get_option( 'footer_logo' ) ?>"
-				 alt="footer logo">
-
+			<a href="/">
+				<img src="<?php echo get_option( 'footer_logo' ) ?>"
+					 alt="footer logo">
+			</a>
 		</div>
 
 		<div class="site-footer-menu">

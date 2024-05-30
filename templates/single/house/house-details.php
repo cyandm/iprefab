@@ -13,63 +13,63 @@ $age = intval( date( 'Y' ) ) - intval( get_field( 'established_year', 'company_'
 
 $product_details = [ 
 	[ 
-		'name' => 'company verification type',
+		'name' => __( 'company verification type', 'cyn-dm' ),
 		'value' => get_field( 'type' )
 	],
 	[ 
-		'name' => 'age of compony',
+		'name' => __( 'age of company', 'cyn-dm' ),
 		'value' => $age
 	],
 	[ 
-		'name' => 'logo',
+		'name' => __( 'logo', 'cyn-dm' ),
 		'value' => $company_logo
 	],
 	[ 
-		'name' => 'material',
+		'name' => __( 'material', 'cyn-dm' ),
 		'value' => get_field( 'material' )
 	],
 	[ 
-		'name' => 'total area',
+		'name' => __( 'total area', 'cyn-dm' ),
 		'value' => get_field( 'total_area' ) . '<span class="unit">m<sup>2</sup></span>',
 	],
 	[ 
-		'name' => 'house area',
+		'name' => __( 'house area', 'cyn-dm' ),
 		'value' => get_field( 'house_area' ) . '<span class="unit">m<sup>2</sup></span>',
 	],
 	[ 
-		'name' => 'storage',
+		'name' => __( 'storage', 'cyn-dm' ),
 		'value' => get_field( 'storage' ) ? 'yes' : 'no'
 	],
 	[ 
-		'name' => 'balcony',
+		'name' => __( 'balcony', 'cyn-dm' ),
 		'value' => get_field( 'balcony' ) ? 'yes' : 'no'
 	],
 	[ 
-		'name' => 'garage',
+		'name' => __( 'garage', 'cyn-dm' ),
 		'value' => get_field( 'garage' ) ? 'yes' : 'no'
 	],
 	[ 
-		'name' => 'sauna',
+		'name' => __( 'sauna', 'cyn-dm' ),
 		'value' => get_field( 'sauna' ) ? 'yes' : 'no'
 	],
 	[ 
-		'name' => 'kitchen appliances',
+		'name' => __( 'kitchen appliances', 'cyn-dm' ),
 		'value' => get_field( 'kitchen_appliances' ) ? 'yes' : 'no'
 	],
 	[ 
-		'name' => 'bathroom appliances',
+		'name' => __( 'bathroom appliances', 'cyn-dm' ),
 		'value' => get_field( 'bathroom_appliances' ) ? 'yes' : 'no'
 	],
 	[ 
-		'name' => 'celling style',
+		'name' => __( 'celling style', 'cyn-dm' ),
 		'value' => get_field( 'celling_style' )
 	],
 	[ 
-		'name' => 'façade / material',
+		'name' => __( 'facade / material', 'cyn-dm' ),
 		'value' => get_field( 'facade_material' )
 	],
 	[ 
-		'name' => 'garage (open or close)',
+		'name' => __( 'garage (open or close)', 'cyn-dm' ),
 		'value' => get_field( 'garage_mode' )
 	],
 ];

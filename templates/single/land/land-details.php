@@ -7,43 +7,44 @@ $company_logo = wp_get_attachment_image(
 
 $product_details = [ 
 	[ 
-		'name' => 'publisher',
+		'name' => __( 'publisher', 'cyn-dm' ),
 		'value' => ''
 	],
 	[ 
-		'name' => 'publisher logo',
+		'name' => __( 'publisher logo', 'cyn-dm' ),
 		'value' => $company_logo
 	],
 	[ 
-		'name' => 'neighborhood',
+		'name' => __( 'neighborhood', 'cyn-dm' ),
 		'value' => get_field( 'location' )
 	],
 	[ 
-		'name' => 'building right',
+		'name' => __( 'building right', 'cyn-dm' ),
 		'value' => ''
 	],
 	[ 
-		'name' => 'extra building right',
+		'name' => __( 'extra building right', 'cyn-dm' ),
 		'value' => ''
 	],
 	[ 
-		'name' => 'mortgage',
+		'name' => __( 'mortgage', 'cyn-dm' ),
 		'value' => ''
 	],
 	[ 
-		'name' => 'contact name',
+		'name' => __( 'contact name', 'cyn-dm' ),
+
 		'value' => ''
 	],
 	[ 
-		'name' => 'contact number',
+		'name' => __( 'contact number', 'cyn-dm' ),
 		'value' => ''
 	],
 	[ 
-		'name' => 'contact email',
+		'name' => __( 'contact email', 'cyn-dm' ),
 		'value' => ''
 	],
 	[ 
-		'name' => 'to demolish',
+		'name' => __( 'to demolish', 'cyn-dm' ),
 		'value' => ''
 	],
 ];

@@ -32,6 +32,8 @@ function cyn_register_acf() {
 	cyn_acf_register_exhibition();
 	cyn_acf_register_gallery();
 	cyn_acf_register_homepage();
+	cyn_acf_register_about();
+	cyn_acf_register_contact();
 }
 
 function cyn_register_acf_company_settings() {
@@ -339,6 +341,67 @@ function cyn_acf_register_homepage() {
 	cyn_register_acf_group( 'Home Page Settings', $fields, $location );
 }
 
+function cyn_acf_register_about() {
+
+	$our_team = [];
+	for ( $i = 0; $i < 10; $i++ ) {
+		array_push( $our_team,
+			cyn_acf_add_group( "team_member_$i", "Team Member $i", [ 
+				cyn_acf_add_image( "image", 'Image' ),
+				cyn_acf_add_text( 'name', 'Name' ),
+				cyn_acf_add_text( 'position', 'Position' ),
+			] ) );
+	}
+
+	$fields = [ 
+		cyn_acf_add_tab( 'main' ),
+		cyn_acf_add_text( 'title', 'Title', 1 ),
+		cyn_acf_add_image( 'hero_image', 'Hero Image' ),
+		cyn_acf_add_wysiwyg( 'hero_text', 'Hero Text' ),
+		cyn_acf_add_tab( 'Team' ),
+		cyn_acf_add_text( 'our_team_title', 'Our Team Title' ),
+		cyn_acf_add_group( 'our_team', 'Our Team', $our_team ),
+		cyn_acf_add_tab( 'Perspective' ),
+		cyn_acf_add_text( 'perspective_title', 'Our Perspective Title' ),
+		cyn_acf_add_image( 'perspective_image', 'Perspective Image' ),
+		cyn_acf_add_wysiwyg( 'perspective_text', 'Perspective Text' ),
+
+	];
+
+	$location = [ 
+		[ 
+			[ 
+				'param' => 'post_template',
+				'operator' => '==',
+				'value' => 'templates/about-us.php',
+			],
+		],
+	];
+	cyn_register_acf_group( 'About Us', $fields, $location );
+
+}
+;
+
+function cyn_acf_register_contact() {
+
+
+	$fields = [ 
+		cyn_acf_add_google_map( 'location', 'location' )
+	];
+
+
+	$location = [ 
+		[ 
+			[ 
+				'param' => 'post_template',
+				'operator' => '==',
+				'value' => 'templates/contact-us.php',
+			],
+		],
+	];
+	cyn_register_acf_group( 'Contact Us', $fields, $location );
+
+}
 
 
 

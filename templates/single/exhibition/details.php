@@ -4,7 +4,7 @@
 			<div class="h5">
 				<i class="iconsax"
 				   icon-name="location"></i>
-				The address of the house presentation
+				<?php _e( 'The address of the house presentation', 'cyn-dm' ) ?>
 			</div>
 
 			<?= get_field( 'address' ) ?>
@@ -16,7 +16,7 @@
 			<div class="h5">
 				<i class="iconsax"
 				   icon-name="question-message"></i>
-				Guidance
+				<?php _e( 'Guidance', 'cyn-dm' ) ?>
 			</div>
 
 			<p>
@@ -26,7 +26,7 @@
 
 			<a href="<?= get_field( 'guidance_link' ) ?>"
 			   class="btn-small btn-link">
-				show driving directions
+				<?php _e( 'show driving directions', 'cyn-dm' ) ?>
 				<i class="iconsax"
 				   icon-name="arrow-right">
 				</i>
@@ -39,7 +39,7 @@
 			<div class="h5">
 				<i class="iconsax"
 				   icon-name="house-1"></i>
-				collection
+				<?php _e( 'collection', 'cyn-dm' ) ?>
 			</div>
 
 			<?= get_field( 'collection' ) ?>

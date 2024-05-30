@@ -151,7 +151,7 @@ $checklist_sections = [
 
 
 		<input type="submit"
-			   class="btn-primary">
+			   class="btn-primary btn-small">
 
 	</form>
 </div>

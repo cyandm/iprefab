@@ -14,13 +14,13 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="search"
 		   class="input-wrapper">
 		<span class="input-label">
-			Search
+			<?php _e( 'Search', 'cyn-dm' ) ?>
 		</span>
 		<input type="text"
 			   name="search"
 			   id="search"
 			   value="<?=
-			   	isset ( $filters['search'] ) ? $filters['search'] : ''
+			   	isset( $filters['search'] ) ? $filters['search'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -32,13 +32,13 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="city"
 		   class="input-wrapper">
 		<span class="input-label">
-			City
+			<?php _e( 'City', 'cyn-dm' ) ?>
 		</span>
 		<select name="city"
 				id="city">
 
 			<option value="null">
-				doesn't matter
+				<?php _e( 'doesn\'t matter', 'cyn-dm' ) ?>
 			</option>
 
 			<?php foreach ( $cities as $city ) : ?>
@@ -46,7 +46,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 				<option value="<?= $city ?>"
 						<?php
 						if (
-							isset ( $filters['city'] ) &&
+							isset( $filters['city'] ) &&
 							$filters['city'] === $city
 						) {
 							echo 'selected';
@@ -65,19 +65,23 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	</label>
 
 	<div class="input-group">
-		<span class="input-group-label">Permit type</span>
+		<span class="input-group-label">
+			<?php _e( 'Permit type', 'cyn-dm' ) ?>
+		</span>
 		<div class="input-group-wrapper">
 			<label for="permitTypeHouse">
 				<input type="radio"
 					   name="permitType"
 					   id="permitTypeHouse"
 					   value="house"
-   <?=
-   	isset ( $filters['permitType'] ) &&
-   	$filters['permitType'] == 'house' ?
-   	'checked' : '' ?>>
+					   <?=
+					   	isset( $filters['permitType'] ) &&
+					   	$filters['permitType'] == 'house' ?
+					   	'checked' : '' ?>>
 
-				<span>house</span>
+				<span>
+					<?php _e( 'house', 'cyn-dm' ) ?>
+				</span>
 
 			</label>
 
@@ -87,10 +91,12 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 					   id="permitTypeVilla"
 					   value="villa"
 					   <?=
-					   	isset ( $filters['permitType'] ) &&
+					   	isset( $filters['permitType'] ) &&
 					   	$filters['permitType'] == 'villa' ?
 					   	'checked' : '' ?>>
-				<span>Villa</span>
+				<span>
+					<?php _e( 'Villa', 'cyn-dm' ) ?>
+				</span>
 
 			</label>
 		</div>
@@ -99,13 +105,13 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="priceMin"
 		   class="input-wrapper">
 		<span class="input-label">
-			price min
+			<?php _e( 'price min', 'cyn-dm' ) ?>
 		</span>
 		<input type="number"
 			   name="priceMin"
 			   id="priceMin"
 			   value="<?=
-			   	isset ( $filters['priceMin'] ) ? $filters['priceMin'] : ''
+			   	isset( $filters['priceMin'] ) ? $filters['priceMin'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -116,13 +122,13 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="priceMax"
 		   class="input-wrapper">
 		<span class="input-label">
-			price max
+			<?php _e( 'price max', 'cyn-dm' ) ?>
 		</span>
 		<input type="number"
 			   name="priceMax"
 			   id="priceMax"
 			   value="<?=
-			   	isset ( $filters['priceMax'] ) ? $filters['priceMax'] : ''
+			   	isset( $filters['priceMax'] ) ? $filters['priceMax'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -133,13 +139,13 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="surfaceMin"
 		   class="input-wrapper">
 		<span class="input-label">
-			surface min
+			<?php _e( 'surface min', 'cyn-dm' ) ?>
 		</span>
 		<input type="number"
 			   name="surfaceMin"
 			   id="surfaceMin"
 			   value="<?=
-			   	isset ( $filters['surfaceMin'] ) ? $filters['surfaceMin'] : ''
+			   	isset( $filters['surfaceMin'] ) ? $filters['surfaceMin'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -150,13 +156,13 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="surfaceMax"
 		   class="input-wrapper">
 		<span class="input-label">
-			surface max
+			<?php _e( 'surface max', 'cyn-dm' ) ?>
 		</span>
 		<input type="number"
 			   name="surfaceMax"
 			   id="surfaceMax"
 			   value="<?=
-			   	isset ( $filters['surfaceMax'] ) ? $filters['surfaceMax'] : ''
+			   	isset( $filters['surfaceMax'] ) ? $filters['surfaceMax'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -168,6 +174,6 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 
 	<button class="btn-primary btn-full"
 			type="submit">
-		apply filter
+		<?php _e( 'apply filter', 'cyn-dm' ) ?>
 	</button>
 </form>

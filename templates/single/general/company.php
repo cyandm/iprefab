@@ -31,7 +31,7 @@ $company_color = get_field( 'color', 'company_' . $company->term_id );
 			<div class="clear-fix-16"></div>
 			<a href="<?= get_term_link( $company ) ?>"
 			   class="btn-secondary">
-				visit supplier
+				<?php _e( 'visit supplier', 'cyn-dm' ) ?>
 			</a>
 		</div>
 	</div>

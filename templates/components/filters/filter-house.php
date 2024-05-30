@@ -24,13 +24,13 @@ $countries = array_filter( $countries );
 	<label for="originCompany"
 		   class="input-wrapper">
 		<span class="input-label">
-			origin of company
+			<?php _e( 'origin of company', 'cyn-dm' ) ?>
 		</span>
 		<select name="originCompany"
 				id="originCompany">
 
 			<option value="null">
-				doesn't matter
+				<?php _e( 'doesn\'t matter', 'cyn-dm' ) ?>
 			</option>
 
 			<?php foreach ( $countries as $country ) : ?>
@@ -38,7 +38,7 @@ $countries = array_filter( $countries );
 				<option value="<?= $country ?>"
 						<?php
 						if (
-							isset ( $filters['originCompany'] ) &&
+							isset( $filters['originCompany'] ) &&
 							$filters['originCompany'] === $country
 						) {
 							echo 'selected';
@@ -59,13 +59,13 @@ $countries = array_filter( $countries );
 	<label for="areaMin"
 		   class="input-wrapper">
 		<span class="input-label">
-			area min
+			<?php _e( 'area min', 'cyn-dm' ) ?>
 		</span>
 		<input type="number"
 			   name="areaMin"
 			   id="areaMin"
 			   value="<?=
-			   	isset ( $filters['areaMin'] ) ? $filters['areaMin'] : ''
+			   	isset( $filters['areaMin'] ) ? $filters['areaMin'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -76,13 +76,13 @@ $countries = array_filter( $countries );
 	<label for="areaMax"
 		   class="input-wrapper">
 		<span class="input-label">
-			area max
+			<?php _e( 'area max', 'cyn-dm' ) ?>
 		</span>
 		<input type="number"
 			   name="areaMax"
 			   id="areaMax"
 			   value="<?=
-			   	isset ( $filters['areaMax'] ) ? $filters['areaMax'] : ''
+			   	isset( $filters['areaMax'] ) ? $filters['areaMax'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -93,13 +93,13 @@ $countries = array_filter( $countries );
 	<label for="priceMin"
 		   class="input-wrapper">
 		<span class="input-label">
-			price min
+			<?php _e( 'price min', 'cyn-dm' ) ?>
 		</span>
 		<input type="number"
 			   name="priceMin"
 			   id="priceMin"
 			   value="<?=
-			   	isset ( $filters['priceMin'] ) ? $filters['priceMin'] : ''
+			   	isset( $filters['priceMin'] ) ? $filters['priceMin'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -110,13 +110,13 @@ $countries = array_filter( $countries );
 	<label for="priceMax"
 		   class="input-wrapper">
 		<span class="input-label">
-			price max
+			<?php _e( 'price max', 'cyn-dm' ) ?>
 		</span>
 		<input type="number"
 			   name="priceMax"
 			   id="priceMax"
 			   value="<?=
-			   	isset ( $filters['priceMax'] ) ? $filters['priceMax'] : ''
+			   	isset( $filters['priceMax'] ) ? $filters['priceMax'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -127,17 +127,17 @@ $countries = array_filter( $countries );
 	<label for="rooms"
 		   class="input-wrapper">
 		<span class="input-label">
-			rooms
+			<?php _e( 'rooms', 'cyn-dm' ) ?>
 		</span>
 		<select name="rooms"
 				id="rooms">
 			<option value="null">
-				doesn't matter
+				<?php _e( 'doesn\'t matter', 'cyn-dm' ) ?>
 			</option>
 			<?php for ( $i = 1; $i <= 8; $i++ ) : ?>
 				<option value="<?= $i ?>"
 						<?php
-						if ( isset ( $filters['rooms'] ) && (int) $filters['rooms'] === $i ) {
+						if ( isset( $filters['rooms'] ) && (int) $filters['rooms'] === $i ) {
 							echo 'selected';
 						}
 						?>>
@@ -155,17 +155,17 @@ $countries = array_filter( $countries );
 	<label for="floors"
 		   class="input-wrapper">
 		<span class="input-label">
-			floors
+			<?php _e( 'floors', 'cyn-dm' ) ?>
 		</span>
 		<select name="floors"
 				id="floors">
 			<option value="null">
-				doesn't matter
+				<?php _e( 'doesn\'t matter', 'cyn-dm' ) ?>
 			</option>
 			<?php for ( $i = 1; $i <= 3; $i++ ) : ?>
 				<option value="<?= $i ?>"
 						<?php
-						if ( isset ( $filters['floors'] ) && (int) $filters['floors'] === $i ) {
+						if ( isset( $filters['floors'] ) && (int) $filters['floors'] === $i ) {
 							echo 'selected';
 						}
 						?>>
@@ -181,7 +181,9 @@ $countries = array_filter( $countries );
 	</label>
 
 	<div class="input-group">
-		<span class="input-group-label">Sauna</span>
+		<span class="input-group-label">
+			<?php _e( 'Sauna', 'cyn-dm' ) ?>
+		</span>
 		<div class="input-group-wrapper">
 			<label for="saunaNo">
 				<input type="radio"
@@ -189,7 +191,7 @@ $countries = array_filter( $countries );
 					   id="saunaNo"
 					   value="no"
 					   <?=
-					   	isset ( $filters['sauna'] ) &&
+					   	isset( $filters['sauna'] ) &&
 					   	$filters['sauna'] == 'no' ?
 					   	'checked' : '' ?>>
 
@@ -203,10 +205,12 @@ $countries = array_filter( $countries );
 					   id="saunaYes"
 					   value="yes"
 					   <?=
-					   	isset ( $filters['sauna'] ) &&
+					   	isset( $filters['sauna'] ) &&
 					   	$filters['sauna'] == 'yes' ?
 					   	'checked' : '' ?>>
-				<span>yes</span>
+				<span>
+					<?php _e( 'yes', 'cyn-dm' ) ?>
+				</span>
 
 			</label>
 		</div>
@@ -214,6 +218,6 @@ $countries = array_filter( $countries );
 
 	<button class="btn-primary btn-full"
 			type="submit">
-		apply filter
+		<?php _e( 'apply filter', 'cyn-dm' ) ?>
 	</button>
 </form>

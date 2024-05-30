@@ -3,7 +3,7 @@
 
 $chips = [ 
 	[ 
-		'title' => 'finland',
+		'title' => __( 'finland', 'cyn-dm' ),
 		'link' => '/'
 	],
 	[ 

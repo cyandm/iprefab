@@ -52,12 +52,12 @@ $is_calender = $args['is_calender'] ?? false;
 			   class="btn-secondary btn-icon-start">
 				<i class="iconsax"
 				   icon-name="calendar-2"></i>
-				add to calender
+				<?php _e( 'add to calender', 'cyn-dm' ) ?>
 			</a>
 
 		<?php else : ?>
 			<button class="btn-primary">
-				call back request
+				<?php _e( 'call back request', 'cyn-dm' ) ?>
 			</button>
 
 		<?php endif; ?>

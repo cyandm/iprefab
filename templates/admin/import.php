@@ -6,24 +6,30 @@ $company_file = isset( $_GET['company_file'] );
 ?>
 
 <h1>
-	Import By Excel
+	<?php _e( 'Import By Excel', 'cyn-dm' ) ?>
 </h1>
 
 <?php if ( $house_file ) : ?>
 	<div class="notice notice-success is-dismissible">
-		<p>Houses Uploaded. <a href="<?= admin_url( 'edit.php?post_type=house' ) ?>">View</a></p>
+		<p><?php _e( 'Houses Uploaded.', 'cyn-dm' ) ?>
+			<a href="<?= admin_url( 'edit.php?post_type=house' ) ?>">
+				<?php _e( 'View', 'cyn-dm' ) ?>
+			</a>
+		</p>
 	</div>
 <?php endif; ?>
 
 <?php if ( $land_file ) : ?>
 	<div class="notice notice-success is-dismissible">
-		<p>Lands Uploaded. <a href="<?= admin_url( 'edit.php?post_type=land' ) ?>">View</a></p>
+		<p><?php _e( 'Lands Uploaded.', 'cyn-dm' ) ?> <a
+			   href="<?= admin_url( 'edit.php?post_type=land' ) ?>"><?php _e( 'View', 'cyn-dm' ) ?></a></p>
 	</div>
 <?php endif; ?>
 
 <?php if ( $company_file ) : ?>
 	<div class="notice notice-success is-dismissible">
-		<p>Companies Uploaded. <a href="<?= admin_url( 'edit-tags.php?taxonomy=company' ) ?>">View</a></p>
+		<p><?php _e( 'Companies Uploaded.', 'cyn-dm' ) ?> <a
+			   href="<?= admin_url( 'edit-tags.php?taxonomy=company' ) ?>"><?php _e( 'View', 'cyn-dm' ) ?></a></p>
 	</div>
 <?php endif; ?>
 
@@ -36,7 +42,7 @@ $company_file = isset( $_GET['company_file'] );
 	<table class="form-table">
 		<tbody>
 			<tr>
-				<th scope="row">Import lands</th>
+				<th scope="row"><?php _e( 'Import lands', 'cyn-dm' ) ?></th>
 				<td>
 					<input name="lands"
 						   type="file"
@@ -45,7 +51,7 @@ $company_file = isset( $_GET['company_file'] );
 			</tr>
 
 			<tr>
-				<th scope="row">Import House</th>
+				<th scope="row"><?php _e( 'Import House', 'cyn-dm' ) ?></th>
 				<td>
 					<input name="house"
 						   type="file"
@@ -54,7 +60,7 @@ $company_file = isset( $_GET['company_file'] );
 			</tr>
 
 			<tr>
-				<th scope="row">Import Company</th>
+				<th scope="row"><?php _e( 'Import Company', 'cyn-dm' ) ?></th>
 				<td>
 					<input name="company"
 						   type="file"
@@ -66,7 +72,7 @@ $company_file = isset( $_GET['company_file'] );
 				<th>
 					<button type="submit"
 							class="button button-primary">
-						Upload Files
+						<?php _e( 'Upload Files', 'cyn-dm' ) ?>
 					</button>
 				</th>
 			</tr>

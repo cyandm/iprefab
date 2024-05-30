@@ -21,10 +21,10 @@ if ( ! $related_lands ) {
 
 
 
-cyn_render_section_card( 'you might like',
+cyn_render_section_card( __( 'you might like', 'cyn-dm' ),
 	[ 
 		'link' => get_post_type_archive_link( 'land' ),
-		'title' => 'view all',
+		'title' => __( 'view all', 'cyn-dm' ),
 		'icon' => 'eye'
 	], $lands_ids, 'land', 'land-recommended' );
 

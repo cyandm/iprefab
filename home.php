@@ -5,7 +5,7 @@
 		'items' => [ 
 			[ 
 				'link' => '#',
-				'label' => 'Blogs'
+				'label' => __( 'Blogs', 'cyn-dm' )
 			]
 		]
 	] ); ?>

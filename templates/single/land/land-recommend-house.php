@@ -23,10 +23,10 @@ if ( ! $related_posts ) {
 
 
 
-cyn_render_section_card( 'houses that are suitable for the land',
+cyn_render_section_card( __( 'houses that are suitable for the land', 'cyn-dm' ),
 	[ 
 		'link' => get_post_type_archive_link( 'land' ),
-		'title' => 'view all',
+		'title' => __( 'view all', 'cyn-dm' ),
 		'icon' => 'eye'
 	], $post_ids, 'land', 'land-recommended' );
 

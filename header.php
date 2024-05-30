@@ -33,7 +33,7 @@
 					<i class="iconsax"
 					   icon-name="user-1"></i>
 					<span>
-						profile
+						<?php _e( 'profile', 'cyn-dm' ) ?>
 					</span>
 				</a>
 			</div>

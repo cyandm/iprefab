@@ -1,0 +1,28 @@
+@use '../utils' as *;
+
+.search-card {
+	padding: 0.5rem;
+	border: $b_2;
+	border-radius: 0.5rem;
+
+	.img-wrapper {
+		max-width: 6rem;
+		aspect-ratio: 1/1;
+		border-radius: 0.5rem;
+	}
+
+	.caption {
+		@include fs('caption');
+		text-transform: capitalize;
+		color: $c_n_400;
+	}
+}
+
+main.search {
+	button {
+		background: none;
+		border: unset;
+		padding: unset;
+		font-size: unset;
+	}
+}

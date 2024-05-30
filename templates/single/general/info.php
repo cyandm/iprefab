@@ -68,6 +68,6 @@ if ( isset( $company_2 ) && $company_2 !== false ) {
 <div class="clear-fix-12"> </div>
 
 
-<div class="general-info-short">
+<!-- <div class="general-info-short">
 	Lorem ipsum dolor sit, amet consectetur • adipisicing elit. Atque enim laudantium fugit!
-</div>
+</div> -->
