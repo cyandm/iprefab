@@ -1,11 +1,12 @@
 <?php
 $land_id = $args['land_id'];
 
+
 $primary_data = [ 
 	[ 
 		'icon' => 'money-4',
 		'text' => 'fee',
-		'value' => '€' . number_format( get_field( 'price', $land_id ) ),
+		'value' => '€' . number_format( intval( get_field( 'price', $land_id ) ) ),
 	],
 	[ 
 		'icon' => 'map-1',
@@ -15,7 +16,7 @@ $primary_data = [
 	[ 
 		'icon' => 'location',
 		'text' => 'neighborhood',
-		'value' => str_split( get_field( 'neighborhood', $land_id ), 10 )[0],
+		'value' => str_split( strval( get_field( 'neighborhood', $land_id ) ), 10 )[0],
 	],
 	[ 
 		'icon' => 'star',

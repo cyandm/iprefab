@@ -3,6 +3,10 @@ $post_type = $args['post_type'] ?? 'product';
 $company = $args['company'] ?? get_the_terms( get_queried_object_id(), 'company' )[0];
 $col = $args['col'] ?? 3;
 
+if ( is_null( $company ) ) {
+	return;
+}
+
 $products = new WP_Query( [ 
 	'post_type' => $post_type,
 	'tax_query' => [ 

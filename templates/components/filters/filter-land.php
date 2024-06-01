@@ -30,6 +30,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	</label>
 
 	<label for="city"
+		   class="city-select-2"
 		   class="input-wrapper">
 		<span class="input-label">
 			<?php _e( 'City', 'cyn-dm' ) ?>

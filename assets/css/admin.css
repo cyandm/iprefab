@@ -6,3 +6,13 @@
 *:not(i, .ab-icon, .dashicons) {
 	font-family: 'Poppins' !important;
 }
+
+#information table {
+	border-spacing: 0.25rem;
+	width: 100%;
+}
+
+#information td {
+	padding: 0.5rem;
+	border: 1px solid #ddd;
+}

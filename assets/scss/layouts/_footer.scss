@@ -3,6 +3,7 @@
 .site-footer {
 	border-top: $b_2;
 	padding-block-start: 2rem;
+	padding-bottom: var(--cta-height, 0);
 
 	&-top {
 		display: flex;

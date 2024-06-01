@@ -12,11 +12,13 @@ function cyn_post_type_register() {
 	cyn_make_post_type( __( 'house + land', 'cyn-dm' ), 'house-and-land', 'dashicons-admin-home' );
 	cyn_make_post_type( __( 'exhibition', 'cyn-dm' ), 'exhibition', 'dashicons-tickets-alt' );
 	cyn_make_post_type( __( 'Question', 'cyn-dm' ), 'faq', 'dashicons-editor-quote' );
+	cyn_make_post_type( __( 'Forms', 'cyn-dm' ), 'form', 'dashicons-email' );
 }
 
 function cyn_taxonomy_register() {
 	cyn_make_taxonomy( __( 'Company', 'cyn-dm' ), 'company', [ 'house', 'land', 'exhibition' ] );
 	cyn_make_taxonomy( __( 'Faq Category', 'cyn-dm' ), 'faq-cat', [ 'faq' ] );
+	cyn_make_taxonomy( __( 'Form Category', 'cyn-dm' ), 'form-cat', [ 'form' ] );
 }
 
 function cyn_make_post_type( $name, $slug, $icon, $menu = true ) {
@@ -47,6 +49,8 @@ function cyn_make_taxonomy( $name, $slug, $post_types, $is_hierarchical = true )
 
 
 	$args = [ 
+
+		'labels' => [ 'name' => $name ],
 		'hierarchical' => $is_hierarchical,
 		'show_ui' => true,
 		'show_admin_column' => true,
@@ -58,7 +62,8 @@ function cyn_make_taxonomy( $name, $slug, $post_types, $is_hierarchical = true )
 }
 
 function cyn_term_register() {
-	//wp_insert_term(__('اقتصادی', 'cyn-dm'), 'tour-type', ['slug' => 'economy']);
+	wp_insert_term( __( 'contact us page', 'cyn-dm' ), 'form-cat', [ 'slug' => 'contact-us-page' ] );
+	wp_insert_term( __( 'contact popup', 'cyn-dm' ), 'form-cat', [ 'slug' => 'contact-popup' ] );
 
 }
 

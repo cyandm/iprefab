@@ -36,7 +36,8 @@ $brochure_link = get_field( 'brochure', get_queried_object_id() );
 			   icon-name="book-with-bookmark"></i>
 			<?php _e( 'brochure', 'cyn-dm' ) ?>
 		</a>
-		<button class="btn-primary">
+		<button class="btn-primary"
+				disabled>
 			<?php _e( 'call back request', 'cyn-dm' ) ?>
 		</button>
 	</div>

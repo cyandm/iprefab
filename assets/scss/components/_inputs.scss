@@ -97,6 +97,10 @@ input[type='checkbox'] {
 				border: 1px solid $c_n_400;
 			}
 		}
+
+		&:user-invalid {
+			border-color: $c_e_dark;
+		}
 	}
 
 	&-label {
@@ -174,4 +178,12 @@ input[type='checkbox'] {
 #filtersForm .input-group {
 	padding-inline-start: 1.5rem;
 	margin-block-end: 1rem;
+}
+
+select.city-select-2 {
+	display: none;
+}
+
+.input-label {
+	z-index: 100;
 }

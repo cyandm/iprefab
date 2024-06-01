@@ -10,7 +10,7 @@ add_filter( 'upload_mimes', 'cyn_mime_types' );
 
 
 
-function cyn_enqueue_files( $build = false, $ver = '0.0.1.4' ) {
+function cyn_enqueue_files( $build = false, $ver = '1.0.0' ) {
 
 	$css_path = $build ? '/assets/css/final.css' : '/assets/css/compiled.css';
 	$js_path = $build ? '/assets/js/dist/scripts.bundle.min.js' : '/assets/js/dist/scripts.bundle.js';
@@ -19,7 +19,12 @@ function cyn_enqueue_files( $build = false, $ver = '0.0.1.4' ) {
 	wp_enqueue_style( 'cyn-style', get_stylesheet_directory() );
 	wp_dequeue_style( 'wp-block-library' );
 
-	wp_enqueue_script( 'cyn-theme', get_stylesheet_directory_uri() . $js_path, [], $ver, true );
+	wp_enqueue_script( 'cyn-theme', get_stylesheet_directory_uri() . $js_path, [ 'jquery' ], $ver, true );
+	wp_enqueue_script( 'cyn-select-2', get_stylesheet_directory_uri() . '/assets/js/libs/select2.js', [ 'jquery' ], '4.0.1', true );
+	wp_localize_script( 'cyn-theme', 'restDetails', [ 
+		'url' => rest_url(),
+		'nonce' => wp_create_nonce( 'wp_rest' )
+	] );
 	wp_dequeue_script( 'global-styles' );
 }
 

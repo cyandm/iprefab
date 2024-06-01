@@ -3,7 +3,7 @@ $primary_data = [
 	[ 
 		'icon' => 'money-4',
 		'text' => __( 'fee', 'cyn-dm' ),
-		'value' => '€' . number_format( get_field( 'price' ) ),
+		'value' => '€' . number_format( intval( get_field( 'price' ) ) ),
 	],
 	[ 
 		'icon' => 'location',

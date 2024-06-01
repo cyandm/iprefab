@@ -23,16 +23,19 @@
 			<div class="clear-fix-16"></div>
 
 			<div>
-				<form action="/">
+				<form id="contactUsPage">
 					<input type="text"
+						   required
 						   class="input-wrapper"
 						   name="name"
 						   placeholder="<?php _e( 'your name', 'cyn-dm' ) ?>" />
 					<input type="email"
+						   required
 						   class="input-wrapper"
 						   name="email"
 						   placeholder="<?php _e( 'your email', 'cyn-dm' ) ?>" />
 					<textarea name="message"
+							  required
 							  class="input-wrapper"
 							  placeholder="<?php _e( 'Your Message', 'cyn-dm' ) ?>"></textarea>
 

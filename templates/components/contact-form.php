@@ -24,6 +24,7 @@ $get_advice = [
 	[ 
 		'name' => 'price',
 		'type' => 'number',
+		'class' => '',
 		'label' => __( 'Price', 'cyn-dm' ),
 		'is_required' => false,
 		'action' => 'dollar-circle'
@@ -31,6 +32,7 @@ $get_advice = [
 	[ 
 		'name' => 'city',
 		'type' => 'select',
+		'class' => 'city-select-2',
 		'options' => [],
 		'label' => __( 'City', 'cyn-dm' ),
 		'is_required' => true,
@@ -50,13 +52,25 @@ $form_sections = [
 ];
 
 $looking_for = [ 
-	__( 'house', 'cyn-dm' ),
-	__( 'house + land', 'cyn-dm' )
+	[ 
+		'name' => 'looking-for-house',
+		'label' => __( 'house', 'cyn-dm' ),
+	],
+	[ 
+		'name' => 'looking-for-house-plus-land',
+		'label' => __( 'house + land', 'cyn-dm' ),
+	],
 ];
 
 $house_type = [ 
-	__( 'house', 'cyn-dm' ),
-	__( 'villa', 'cyn-dm' ),
+	[ 
+		'name' => 'type-house',
+		'label' => __( 'house', 'cyn-dm' ),
+	],
+	[ 
+		'name' => 'type-villa',
+		'label' => __( 'villa', 'cyn-dm' ),
+	],
 ];
 
 
@@ -76,8 +90,7 @@ $checklist_sections = [
 
 <div class="form-wrapper"
 	 id="contactFormPopUp">
-	<form action=""
-		  class="form">
+	<form class="form">
 		<div class="form_header">
 			<i class="iconsax"
 			   id="contactFormPopupCloser"
@@ -102,11 +115,11 @@ $checklist_sections = [
 								<?php echo $input['label'] ?>
 							</span>
 
-
 							<input type="<?php echo $input['type'] ?>"
-								   name="full_name"
+								   class="<?php echo $input['class'] ?>"
+								   name="<?php echo $input['name'] ?>"
 						   		<?php echo $input['is_required'] ? 'required' : '' ?>
-								   id="full_name">
+								   id="<?php echo $input['name'] ?>">
 
 							<?php if ( $input['action'] !== '' ) : ?>
 								<span class="input-action">
@@ -114,8 +127,6 @@ $checklist_sections = [
 									   icon-name="<?php echo $input['action'] ?>"></i>
 								</span>
 							<?php endif; ?>
-
-
 						</label>
 					<?php endforeach; ?>
 				</div>
@@ -135,8 +146,8 @@ $checklist_sections = [
 
 							<input type="checkbox"
 								   class="input-medium"
-								   name="<?php echo $input ?>">
-							<span><?php echo $input ?></span>
+								   name="<?php echo $input['name'] ?>">
+							<span><?php echo $input['label'] ?></span>
 
 
 						</div>

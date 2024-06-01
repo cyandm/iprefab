@@ -56,7 +56,8 @@ $is_calender = $args['is_calender'] ?? false;
 			</a>
 
 		<?php else : ?>
-			<button class="btn-primary">
+			<button class="btn-primary"
+					disabled>
 				<?php _e( 'call back request', 'cyn-dm' ) ?>
 			</button>
 

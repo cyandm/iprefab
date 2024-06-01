@@ -1,5 +1,5 @@
 <?php
-$images = get_field( 'images' ) ?? [];
+$images = is_array( get_field( 'images' ) ) ? get_field( 'images' ) : [];
 array_unshift( $images, get_post_thumbnail_id() );
 
 

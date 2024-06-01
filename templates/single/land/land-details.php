@@ -8,7 +8,7 @@ $company_logo = wp_get_attachment_image(
 $product_details = [ 
 	[ 
 		'name' => __( 'publisher', 'cyn-dm' ),
-		'value' => ''
+		'value' => $company->name,
 	],
 	[ 
 		'name' => __( 'publisher logo', 'cyn-dm' ),
@@ -16,36 +16,38 @@ $product_details = [
 	],
 	[ 
 		'name' => __( 'neighborhood', 'cyn-dm' ),
-		'value' => get_field( 'location' )
+		'value' => get_field( 'neighborhood' )
 	],
 	[ 
 		'name' => __( 'building right', 'cyn-dm' ),
-		'value' => ''
+		'value' => get_field( 'building_right' ),
 	],
 	[ 
 		'name' => __( 'extra building right', 'cyn-dm' ),
-		'value' => ''
+		'value' => get_field( 'extra_building_right' ),
+
 	],
 	[ 
 		'name' => __( 'mortgage', 'cyn-dm' ),
-		'value' => ''
+		'value' => get_field( 'mortgage' ),
+
 	],
 	[ 
 		'name' => __( 'contact name', 'cyn-dm' ),
+		'value' => get_field( 'contact_name' ),
 
-		'value' => ''
 	],
 	[ 
 		'name' => __( 'contact number', 'cyn-dm' ),
-		'value' => ''
+		'value' => get_field( 'contact_number' ),
 	],
 	[ 
 		'name' => __( 'contact email', 'cyn-dm' ),
-		'value' => ''
+		'value' => get_field( 'contact_email' ),
 	],
 	[ 
 		'name' => __( 'to demolish', 'cyn-dm' ),
-		'value' => ''
+		'value' => get_field( 'dilapidated' ) ? 'Yes' : 'No',
 	],
 ];
 

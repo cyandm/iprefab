@@ -8,4 +8,12 @@
 	padding: 2rem;
 	border-radius: 1rem;
 	align-items: center;
+
+	.actions {
+		grid-column: 1 / 6;
+		align-items: center;
+		max-width: 30%;
+		justify-content: center;
+		margin-inline: auto;
+	}
 }

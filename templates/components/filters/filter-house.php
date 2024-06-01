@@ -21,6 +21,24 @@ $countries = array_filter( $countries );
 	  method="post"
 	  id="filtersForm">
 
+	<label for="search"
+		   class="input-wrapper">
+		<span class="input-label">
+			<?php _e( 'Search', 'cyn-dm' ) ?>
+		</span>
+		<input type="text"
+			   name="search"
+			   id="search"
+			   value="<?=
+			   	isset( $filters['search'] ) ? $filters['search'] : ''
+			   	?>">
+
+		<span class="input-action">
+			<i class="iconsax"
+			   icon-name="search-normal-2"></i>
+		</span>
+	</label>
+
 	<label for="originCompany"
 		   class="input-wrapper">
 		<span class="input-label">

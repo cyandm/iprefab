@@ -16,15 +16,15 @@ function add_to_meta_query( $item_name, $meta_key, $meta_type, $meta_compare, $i
 
 	if ( $is_array === false ) {
 		$item =
-			( isset ( $filters[ $item_name ] ) && $filters[ $item_name ] !== '' ) ?
+			( isset( $filters[ $item_name ] ) && $filters[ $item_name ] !== '' ) ?
 			$filters[ $item_name ] : null;
 	}
 
 	if ( $is_array === true ) {
-		$item_min = ( isset ( $filters[ $item_name[0] ] ) && $filters[ $item_name[0] ] !== '' ) ?
+		$item_min = ( isset( $filters[ $item_name[0] ] ) && $filters[ $item_name[0] ] !== '' ) ?
 			$filters[ $item_name[0] ] : 0;
 
-		$item_max = ( isset ( $filters[ $item_name[1] ] ) && $filters[ $item_name[1] ] !== '' ) ?
+		$item_max = ( isset( $filters[ $item_name[1] ] ) && $filters[ $item_name[1] ] !== '' ) ?
 			$filters[ $item_name[1] ] : 1000000000000;
 	}
 
@@ -69,7 +69,7 @@ function cyn_sort_price( $query ) {
 	$filters = cyn_get_filters();
 	if ( $filters === false )
 		return;
-	if ( ! isset ( $filters['price-sort'] ) )
+	if ( ! isset( $filters['price-sort'] ) )
 		return;
 
 
@@ -92,6 +92,8 @@ function cyn_filter_houses( $query ) {
 
 
 	$filters = cyn_get_filters();
+
+
 	if ( $filters === false )
 		return;
 
@@ -104,10 +106,13 @@ function cyn_filter_houses( $query ) {
 	add_to_meta_query( [ 'priceMin', 'priceMax' ], 'price', 'numeric', 'between', true, $meta_query, $filters );
 
 
+
+
 	$query->set( 'meta_query', $meta_query );
+	$query->set( 's', $filters['search'] );
 
 
-	if ( isset ( $filters['originCompany'] ) && 'null' !== $filters['originCompany'] ) {
+	if ( isset( $filters['originCompany'] ) && 'null' !== $filters['originCompany'] ) {
 		$companies = get_terms( [ 
 			'taxonomy' => 'company',
 			'meta_query' => [ 
@@ -178,15 +183,17 @@ function cyn_filter_house_and_lands( $query ) {
 	)
 		return;
 
+
+
 	$filters = cyn_get_filters();
 	if ( $filters === false )
 		return;
 
+
 	$meta_query = [];
 
 
-
-	if ( isset ( $filters['city'] ) ) {
+	if ( isset( $filters['city'] ) ) {
 		$land_ids = [];
 		$q = new WP_Query( [ 
 			'post_type' => 'land',
@@ -202,39 +209,77 @@ function cyn_filter_house_and_lands( $query ) {
 			array_push( $land_ids, $post->ID );
 		}
 
+
 		array_push( $meta_query,
 			[ 
 				'key' => 'related_land',
-				'value' => $land_ids
+				'value' => $land_ids,
+
 			]
 		);
 	}
 
-	if ( isset ( $filters['houseType'] ) ) {
+	if ( isset( $filters['areaMin'] ) || isset( $filters['areaMax'] ) ) {
+
 		$house_ids = [];
-		$house_q = new WP_Query( [ 
+
+		$q = new WP_Query( [ 
 			'post_type' => 'house',
 			'meta_query' => [ 
 				[ 
-					'key' => 'type',
-					'value' => $filters['houseType']
+					'key' => 'area',
+					'value' => [ $filters['areaMin'], $filters['areaMax'] ],
+					'type' => 'NUMERIC',
+					'compare' => 'BETWEEN',
 				]
 			]
 		] );
 
-		foreach ( $house_q->posts as $post ) {
+		foreach ( $q->posts as $post ) {
 			array_push( $house_ids, $post->ID );
 		}
 
 		array_push( $meta_query,
 			[ 
 				'key' => 'related_house',
-				'value' => $house_ids
+				'value' => $house_ids,
 			]
 		);
+
 	}
 
-	// add_to_meta_query( [ 'priceMin', 'priceMax' ], 'price', 'numeric', 'between', true, $meta_query, $filters );
+
+	if ( isset( $filters['priceMin'] ) || isset( $filters['priceMax'] ) ) {
+
+		$house_ids = [];
+
+		$q = new WP_Query( [ 
+			'post_type' => 'house',
+			'meta_query' => [ 
+				[ 
+					'key' => 'area',
+					'value' => [ $filters['priceMin'], $filters['priceMax'] ],
+					'type' => 'NUMERIC',
+					'compare' => 'BETWEEN',
+				]
+			]
+		] );
+
+		foreach ( $q->posts as $post ) {
+			array_push( $house_ids, $post->ID );
+		}
+
+		array_push( $meta_query,
+			[ 
+				'key' => 'related_house',
+				'value' => $house_ids,
+			]
+		);
+
+	}
+
+
+
 
 	$query->set( 'meta_query', $meta_query );
 
@@ -247,7 +292,7 @@ function cyn_filter_house_and_lands( $query ) {
  * return bool if cookie not set
  */
 function cyn_get_filters() {
-	if ( ! isset ( $_COOKIE['cyn-filters'] ) ) {
+	if ( ! isset( $_COOKIE['cyn-filters'] ) ) {
 		return false;
 	}
 

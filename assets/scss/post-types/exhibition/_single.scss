@@ -15,6 +15,10 @@
 			color: $c_t_main;
 			@include d_flex(row, flex-start, center, $gap: $s_2);
 		}
+
+		@include mq('md') {
+			flex-direction: column-reverse;
+		}
 	}
 
 	&-time {

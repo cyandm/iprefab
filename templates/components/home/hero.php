@@ -65,7 +65,9 @@ $city_options = [
 
 
 		<form class="hero_box_form only-desktop"
-			  action="">
+			  method="post"
+			  id="filtersForm"
+			  action="<?php echo get_post_type_archive_link( 'house-and-land' ) ?>">
 			<div>
 
 				<label for="city"
@@ -76,10 +78,9 @@ $city_options = [
 					</span>
 
 					<select name=""
-							id="city">
-						<?php foreach ( $city_options as $value => $text ) : ?>
-							<option value="<?= $value ?>"><?= $text ?></option>
-						<?php endforeach; ?>
+							class="city-select-2"
+							id="cityDesktop">
+
 					</select>
 
 					<span class="input-action">
@@ -97,6 +98,7 @@ $city_options = [
 						<?php _e( 'area min', 'cyn-dm' ) ?>
 					</span>
 					<input type="text"
+						   name="areaMin"
 						   id="areaMin">
 				</label>
 
@@ -112,7 +114,9 @@ $city_options = [
 	</div>
 
 	<form class="hero_box_form only-mobile"
-		  action="">
+		  method="post"
+		  id="filtersForm"
+		  action="<?php echo get_post_type_archive_link( 'house-and-land' ) ?>">
 		<div>
 
 			<label for="city"
@@ -123,10 +127,8 @@ $city_options = [
 				</span>
 
 				<select name=""
-						id="city">
-					<?php foreach ( $city_options as $value => $text ) : ?>
-						<option value="<?= $value ?>"><?= $text ?></option>
-					<?php endforeach; ?>
+						class="city-select-2"
+						id="cityMobile">
 				</select>
 
 				<span class="input-action">
@@ -144,6 +146,7 @@ $city_options = [
 					<?php _e( 'area min', 'cyn-dm' ) ?>
 				</span>
 				<input type="text"
+					   name="areaMin"
 					   id="areaMin">
 			</label>
 
