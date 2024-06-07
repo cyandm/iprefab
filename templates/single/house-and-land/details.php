@@ -4,10 +4,10 @@ $land_id = $args['land_id'] ?? null;
 
 
 $details = [ 
-	[ 
-		'name' => __( 'publisher', 'cyn-dm' ),
-		'value' => ''
-	],
+	// [ 
+	// 	'name' => __( 'publisher', 'cyn-dm' ),
+	// 	'value' => ''
+	// ],
 	[ 
 		'name' => __( 'neighborhood', 'cyn-dm' ),
 		'value' => get_field( 'neighborhood', $land_id )

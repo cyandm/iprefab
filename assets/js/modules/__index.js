@@ -9,3 +9,4 @@ import './popup';
 import './forms';
 import './toastify';
 import './city';
+import './print';

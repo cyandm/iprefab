@@ -22,6 +22,12 @@ $is_calender = $args['is_calender'] ?? false;
 					<i class="iconsax"
 					   icon-name="share"></i>
 				</button>
+
+				<button class="action-share | btn-icon"
+						id="btnPrint">
+					<i class="iconsax"
+					   icon-name="printer"></i>
+				</button>
 			</div>
 		</div>
 		<div class="general-info-short">

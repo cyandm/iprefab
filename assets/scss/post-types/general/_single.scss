@@ -230,6 +230,10 @@
 			transform: translateY(0);
 		}
 
+		@media print {
+			display: none;
+		}
+
 		&-company {
 			@include d_flex(row, flex-start, center, nowrap, false, $s_4);
 			text-transform: capitalize;

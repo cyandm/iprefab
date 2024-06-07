@@ -1,6 +1,7 @@
 <?php
 $area = $args['area'] ?? 0;
 $price = $args['price'] ?? 0;
+$address = $args['address'] ?? '';
 
 $house_ID = $args['post_1'] ?? get_queried_object_id();
 $land_ID = $args['post_2'] ?? null;
@@ -68,6 +69,6 @@ if ( isset( $company_2 ) && $company_2 !== false ) {
 <div class="clear-fix-12"> </div>
 
 
-<!-- <div class="general-info-short">
-	Lorem ipsum dolor sit, amet consectetur • adipisicing elit. Atque enim laudantium fugit!
-</div> -->
+<div class="general-info-short">
+	<?= $address ?>
+</div>

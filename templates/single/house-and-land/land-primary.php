@@ -44,6 +44,7 @@ get_template_part(
 	null,
 	[ 
 		'primary_data' => $primary_data,
-		'title' => 'Land Primary'
+		'title' => __( 'Land Info', 'cyn-dm' )
+
 	] );
 

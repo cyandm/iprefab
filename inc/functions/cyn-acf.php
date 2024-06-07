@@ -139,7 +139,7 @@ function cyn_register_acf_house_settings() {
 		cyn_acf_add_tab( 'General' ),
 		cyn_acf_add_options( 'type', 'Type', [ 'house' => 'house', 'villa' => 'villa' ], width: 50 ),
 		cyn_acf_add_options( 'material', 'Material',
-			[ 'Wooden', 'Light Steel', 'Cement', 'Other' ], width: 50 ),
+			[ 'Wooden' => 'Wooden', 'Light Steel' => 'Light Steel', 'Cement' => 'Cement', 'Other' => 'Other' ], width: 50 ),
 		cyn_acf_add_number( 'total_area', 'Total Area', 0, 25, 'm2' ),
 		cyn_acf_add_number( 'house_area', 'House Area', 0, 25, 'm2' ),
 		cyn_acf_add_options( 'number_of_floors', 'Number of floors', [ 1 => 1, 2 => 2 ], width: 50 ),
@@ -317,15 +317,17 @@ function cyn_acf_register_homepage() {
 		cyn_acf_add_tab( 'Middle Banner' ),
 		cyn_acf_add_image( 'middle_banner', 'Middle Banner' ),
 		cyn_acf_add_tab( 'House + Land' ),
+		cyn_acf_add_text( 'house_plus_land_title', 'title' ),
 		cyn_acf_add_post_object( 'house_plus_land', 'House + Land', 'house-and-land', 100, 1 ),
 		cyn_acf_add_tab( 'Companies' ),
+		cyn_acf_add_text( 'company_title', 'title' ),
 		cyn_acf_add_taxonomy( 'companies', 'Companies', 'company' ),
 		cyn_acf_add_tab( 'Exhibitions' ),
+		cyn_acf_add_text( 'exhibitions_title', 'title' ),
 		cyn_acf_add_post_object( 'exhibitions', 'Exhibitions', 'exhibition', 100, 1 ),
 		cyn_acf_add_tab( 'Blogs' ),
+		cyn_acf_add_text( 'blogs_title', 'title' ),
 		cyn_acf_add_post_object( 'blogs', 'Blogs', 'post', 100, 1 ),
-
-
 	];
 
 	$location = [ 

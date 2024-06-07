@@ -1,4 +1,9 @@
-<?php get_header() ?>
+<?php
+$company = get_the_terms( get_queried_object_id(), 'company' )[0];
+
+
+get_header() ?>
+
 
 <main class="single-house container">
 	<?php get_template_part( '/templates/components/breadcrumb' ); ?>
@@ -13,6 +18,7 @@
 		[ 
 			'area' => get_field( 'total_area' ),
 			'price' => get_field( 'price' ),
+			'address' => $company->name . ' • ' . get_field( 'established_year', 'company_' . $company->term_id ) . ' • ' . get_field( 'country', 'company_' . $company->term_id )
 		] ) ?>
 
 	<div class="clear-fix-24"></div>

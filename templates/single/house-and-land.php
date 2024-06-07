@@ -19,6 +19,7 @@ $land_id = get_field( 'related_land', $post_id );
 			'price' => get_field( 'price', $house_id ),
 			'post_1' => $house_id,
 			'post_2' => $land_id,
+			'address' => get_field( 'neighborhood', $land_id )
 		] ) ?>
 
 	<div class="clear-fix-24"></div>
@@ -72,7 +73,7 @@ $land_id = get_field( 'related_land', $post_id );
 		null,
 		[ 
 			'company' => get_the_terms( $land_id, 'company' ),
-			'title' => 'about supplier'
+			'title' => 'about builder'
 		] )
 		?>
 

@@ -6961,6 +6961,11 @@ main.contact-us form {
 .general-bottom-cta[data-active=true] {
   transform: translateY(0);
 }
+@media print {
+  .general-bottom-cta {
+    display: none;
+  }
+}
 .general-bottom-cta-company {
   display: flex;
   flex-direction: row;

@@ -1,3 +1,5 @@
+<div class="clear-fix-64"></div>
+
 <footer class="site-footer">
 	<div class="site-footer-top | container">
 		<div class="footer-logo">

@@ -1,4 +1,6 @@
 <?php
+$company = get_the_terms( get_queried_object_id(), 'company' )[0];
+
 $primary_data = [ 
 	[ 
 		'icon' => 'money-4',
@@ -7,19 +9,19 @@ $primary_data = [
 	],
 	[ 
 		'icon' => 'location',
-		'text' => __( 'location', 'cyn-dm' ),
-		'value' => 'location',
+		'text' => __( 'origin of company', 'cyn-dm' ),
+		'value' => get_field( 'country', 'company_' . $company->term_id ),
 	],
 	[ 
 		'icon' => 'home-2',
 		'text' => __( 'house area', 'cyn-dm' ),
 		'value' => '<span>' . get_field( 'house_area' ) . '</span>' . '<span class="unit">m<sup>2</sup></span>',
 	],
-	[ 
-		'icon' => 'size',
-		'text' => __( 'total area', 'cyn-dm' ),
-		'value' => '<span>' . get_field( 'total_area' ) . '</span>' . '<span class="unit">m<sup>2</sup></span>',
-	],
+	// [ 
+	// 	'icon' => 'size',
+	// 	'text' => __( 'total area', 'cyn-dm' ),
+	// 	'value' => '<span>' . get_field( 'total_area' ) . '</span>' . '<span class="unit">m<sup>2</sup></span>',
+	// ],
 	[ 
 		'icon' => 'lamp-1',
 		'text' => __( 'rooms', 'cyn-dm' ),

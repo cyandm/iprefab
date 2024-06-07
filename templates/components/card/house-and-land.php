@@ -61,11 +61,13 @@ if ( $company_2 !== false ) {
 
 		<div class="land-card-items jc-between">
 
-			<div>
+			<div class="d-flex gap-12">
 				<?php
+				cyn_render_icon_box( 'tree', get_field( 'surface', $land_ID ), '<span>m2</span>' );
+
 				cyn_render_icon_box( 'home-2', get_field( 'total_area', $house_ID ), '<span>m2</span>' );
 
-				cyn_render_icon_box( 'star', get_field( 'permit_type', $land_ID ) );
+				cyn_render_icon_box( 'lamp-1', get_field( 'rooms', $house_ID ) );
 				?>
 			</div>
 

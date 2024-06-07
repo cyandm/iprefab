@@ -18,8 +18,10 @@ if ( is_null( $companies_from_acf ) || false == $companies_from_acf ) {
 }
 
 
-cyn_render_section_card( __( 'Suppliers in Finland', 'cyn-dm' ), [ 
-	'link' => get_permalink( get_page_by_path( 'suppliers' ) ),
-	'title' => 'view all',
-	'icon' => 'eye'
-], $companies, 'company-mini', 'swiper', 5 );
+cyn_render_section_card(
+	get_field( 'company_title' ),
+	[ 
+		'link' => get_permalink( get_page_by_path( 'suppliers' ) ),
+		'title' => 'view all',
+		'icon' => 'eye'
+	], $companies, 'company-mini', 'swiper', 5 );

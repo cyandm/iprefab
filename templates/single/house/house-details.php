@@ -18,15 +18,15 @@ $product_details = [
 	],
 	[ 
 		'name' => __( 'age of company', 'cyn-dm' ),
-		'value' => $age
+		'value' => $age . '<span class="unit">years</span>'
 	],
-	[ 
-		'name' => __( 'logo', 'cyn-dm' ),
-		'value' => $company_logo
-	],
+	// [ 
+	// 	'name' => __( 'logo', 'cyn-dm' ),
+	// 	'value' => $company_logo
+	// ],
 	[ 
 		'name' => __( 'material', 'cyn-dm' ),
-		'value' => get_field( 'material' )
+		'value' => get_field( 'material' ) ?? ''
 	],
 	[ 
 		'name' => __( 'total area', 'cyn-dm' ),

@@ -34,7 +34,7 @@ $company_logo = isset( $company ) ? wp_get_attachment_image(
 			</span>
 
 			<span class="general-card-price">
-				€ <span><?= number_format( get_field( 'helsinki_price', $post_id ) ) ?></span>
+				€ <span><?= number_format( get_field( 'price', $post_id ) ) ?></span>
 			</span>
 		</div>
 
