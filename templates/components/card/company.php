@@ -11,7 +11,8 @@ $company_logo = isset( $term ) ? wp_get_attachment_image(
 ?>
 
 <?php if ( $term !== null ) : ?>
-	<div class="company-card <?= $class ?> ">
+	<a href="<?php echo get_term_link( $term, 'company' ) ?>"
+	   class="company-card <?= $class ?> ">
 		<div class="company-card-image">
 			<?= $company_logo ?>
 		</div>
@@ -39,6 +40,6 @@ $company_logo = isset( $term ) ? wp_get_attachment_image(
 				</div>
 			</div>
 		</div>
-	</div>
+	</a>
 
 <?php endif; ?>

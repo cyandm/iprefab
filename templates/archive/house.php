@@ -1,7 +1,7 @@
 <?php
 
 global $wp_query;
-$img_url = get_option( 'cyn_product_archive_image' );
+$img_url = get_option( 'cyn_house_archive_image' );
 $filters = cyn_get_filters();
 
 ?>

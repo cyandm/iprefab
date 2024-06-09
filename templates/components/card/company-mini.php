@@ -9,11 +9,12 @@ $company_logo = isset( $term_object ) ? wp_get_attachment_image(
 	[ 'style' => '--logo-color:' . get_field( 'color', $company_acf_address ) ] ) : '';
 
 ?>
-<div class="company-card-mini <?= $class ?> | d-flex flex-col jc-center ai-center">
+<a href="<?php echo get_term_link( $term_id, 'company' ) ?>"
+   class="company-card-mini <?= $class ?> | d-flex flex-col jc-center ai-center">
 	<div class="img-wrapper">
 		<?= $company_logo ?>
 	</div>
 	<div>
 		<?php echo $term_object->name ?>
 	</div>
-</div>
+</a>

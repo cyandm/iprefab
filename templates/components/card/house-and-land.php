@@ -72,7 +72,7 @@ if ( $company_2 !== false ) {
 			</div>
 
 			<div>
-				<?php cyn_render_icon_box( 'location', get_field( 'location', $land_ID ) ); ?>
+				<?php cyn_render_icon_box( 'location', get_field( 'city', $land_ID ) ); ?>
 			</div>
 
 		</div>
