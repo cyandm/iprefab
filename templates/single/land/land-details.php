@@ -6,14 +6,14 @@ $company_logo = wp_get_attachment_image(
 	[ 'style' => '--logo-color:' . get_field( 'color', 'company_' . $company->term_id ) ] );
 
 $product_details = [ 
-	[ 
-		'name' => __( 'publisher', 'cyn-dm' ),
-		'value' => $company->name,
-	],
-	[ 
-		'name' => __( 'publisher logo', 'cyn-dm' ),
-		'value' => $company_logo
-	],
+	// [ 
+	// 	'name' => __( 'publisher', 'cyn-dm' ),
+	// 	'value' => $company->name,
+	// ],
+	// [ 
+	// 	'name' => __( 'publisher logo', 'cyn-dm' ),
+	// 	'value' => $company_logo
+	// ],
 	[ 
 		'name' => __( 'neighborhood', 'cyn-dm' ),
 		'value' => get_field( 'neighborhood' )

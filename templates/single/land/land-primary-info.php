@@ -13,12 +13,12 @@ $primary_data = [
 	[ 
 		'icon' => 'location',
 		'text' => __( 'neighborhood', 'cyn-dm' ),
-		'value' => str_split( get_field( 'location' ), 10 )[0] . '...',
+		'value' => str_split( get_field( 'neighborhood' ), 10 )[0] . '...',
 	],
 	[ 
 		'icon' => 'star',
 		'text' => __( 'permit type', 'cyn-dm' ),
-		'value' => get_field( 'permit-type' ),
+		'value' => get_field( 'permit_type' ),
 	],
 	[ 
 		'icon' => 'size',
