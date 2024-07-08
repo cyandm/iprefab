@@ -1,4 +1,7 @@
 <?php
+
+$cta_text = $args['cta_text'] ?? pll__( 'Ask Builder' );
+$cta_link = $args['cta_link'] ?? '#';
 $has_brochure = $args['has_brochure'] ?? false;
 $title = get_the_title();
 
@@ -19,8 +22,7 @@ $is_calender = $args['is_calender'] ?? false;
 			<div class="general-actions-secondary">
 				<button class="action-share | btn-icon"
 						id="btnShare">
-					<i class="iconsax"
-					   icon-name="share"></i>
+					<?php get_template_part( '/assets/icons/share' ) ?>
 				</button>
 
 				<button class="action-share | btn-icon"
@@ -58,14 +60,14 @@ $is_calender = $args['is_calender'] ?? false;
 			   class="btn-secondary btn-icon-start">
 				<i class="iconsax"
 				   icon-name="calendar-2"></i>
-				<?php _e( 'add to calender', 'cyn-dm' ) ?>
+				<?php pll_e( 'add to calender' ) ?>
 			</a>
 
 		<?php else : ?>
-			<button class="btn-primary"
-					disabled>
-				<?php _e( 'call back request', 'cyn-dm' ) ?>
-			</button>
+			<a href="<?php echo $cta_link ?>"
+			   class="btn-cta">
+				<?php echo $cta_text ?>
+			</a>
 
 		<?php endif; ?>
 	</div>

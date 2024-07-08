@@ -3,7 +3,7 @@
 
 $chips = [ 
 	[ 
-		'title' => __( 'finland', 'cyn-dm' ),
+		'title' => pll__( 'finland', 'cyn-dm' ),
 		'link' => '/'
 	],
 	[ 
@@ -71,21 +71,18 @@ $city_options = [
 			<div>
 
 				<label for="city"
-					   class="input-wrapper">
+					   class="input-wrapper citySearch">
 
 					<span class="input-label">
-						<?php _e( 'city', 'cyn-dm' ) ?>
+						<?php pll_e( 'city' ) ?>
 					</span>
 
-					<select name=""
-							class="city-select-2"
-							id="cityDesktop">
+					<input type="text">
 
-					</select>
 
 					<span class="input-action">
 						<i class="iconsax"
-						   icon-name="chevron-down"></i>
+						   icon-name="search-normal-2"></i>
 					</span>
 
 				</label>
@@ -95,18 +92,23 @@ $city_options = [
 				<label for="areaMin"
 					   class="input-wrapper">
 					<span class="input-label">
-						<?php _e( 'area min', 'cyn-dm' ) ?>
+						<?php pll_e( 'area min' ) ?>
 					</span>
-					<input type="text"
+					<input type="number"
 						   name="areaMin"
 						   id="areaMin">
+
+					<span class="input-action">
+						m <sup>2</sup>
+					</span>
 				</label>
+
 
 
 
 				<button type="submit"
 						class="btn-primary ">
-					<?php _e( 'les’t find a house', 'cyn-theme' ) ?>
+					<?php pll_e( 'search' ) ?>
 				</button>
 
 			</div>
@@ -120,20 +122,18 @@ $city_options = [
 		<div>
 
 			<label for="city"
-				   class="input-wrapper">
+				   class="input-wrapper citySearch">
 
 				<span class="input-label">
-					<?php _e( 'city', 'cyn-dm' ) ?>
+					<?php pll_e( 'city' ) ?>
 				</span>
 
-				<select name=""
-						class="city-select-2"
-						id="cityMobile">
-				</select>
+				<input type="text">
+
 
 				<span class="input-action">
 					<i class="iconsax"
-					   icon-name="chevron-down"></i>
+					   icon-name="search-normal-2"></i>
 				</span>
 
 			</label>
@@ -143,18 +143,20 @@ $city_options = [
 			<label for="areaMin"
 				   class="input-wrapper">
 				<span class="input-label">
-					<?php _e( 'area min', 'cyn-dm' ) ?>
+					<?php pll_e( 'area min' ) ?>
 				</span>
-				<input type="text"
+				<input type="number"
 					   name="areaMin"
 					   id="areaMin">
+
+
 			</label>
 
 
 
 			<button type="submit"
 					class="btn-primary ">
-				<?php _e( 'les’t find a house', 'cyn-theme' ) ?>
+				<?php pll_e( 'Search' ) ?>
 			</button>
 
 		</div>

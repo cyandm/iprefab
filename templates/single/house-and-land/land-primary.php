@@ -5,32 +5,32 @@ $land_id = $args['land_id'];
 $primary_data = [ 
 	[ 
 		'icon' => 'money-4',
-		'text' => 'fee',
+		'text' => pll__( 'fee' ),
 		'value' => '€' . number_format( intval( get_field( 'price', $land_id ) ) ),
 	],
 	[ 
 		'icon' => 'map-1',
-		'text' => 'city',
+		'text' => pll__( 'city' ),
 		'value' => get_field( 'city', $land_id ),
 	],
 	[ 
 		'icon' => 'location',
-		'text' => 'neighborhood',
+		'text' => pll__( 'neighborhood' ),
 		'value' => str_split( strval( get_field( 'neighborhood', $land_id ) ), 10 )[0],
 	],
 	[ 
 		'icon' => 'star',
-		'text' => 'permit type',
+		'text' => pll__( 'permit type' ),
 		'value' => get_field( 'permit_type', $land_id ),
 	],
 	[ 
 		'icon' => 'size',
-		'text' => 'permit size',
+		'text' => pll__( 'permit size' ),
 		'value' => '<span>' . get_field( 'surface', $land_id ) . '</span>' . '<span class="unit">m<sup>2</sup></span>',
 	],
 	[ 
 		'icon' => 'size',
-		'text' => 'total area',
+		'text' => pll__( 'total area' ),
 		'value' => '<span>' . get_field( 'surface', $land_id ) . '</span>' . '<span class="unit">m<sup>2</sup></span>',
 	],
 
@@ -44,7 +44,7 @@ get_template_part(
 	null,
 	[ 
 		'primary_data' => $primary_data,
-		'title' => __( 'Land Info', 'cyn-dm' )
+		'title' => pll__( 'Land Info' )
 
 	] );
 

@@ -55,7 +55,8 @@ if ( $company_2 !== false ) {
 			</span>
 
 			<span class="general-card-price">
-				€ <span><?= number_format( intval( get_field( 'price', $house_ID ) ) ) ?></span>
+				€
+				<span><?= number_format( intval( get_field( 'price', $house_ID ) ) + intval( get_field( 'price', $land_ID ) ) ) ?></span>
 			</span>
 		</div>
 
@@ -67,7 +68,7 @@ if ( $company_2 !== false ) {
 
 				cyn_render_icon_box( 'home-2', get_field( 'total_area', $house_ID ), '<span>m2</span>' );
 
-				cyn_render_icon_box( 'lamp-1', get_field( 'rooms', $house_ID ) );
+				cyn_render_icon_box( 'bed', get_field( 'rooms', $house_ID ), '', true );
 				?>
 			</div>
 

@@ -4,56 +4,53 @@ $land_id = $args['land_id'] ?? null;
 
 
 $details = [ 
-	// [ 
-	// 	'name' => __( 'publisher', 'cyn-dm' ),
-	// 	'value' => ''
-	// ],
+
 	[ 
-		'name' => __( 'neighborhood', 'cyn-dm' ),
+		'name' => pll__( 'neighborhood' ),
 		'value' => get_field( 'neighborhood', $land_id )
 	],
 	[ 
-		'name' => __( 'material', 'cyn-dm' ),
+		'name' => pll__( 'material' ),
 		'value' => get_field( 'material', $house_id )
 	],
 	[ 
-		'name' => __( 'total area', 'cyn-dm' ),
+		'name' => pll__( 'total area' ),
 		'value' => get_field( 'total_area', $house_id ) . '<span class="unit">m<sup>2</sup></span>'
 	],
 	[ 
-		'name' => __( 'house area', 'cyn-dm' ),
+		'name' => pll__( 'house area' ),
 		'value' => get_field( 'house_area', $house_id ) . '<span class="unit">m<sup>2</sup></span>'
 	],
 	[ 
-		'name' => __( 'balcony', 'cyn-dm' ),
+		'name' => pll__( 'balcony' ),
 		'value' => get_field( 'balcony', $house_id ) ? 'yes' : 'no'
 	],
 	[ 
-		'name' => __( 'garage', 'cyn-dm' ),
+		'name' => pll__( 'garage' ),
 		'value' => get_field( 'garage', $house_id ) ? 'yes' : 'no'
 	],
 	[ 
-		'name' => __( 'kitchen appliances', 'cyn-dm' ),
+		'name' => pll__( 'kitchen appliances' ),
 		'value' => get_field( 'kitchen_appliances', $house_id ) ? 'yes' : 'no'
 	],
 	[ 
-		'name' => __( 'bathroom appliances', 'cyn-dm' ),
+		'name' => pll__( 'bathroom appliances' ),
 		'value' => get_field( 'bathroom_appliances', $house_id ) ? 'yes' : 'no'
 	],
 	[ 
-		'name' => __( 'celling style', 'cyn-dm' ),
+		'name' => pll__( 'celling style' ),
 		'value' => get_field( 'celling_style', $house_id ),
 	],
 	[ 
-		'name' => __( 'Facade / Material', 'cyn-dm' ),
+		'name' => pll__( 'Facade / Material' ),
 		'value' => get_field( 'facade_material', $house_id )
 	],
 	[ 
-		'name' => __( 'garage (open or close)', 'cyn-dm' ),
+		'name' => pll__( 'garage (open or close)' ),
 		'value' => get_field( 'garage_mode', $house_id )
 	],
 	[ 
-		'name' => __( 'land details', 'cyn-dm' ),
+		'name' => pll__( 'land details' ),
 		'value' => "<a class=\" btn-accent btn-small \" href=\" " . get_permalink( $land_id ) . " \" > more info </a>"
 	],
 ];

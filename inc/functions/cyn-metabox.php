@@ -7,39 +7,39 @@ add_action( 'manage_form_posts_custom_column', 'cyn_form_table_column', 10, 2 );
 $meta = [ 
 	[ 
 		'name' => 'phone',
-		'label' => __( 'phone', 'cyn-dm' ),
+		'label' => pll__( 'phone', 'cyn-dm' ),
 	],
 	[ 
 		'name' => 'email',
-		'label' => __( 'email', 'cyn-dm' ),
+		'label' => pll__( 'email', 'cyn-dm' ),
 	],
 	[ 
 		'name' => 'house',
-		'label' => __( 'house', 'cyn-dm' ),
+		'label' => pll__( 'house', 'cyn-dm' ),
 	],
 	[ 
 		'name' => 'price',
-		'label' => __( 'price', 'cyn-dm' ),
+		'label' => pll__( 'price', 'cyn-dm' ),
 	],
 	[ 
 		'name' => 'city',
-		'label' => __( 'city', 'cyn-dm' ),
+		'label' => pll__( 'city', 'cyn-dm' ),
 	],
 	[ 
 		'name' => 'type-house',
-		'label' => __( 'house', 'cyn-dm' ),
+		'label' => pll__( 'house', 'cyn-dm' ),
 	],
 	[ 
 		'name' => 'type-villa',
-		'label' => __( 'villa', 'cyn-dm' ),
+		'label' => pll__( 'villa', 'cyn-dm' ),
 	],
 	[ 
 		'name' => 'looking-for-house',
-		'label' => __( 'house', 'cyn-dm' ),
+		'label' => pll__( 'house', 'cyn-dm' ),
 	],
 	[ 
 		'name' => 'looking-for-house-plus-land',
-		'label' => __( 'house + land', 'cyn-dm' ),
+		'label' => pll__( 'house + land', 'cyn-dm' ),
 	],
 
 
@@ -47,7 +47,7 @@ $meta = [
 ];
 
 function cyn_form_meta_box() {
-	add_meta_box( 'information', __( 'information', 'cyn-dm' ), function () {
+	add_meta_box( 'information', pll__( 'information', 'cyn-dm' ), function () {
 		global $post, $meta;
 		?>
 		<table>
@@ -75,8 +75,8 @@ function cyn_form_meta_box() {
 }
 
 function cyn_form_table_head( $columns ) {
-	$columns['phone'] = __( 'phone', 'cyn-dm' );
-	$columns['email'] = __( 'email', 'cyn-dm' );
+	$columns['phone'] = pll__( 'phone', 'cyn-dm' );
+	$columns['email'] = pll__( 'email', 'cyn-dm' );
 	return $columns;
 }
 

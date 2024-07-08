@@ -5,8 +5,6 @@ $img_top_url = get_option( 'cyn_house_and_land_top_archive_image' );
 $img_bottom_url = get_option( 'cyn_house_and_land_bottom_archive_image' );
 $filters = cyn_get_filters();
 
-// var_dump( $wp_query );
-// wp_die();
 
 
 ?>
@@ -22,11 +20,8 @@ $filters = cyn_get_filters();
 	<section>
 		<div class="clear-fix-24"></div>
 		<div>
-
 			<?php get_template_part( '/templates/components/filters/filter', 'house-and-land' ) ?>
-
 			<div class="clear-fix-24"></div>
-
 			<?php get_template_part( '/templates/archive/general/sort', null, [ 'post_type' => 'house-and-land' ] ) ?>
 			<div class="clear-fix-16"></div>
 			<?php get_template_part( '/templates/archive/general/posts', null, [ 'post_type' => 'house-and-land' ] ) ?>

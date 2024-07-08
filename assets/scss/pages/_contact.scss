@@ -40,4 +40,15 @@ main.contact-us {
 		display: grid;
 		gap: 1rem;
 	}
+
+	.map iframe {
+		border-radius: 1rem;
+		overflow: hidden;
+		filter: grayscale(100%);
+		transition: all 0.3s ease-in-out;
+
+		&:hover {
+			filter: grayscale(0);
+		}
+	}
 }

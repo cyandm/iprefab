@@ -1,1 +1,9 @@
 @use '../../utils/' as *;
+
+.single-land {
+	.general-actions-primary {
+		.btn-cta {
+			background-color: #128c7e;
+		}
+	}
+}

@@ -109,7 +109,7 @@ function cyn_filter_houses( $query ) {
 
 
 	$query->set( 'meta_query', $meta_query );
-	$query->set( 's', $filters['search'] );
+	// $query->set( 's', $filters['search'] );
 
 
 	if ( isset( $filters['originCompany'] ) && 'null' !== $filters['originCompany'] ) {
@@ -197,6 +197,7 @@ function cyn_filter_house_and_lands( $query ) {
 		$land_ids = [];
 		$q = new WP_Query( [ 
 			'post_type' => 'land',
+			'posts_per_page' => -1,
 			'meta_query' => [ 
 				[ 
 					'key' => 'city',
@@ -213,18 +214,19 @@ function cyn_filter_house_and_lands( $query ) {
 		array_push( $meta_query,
 			[ 
 				'key' => 'related_land',
+				'compare' => 'IN',
 				'value' => $land_ids,
-
 			]
 		);
 	}
 
+	$area_house_ids = [ 0 ];
 	if ( isset( $filters['areaMin'] ) || isset( $filters['areaMax'] ) ) {
 
-		$house_ids = [];
 
 		$q = new WP_Query( [ 
 			'post_type' => 'house',
+			'posts_per_page' => -1,
 			'meta_query' => [ 
 				[ 
 					'key' => 'area',
@@ -236,28 +238,23 @@ function cyn_filter_house_and_lands( $query ) {
 		] );
 
 		foreach ( $q->posts as $post ) {
-			array_push( $house_ids, $post->ID );
+			array_push( $area_house_ids, $post->ID );
 		}
 
-		array_push( $meta_query,
-			[ 
-				'key' => 'related_house',
-				'value' => $house_ids,
-			]
-		);
+
 
 	}
 
-
+	$price_house_ids = [ 0 ];
 	if ( isset( $filters['priceMin'] ) || isset( $filters['priceMax'] ) ) {
 
-		$house_ids = [];
 
 		$q = new WP_Query( [ 
 			'post_type' => 'house',
+			'posts_per_page' => -1,
 			'meta_query' => [ 
 				[ 
-					'key' => 'area',
+					'key' => 'price',
 					'value' => [ $filters['priceMin'], $filters['priceMax'] ],
 					'type' => 'NUMERIC',
 					'compare' => 'BETWEEN',
@@ -266,22 +263,25 @@ function cyn_filter_house_and_lands( $query ) {
 		] );
 
 		foreach ( $q->posts as $post ) {
-			array_push( $house_ids, $post->ID );
+			array_push( $price_house_ids, $post->ID );
 		}
-
-		array_push( $meta_query,
-			[ 
-				'key' => 'related_house',
-				'value' => $house_ids,
-			]
-		);
 
 	}
 
+	array_push( $meta_query,
+		[ 
+			'key' => 'related_house',
+			'compare' => 'IN',
+			'value' => array_merge( $price_house_ids, $area_house_ids ),
+		]
+	);
 
 
 
 	$query->set( 'meta_query', $meta_query );
+
+
+
 
 }
 

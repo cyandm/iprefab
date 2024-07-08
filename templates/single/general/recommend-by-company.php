@@ -31,7 +31,7 @@ foreach ( $products->posts as $post ) {
 cyn_render_section_card( 'from this builder',
 	[ 
 		'link' => get_term_link( $company ),
-		'title' => __( 'view all', 'cyn-dm' ),
+		'title' => pll__( 'view all' ),
 		'icon' => 'eye'
 	], $post_ids, $post_type, $post_type . '-recommended', $col );
 

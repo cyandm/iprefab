@@ -710,3 +710,7 @@
 .select2-container--classic.select2-container--open .select2-dropdown {
 	border-color: $c_se_dark;
 }
+
+.select2-selection__arrow {
+	display: none;
+}

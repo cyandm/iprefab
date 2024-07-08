@@ -19,7 +19,7 @@ if ( ! empty( $blogs_from_acf ) ) {
 cyn_render_section_card(
 	get_field( 'blogs_title' ),
 	[ 
-		'title' => __( 'view all', 'cyn-dm' ),
+		'title' => pll__( 'view all' ),
 		'link' => get_post_type_archive_link( 'post' ),
 		'icon' => 'eye'
 	],

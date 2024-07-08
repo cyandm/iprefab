@@ -6,14 +6,14 @@ $company_file = isset( $_GET['company_file'] );
 ?>
 
 <h1>
-	<?php _e( 'Import By Excel', 'cyn-dm' ) ?>
+	<?php pll_e( 'Import By Excel', 'cyn-dm' ) ?>
 </h1>
 
 <?php if ( $house_file ) : ?>
 	<div class="notice notice-success is-dismissible">
-		<p><?php _e( 'Houses Uploaded.', 'cyn-dm' ) ?>
+		<p><?php pll_e( 'Houses Uploaded.', 'cyn-dm' ) ?>
 			<a href="<?= admin_url( 'edit.php?post_type=house' ) ?>">
-				<?php _e( 'View', 'cyn-dm' ) ?>
+				<?php pll_e( 'View', 'cyn-dm' ) ?>
 			</a>
 		</p>
 	</div>
@@ -21,15 +21,15 @@ $company_file = isset( $_GET['company_file'] );
 
 <?php if ( $land_file ) : ?>
 	<div class="notice notice-success is-dismissible">
-		<p><?php _e( 'Lands Uploaded.', 'cyn-dm' ) ?> <a
-			   href="<?= admin_url( 'edit.php?post_type=land' ) ?>"><?php _e( 'View', 'cyn-dm' ) ?></a></p>
+		<p><?php pll_e( 'Lands Uploaded.', 'cyn-dm' ) ?> <a
+			   href="<?= admin_url( 'edit.php?post_type=land' ) ?>"><?php pll_e( 'View', 'cyn-dm' ) ?></a></p>
 	</div>
 <?php endif; ?>
 
 <?php if ( $company_file ) : ?>
 	<div class="notice notice-success is-dismissible">
-		<p><?php _e( 'Companies Uploaded.', 'cyn-dm' ) ?> <a
-			   href="<?= admin_url( 'edit-tags.php?taxonomy=company' ) ?>"><?php _e( 'View', 'cyn-dm' ) ?></a></p>
+		<p><?php pll_e( 'Companies Uploaded.', 'cyn-dm' ) ?> <a
+			   href="<?= admin_url( 'edit-tags.php?taxonomy=company' ) ?>"><?php pll_e( 'View', 'cyn-dm' ) ?></a></p>
 	</div>
 <?php endif; ?>
 
@@ -42,7 +42,7 @@ $company_file = isset( $_GET['company_file'] );
 	<table class="form-table">
 		<tbody>
 			<tr>
-				<th scope="row"><?php _e( 'Import lands', 'cyn-dm' ) ?></th>
+				<th scope="row"><?php pll_e( 'Import lands', 'cyn-dm' ) ?></th>
 				<td>
 					<input name="lands"
 						   type="file"
@@ -51,7 +51,7 @@ $company_file = isset( $_GET['company_file'] );
 			</tr>
 
 			<tr>
-				<th scope="row"><?php _e( 'Import House', 'cyn-dm' ) ?></th>
+				<th scope="row"><?php pll_e( 'Import House', 'cyn-dm' ) ?></th>
 				<td>
 					<input name="house"
 						   type="file"
@@ -60,7 +60,7 @@ $company_file = isset( $_GET['company_file'] );
 			</tr>
 
 			<tr>
-				<th scope="row"><?php _e( 'Import Company', 'cyn-dm' ) ?></th>
+				<th scope="row"><?php pll_e( 'Import Company', 'cyn-dm' ) ?></th>
 				<td>
 					<input name="company"
 						   type="file"
@@ -72,7 +72,7 @@ $company_file = isset( $_GET['company_file'] );
 				<th>
 					<button type="submit"
 							class="button button-primary">
-						<?php _e( 'Upload Files', 'cyn-dm' ) ?>
+						<?php pll_e( 'Upload Files', 'cyn-dm' ) ?>
 					</button>
 				</th>
 			</tr>

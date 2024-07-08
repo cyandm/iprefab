@@ -32,12 +32,12 @@ $q = new WP_Query( [
 
 			<div>
 				<div>
-					<span><?php _e( 'Author', 'cyn-dm' ) ?> : </span>
+					<span><?php pll_e( 'Author' ) ?> : </span>
 					<span><?= get_the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ); ?></span>
 				</div>
 
 				<div>
-					<span><?php _e( 'Date', 'cyn-dm' ) ?> : </span>
+					<span><?php pll_e( 'Date' ) ?> : </span>
 					<span><?= date_format( get_post_datetime(), 'Y/m/d' ) ?></span>
 				</div>
 			</div>
@@ -55,7 +55,7 @@ $q = new WP_Query( [
 
 		<aside class="single-post-sidebar">
 			<h4>
-				<?php _e( 'You might also like', 'cyn-dm' ) ?>
+				<?php pll_e( 'You might also like' ) ?>
 			</h4>
 
 

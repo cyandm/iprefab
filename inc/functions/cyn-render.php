@@ -90,14 +90,25 @@ function cyn_render_image( $img_id, $size = 'full' ) {
 	<?php
 }
 
-function cyn_render_icon_box( $icon, $data, $unit = '' ) {
+function cyn_render_icon_box( $icon, $data, $unit = '', $is_svg = false ) {
 	?>
-	<span class="icon-box">
-		<i class="iconsax"
-		   icon-name="<?= $icon ?>"></i>
-		<span>
-			<?= $data . ' ' . $unit ?>
+
+	<?php if ( $is_svg ) : ?>
+		<span class="icon-box">
+			<?php get_template_part( "./assets/icons/$icon" ) ?>
+			<span>
+				<?= $data . ' ' . $unit ?>
+			</span>
 		</span>
-	</span>
-	<?php
+
+	<?php else : ?>
+		<span class="icon-box">
+			<i class="iconsax"
+			   icon-name="<?= $icon ?>"></i>
+			<span>
+				<?= $data . ' ' . $unit ?>
+			</span>
+		</span>
+		<?php
+	endif;
 }

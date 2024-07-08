@@ -12,12 +12,7 @@ add_filter( 'acf/settings/show_updates', '__return_false', 100 );
 
 add_action( 'acf/include_fields', 'cyn_register_acf' );
 
-$i = 0;
-function cyn_acf_unique_id() {
-	global $i;
-	$i++;
-	return "field_$i";
-}
+
 
 
 function cyn_register_acf() {
@@ -61,7 +56,7 @@ function cyn_register_acf_company_settings() {
 		],
 	];
 
-	cyn_register_acf_group( 'Company Settings', $fields, $location );
+	cyn_register_acf_group( 'company_settings', 'Company Settings', $fields, $location );
 }
 
 function cyn_register_acf_related() {
@@ -82,7 +77,7 @@ function cyn_register_acf_related() {
 		],
 	];
 
-	cyn_register_acf_group( 'Related', $fields, $location );
+	cyn_register_acf_group( 'global_related', 'Related', $fields, $location );
 }
 
 function cyn_register_acf_lands_settings() {
@@ -108,15 +103,13 @@ function cyn_register_acf_lands_settings() {
 		cyn_acf_add_options( 'permit_type', 'Permit type', $permit_options, width: 50 ),
 		cyn_acf_add_number( 'surface', 'Surface', 0, 33, 'm2' ),
 		cyn_acf_add_number( 'building_right', 'Building Right', 0, 33, 'm2' ),
-		cyn_acf_add_number( 'extra_building_right', 'Extra Building Right', 0, 33, 'm2' ),
-		cyn_acf_add_number( 'price', 'Price', 0, 50, '€' ),
-		cyn_acf_add_number( 'mortgage', 'Mortgage', 0, 50, '€' ),
+		cyn_acf_add_number( 'price', 'Price', 0, 33, '€' ),
 		cyn_acf_add_text( 'contact_name', 'Contact Name', 0, 33 ),
 		cyn_acf_add_text( 'contact_number', 'Contact number', 0, 33 ),
-		cyn_acf_add_text( 'contact_email', 'Contact email', 0, 33 ),
-		cyn_acf_add_boolean( 'dilapidated', 'Dilapidated', 20 ),
-		cyn_acf_add_text( 'neighborhood', 'Neighborhood', 0, 80 ),
-		cyn_acf_add_google_map( 'address', 'Address', 50 ),
+		cyn_acf_add_text( 'advertise_link', 'advertise Link', 0, 33 ),
+
+		cyn_acf_add_text( 'neighborhood', 'Neighborhood', 0, 100 ),
+		cyn_acf_add_textarea( 'address', 'Address' ),
 		cyn_acf_add_wysiwyg( 'description', 'Description', 50 ),
 	];
 
@@ -130,7 +123,7 @@ function cyn_register_acf_lands_settings() {
 		],
 	];
 
-	cyn_register_acf_group( 'Lands Settings', $fields, $location );
+	cyn_register_acf_group( 'lands_settings', 'Lands Settings', $fields, $location );
 }
 
 function cyn_register_acf_house_settings() {
@@ -200,7 +193,7 @@ function cyn_register_acf_house_settings() {
 		,
 	];
 
-	cyn_register_acf_group( 'House Settings', $fields, $location );
+	cyn_register_acf_group( 'house_settings', 'House Settings', $fields, $location );
 }
 
 function cyn_register_acf_house_plus_land() {
@@ -221,7 +214,7 @@ function cyn_register_acf_house_plus_land() {
 		],
 	];
 
-	cyn_register_acf_group( 'House and lands Settings', $fields, $location );
+	cyn_register_acf_group( 'house_plus_land_settings', 'House and lands Settings', $fields, $location );
 }
 
 function cyn_acf_register_gallery() {
@@ -264,7 +257,7 @@ function cyn_acf_register_gallery() {
 		]
 	];
 
-	cyn_register_acf_group( 'Gallery',
+	cyn_register_acf_group( 'gallery', 'Gallery',
 		[ 
 			cyn_acf_add_group( 'images', 'images', $fields )
 		]
@@ -282,7 +275,7 @@ function cyn_acf_register_exhibition() {
 		],
 	];
 
-	cyn_register_acf_group( 'Exhibition Settings',
+	cyn_register_acf_group( 'exhibition_settings', 'Exhibition Settings',
 		[ 
 			cyn_acf_add_time_picker( 'begin_time', 'Begin Time', 50 ),
 			cyn_acf_add_time_picker( 'end_time', 'End Time', 50 ),
@@ -291,7 +284,7 @@ function cyn_acf_register_exhibition() {
 			cyn_acf_add_text( 'guidance_text', 'Guidance Text', 0, 33 ),
 			cyn_acf_add_text( 'guidance_link', 'Guidance Link', 0, 33 ),
 			cyn_acf_add_text( 'collection', 'Collection', 0, 33 ),
-			cyn_acf_add_google_map( 'location', 'Location' )
+			cyn_acf_add_textarea( 'location', 'Location' )
 
 
 		]
@@ -340,7 +333,7 @@ function cyn_acf_register_homepage() {
 		],
 	];
 
-	cyn_register_acf_group( 'Home Page Settings', $fields, $location );
+	cyn_register_acf_group( 'home_page_settings', 'Home Page Settings', $fields, $location );
 }
 
 function cyn_acf_register_about() {
@@ -379,7 +372,7 @@ function cyn_acf_register_about() {
 			],
 		],
 	];
-	cyn_register_acf_group( 'About Us', $fields, $location );
+	cyn_register_acf_group( 'about_us_setting', 'About Us', $fields, $location );
 
 }
 ;
@@ -388,7 +381,7 @@ function cyn_acf_register_contact() {
 
 
 	$fields = [ 
-		cyn_acf_add_google_map( 'location', 'location' )
+		cyn_acf_add_textarea( 'location', 'location' )
 	];
 
 
@@ -401,17 +394,17 @@ function cyn_acf_register_contact() {
 			],
 		],
 	];
-	cyn_register_acf_group( 'Contact Us', $fields, $location );
+	cyn_register_acf_group( 'contact_us_setting', 'Contact Us', $fields, $location );
 
 }
 
 
 
 #region  general acf
-function cyn_register_acf_group( $label, $fields = [], $location = [] ) {
+function cyn_register_acf_group( $name, $label, $fields = [], $location = [] ) {
 	acf_add_local_field_group(
 		[ 
-			'key' => cyn_acf_unique_id(),
+			'key' => $name . '_key',
 			'title' => $label,
 			'fields' => $fields,
 			'location' => $location,
@@ -430,7 +423,7 @@ function cyn_register_acf_group( $label, $fields = [], $location = [] ) {
 
 function cyn_acf_add_post_object( $name, $label, $post_type, $width = '', $multiple = 0, $return_format = 'id' ) {
 	return [ 
-		'key' => cyn_acf_unique_id(),
+		'key' => $name . '_key',
 		'label' => $label,
 		'name' => $name,
 		'type' => 'post_object',
@@ -447,7 +440,7 @@ function cyn_acf_add_post_object( $name, $label, $post_type, $width = '', $multi
 
 function cyn_acf_add_image( $name, $label ) {
 	return [ 
-		'key' => 'filed_' . cyn_acf_unique_id(),
+		'key' => 'filed_' . $name . '_key',
 		'label' => $label,
 		'name' => $name,
 		'type' => 'image',
@@ -460,7 +453,7 @@ function cyn_acf_add_image( $name, $label ) {
 
 function cyn_acf_add_color( $name, $label ) {
 	return [ 
-		'key' => 'filed_' . cyn_acf_unique_id(),
+		'key' => 'filed_' . $name . '_key',
 		'label' => $label,
 		'name' => $name,
 		'type' => 'color_picker',
@@ -474,7 +467,7 @@ function cyn_acf_add_color( $name, $label ) {
 function cyn_acf_add_options(
 	$name, $label, $choices, $multiple = 0, $return_format = 'value', $allow_null = 1, $width = '', $key = '' ) {
 	if ( $key === '' ) {
-		$key = cyn_acf_unique_id();
+		$key = $name . '_key';
 	}
 	return [ 
 		'key' => $key,
@@ -503,7 +496,7 @@ function cyn_acf_add_options(
 
 function cyn_acf_add_text( $name, $label, $required = 0, $width = '' ) {
 	return [ 
-		'key' => cyn_acf_unique_id(),
+		'key' => $name . '_key',
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -526,7 +519,7 @@ function cyn_acf_add_text( $name, $label, $required = 0, $width = '' ) {
 
 function cyn_acf_add_url( $name, $label, $required = 0, $width = '' ) {
 	return [ 
-		'key' => 'filed_' . cyn_acf_unique_id(),
+		'key' => 'filed_' . $name . '_key',
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -549,7 +542,7 @@ function cyn_acf_add_url( $name, $label, $required = 0, $width = '' ) {
 
 function cyn_acf_add_number( $name, $label, $required = 0, $width = '', $append = '' ) {
 	return [ 
-		'key' => 'filed_' . cyn_acf_unique_id(),
+		'key' => 'filed_' . $name . '_key',
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -574,7 +567,7 @@ function cyn_acf_add_number( $name, $label, $required = 0, $width = '', $append 
 
 function cyn_acf_add_tab( $label ) {
 	return [ 
-		'key' => 'filed_' . cyn_acf_unique_id(),
+		'key' => 'filed_' . $label . '_key',
 		'label' => $label,
 		'name' => '',
 		'aria-label' => '',
@@ -589,7 +582,7 @@ function cyn_acf_add_tab( $label ) {
 
 function cyn_acf_add_google_map( $name, $label, $width = '' ) {
 	return [ 
-		'key' => cyn_acf_unique_id(),
+		'key' => $name . '_key',
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -611,7 +604,7 @@ function cyn_acf_add_google_map( $name, $label, $width = '' ) {
 
 function cyn_acf_add_boolean( $name, $label, $width = '' ) {
 	return [ 
-		'key' => 'filed_' . cyn_acf_unique_id(),
+		'key' => 'filed_' . $name . '_key',
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -634,7 +627,7 @@ function cyn_acf_add_boolean( $name, $label, $width = '' ) {
 
 function cyn_acf_add_wysiwyg( $name, $label, $width = '' ) {
 	return [ 
-		'key' => 'filed_' . cyn_acf_unique_id(),
+		'key' => 'filed_' . $name . '_key',
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -657,7 +650,7 @@ function cyn_acf_add_wysiwyg( $name, $label, $width = '' ) {
 
 function cyn_acf_add_file( $name, $label, $width = '' ) {
 	return [ 
-		'key' => 'filed_' . cyn_acf_unique_id(),
+		'key' => 'filed_' . $name . '_key',
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -680,7 +673,7 @@ function cyn_acf_add_file( $name, $label, $width = '' ) {
 
 function cyn_acf_add_time_picker( $name, $label, $width = '' ) {
 	return [ 
-		'key' => 'filed_' . cyn_acf_unique_id(),
+		'key' => 'filed_' . $name . '_key',
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -700,7 +693,7 @@ function cyn_acf_add_time_picker( $name, $label, $width = '' ) {
 
 function cyn_acf_add_date_picker( $name, $label, $width = '' ) {
 	return [ 
-		'key' => 'filed_' . cyn_acf_unique_id() . '_' . current_time( 'timestamp' ),
+		'key' => 'filed_' . $name . '_key' . '_' . current_time( 'timestamp' ),
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -721,7 +714,7 @@ function cyn_acf_add_date_picker( $name, $label, $width = '' ) {
 
 function cyn_acf_add_group( $name, $label, $sub_fields ) {
 	return [ 
-		'key' => 'filed_' . cyn_acf_unique_id(),
+		'key' => 'filed_' . $name . '_key',
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => $name,
@@ -741,7 +734,7 @@ function cyn_acf_add_group( $name, $label, $sub_fields ) {
 
 function cyn_acf_add_taxonomy( $name, $label, $taxonomy, $field_type = 'multi_select' ) {
 	return [ 
-		'key' => 'filed_' . cyn_acf_unique_id(),
+		'key' => 'filed_' . $name . '_key',
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',
@@ -764,6 +757,32 @@ function cyn_acf_add_taxonomy( $name, $label, $taxonomy, $field_type = 'multi_se
 		'bidirectional' => 0,
 		'multiple' => $field_type === 'multi_select' ? 1 : 0,
 		'bidirectional_target' => [],
+	];
+}
+
+
+function cyn_acf_add_textarea( $name, $label ) {
+	return [ 
+		'key' => 'filed_' . $name . '_key',
+		'label' => $label,
+		'name' => $name,
+		'aria-label' => '',
+		'type' => 'textarea',
+		'instructions' => '',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'wrapper' => array(
+			'width' => '',
+			'class' => '',
+			'id' => '',
+		),
+
+		'placeholder' => '',
+		'maxlength' => '',
+		'rows' => '',
+		'new_lines' => '',
+		'readonly' => 0,
+		'disabled' => 0,
 	];
 }
 #endregion

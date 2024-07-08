@@ -5,7 +5,7 @@
 		'items' => [ 
 			[ 
 				'link' => '#',
-				'label' => __( 'Blogs', 'cyn-dm' )
+				'label' => pll__( 'Blogs' )
 			]
 		]
 	] ); ?>

@@ -1,6 +1,8 @@
 <?php get_header() ?>
 
-<main class="single-product container">
+
+
+<main class="single-land container">
 	<?php get_template_part( '/templates/components/breadcrumb' ); ?>
 
 	<div class="clear-fix-24"> </div>
@@ -24,6 +26,8 @@
 		, null,
 		[ 
 			'has_brochure' => false,
+			'cta_text' => 'Call Broker',
+			'cta_link' => 'tel:' . get_field( 'contact_number', get_the_ID() ),
 		] ) ?>
 
 	<div class="clear-fix-24">
@@ -61,5 +65,23 @@
 
 </main>
 
-<?php get_template_part( '/templates/single/general/bottom-cta' ) ?>
+<?php get_template_part( '/templates/single/general/bottom-cta', null, [ 
+	'buttons' => [ 
+		[ 
+			'text' => pll__( 'call' ),
+			'link' => 'tel:' . get_field( 'contact_number' ),
+			'class' => '',
+			'type' => 'link',
+			'icon' => 'phone'
+		],
+		[ 
+			'text' => pll__( 'visit advertise' ),
+			'link' => get_field( 'advertise_link' ),
+			'class' => '',
+			'type' => 'link',
+			'icon' => 'link-2'
+		],
+	]
+
+] ) ?>
 <?php get_footer() ?>

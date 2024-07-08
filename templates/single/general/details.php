@@ -5,7 +5,7 @@ $product_details = isset( $args['product_details'] ) ? $args['product_details'] 
 
 <?php if ( count( $product_details ) > 0 ) : ?>
 	<div class="general-details">
-		<h4><?php _e( 'Details', 'cyn-dm' ) ?></h4>
+		<h4><?php pll_e( 'Details' ) ?></h4>
 
 		<div class="general-details-wrapper">
 			<div class="general-table-secondary">
@@ -28,22 +28,22 @@ $product_details = isset( $args['product_details'] ) ? $args['product_details'] 
 						 alt="bank">
 				</div>
 				<p class="general-cta-description | body-s">
-					<?php _e( 'Designed to be open and spacious, the impressive hillside house sits diagonally to the slope, which
+					<?php pll_e( 'Designed to be open and spacious, the impressive hillside house sits diagonally to the slope, which
 					creates an architecturally individual and fascinating look for the home. The entrance to the home is on
-					the side of the upper slope.', 'cyn-dm' ) ?>
+					the side of the upper slope.' ) ?>
 				</p>
 
 				<div class="input-wrapper-checkbox">
 					<input type="checkbox"
 						   class="input-medium">
 					<p>
-						<?php _e( 'I accept have a land for this house', 'cyn-dm' ) ?>
+						<?php pll_e( 'I accept have a land for this house' ) ?>
 					</p>
 				</div>
 
 				<button class="btn-primary btn-full"
 						disabled>
-					<?php _e( 'Order a bank request', 'cyn-dm' ) ?>
+					<?php pll_e( 'Order a bank request' ) ?>
 				</button>
 			</div>
 		</div>

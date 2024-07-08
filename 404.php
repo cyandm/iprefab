@@ -11,12 +11,12 @@
 	</div>
 
 	<h1>
-		<?php _e( 'oops something went wrong', 'cyn-dm' ) ?>
+		<?php pll_e( 'oops something went wrong' ) ?>
 	</h1>
 
 	<a href="/"
 	   class="btn-secondary">
-		<?php _e( 'back to homepage', 'cyn-dm' ) ?>
+		<?php pll_e( 'back to homepage' ) ?>
 	</a>
 
 	<div class="clear-fix-40"></div>

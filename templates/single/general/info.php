@@ -56,11 +56,17 @@ if ( isset( $company_2 ) && $company_2 !== false ) {
 	</div>
 	<div class="general-company-logo">
 		<div <?= "style=\"--logo-color:{$company_color_1}\" "; ?>>
-			<?= $company_logo_1 ?>
+			<a
+			   href="<?php echo is_wp_error( get_term_link( $company_1->term_id, 'company' ) ) ? '' : get_term_link( $company_1->term_id, 'company' ) ?>">
+				<?= $company_logo_1 ?>
+			</a>
 		</div>
 		<?php if ( isset( $land_ID ) ) : ?>
 			<div <?= "style=\"--logo-color:{$company_color_2}\" "; ?>>
-				<?= $company_logo_2 ?>
+				<a
+				   href="<?php echo is_wp_error( get_term_link( $company_2->term_id, 'company' ) ) ? '' : get_term_link( $company_2->term_id, 'company' ) ?>">
+					<?= $company_logo_2 ?>
+				</a>
 			</div>
 		<?php endif; ?>
 	</div>

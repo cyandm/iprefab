@@ -16,7 +16,7 @@ export const generalThumbnailSwiper = new Swiper('#generalThumbnailSwiper', {
 });
 
 export const generalMainSwiper = new Swiper('#generalMainSwiper', {
-	modules: [Thumbs, Pagination],
+	modules: [Thumbs, Pagination, Navigation],
 	spaceBetween: 12,
 	autoHeight: true,
 	thumbs: {
@@ -25,6 +25,10 @@ export const generalMainSwiper = new Swiper('#generalMainSwiper', {
 	pagination: {
 		el: '.swiper-pagination',
 		type: 'fraction',
+	},
+	navigation: {
+		nextEl: ".swiper-navigation i[icon-name='chevron-right']",
+		prevEl: ".swiper-navigation i[icon-name='chevron-left']",
 	},
 });
 

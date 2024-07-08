@@ -21,7 +21,7 @@ if ( ! $related_posts ) {
 cyn_render_section_card( 'you might like',
 	[ 
 		'link' => get_post_type_archive_link( 'house-and-land' ),
-		'title' => __( 'view all', 'cyn-dm' ),
+		'title' => pll__( 'view all' ),
 		'icon' => 'eye'
 	], $post_ids, 'house-and-land', 'house-and-land-recommended', 2 );
 

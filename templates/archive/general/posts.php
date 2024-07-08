@@ -8,5 +8,9 @@ $post_type = $args['post_type'] ?? 'post';
 			the_post();
 			get_template_part( "/templates/components/card/$post_type" );
 		endwhile;
+
+	else :
+		pll_e( 'sorry, we have not found anything!' );
+
 	endif; ?>
 </div>

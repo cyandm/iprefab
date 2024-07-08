@@ -60,11 +60,12 @@
 					select,
 					input {
 						padding: 1rem 1.5rem;
-						color: $c_bg_default;
+						background-color: #fff;
+						border-radius: 100rem;
 					}
 
 					i {
-						color: $c_bg_default;
+						color: $c_se_dark;
 					}
 
 					border-color: $c_bg_default;

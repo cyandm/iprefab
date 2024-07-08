@@ -4,7 +4,7 @@
 			<div class="h5">
 				<i class="iconsax"
 				   icon-name="location"></i>
-				<?php _e( 'The address of the house presentation', 'cyn-dm' ) ?>
+				<?php pll_e( 'The address' ) ?>
 			</div>
 
 			<?= get_field( 'address' ) ?>
@@ -16,7 +16,7 @@
 			<div class="h5">
 				<i class="iconsax"
 				   icon-name="question-message"></i>
-				<?php _e( 'Guidance', 'cyn-dm' ) ?>
+				<?php pll_e( 'Guidance' ) ?>
 			</div>
 
 			<p>
@@ -26,7 +26,7 @@
 
 			<a href="<?= get_field( 'guidance_link' ) ?>"
 			   class="btn-small btn-link">
-				<?php _e( 'show driving directions', 'cyn-dm' ) ?>
+				<?php pll_e( 'Visit the original invitation ' ) ?>
 				<i class="iconsax"
 				   icon-name="arrow-right">
 				</i>
@@ -39,7 +39,7 @@
 			<div class="h5">
 				<i class="iconsax"
 				   icon-name="house-1"></i>
-				<?php _e( 'collection', 'cyn-dm' ) ?>
+				<?php pll_e( 'collection' ) ?>
 			</div>
 
 			<?= get_field( 'collection' ) ?>
@@ -47,7 +47,7 @@
 	</div>
 
 	<div class="single-exhibition-location">
-
+		<?= get_field( 'location' ) ?>
 	</div>
 
 </section>

@@ -7,7 +7,7 @@
 
 <?php get_template_part( '/templates/components/breadcrumb', null, [ 'items' => [ 
 	[ 
-		'label' => __( 'contact us', 'cyn-dm' ),
+		'label' => pll__( 'contact us' ),
 		'link' => '#'
 	]
 ] ] ) ?>
@@ -28,28 +28,29 @@
 						   required
 						   class="input-wrapper"
 						   name="name"
-						   placeholder="<?php _e( 'your name', 'cyn-dm' ) ?>" />
+						   placeholder="<?php echo pll__( 'your name' ) . ' *' ?>" />
 					<input type="email"
+						   pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
 						   required
 						   class="input-wrapper"
 						   name="email"
-						   placeholder="<?php _e( 'your email', 'cyn-dm' ) ?>" />
+						   placeholder="<?php echo pll__( 'your email' ) . ' *' ?>" />
 					<textarea name="message"
 							  required
 							  class="input-wrapper"
-							  placeholder="<?php _e( 'Your Message', 'cyn-dm' ) ?>"></textarea>
+							  placeholder="<?php pll_e( 'Your Message' ) ?>"></textarea>
 
 					<div class="button">
 
 						<input class="btn-secondary"
 							   type="submit"
-							   value="<?php _e( 'send', 'cyn-dm' ) ?>">
+							   value="<?php pll_e( 'send' ) ?>">
 					</div>
 				</form>
 			</div>
 		</div>
 
-		<div>
+		<div class="map">
 			<?php the_field( 'location' ) ?>
 		</div>
 	</div>

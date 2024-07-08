@@ -28,12 +28,12 @@
 				<a href="#"
 				   id="contactFormOpener"
 				   class="btn-cta btn-square">
-					<?php _e( 'Contact Iprefab', 'cyn-dm' ) ?>
+					<?php pll_e( 'Ask Iprefab' ) ?>
 				</a>
 
 				<div class="site-footer-follow">
 					<span>
-						<?php _e( 'Follow Us', 'cyn-dm' ) ?>
+						<?php pll_e( 'Follow Us' ) ?>
 					</span>
 
 					<div class="site-footer-social">

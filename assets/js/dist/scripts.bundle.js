@@ -5994,7 +5994,7 @@
     watchSlidesProgress: true
   });
   var generalMainSwiper = new Swiper("#generalMainSwiper", {
-    modules: [Thumb, Pagination],
+    modules: [Thumb, Pagination, Navigation],
     spaceBetween: 12,
     autoHeight: true,
     thumbs: {
@@ -6003,6 +6003,10 @@
     pagination: {
       el: ".swiper-pagination",
       type: "fraction"
+    },
+    navigation: {
+      nextEl: ".swiper-navigation i[icon-name='chevron-right']",
+      prevEl: ".swiper-navigation i[icon-name='chevron-left']"
     }
   });
   var homePageBrands = new Swiper("#homePageBrands", {
@@ -6302,6 +6306,7 @@
 
   // assets/js/modules/city.js
   function city() {
+    var _a;
     jQuery(($) => {
       const defaultOption = document.createElement("option");
       defaultOption.innerText = getCookie("cyn-filters")["city"];
@@ -6324,6 +6329,46 @@
         const cookie = getCookie("cyn-filters");
         cookie["city"] = value;
         setCookie("cyn-filters", cookie);
+      });
+    });
+    (_a = document.querySelectorAll(".citySearch")) == null ? void 0 : _a.forEach((el) => {
+      const input = el.querySelector("input");
+      const searchResults = document.createElement("div");
+      searchResults.classList.add("search-results");
+      el.appendChild(searchResults);
+      document.addEventListener("click", (ev) => {
+        if (ev.target == input)
+          return;
+        searchResults.classList.remove("active");
+      });
+      input.addEventListener("keyup", (e) => {
+        if (e.target.value < 3)
+          return;
+        jQuery(($) => {
+          $.ajax({
+            type: "GET",
+            url: restDetails.url + "cyn-api/v1/cities",
+            data: {
+              q: e.target.value
+            },
+            success: function(response) {
+              searchResults.innerHTML = "";
+              if (response.length === 0) {
+                searchResults.innerHTML = "Sorry We Not Found Anything!";
+              }
+              response.forEach((resItem) => {
+                const div = document.createElement("div");
+                div.innerText = resItem.text;
+                div.addEventListener("click", () => {
+                  input.value = resItem.text;
+                  searchResults.classList.remove("active");
+                });
+                searchResults.appendChild(div);
+              });
+              searchResults.classList.add("active");
+            }
+          });
+        });
       });
     });
   }

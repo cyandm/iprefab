@@ -2,14 +2,14 @@
 # This file is distributed under the .
 msgid ""
 msgstr ""
-"Project-Id-Version: IPrefab 0.0.1.4\n"
+"Project-Id-Version: IPrefab 1.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cyandm\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-05-30T13:45:08+00:00\n"
+"POT-Creation-Date: 2024-06-18T05:58:45+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: cyn-dm\n"
@@ -38,11 +38,11 @@ msgstr ""
 msgid "back to homepage"
 msgstr ""
 
-#: footer.php:29
+#: footer.php:31
 msgid "Contact Iprefab"
 msgstr ""
 
-#: footer.php:34
+#: footer.php:36
 msgid "Follow Us"
 msgstr ""
 
@@ -51,25 +51,59 @@ msgid "profile"
 msgstr ""
 
 #: home.php:8
-#: templates/components/home/blogs.php:20
 msgid "Blogs"
+msgstr ""
+
+#: inc/functions/cyn-metabox.php:10
+#: inc/functions/cyn-metabox.php:78
+msgid "phone"
+msgstr ""
+
+#: inc/functions/cyn-metabox.php:14
+#: inc/functions/cyn-metabox.php:79
+msgid "email"
+msgstr ""
+
+#: inc/functions/cyn-metabox.php:18
+#: inc/functions/cyn-metabox.php:30
+#: inc/functions/cyn-metabox.php:38
+#: inc/functions/cyn-register.php:11
+#: templates/components/contact-form.php:60
+#: templates/components/contact-form.php:71
+#: templates/components/filters/filter-house-and-land.php:121
+#: templates/components/filters/filter-land.php:84
+msgid "house"
+msgstr ""
+
+#: inc/functions/cyn-metabox.php:22
+msgid "price"
+msgstr ""
+
+#: inc/functions/cyn-metabox.php:26
+#: templates/components/filters/filter-house-and-land.php:18
+#: templates/components/home/hero.php:77
+#: templates/components/home/hero.php:127
+#: templates/single/land/land-primary-info.php:10
+msgid "city"
+msgstr ""
+
+#: inc/functions/cyn-metabox.php:34
+#: templates/components/contact-form.php:75
+msgid "villa"
+msgstr ""
+
+#: inc/functions/cyn-metabox.php:42
+#: inc/functions/cyn-register.php:12
+#: templates/components/contact-form.php:64
+msgid "house + land"
+msgstr ""
+
+#: inc/functions/cyn-metabox.php:50
+msgid "information"
 msgstr ""
 
 #: inc/functions/cyn-register.php:10
 msgid "land"
-msgstr ""
-
-#: inc/functions/cyn-register.php:11
-#: templates/components/contact-form.php:53
-#: templates/components/contact-form.php:58
-#: templates/components/filters/filter-house-and-land.php:103
-#: templates/components/filters/filter-land.php:83
-msgid "house"
-msgstr ""
-
-#: inc/functions/cyn-register.php:12
-#: templates/components/contact-form.php:54
-msgid "house + land"
 msgstr ""
 
 #: inc/functions/cyn-register.php:13
@@ -80,29 +114,45 @@ msgstr ""
 msgid "Question"
 msgstr ""
 
-#: inc/functions/cyn-register.php:18
-msgid "Company"
+#: inc/functions/cyn-register.php:15
+msgid "Forms"
 msgstr ""
 
 #: inc/functions/cyn-register.php:19
+msgid "Company"
+msgstr ""
+
+#: inc/functions/cyn-register.php:20
 msgid "Faq Category"
 msgstr ""
 
-#: inc/functions/cyn-register.php:70
+#: inc/functions/cyn-register.php:21
+msgid "Form Category"
+msgstr ""
+
+#: inc/functions/cyn-register.php:65
+msgid "contact us page"
+msgstr ""
+
+#: inc/functions/cyn-register.php:66
+msgid "contact popup"
+msgstr ""
+
+#: inc/functions/cyn-register.php:75
 msgid "Home"
 msgstr ""
 
-#: inc/functions/cyn-register.php:83
+#: inc/functions/cyn-register.php:88
 #: templates/suppliers.php:28
 #: templates/taxonomy/company.php:43
 msgid "suppliers"
 msgstr ""
 
-#: inc/functions/cyn-register.php:93
+#: inc/functions/cyn-register.php:98
 msgid "Contact us"
 msgstr ""
 
-#: inc/functions/cyn-register.php:103
+#: inc/functions/cyn-register.php:108
 msgid "About us"
 msgstr ""
 
@@ -202,92 +252,97 @@ msgstr ""
 msgid "publish date"
 msgstr ""
 
-#: templates/components/contact-form.php:5
+#: templates/components/contact-form.php:6
 msgid "Full Name"
 msgstr ""
 
-#: templates/components/contact-form.php:11
+#: templates/components/contact-form.php:13
 msgid "Email"
 msgstr ""
 
-#: templates/components/contact-form.php:17
+#: templates/components/contact-form.php:20
 msgid "Phone"
 msgstr ""
 
-#: templates/components/contact-form.php:27
+#: templates/components/contact-form.php:31
 msgid "Price"
 msgstr ""
 
-#: templates/components/contact-form.php:35
-#: templates/components/filters/filter-land.php:35
+#: templates/components/contact-form.php:40
+#: templates/components/filters/filter-land.php:36
 msgid "City"
 msgstr ""
 
-#: templates/components/contact-form.php:43
+#: templates/components/contact-form.php:48
 msgid "Personal Info"
 msgstr ""
 
-#: templates/components/contact-form.php:47
+#: templates/components/contact-form.php:52
 msgid "Get Advice For"
 msgstr ""
 
-#: templates/components/contact-form.php:59
-msgid "villa"
-msgstr ""
-
-#: templates/components/contact-form.php:65
+#: templates/components/contact-form.php:82
 msgid "you looking for ... "
 msgstr ""
 
-#: templates/components/contact-form.php:69
+#: templates/components/contact-form.php:86
 msgid "house type"
 msgstr ""
 
-#: templates/components/contact-form.php:86
+#: templates/components/contact-form.php:102
 msgid "Contact IPREFAB"
 msgstr ""
 
-#: templates/components/filters/filter-house-and-land.php:21
-#: templates/components/home/hero.php:75
-#: templates/components/home/hero.php:122
-#: templates/single/land/land-primary-info.php:10
-msgid "city"
-msgstr ""
-
-#: templates/components/filters/filter-house-and-land.php:27
+#: templates/components/filters/filter-house-and-land.php:25
 #: templates/components/filters/filter-house.php:51
 #: templates/components/filters/filter-house.php:153
 #: templates/components/filters/filter-house.php:181
-#: templates/components/filters/filter-land.php:41
+#: templates/components/filters/filter-land.php:42
 msgid "doesn't matter"
 msgstr ""
 
-#: templates/components/filters/filter-house-and-land.php:56
+#: templates/components/filters/filter-house-and-land.php:40
 #: templates/components/filters/filter-house.php:114
-#: templates/components/filters/filter-land.php:108
+#: templates/components/filters/filter-land.php:109
 msgid "price min"
 msgstr ""
 
-#: templates/components/filters/filter-house-and-land.php:73
+#: templates/components/filters/filter-house-and-land.php:57
 #: templates/components/filters/filter-house.php:131
-#: templates/components/filters/filter-land.php:125
+#: templates/components/filters/filter-land.php:126
 msgid "price max"
 msgstr ""
 
-#: templates/components/filters/filter-house-and-land.php:89
-#: templates/components/filters/filter-land.php:69
+#: templates/components/filters/filter-house-and-land.php:74
+#: templates/components/filters/filter-house.php:80
+#: templates/components/home/hero.php:98
+#: templates/components/home/hero.php:147
+msgid "area min"
+msgstr ""
+
+#: templates/components/filters/filter-house-and-land.php:91
+#: templates/components/filters/filter-house.php:97
+msgid "area max"
+msgstr ""
+
+#: templates/components/filters/filter-house-and-land.php:107
+#: templates/components/filters/filter-land.php:70
 msgid "Permit type"
 msgstr ""
 
-#: templates/components/filters/filter-house-and-land.php:118
-#: templates/components/filters/filter-land.php:98
+#: templates/components/filters/filter-house-and-land.php:136
+#: templates/components/filters/filter-land.php:99
 msgid "Villa"
 msgstr ""
 
-#: templates/components/filters/filter-house-and-land.php:127
+#: templates/components/filters/filter-house-and-land.php:147
 #: templates/components/filters/filter-house.php:239
-#: templates/components/filters/filter-land.php:177
+#: templates/components/filters/filter-land.php:178
 msgid "apply filter"
+msgstr ""
+
+#: templates/components/filters/filter-house-and-land.php:153
+msgid "other filters"
 msgstr ""
 
 #: templates/components/filters/filter-house.php:27
@@ -296,26 +351,20 @@ msgid "Search"
 msgstr ""
 
 #: templates/components/filters/filter-house.php:45
+#: templates/single/house-and-land/house-primary.php:14
+#: templates/single/house/house-primary-info.php:12
 msgid "origin of company"
 msgstr ""
 
-#: templates/components/filters/filter-house.php:80
-#: templates/components/home/hero.php:97
-#: templates/components/home/hero.php:144
-msgid "area min"
-msgstr ""
-
-#: templates/components/filters/filter-house.php:97
-msgid "area max"
-msgstr ""
-
 #: templates/components/filters/filter-house.php:148
-#: templates/single/house/house-primary-info.php:25
+#: templates/single/house-and-land/house-primary.php:29
+#: templates/single/house/house-primary-info.php:27
 msgid "rooms"
 msgstr ""
 
 #: templates/components/filters/filter-house.php:176
-#: templates/single/house/house-primary-info.php:30
+#: templates/single/house-and-land/house-primary.php:34
+#: templates/single/house/house-primary-info.php:33
 msgid "floors"
 msgstr ""
 
@@ -327,17 +376,17 @@ msgstr ""
 msgid "yes"
 msgstr ""
 
-#: templates/components/filters/filter-land.php:142
+#: templates/components/filters/filter-land.php:143
 msgid "surface min"
 msgstr ""
 
-#: templates/components/filters/filter-land.php:159
+#: templates/components/filters/filter-land.php:160
 msgid "surface max"
 msgstr ""
 
 #: templates/components/home/blogs.php:22
-#: templates/components/home/exhibitions.php:20
-#: templates/components/home/house-plus-land.php:19
+#: templates/components/home/exhibitions.php:22
+#: templates/components/home/house-plus-land.php:21
 #: templates/single/exhibition/recommended.php:24
 #: templates/single/general/recommend-by-company.php:34
 #: templates/single/house-and-land/recommended.php:24
@@ -348,10 +397,6 @@ msgstr ""
 msgid "view all"
 msgstr ""
 
-#: templates/components/home/exhibitions.php:19
-msgid "Discover Exhibitions"
-msgstr ""
-
 #: templates/components/home/faq.php:10
 msgid "Frequently Asked Questions"
 msgstr ""
@@ -360,16 +405,8 @@ msgstr ""
 msgid "finland"
 msgstr ""
 
-#: templates/components/home/house-plus-land.php:17
-msgid "Investment offers for House + Land"
-msgstr ""
-
 #: templates/components/home/middle-banner.php:18
 msgid "please select an image"
-msgstr ""
-
-#: templates/components/home/suppliers.php:21
-msgid "Suppliers in Finland"
 msgstr ""
 
 #. Template Name of the theme
@@ -377,19 +414,19 @@ msgstr ""
 msgid "contact us"
 msgstr ""
 
-#: templates/contact-us.php:30
+#: templates/contact-us.php:31
 msgid "your name"
 msgstr ""
 
-#: templates/contact-us.php:34
+#: templates/contact-us.php:36
 msgid "your email"
 msgstr ""
 
-#: templates/contact-us.php:37
+#: templates/contact-us.php:40
 msgid "Your Message"
 msgstr ""
 
-#: templates/contact-us.php:43
+#: templates/contact-us.php:46
 msgid "send"
 msgstr ""
 
@@ -413,18 +450,16 @@ msgstr ""
 msgid "collection"
 msgstr ""
 
-#: templates/single/general/bottom-cta.php:37
+#: templates/single/general/bottom-cta.php:13
 msgid "brochure"
 msgstr ""
 
-#: templates/single/general/bottom-cta.php:40
-#: templates/single/general/main-info.php:60
-#: templates/taxonomy/company.php:132
-msgid "call back request"
+#: templates/single/general/bottom-cta.php:20
+msgid "callback request"
 msgstr ""
 
 #: templates/single/general/company.php:34
-msgid "visit supplier"
+msgid "visit builder"
 msgstr ""
 
 #: templates/single/general/description.php:3
@@ -450,17 +485,17 @@ msgstr ""
 msgid "Order a bank request"
 msgstr ""
 
-#: templates/single/general/main-info.php:55
+#: templates/single/general/main-info.php:60
 msgid "add to calender"
+msgstr ""
+
+#: templates/single/general/main-info.php:66
+#: templates/taxonomy/company.php:134
+msgid "call back request"
 msgstr ""
 
 #: templates/single/general/primary-info.php:3
 msgid "Primary"
-msgstr ""
-
-#: templates/single/house-and-land/details.php:8
-#: templates/single/land/land-details.php:10
-msgid "publisher"
 msgstr ""
 
 #: templates/single/house-and-land/details.php:12
@@ -476,14 +511,14 @@ msgstr ""
 
 #: templates/single/house-and-land/details.php:20
 #: templates/single/house/house-details.php:32
-#: templates/single/house/house-primary-info.php:20
 #: templates/single/land/land-primary-info.php:30
 msgid "total area"
 msgstr ""
 
 #: templates/single/house-and-land/details.php:24
+#: templates/single/house-and-land/house-primary.php:19
 #: templates/single/house/house-details.php:36
-#: templates/single/house/house-primary-info.php:15
+#: templates/single/house/house-primary-info.php:17
 msgid "house area"
 msgstr ""
 
@@ -525,16 +560,26 @@ msgstr ""
 msgid "land details"
 msgstr ""
 
+#: templates/single/house-and-land/house-primary.php:9
+#: templates/single/house/house-primary-info.php:7
+#: templates/single/land/land-primary-info.php:5
+msgid "fee"
+msgstr ""
+
+#: templates/single/house-and-land/house-primary.php:48
+msgid "House Info"
+msgstr ""
+
+#: templates/single/house-and-land/land-primary.php:47
+msgid "Land Info"
+msgstr ""
+
 #: templates/single/house/house-details.php:16
 msgid "company verification type"
 msgstr ""
 
 #: templates/single/house/house-details.php:20
 msgid "age of company"
-msgstr ""
-
-#: templates/single/house/house-details.php:24
-msgid "logo"
 msgstr ""
 
 #: templates/single/house/house-details.php:40
@@ -549,45 +594,24 @@ msgstr ""
 msgid "facade / material"
 msgstr ""
 
-#: templates/single/house/house-primary-info.php:5
-#: templates/single/land/land-primary-info.php:5
-msgid "fee"
+#: templates/single/land.php:69
+msgid "call"
 msgstr ""
 
-#: templates/single/house/house-primary-info.php:10
-msgid "location"
-msgstr ""
-
-#: templates/single/land/land-details.php:14
-msgid "publisher logo"
+#: templates/single/land.php:76
+msgid "visit advertise"
 msgstr ""
 
 #: templates/single/land/land-details.php:22
 msgid "building right"
 msgstr ""
 
-#: templates/single/land/land-details.php:26
-msgid "extra building right"
-msgstr ""
-
-#: templates/single/land/land-details.php:30
-msgid "mortgage"
-msgstr ""
-
-#: templates/single/land/land-details.php:34
+#: templates/single/land/land-details.php:28
 msgid "contact name"
 msgstr ""
 
-#: templates/single/land/land-details.php:39
+#: templates/single/land/land-details.php:33
 msgid "contact number"
-msgstr ""
-
-#: templates/single/land/land-details.php:43
-msgid "contact email"
-msgstr ""
-
-#: templates/single/land/land-details.php:47
-msgid "to demolish"
 msgstr ""
 
 #: templates/single/land/land-primary-info.php:20
@@ -626,22 +650,22 @@ msgstr ""
 msgid "All Suppliers"
 msgstr ""
 
-#: templates/taxonomy/company.php:101
+#: templates/taxonomy/company.php:103
 msgid "houses"
 msgstr ""
 
-#: templates/taxonomy/company.php:113
+#: templates/taxonomy/company.php:115
 msgid "visit website"
 msgstr ""
 
-#: templates/taxonomy/company.php:120
-msgid "contact info"
+#: templates/taxonomy/company.php:122
+msgid "call company"
 msgstr ""
 
-#: templates/taxonomy/company.php:130
+#: templates/taxonomy/company.php:132
 msgid "about company"
 msgstr ""
 
-#: templates/taxonomy/company.php:158
+#: templates/taxonomy/company.php:160
 msgid "houses in IPREFAB"
 msgstr ""

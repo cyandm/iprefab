@@ -51,8 +51,8 @@
 
 	<?php get_template_part( '/templates/single/general/recommend-by-company', null,
 		[ 
-			'post_type' => 'exhibition',
-			'col' => 2
+			'post_type' => 'house',
+			'col' => 3
 		]
 	) ?>
 

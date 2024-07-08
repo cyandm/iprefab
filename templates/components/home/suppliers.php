@@ -22,6 +22,6 @@ cyn_render_section_card(
 	get_field( 'company_title' ),
 	[ 
 		'link' => get_permalink( get_page_by_path( 'suppliers' ) ),
-		'title' => 'view all',
+		'title' => pll__( 'view all' ),
 		'icon' => 'eye'
 	], $companies, 'company-mini', 'swiper', 5 );

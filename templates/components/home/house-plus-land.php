@@ -18,7 +18,7 @@ cyn_render_section_card(
 	get_field( 'house_plus_land_title' )
 	, [ 
 		'link' => get_post_type_archive_link( 'house-and-land' ),
-		'title' => __( 'view all', 'cyn-dm' ),
+		'title' => pll__( 'view all' ),
 		'icon' => 'eye'
 	], $posts, 'house-and-land', 'swiper', '2' );
 

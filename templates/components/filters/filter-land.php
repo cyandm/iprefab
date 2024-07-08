@@ -11,10 +11,10 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	  method="post"
 	  id="filtersForm">
 
-	<label for="search"
+	<!-- <label for="search"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php _e( 'Search', 'cyn-dm' ) ?>
+			<?php pll_e( 'Search', 'cyn-dm' ) ?>
 		</span>
 		<input type="text"
 			   name="search"
@@ -27,47 +27,28 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 			<i class="iconsax"
 			   icon-name="search-normal-2"></i>
 		</span>
-	</label>
+	</label> -->
 
 	<label for="city"
-		   class="city-select-2"
-		   class="input-wrapper">
+		   class="input-wrapper citySearch">
+
 		<span class="input-label">
-			<?php _e( 'City', 'cyn-dm' ) ?>
+			<?php pll_e( 'city' ) ?>
 		</span>
-		<select name="city"
-				id="city">
 
-			<option value="null">
-				<?php _e( 'doesn\'t matter', 'cyn-dm' ) ?>
-			</option>
+		<input type="text">
 
-			<?php foreach ( $cities as $city ) : ?>
-
-				<option value="<?= $city ?>"
-						<?php
-						if (
-							isset( $filters['city'] ) &&
-							$filters['city'] === $city
-						) {
-							echo 'selected';
-						}
-						?>>
-					<?= $city ?>
-				</option>
-
-			<?php endforeach; ?>
-		</select>
 
 		<span class="input-action">
 			<i class="iconsax"
-			   icon-name="chevron-down"></i>
+			   icon-name="search-normal-2"></i>
 		</span>
+
 	</label>
 
 	<div class="input-group">
 		<span class="input-group-label">
-			<?php _e( 'Permit type', 'cyn-dm' ) ?>
+			<?php pll_e( 'Permit type' ) ?>
 		</span>
 		<div class="input-group-wrapper">
 			<label for="permitTypeHouse">
@@ -81,7 +62,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 					   	'checked' : '' ?>>
 
 				<span>
-					<?php _e( 'house', 'cyn-dm' ) ?>
+					<?php pll_e( 'house' ) ?>
 				</span>
 
 			</label>
@@ -96,7 +77,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 					   	$filters['permitType'] == 'villa' ?
 					   	'checked' : '' ?>>
 				<span>
-					<?php _e( 'Villa', 'cyn-dm' ) ?>
+					<?php pll_e( 'Villa' ) ?>
 				</span>
 
 			</label>
@@ -106,7 +87,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="priceMin"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php _e( 'price min', 'cyn-dm' ) ?>
+			<?php pll_e( 'price min' ) ?>
 		</span>
 		<input type="number"
 			   name="priceMin"
@@ -123,7 +104,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="priceMax"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php _e( 'price max', 'cyn-dm' ) ?>
+			<?php pll_e( 'price max' ) ?>
 		</span>
 		<input type="number"
 			   name="priceMax"
@@ -140,7 +121,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="surfaceMin"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php _e( 'surface min', 'cyn-dm' ) ?>
+			<?php pll_e( 'surface min' ) ?>
 		</span>
 		<input type="number"
 			   name="surfaceMin"
@@ -157,7 +138,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="surfaceMax"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php _e( 'surface max', 'cyn-dm' ) ?>
+			<?php pll_e( 'surface max' ) ?>
 		</span>
 		<input type="number"
 			   name="surfaceMax"
@@ -175,6 +156,6 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 
 	<button class="btn-primary btn-full"
 			type="submit">
-		<?php _e( 'apply filter', 'cyn-dm' ) ?>
+		<?php pll_e( 'Search' ) ?>
 	</button>
 </form>

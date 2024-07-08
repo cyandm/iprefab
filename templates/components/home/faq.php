@@ -7,7 +7,7 @@ $faq_cats = get_terms( [
 
 <div class="section-card-title-wrapper">
 	<span class="h1">
-		<?php _e( 'Frequently Asked Questions', 'cyn-dm' ) ?>
+		<?php pll_e( 'Frequently Asked Questions' ) ?>
 	</span>
 </div>
 <div class="clear-fix-16"></div>

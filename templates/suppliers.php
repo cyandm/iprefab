@@ -25,7 +25,7 @@ $terms = get_terms(
 	<?php get_template_part( '/templates/components/breadcrumb', null, [ 'items' =>
 		[ 
 			[ 
-				'label' => __( 'suppliers', 'cyn-dm' ),
+				'label' => pll__( 'suppliers' ),
 				'link' => '#'
 			],
 		]
@@ -46,7 +46,7 @@ $terms = get_terms(
 
 	<!-- filters -->
 	<h2>
-		<?php _e( 'All Suppliers', 'cyn-dm' ) ?>
+		<?php pll_e( 'All Suppliers' ) ?>
 	</h2>
 	<hr>
 

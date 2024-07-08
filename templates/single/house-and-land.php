@@ -16,7 +16,7 @@ $land_id = get_field( 'related_land', $post_id );
 		, null,
 		[ 
 			'area' => get_field( 'total_area', $house_id ),
-			'price' => get_field( 'price', $house_id ),
+			'price' => intval( get_field( 'price', $house_id ) ) + intval( get_field( 'price', $land_id ) ),
 			'post_1' => $house_id,
 			'post_2' => $land_id,
 			'address' => get_field( 'neighborhood', $land_id )
@@ -32,7 +32,8 @@ $land_id = get_field( 'related_land', $post_id );
 		'/templates/single/general/main-info'
 		, null,
 		[ 
-			'has_brochure' => false,
+			'has_brochure' => true,
+			'cta_text' => pll__( 'Ask Iprefab' )
 		] ) ?>
 
 	<div class="clear-fix-24">

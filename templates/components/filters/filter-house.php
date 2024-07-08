@@ -21,10 +21,10 @@ $countries = array_filter( $countries );
 	  method="post"
 	  id="filtersForm">
 
-	<label for="search"
+	<!-- <label for="search"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php _e( 'Search', 'cyn-dm' ) ?>
+			<?php pll_e( 'Search', 'cyn-dm' ) ?>
 		</span>
 		<input type="text"
 			   name="search"
@@ -37,18 +37,18 @@ $countries = array_filter( $countries );
 			<i class="iconsax"
 			   icon-name="search-normal-2"></i>
 		</span>
-	</label>
+	</label> -->
 
 	<label for="originCompany"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php _e( 'origin of company', 'cyn-dm' ) ?>
+			<?php pll_e( 'origin of company' ) ?>
 		</span>
 		<select name="originCompany"
 				id="originCompany">
 
 			<option value="null">
-				<?php _e( 'doesn\'t matter', 'cyn-dm' ) ?>
+				<?php pll_e( 'doesn\'t matter' ) ?>
 			</option>
 
 			<?php foreach ( $countries as $country ) : ?>
@@ -77,7 +77,7 @@ $countries = array_filter( $countries );
 	<label for="areaMin"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php _e( 'area min', 'cyn-dm' ) ?>
+			<?php pll_e( 'area min' ) ?>
 		</span>
 		<input type="number"
 			   name="areaMin"
@@ -94,7 +94,7 @@ $countries = array_filter( $countries );
 	<label for="areaMax"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php _e( 'area max', 'cyn-dm' ) ?>
+			<?php pll_e( 'area max' ) ?>
 		</span>
 		<input type="number"
 			   name="areaMax"
@@ -111,7 +111,7 @@ $countries = array_filter( $countries );
 	<label for="priceMin"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php _e( 'price min', 'cyn-dm' ) ?>
+			<?php pll_e( 'price min' ) ?>
 		</span>
 		<input type="number"
 			   name="priceMin"
@@ -128,7 +128,7 @@ $countries = array_filter( $countries );
 	<label for="priceMax"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php _e( 'price max', 'cyn-dm' ) ?>
+			<?php pll_e( 'price max' ) ?>
 		</span>
 		<input type="number"
 			   name="priceMax"
@@ -145,12 +145,12 @@ $countries = array_filter( $countries );
 	<label for="rooms"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php _e( 'rooms', 'cyn-dm' ) ?>
+			<?php pll_e( 'rooms' ) ?>
 		</span>
 		<select name="rooms"
 				id="rooms">
 			<option value="null">
-				<?php _e( 'doesn\'t matter', 'cyn-dm' ) ?>
+				<?php pll_e( 'doesn\'t matter' ) ?>
 			</option>
 			<?php for ( $i = 1; $i <= 8; $i++ ) : ?>
 				<option value="<?= $i ?>"
@@ -173,12 +173,12 @@ $countries = array_filter( $countries );
 	<label for="floors"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php _e( 'floors', 'cyn-dm' ) ?>
+			<?php pll_e( 'floors' ) ?>
 		</span>
 		<select name="floors"
 				id="floors">
 			<option value="null">
-				<?php _e( 'doesn\'t matter', 'cyn-dm' ) ?>
+				<?php pll_e( 'doesn\'t matter' ) ?>
 			</option>
 			<?php for ( $i = 1; $i <= 3; $i++ ) : ?>
 				<option value="<?= $i ?>"
@@ -200,7 +200,7 @@ $countries = array_filter( $countries );
 
 	<div class="input-group">
 		<span class="input-group-label">
-			<?php _e( 'Sauna', 'cyn-dm' ) ?>
+			<?php pll_e( 'Sauna' ) ?>
 		</span>
 		<div class="input-group-wrapper">
 			<label for="saunaNo">
@@ -227,7 +227,7 @@ $countries = array_filter( $countries );
 					   	$filters['sauna'] == 'yes' ?
 					   	'checked' : '' ?>>
 				<span>
-					<?php _e( 'yes', 'cyn-dm' ) ?>
+					<?php pll_e( 'yes' ) ?>
 				</span>
 
 			</label>
@@ -236,6 +236,6 @@ $countries = array_filter( $countries );
 
 	<button class="btn-primary btn-full"
 			type="submit">
-		<?php _e( 'apply filter', 'cyn-dm' ) ?>
+		<?php pll_e( 'Search' ) ?>
 	</button>
 </form>

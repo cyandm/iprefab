@@ -7,6 +7,24 @@ $company_logo = wp_get_attachment_image(
 
 $brochure_link = get_field( 'brochure', get_queried_object_id() );
 
+
+$button_default = [ 
+	[ 
+		'text' => pll__( 'brochure' ),
+		'link' => $brochure_link,
+		'class' => '',
+		'type' => 'link',
+		'icon' => 'book-with-bookmark'
+	],
+	[ 
+		'text' => pll__( 'Ask Builder' ),
+		'class' => '',
+		'type' => 'button',
+	],
+];
+
+$buttons = $args['buttons'] ?? $button_default;
+
 ?>
 
 
@@ -30,15 +48,24 @@ $brochure_link = get_field( 'brochure', get_queried_object_id() );
 	</div>
 
 	<div class="general-actions-primary">
-		<a href="<?= $brochure_link['url'] ?>"
-		   class="btn-secondary btn-icon-start">
-			<i class="iconsax"
-			   icon-name="book-with-bookmark"></i>
-			<?php _e( 'brochure', 'cyn-dm' ) ?>
-		</a>
-		<button class="btn-primary"
-				disabled>
-			<?php _e( 'call back request', 'cyn-dm' ) ?>
-		</button>
+		<?php foreach ( $buttons as $index => $button ) : ?>
+
+			<?php if ( $button['type'] === 'link' ) : ?>
+
+				<a href="<?= $button['link'] ?>"
+				   class="btn-secondary btn-icon-start <?= $button['class'] ?>">
+					<i class="iconsax"
+					   icon-name="<?= $button['icon'] ?>"></i>
+					<?= $button['text'] ?>
+				</a>
+			<?php elseif ( $button['type'] === 'button' ) : ?>
+				<button class="btn-cta <?= $button['class'] ?>">
+					<?= $button['text'] ?>
+				</button>
+			<?php endif; ?>
+
+		<?php endforeach; ?>
+
+
 	</div>
 </div>

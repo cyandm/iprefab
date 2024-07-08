@@ -1,5 +1,18 @@
 @use '../utils' as *;
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: $c_n_100;
+	transition: background-color 5000s ease-in-out 0s;
+
+	box-shadow: inset 0 0 20px 20px $c_bg_default;
+	border-radius: inherit;
+	border-color: $c_a_main;
+}
+
 input,
 select,
 textarea {
@@ -92,6 +105,7 @@ input[type='checkbox'] {
 
 		&-checkbox {
 			@include d_flex(row, flex-start, center, nowrap, false, $s_2);
+			text-transform: capitalize;
 
 			input {
 				border: 1px solid $c_n_400;
@@ -186,4 +200,43 @@ select.city-select-2 {
 
 .input-label {
 	z-index: 100;
+}
+
+.citySearch {
+	.search-results {
+		padding: 0.5rem 1rem;
+		gap: 0.25rem;
+		height: fit-content;
+		position: absolute;
+		background-color: #fff;
+		border: #eee;
+		border-radius: 1rem;
+		inset: 0;
+		top: 100%;
+		display: flex;
+		flex-direction: column;
+		z-index: 1000;
+
+		opacity: 0;
+		pointer-events: none;
+
+		transition: opacity 0.3s ease-in-out;
+		max-height: 12rem;
+		overflow: auto;
+
+		&.active {
+			opacity: 1;
+			pointer-events: all;
+		}
+
+		div {
+			padding: 0.5rem 0.25rem;
+			width: 100%;
+			text-transform: capitalize;
+
+			&:not(:first-child) {
+				border-top: 1px solid #eee;
+			}
+		}
+	}
 }

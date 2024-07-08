@@ -19,8 +19,7 @@ $filters = cyn_get_filters();
 	<section class="d-flex gap-16 ai-start ">
 		<?php get_template_part( '/templates/archive/general/filters', null, [ 'post_type' => 'house' ] ) ?>
 
-		<div class="flex-3">
-
+		<div class="flex-3 general-archive-wrapper">
 			<?php get_template_part( '/templates/archive/general/sort', null, [ 'post_type' => 'house' ] ) ?>
 			<div class="clear-fix-16"></div>
 			<?php get_template_part( '/templates/archive/general/posts', null, [ 'post_type' => 'house' ] ) ?>
@@ -41,7 +40,7 @@ $filters = cyn_get_filters();
 		<i class="iconsax"
 		   id="filtersPopUpCloser"
 		   icon-name="x-circle"></i>
-		<h3><?php _e( 'filters', 'cyn-dm' ) ?></h3>
+		<h3><?php pll_e( 'filters' ) ?></h3>
 	</div>
 
 	<?= get_template_part( '/templates/components/filters/filter', 'house' ) ?>

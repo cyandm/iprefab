@@ -32,6 +32,14 @@ function cyn_render_images( $images ) {
 
 		</div>
 
+
+		<div class="swiper-navigation">
+			<i class="iconsax"
+			   icon-name="chevron-left"></i>
+
+			<i class="iconsax"
+			   icon-name="chevron-right"></i>
+		</div>
 	</div>
 
 	<div thumbsSlider

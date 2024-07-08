@@ -16,7 +16,7 @@ $supplier_page_q = new WP_Query( [
 $houses = [];
 
 foreach ( $wp_query->posts as $post ) {
-	if ( count( $houses ) < 3 ) {
+	if ( count( $houses ) < 3 && $post->post_type === 'house' ) {
 		array_push( $houses, $post->ID );
 	}
 }
@@ -40,7 +40,7 @@ $company_acf_address = 'company_' . $current_term->term_id;
 		'/templates/components/breadcrumb', null,
 		[ 'items' => [ 
 			[ 
-				'label' => __( 'suppliers', 'cyn-dm' ),
+				'label' => pll__( 'suppliers' ),
 				'link' => $supplier_page_link
 			],
 			[ 
@@ -56,7 +56,7 @@ $company_acf_address = 'company_' . $current_term->term_id;
 		<div class="single-company-info | d-flex gap-12">
 			<div class="single-company-logo"
 				 style="--logo-color:<?= get_field( 'color', $company_acf_address ) ?>">
-				<?= wp_get_attachment_image( get_field( 'logo', $company_acf_address ), 'full' ) ?>
+				<?= wp_get_attachment_image( get_field( 'logo', $company_acf_address ), [ 250, 250 ] ) ?>
 			</div>
 			<div class="d-grid gap-20">
 
@@ -67,22 +67,24 @@ $company_acf_address = 'company_' . $current_term->term_id;
 
 					<div class="d-flex gap-12">
 						<a href="#"
+						   id="btnPrint"
 						   class="btn-icon">
+
 							<i class="iconsax"
 							   icon-name="printer"></i>
 						</a>
 
 						<a href="#"
+						   id="btnShare"
 						   class="btn-icon">
-							<i class="iconsax"
-							   icon-name="share"></i>
+							<?php get_template_part( '/assets/icons/share' ) ?>
 						</a>
 					</div>
 
 					<div class="d-grid gap-4">
 						<div class="d-flex ai-center gap-4">
 							<span class="single-company-flag">
-								<?= wp_get_attachment_image( get_field( 'flag', $company_acf_address ), 'full' ) ?>
+								<?= wp_get_attachment_image( get_field( 'flag', $company_acf_address ), [ 'full' ] ) ?>
 							</span>
 
 							<div class="single-company-country d-flex gap-4">
@@ -98,26 +100,35 @@ $company_acf_address = 'company_' . $current_term->term_id;
 							<i class="iconsax"
 							   icon-name="house-1"></i>
 							<span><?= $wp_query->found_posts ?></span>
-							<span><?php _e( 'houses', 'cyn-dm' ) ?></span>
+							<span><?php pll_e( 'houses' ) ?></span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="single-company-cta | d-flex ai-center gap-12">
+		<div class="single-company-cta | d-flex flex-col ai-center jc-center gap-12">
 			<a href="#"
-			   class="btn-horizontal btn-secondary">
+			   class="btn-secondary">
 				<i class="iconsax"
 				   icon-name="eye"></i>
-				<?php _e( 'visit website', 'cyn-dm' ) ?>
+				<?php pll_e( 'visit website' ) ?>
 			</a>
 
-			<a href="#"
-			   class="btn-horizontal btn-secondary">
+			<a href="<?= 'tel:' . get_field( 'phone', $company_acf_address ) ?>"
+			   class="btn-primary"
+			   style="background-color:#006553; border-color:#006553">
 				<i class="iconsax"
-				   icon-name="mobile"></i>
-				<?php _e( 'contact info', 'cyn-dm' ) ?>
+				   icon-name="phone"></i>
+				<?php pll_e( 'call builder' ) ?>
+			</a>
+
+
+			<a href="<?= 'tel:' . get_field( 'phone', $company_acf_address ) ?>"
+			   class="btn-primary">
+				<i class="iconsax"
+				   icon-name="messages-1"></i>
+				<?php pll_e( 'write to builder' ) ?>
 			</a>
 		</div>
 	</section>
@@ -127,9 +138,8 @@ $company_acf_address = 'company_' . $current_term->term_id;
 	<section class="">
 
 		<div class="d-flex jc-between">
-			<h2 class="h1"><?php _e( 'about company', 'cyn-dm' ) ?></h2>
-			<a href="#"
-			   class="btn-primary"><?php _e( 'call back request', 'cyn-dm' ) ?></a>
+			<h2 class="h1"><?php pll_e( 'about company' ) ?></h2>
+
 
 		</div>
 
@@ -155,7 +165,7 @@ $company_acf_address = 'company_' . $current_term->term_id;
 
 	<?php
 	cyn_render_section_card(
-		__( 'houses in IPREFAB', 'cyn-dm' ),
+		pll__( 'houses in IPREFAB' ),
 		[ 'link' => '#', 'title' => 'view all', 'icon' => 'eye' ],
 		$houses,
 		'house'
