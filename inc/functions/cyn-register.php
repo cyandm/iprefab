@@ -16,9 +16,9 @@ function cyn_post_type_register() {
 }
 
 function cyn_taxonomy_register() {
-	cyn_make_taxonomy( pll__( 'Company', 'cyn-dm' ), 'company', [ 'house', 'land', 'exhibition' ] );
-	cyn_make_taxonomy( pll__( 'Faq Category', 'cyn-dm' ), 'faq-cat', [ 'faq' ] );
-	cyn_make_taxonomy( pll__( 'Form Category', 'cyn-dm' ), 'form-cat', [ 'form' ] );
+	cyn_make_taxonomy( pll__( 'Company' ), 'company', [ 'house', 'land', 'exhibition' ] );
+	cyn_make_taxonomy( pll__( 'Faq Category' ), 'faq-cat', [ 'faq' ] );
+	cyn_make_taxonomy( pll__( 'Form Category' ), 'form-cat', [ 'form' ] );
 }
 
 function cyn_make_post_type( $name, $slug, $icon, $menu = true ) {
@@ -62,8 +62,12 @@ function cyn_make_taxonomy( $name, $slug, $post_types, $is_hierarchical = true )
 }
 
 function cyn_term_register() {
-	wp_insert_term( pll__( 'contact us page', 'cyn-dm' ), 'form-cat', [ 'slug' => 'contact-us-page' ] );
-	wp_insert_term( pll__( 'contact popup', 'cyn-dm' ), 'form-cat', [ 'slug' => 'contact-popup' ] );
+	wp_insert_term( 'contact us page', 'form-cat', [ 'slug' => 'contact-us-page' ] );
+	wp_insert_term( 'contact popup', 'form-cat', [ 'slug' => 'contact-popup' ] );
+	wp_insert_term( 'callback popup', 'form-cat', [ 'slug' => 'callback-popup' ] );
+
+	wp_insert_term( 'house builder', 'company', [ 'slug' => 'house-builder' ] );
+	wp_insert_term( 'land advertiser', 'company', [ 'slug' => 'land-advertiser' ] );
 
 }
 

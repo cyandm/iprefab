@@ -65,7 +65,7 @@ $is_calender = $args['is_calender'] ?? false;
 
 		<?php else : ?>
 			<a href="<?php echo $cta_link ?>"
-			   class="btn-cta">
+			   class="btn-cta callback-opener">
 				<?php echo $cta_text ?>
 			</a>
 

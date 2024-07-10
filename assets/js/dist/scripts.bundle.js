@@ -6207,23 +6207,30 @@
   });
 
   // assets/js/modules/popup.js
-  function ContactForm() {
-    const contactFormOpener = document.getElementById("contactFormOpener");
-    const contactFormPopUp = document.getElementById("contactFormPopUp");
-    const contactFormPopupCloser = document.getElementById(
-      "contactFormPopupCloser"
-    );
-    if (!contactFormOpener || !contactFormPopUp || !contactFormPopupCloser)
+  function createPopup(popupSelector, closersSelectors, openersSelectors) {
+    const popup = document.querySelector(popupSelector);
+    const closers = document.querySelectorAll(closersSelectors);
+    const openers = document.querySelectorAll(openersSelectors);
+    if (!popup, !closers, !openers)
       return;
-    definePopUp(contactFormPopUp);
-    contactFormOpener.addEventListener("click", () => {
-      activateEl(contactFormPopUp);
+    definePopUp(popup);
+    openers.forEach((opener) => {
+      opener.addEventListener("click", () => {
+        activateEl(popup);
+      });
     });
-    contactFormPopupCloser.addEventListener("click", () => {
-      deActivateEl(contactFormPopUp);
+    closers.forEach((closer) => {
+      closer.addEventListener("click", () => {
+        deActivateEl(popup);
+      });
     });
   }
-  ContactForm();
+  createPopup(
+    "#contactFormPopUp",
+    "#contactFormPopupCloser",
+    "#contactFormOpener"
+  );
+  createPopup("#callBackPopUp", "#callBackPopupCloser", ".callback-opener");
 
   // assets/js/modules/toastify.js
   var import_toastify_js = __toESM(require_toastify());
@@ -6243,41 +6250,11 @@
   });
 
   // assets/js/modules/forms.js
-  function contactUsPage() {
-    const main = document.querySelector("main.contact-us");
-    const contactUsPageForm = document.querySelector("form#contactUsPage");
-    if (!main || !contactUsPageForm)
+  function createForm(formSelector, endPoint) {
+    const formWrapper = document.querySelector(formSelector);
+    if (!formWrapper)
       return;
-    contactUsPageForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const formData = new FormData(contactUsPageForm, e.submitter);
-      formData.append("_nonce", restDetails.nonce);
-      jQuery(($) => {
-        $.ajax({
-          type: "POST",
-          url: restDetails.url + "cyn-api/v1/forms/contact-page",
-          data: formData,
-          cache: false,
-          processData: false,
-          contentType: false,
-          success: (res) => {
-            successToast.showToast();
-            contactUsPageForm.reset();
-          },
-          error: (error) => {
-            errorToast.showToast();
-            console.log(error);
-          }
-        });
-      });
-    });
-  }
-  contactUsPage();
-  function contactUsPopup() {
-    const contactFormPopUp = document.getElementById("contactFormPopUp");
-    if (!contactFormPopUp)
-      return;
-    const form = contactFormPopUp.querySelector("form");
+    const form = formWrapper.querySelector("form");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       const formData = new FormData(form, e.submitter);
@@ -6285,7 +6262,7 @@
       jQuery(($) => {
         $.ajax({
           type: "POST",
-          url: restDetails.url + "cyn-api/v1/forms/contact-popup",
+          url: restDetails.url + endPoint,
           data: formData,
           cache: false,
           processData: false,
@@ -6302,7 +6279,9 @@
       });
     });
   }
-  contactUsPopup();
+  createForm("#contactFormPopUp", "cyn-api/v1/forms/contact-popup");
+  createForm("main.contact-us", "cyn-api/v1/forms/contact-page");
+  createForm("#callBackPopUp", "cyn-api/v1/forms/callback");
 
   // assets/js/modules/city.js
   function city() {

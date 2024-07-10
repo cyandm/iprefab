@@ -59,7 +59,7 @@ $buttons = $args['buttons'] ?? $button_default;
 					<?= $button['text'] ?>
 				</a>
 			<?php elseif ( $button['type'] === 'button' ) : ?>
-				<button class="btn-cta <?= $button['class'] ?>">
+				<button class="btn-cta callback-opener <?= $button['class'] ?>">
 					<?= $button['text'] ?>
 				</button>
 			<?php endif; ?>

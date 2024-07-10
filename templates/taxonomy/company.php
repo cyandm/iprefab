@@ -27,6 +27,7 @@ $supplier_page_link =
 	get_permalink( $supplier_page_q->posts[0]->ID );
 
 $company_acf_address = 'company_' . $current_term->term_id;
+$parent_id = wp_get_term_taxonomy_parent_id( get_queried_object_id(), 'company' );
 
 ?>
 
@@ -40,8 +41,8 @@ $company_acf_address = 'company_' . $current_term->term_id;
 		'/templates/components/breadcrumb', null,
 		[ 'items' => [ 
 			[ 
-				'label' => pll__( 'suppliers' ),
-				'link' => $supplier_page_link
+				'label' => get_term( $parent_id, 'company' )->name,
+				'link' => get_term_link( $parent_id, 'company' )
 			],
 			[ 
 				'label' => $current_term->name,

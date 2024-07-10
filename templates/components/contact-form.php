@@ -116,6 +116,7 @@ $checklist_sections = [
 
 									<span class="input-label">
 										<?php echo $input['label'] ?>
+										<?php echo $input['is_required'] ? ' *' : '' ?>
 									</span>
 
 									<input type="<?php echo $input['type'] ?>"

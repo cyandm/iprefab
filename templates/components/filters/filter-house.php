@@ -7,7 +7,7 @@ $companies = get_terms( [
 $countries = [];
 
 foreach ( $companies as $company ) {
-	$origin = get_field( 'origin_of_company', 'company_' . $company->term_id );
+	$origin = get_field( 'country', 'company_' . $company->term_id );
 
 	array_push( $countries, $origin );
 }
@@ -51,18 +51,18 @@ $countries = array_filter( $countries );
 				<?php pll_e( 'doesn\'t matter' ) ?>
 			</option>
 
-			<?php foreach ( $countries as $country ) : ?>
+			<?php foreach ( $countries as $material ) : ?>
 
-				<option value="<?= $country ?>"
+				<option value="<?= $material ?>"
 						<?php
 						if (
 							isset( $filters['originCompany'] ) &&
-							$filters['originCompany'] === $country
+							$filters['originCompany'] === $material
 						) {
 							echo 'selected';
 						}
 						?>>
-					<?= $country ?>
+					<?= $material ?>
 				</option>
 
 			<?php endforeach; ?>

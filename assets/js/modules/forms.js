@@ -1,47 +1,11 @@
 import { errorToast, successToast } from './toastify';
 
-export function contactUsPage() {
-	const main = document.querySelector('main.contact-us');
-	const contactUsPageForm = document.querySelector('form#contactUsPage');
+function createForm(formSelector, endPoint) {
+	const formWrapper = document.querySelector(formSelector);
 
-	if (!main || !contactUsPageForm) return;
+	if (!formWrapper) return;
 
-	contactUsPageForm.addEventListener('submit', (e) => {
-		e.preventDefault();
-		const formData = new FormData(contactUsPageForm, e.submitter);
-		formData.append('_nonce', restDetails.nonce);
-
-		jQuery(($) => {
-			$.ajax({
-				type: 'POST',
-				url: restDetails.url + 'cyn-api/v1/forms/contact-page',
-				data: formData,
-				cache: false,
-				processData: false,
-				contentType: false,
-
-				success: (res) => {
-					successToast.showToast();
-					contactUsPageForm.reset();
-				},
-
-				error: (error) => {
-					errorToast.showToast();
-					console.log(error);
-				},
-			});
-		});
-	});
-}
-
-contactUsPage();
-
-export function contactUsPopup() {
-	const contactFormPopUp = document.getElementById('contactFormPopUp');
-
-	if (!contactFormPopUp) return;
-
-	const form = contactFormPopUp.querySelector('form');
+	const form = formWrapper.querySelector('form');
 
 	form.addEventListener('submit', (e) => {
 		e.preventDefault();
@@ -51,7 +15,7 @@ export function contactUsPopup() {
 		jQuery(($) => {
 			$.ajax({
 				type: 'POST',
-				url: restDetails.url + 'cyn-api/v1/forms/contact-popup',
+				url: restDetails.url + endPoint,
 				data: formData,
 				cache: false,
 				processData: false,
@@ -71,4 +35,6 @@ export function contactUsPopup() {
 	});
 }
 
-contactUsPopup();
+createForm('#contactFormPopUp', 'cyn-api/v1/forms/contact-popup');
+createForm('main.contact-us', 'cyn-api/v1/forms/contact-page');
+createForm('#callBackPopUp', 'cyn-api/v1/forms/callback');

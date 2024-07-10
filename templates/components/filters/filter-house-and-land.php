@@ -19,7 +19,8 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 			<?php pll_e( 'city' ) ?>
 		</span>
 
-		<input type="text">
+		<input type="text"
+			   name="city">
 
 
 		<span class="input-action">

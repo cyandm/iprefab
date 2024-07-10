@@ -37,6 +37,7 @@ function cyn_register_acf_company_settings() {
 		cyn_acf_add_text( 'country', 'country' ),
 		cyn_acf_add_text( 'location', 'location' ),
 		cyn_acf_add_text( 'phone', 'phone' ),
+		cyn_acf_add_text( 'material', 'material' ),
 		cyn_acf_add_image( 'flag', 'Flag' ),
 		cyn_acf_add_image( 'logo', 'Logo' ),
 		cyn_acf_add_options( 'verified_type', 'Verified Type', [ 'star supplier' => 'Star Supplier',
@@ -82,25 +83,10 @@ function cyn_register_acf_related() {
 
 function cyn_register_acf_lands_settings() {
 
-	$city_options = [ 
-		'vantaa' => 'Vantaa',
-		'jarvenpaa' => 'Järvenpää',
-		'helsinki' => 'Helsinki',
-		'espoo' => 'Espoo',
-		'tampere' => 'Tampere',
-		'oulu' => 'Oulu',
-		'turku' => 'Turku',
-		'kirkonoumi' => 'Kirkonoumi',
-	];
-
-	$permit_options = [ 
-		'Omakotitalo' => 'Omakotitalo',
-		'Mokki' => 'Mokki',
-	];
 
 	$fields = [ 
-		cyn_acf_add_options( 'city', 'City', $city_options, width: 50, key: 'single_land_city' ),
-		cyn_acf_add_options( 'permit_type', 'Permit type', $permit_options, width: 50 ),
+		cyn_acf_add_text( 'city', 'City' ),
+		cyn_acf_add_text( 'permit_type', 'Permit type' ),
 		cyn_acf_add_number( 'surface', 'Surface', 0, 33, 'm2' ),
 		cyn_acf_add_number( 'building_right', 'Building Right', 0, 33, 'm2' ),
 		cyn_acf_add_number( 'price', 'Price', 0, 33, '€' ),

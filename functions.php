@@ -22,3 +22,4 @@ require_once ( __DIR__ . '/inc/functions/cyn-pll.php' );
 require_once ( __DIR__ . '/inc/class/cyn-upload-excel.php' );
 
 $cyn_upload_excel = new cyn_upload_excel();
+

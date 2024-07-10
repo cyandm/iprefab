@@ -1,22 +1,30 @@
 import { activateEl, deActivateEl, definePopUp } from '../utils/functions';
 
-function ContactForm() {
-	const contactFormOpener = document.getElementById('contactFormOpener');
-	const contactFormPopUp = document.getElementById('contactFormPopUp');
-	const contactFormPopupCloser = document.getElementById(
-		'contactFormPopupCloser'
-	);
-	if (!contactFormOpener || !contactFormPopUp || !contactFormPopupCloser)
-		return;
+function createPopup(popupSelector, closersSelectors, openersSelectors) {
+	const popup = document.querySelector(popupSelector);
+	const closers = document.querySelectorAll(closersSelectors);
+	const openers = document.querySelectorAll(openersSelectors);
 
-	definePopUp(contactFormPopUp);
-	contactFormOpener.addEventListener('click', () => {
-		activateEl(contactFormPopUp);
+	if ((!popup, !closers, !openers)) return;
+	definePopUp(popup);
+
+	openers.forEach((opener) => {
+		opener.addEventListener('click', () => {
+			activateEl(popup);
+		});
 	});
 
-	contactFormPopupCloser.addEventListener('click', () => {
-		deActivateEl(contactFormPopUp);
+	closers.forEach((closer) => {
+		closer.addEventListener('click', () => {
+			deActivateEl(popup);
+		});
 	});
 }
 
-ContactForm();
+createPopup(
+	'#contactFormPopUp',
+	'#contactFormPopupCloser',
+	'#contactFormOpener'
+);
+
+createPopup('#callBackPopUp', '#callBackPopupCloser', '.callback-opener');

@@ -82,8 +82,13 @@ input[type='checkbox'] {
 		margin-block-end: $s_4;
 		transition: border-color 0.2s ease;
 
+		&:has(textarea) {
+			border-radius: 2rem;
+		}
+
 		input,
-		select {
+		select,
+		textarea {
 			padding: $s_4 $s_6;
 
 			@include mq('md') {
@@ -99,7 +104,9 @@ input[type='checkbox'] {
 		&:has(input:focus),
 		&:has(input:focus-visible),
 		&:has(select:focus),
-		&:has(select:focus-visible) {
+		&:has(select:focus-visible),
+		&:has(textarea:focus),
+		&:has(textarea:focus-visible) {
 			border-color: $c_p_dark;
 		}
 
@@ -238,5 +245,19 @@ select.city-select-2 {
 				border-top: 1px solid #eee;
 			}
 		}
+	}
+}
+
+.form-row {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+
+	> *:not(button) {
+		flex: 1;
+	}
+
+	button {
+		padding-inline: 4rem;
 	}
 }

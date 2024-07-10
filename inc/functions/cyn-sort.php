@@ -11,7 +11,7 @@
  * @param array $filters
  * @return void
  */
-function add_to_meta_query( $item_name, $meta_key, $meta_type, $meta_compare, $is_array = false, &$meta_query, $filters ) {
+function add_to_meta_query( $item_name, $meta_key, $meta_type, $meta_compare, &$meta_query, $filters, $is_array = false ) {
 
 
 	if ( $is_array === false ) {
@@ -100,10 +100,10 @@ function cyn_filter_houses( $query ) {
 	$meta_query = [];
 
 
-	add_to_meta_query( 'floors', 'number_of_floors', 'numeric', '=', false, $meta_query, $filters );
-	add_to_meta_query( 'rooms', 'rooms', 'numeric', '=', false, $meta_query, $filters );
-	add_to_meta_query( [ 'areaMin', 'areaMax' ], 'total_area', 'numeric', 'between', true, $meta_query, $filters );
-	add_to_meta_query( [ 'priceMin', 'priceMax' ], 'price', 'numeric', 'between', true, $meta_query, $filters );
+	add_to_meta_query( 'floors', 'number_of_floors', 'numeric', '=', $meta_query, $filters, false );
+	add_to_meta_query( 'rooms', 'rooms', 'numeric', '=', $meta_query, $filters, false );
+	add_to_meta_query( [ 'areaMin', 'areaMax' ], 'total_area', 'numeric', 'between', $meta_query, $filters, true );
+	add_to_meta_query( [ 'priceMin', 'priceMax' ], 'price', 'numeric', 'between', $meta_query, $filters, true );
 
 
 
@@ -161,10 +161,10 @@ function cyn_filter_lands( $query ) {
 
 	$meta_query = [];
 
-	add_to_meta_query( 'city', 'city', 'char', '=', false, $meta_query, $filters );
-	add_to_meta_query( 'permitType', 'permit_type', 'char', '=', false, $meta_query, $filters );
-	add_to_meta_query( [ 'surfaceMin', 'surfaceMax' ], 'surface', 'numeric', 'between', true, $meta_query, $filters );
-	add_to_meta_query( [ 'priceMin', 'priceMax' ], 'price', 'numeric', 'between', true, $meta_query, $filters );
+	add_to_meta_query( 'city', 'city', 'char', '=', $meta_query, $filters, false );
+	add_to_meta_query( 'permitType', 'permit_type', 'char', '=', $meta_query, $filters, false );
+	add_to_meta_query( [ 'surfaceMin', 'surfaceMax' ], 'surface', 'numeric', 'between', $meta_query, $filters, true );
+	add_to_meta_query( [ 'priceMin', 'priceMax' ], 'price', 'numeric', 'between', $meta_query, $filters, true );
 
 	$query->set( 'meta_query', $meta_query );
 	$query->set( 's', $filters['search'] );

@@ -6,6 +6,7 @@ add_action( 'rest_api_init', 'cyn_register_rest_route' );
 function cyn_register_rest_route() {
 	contact_us_page();
 	contact_us_popup();
+	callback_popup();
 	cities();
 }
 
@@ -27,13 +28,13 @@ function contact_us_page() {
 			'post_author' => 1,
 			'post_title' => sanitize_text_field( $_POST['name'] ),
 			'post_content' => sanitize_textarea_field( $_POST['message'] ),
-			'tax_input' => [ 
-				'form-cat' => [ get_term_by( 'slug', 'contact-us-page', 'form-cat' )->term_id ] //@FIXME
-			],
 			'meta_input' => [ 
 				'email' => sanitize_email( $_POST['email'] ),
 			]
 		] );
+
+		wp_set_object_terms( $insert_post, [ get_term_by( 'slug', 'contact-us-page', 'form-cat' )->term_id ], 'form-cat' );
+
 
 		if ( is_wp_error( $insert_post ) )
 			return wp_send_json_error( [ 'insert_row' => false ], 500 );
@@ -71,11 +72,54 @@ function contact_us_popup() {
 			'post_type' => 'form',
 			'post_author' => 1,
 			'post_title' => sanitize_text_field( $_POST['full_name'] ),
-			'tax_input' => [ 
-				'form-cat' => [ get_term_by( 'slug', 'contact-popup', 'form-cat' )->term_id ] //@FIXME
-			],
 			'meta_input' => $meta
 		] );
+
+		wp_set_object_terms( $insert_post, [ get_term_by( 'slug', 'contact-popup', 'form-cat' )->term_id ], 'form-cat' );
+
+
+		if ( is_wp_error( $insert_post ) )
+			return wp_send_json_error( [ 'insert_row' => false ], 500 );
+
+
+
+		wp_send_json_success( [ 'post_id' => $insert_post ], 200 );
+	}
+}
+
+function callback_popup() {
+	register_rest_route( 'cyn-api/v1', '/forms/callback', [ 
+		'methods' => 'POST',
+		'callback' => 'handle_callback_popup',
+	] );
+
+	function handle_callback_popup() {
+
+		//@FIXME nonce must be checked
+		// if ( ! wp_verify_nonce( $_POST['_nonce'], 'wp_rest' ) ) {
+		// 	return wp_send_json_error( [ 'error' => 'nonce is invalid' ], 403 );
+		// }
+
+
+		$meta = [];
+
+		foreach ( $_POST as $key => $field ) {
+			if ( in_array( $key, [ 'full_name', '_nonce' ] ) )
+				continue;
+
+			$meta[ $key ] = $field;
+		}
+
+		$insert_post = wp_insert_post( [ 
+			'post_type' => 'form',
+			'post_author' => 1,
+			'post_title' => sanitize_text_field( $_POST['full_name'] ),
+			'meta_input' => $meta
+		] );
+
+		wp_set_object_terms( $insert_post, [ get_term_by( 'slug', 'callback-popup', 'form-cat' )->term_id ], 'form-cat' );
+
+
 
 		if ( is_wp_error( $insert_post ) )
 			return wp_send_json_error( [ 'insert_row' => false ], 500 );

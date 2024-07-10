@@ -1,20 +1,29 @@
 <?php
 //Template name: archive suppliers  
-?>
 
-
-
-<?php
 $img_top_url = get_option( 'cyn_company_top_archive_image' );
 $img_bottom_url = get_option( 'cyn_company_bottom_archive_image' );
 
+$children = $args['children'] ?? false;
 
-$terms = get_terms(
-	[ 
+if ( $children ) {
+
+	$terms = get_terms( [ 
 		'taxonomy' => 'company',
-		'hide_empty' => false
-	]
-);
+		'hide_empty' => false,
+		'parent' => get_queried_object_id(),
+	] );
+
+} else {
+	$terms = get_terms(
+		[ 
+			'taxonomy' => 'company',
+			'hide_empty' => false
+		]
+	);
+}
+
+
 
 ?>
 
@@ -25,7 +34,7 @@ $terms = get_terms(
 	<?php get_template_part( '/templates/components/breadcrumb', null, [ 'items' =>
 		[ 
 			[ 
-				'label' => pll__( 'suppliers' ),
+				'label' => get_queried_object()->name,
 				'link' => '#'
 			],
 		]
@@ -40,13 +49,15 @@ $terms = get_terms(
 
 	<div class="clear-fix-24"></div>
 
-	<?php get_template_part( '/templates/single/exhibition/recommended', null, [] ) ?>
+
+
+	<?php get_template_part( '/templates/components/filters/filter', 'company', [] ) ?>
 
 	<div class="clear-fix-64"></div>
 
 	<!-- filters -->
 	<h2>
-		<?php pll_e( 'All Suppliers' ) ?>
+		<?php echo pll__( 'All' ) . ' ' . get_queried_object()->name ?>
 	</h2>
 	<hr>
 
@@ -65,6 +76,10 @@ $terms = get_terms(
 
 		} ?>
 	</div>
+
+	<div class="clear-fix-64"></div>
+
+	<?php get_template_part( '/templates/single/exhibition/recommended', null, [] ) ?>
 
 	<div class="clear-fix-80"></div>
 

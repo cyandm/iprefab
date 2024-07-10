@@ -61,6 +61,7 @@
 
 </footer>
 <?php get_template_part( '/templates/components/contact-form' ) ?>
+<?php get_template_part( '/templates/components/callback-request' ) ?>
 
 
 
