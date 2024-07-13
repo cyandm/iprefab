@@ -2,8 +2,6 @@
 global $wp_query;
 $post_type = $args['post_type'] ?? 'post';
 
-
-$_GET = cyn_get_filters();
 ?>
 
 
@@ -13,21 +11,21 @@ $_GET = cyn_get_filters();
 	   class="btn-secondary filter-btn">
 		<i class="iconsax"
 		   icon-name="filter"></i>
-		<?php pll_e( 'filters', 'cyn-dm' ) ?>
+		<?php pll_e( 'filters' ) ?>
 	</a>
 
 	<a class="btn-secondary sort-btn">
 		<i class="iconsax"
 		   icon-name="arrow-up-down"></i>
-		<?php pll_e( 'sort by', 'cyn-dm' ) ?>
+		<?php pll_e( 'sort by' ) ?>
 
 		<div class="general-archive-sort-panel">
 			<form action="<?= get_post_type_archive_link( $post_type ) ?>"
-				  method="post"
+				  method="GET"
 				  id="sortForm">
 				<div class="input-group">
 					<span class="input-group-label">
-						<?php pll_e( 'Price Sort', 'cyn-dm' ) ?>
+						<?php pll_e( 'Price Sort' ) ?>
 					</span>
 					<div class="input-group-wrapper">
 						<label for="priceLowest">
@@ -40,7 +38,7 @@ $_GET = cyn_get_filters();
 								   	$_GET['price-sort'] == 'lowest' ?
 								   	'checked' : '' ?>>
 							<span>
-								<?php pll_e( 'lowest', 'cyn-dm' ) ?>
+								<?php pll_e( 'lowest' ) ?>
 							</span>
 
 						</label>
@@ -55,7 +53,7 @@ $_GET = cyn_get_filters();
 								   	$_GET['price-sort'] == 'highest' ?
 								   	'checked' : '' ?>>
 							<span>
-								<?php pll_e( 'highest', 'cyn-dm' ) ?>
+								<?php pll_e( 'highest' ) ?>
 							</span>
 
 						</label>
@@ -64,17 +62,17 @@ $_GET = cyn_get_filters();
 
 				<button class="btn-primary"
 						type="submit">
-					<?php pll_e( 'sort', 'cyn-dm' ) ?>
+					<?php pll_e( 'sort' ) ?>
 				</button>
 			</form>
 		</div>
 	</a>
 
 	<span class="general-archive-found-posts">
-		<?php pll_e( 'finland:', 'cyn-dm' ) ?>
+		<?php pll_e( 'finland:' ) ?>
 		<span id="foundPosts">
 			<?= $wp_query->found_posts ?>
 		</span>
-		<?php pll_e( 'items', 'cyn-dm' ) ?>
+		<?php pll_e( 'items' ) ?>
 	</span>
 </div>

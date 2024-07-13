@@ -1,5 +1,4 @@
 <?php
-$_GET = cyn_get_filters();
 
 $companies = get_terms( [ 
 	'taxonomy' => 'company'
@@ -18,13 +17,13 @@ $countries = array_filter( $countries );
 ?>
 
 <form action="<?= get_post_type_archive_link( 'house' ) ?>"
-	  method="post"
+	  method="GET"
 	  id="filtersForm">
 
 	<!-- <label for="search"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php pll_e( 'Search', 'cyn-dm' ) ?>
+			<?php pll_e( 'Search' ) ?>
 		</span>
 		<input type="text"
 			   name="search"

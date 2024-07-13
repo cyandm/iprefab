@@ -1,5 +1,4 @@
 <?php
-$_GET = cyn_get_filters();
 
 $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 
@@ -8,7 +7,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 
 
 <form action="<?= get_post_type_archive_link( 'land' ) ?>"
-	  method="post"
+	  method="get"
 	  id="filtersForm">
 
 	<!-- <label for="search"

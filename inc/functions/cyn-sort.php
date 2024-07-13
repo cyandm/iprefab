@@ -66,17 +66,17 @@ function cyn_sort_price( $query ) {
 		return;
 
 
-	$filters = cyn_get_filters();
-	if ( $filters === false )
+	if ( count( $_GET ) === 0 )
 		return;
-	if ( ! isset( $filters['price-sort'] ) )
+
+	if ( ! isset( $_GET['price-sort'] ) )
 		return;
 
 
 
 	$query->set( 'orderby', 'meta_value_num' );
 	$query->set( 'meta_key', 'price' );
-	$query->set( 'order', $filters['price-sort'] === 'lowest' ? 'ASC' : 'DESC' );
+	$query->set( 'order', $_GET['price-sort'] === 'lowest' ? 'ASC' : 'DESC' );
 
 }
 
@@ -91,19 +91,16 @@ function cyn_filter_houses( $query ) {
 		return;
 
 
-	$filters = cyn_get_filters();
-
-
-	if ( $filters === false )
+	if ( count( $_GET ) === 0 )
 		return;
 
 	$meta_query = [];
 
 
-	add_to_meta_query( 'floors', 'number_of_floors', 'numeric', '=', $meta_query, $filters, false );
-	add_to_meta_query( 'rooms', 'rooms', 'numeric', '=', $meta_query, $filters, false );
-	add_to_meta_query( [ 'areaMin', 'areaMax' ], 'total_area', 'numeric', 'between', $meta_query, $filters, true );
-	add_to_meta_query( [ 'priceMin', 'priceMax' ], 'price', 'numeric', 'between', $meta_query, $filters, true );
+	add_to_meta_query( 'floors', 'number_of_floors', 'numeric', '=', $meta_query, $_GET, false );
+	add_to_meta_query( 'rooms', 'rooms', 'numeric', '=', $meta_query, $_GET, false );
+	add_to_meta_query( [ 'areaMin', 'areaMax' ], 'total_area', 'numeric', 'between', $meta_query, $_GET, true );
+	add_to_meta_query( [ 'priceMin', 'priceMax' ], 'price', 'numeric', 'between', $meta_query, $_GET, true );
 
 
 
@@ -112,13 +109,13 @@ function cyn_filter_houses( $query ) {
 	// $query->set( 's', $filters['search'] );
 
 
-	if ( isset( $filters['originCompany'] ) && 'null' !== $filters['originCompany'] ) {
+	if ( isset( $_GET['originCompany'] ) && 'null' !== $_GET['originCompany'] ) {
 		$companies = get_terms( [ 
 			'taxonomy' => 'company',
 			'meta_query' => [ 
 				[ 
 					'key' => 'origin_of_company',
-					'value' => $filters['originCompany'],
+					'value' => $_GET['originCompany'],
 					'compare' => '='
 				]
 			]
@@ -154,20 +151,18 @@ function cyn_filter_lands( $query ) {
 		return;
 
 
-	$filters = cyn_get_filters();
-	if ( $filters === false )
+	if ( count( $_GET ) === 0 )
 		return;
 
 
 	$meta_query = [];
 
-	add_to_meta_query( 'city', 'city', 'char', '=', $meta_query, $filters, false );
-	add_to_meta_query( 'permitType', 'permit_type', 'char', '=', $meta_query, $filters, false );
-	add_to_meta_query( [ 'surfaceMin', 'surfaceMax' ], 'surface', 'numeric', 'between', $meta_query, $filters, true );
-	add_to_meta_query( [ 'priceMin', 'priceMax' ], 'price', 'numeric', 'between', $meta_query, $filters, true );
+	add_to_meta_query( 'city', 'city', 'char', '=', $meta_query, $_GET, false );
+	add_to_meta_query( 'permitType', 'permit_type', 'char', '=', $meta_query, $_GET, false );
+	add_to_meta_query( [ 'surfaceMin', 'surfaceMax' ], 'surface', 'numeric', 'between', $meta_query, $_GET, true );
+	add_to_meta_query( [ 'priceMin', 'priceMax' ], 'price', 'numeric', 'between', $meta_query, $_GET, true );
 
 	$query->set( 'meta_query', $meta_query );
-	$query->set( 's', $filters['search'] );
 
 
 }
@@ -237,7 +232,6 @@ function cyn_filter_house_and_lands( $query ) {
 
 
 }
-
 
 
 /**

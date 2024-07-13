@@ -3,7 +3,6 @@
 global $wp_query;
 $img_top_url = get_option( 'cyn_land_top_archive_image' );
 $img_bottom_url = get_option( 'cyn_land_bottom_archive_image' );
-$_GET = cyn_get_filters();
 
 
 ?>
