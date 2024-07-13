@@ -185,96 +185,49 @@ function cyn_filter_house_and_lands( $query ) {
 
 
 
-	$filters = cyn_get_filters();
-	if ( $filters === false )
+	if ( count( $_GET ) === 0 )
 		return;
-
 
 	$meta_query = [];
 
 
-	if ( isset( $filters['city'] ) ) {
-		$land_ids = [];
-		$q = new WP_Query( [ 
-			'post_type' => 'land',
-			'posts_per_page' => -1,
-			'meta_query' => [ 
-				[ 
-					'key' => 'city',
-					'value' => $filters['city']
-				]
-			]
+	if ( ! empty( $_GET['city'] ) ) {
+		array_push( $meta_query, [ 
+			'key' => 'city',
+			'value' => $_GET['city'],
+			'compare' => '='
 		] );
-
-		foreach ( $q->posts as $post ) {
-			array_push( $land_ids, $post->ID );
-		}
-
-
-		array_push( $meta_query,
-			[ 
-				'key' => 'related_land',
-				'compare' => 'IN',
-				'value' => $land_ids,
-			]
-		);
 	}
 
-	$area_house_ids = [ 0 ];
-	if ( isset( $filters['areaMin'] ) || isset( $filters['areaMax'] ) ) {
 
 
-		$q = new WP_Query( [ 
-			'post_type' => 'house',
-			'posts_per_page' => -1,
-			'meta_query' => [ 
-				[ 
-					'key' => 'area',
-					'value' => [ $filters['areaMin'], $filters['areaMax'] ],
-					'type' => 'NUMERIC',
-					'compare' => 'BETWEEN',
-				]
-			]
+	if ( ! empty( $_GET['priceMin'] ) || ! empty( $_GET['priceMax'] ) ) {
+
+		$priceMax = empty( $_GET['priceMax'] ) ? 20000000000 : $_GET['priceMax'];
+		$priceMin = empty( $_GET['priceMin'] ) ? 0 : $_GET['priceMin'];
+
+		array_push( $meta_query, [ 
+			'key' => 'price',
+			'value' => [ $priceMin, $priceMax ],
+			'type' => 'NUMERIC',
+			'compare' => 'BETWEEN'
 		] );
-
-		foreach ( $q->posts as $post ) {
-			array_push( $area_house_ids, $post->ID );
-		}
-
-
-
 	}
 
-	$price_house_ids = [ 0 ];
-	if ( isset( $filters['priceMin'] ) || isset( $filters['priceMax'] ) ) {
 
+	if ( ! empty( $_GET['areaMin'] ) || ! empty( $_GET['areaMax'] ) ) {
 
-		$q = new WP_Query( [ 
-			'post_type' => 'house',
-			'posts_per_page' => -1,
-			'meta_query' => [ 
-				[ 
-					'key' => 'price',
-					'value' => [ $filters['priceMin'], $filters['priceMax'] ],
-					'type' => 'NUMERIC',
-					'compare' => 'BETWEEN',
-				]
-			]
+		$areaMax = empty( $_GET['areaMax'] ) ? 20000000000 : $_GET['areaMax'];
+		$areaMin = empty( $_GET['areaMin'] ) ? 0 : $_GET['areaMin'];
+
+		array_push( $meta_query, [ 
+			'key' => 'area',
+			'value' => [ $areaMin, $areaMax ],
+			'type' => 'NUMERIC',
+			'compare' => 'BETWEEN'
 		] );
-
-		foreach ( $q->posts as $post ) {
-			array_push( $price_house_ids, $post->ID );
-		}
-
 	}
 
-	array_push( $meta_query,
-		[ 
-			'key' => 'related_house',
-			'compare' => 'IN',
-			'value' => array_merge( $price_house_ids, $area_house_ids ),
-		]
-	);
 
 
 

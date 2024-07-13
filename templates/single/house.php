@@ -18,7 +18,7 @@ get_header() ?>
 		[ 
 			'area' => get_field( 'total_area' ),
 			'price' => get_field( 'price' ),
-			'address' => $company->name . ' • ' . get_field( 'established_year', 'company_' . $company->term_id ) . ' • ' . get_field( 'country', 'company_' . $company->term_id )
+			'address' => $company->name . ' • ' . get_field( 'established_year', 'company_' . $company->term_id ) . ' • ' . get_field( 'country', 'company_' . $company->term_id ) . ' • ' . get_field( 'rooms', get_queried_object_id() ) . 'H'
 		] ) ?>
 
 	<div class="clear-fix-24"></div>

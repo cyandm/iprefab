@@ -56,7 +56,7 @@ if ( $company_2 !== false ) {
 
 			<span class="general-card-price">
 				€
-				<span><?= number_format( intval( get_field( 'price', $house_ID ) ) + intval( get_field( 'price', $land_ID ) ) ) ?></span>
+				<span><?= number_format( intval( get_field( 'price', $post_id ) ) ) ?></span>
 			</span>
 		</div>
 

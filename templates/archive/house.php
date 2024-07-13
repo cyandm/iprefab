@@ -2,7 +2,7 @@
 
 global $wp_query;
 $img_url = get_option( 'cyn_house_archive_image' );
-$filters = cyn_get_filters();
+$_GET = cyn_get_filters();
 
 ?>
 

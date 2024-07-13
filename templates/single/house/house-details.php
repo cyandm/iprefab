@@ -13,7 +13,7 @@ $age = intval( date( 'Y' ) ) - intval( get_field( 'established_year', 'company_'
 
 $product_details = [ 
 	[ 
-		'name' => pll__( 'company verification type' ),
+		'name' => pll__( 'type' ),
 		'value' => get_field( 'type' )
 	],
 	[ 

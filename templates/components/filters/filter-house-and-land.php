@@ -1,14 +1,14 @@
 <?php
 global $wp_query;
 
-$filters = cyn_get_filters();
+
 $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 
 ?>
 
 
 <form action="<?= get_post_type_archive_link( 'house-and-land' ) ?>"
-	  method="post"
+	  method="get"
 	  class="row-form"
 	  id="filtersForm">
 
@@ -20,6 +20,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 		</span>
 
 		<input type="text"
+			   value="<?php echo $_GET['city'] ?>"
 			   name="city">
 
 
@@ -33,13 +34,13 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="priceMin"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php pll_e( 'price min', 'cyn-dm' ) ?>
+			<?php pll_e( 'price min' ) ?>
 		</span>
 		<input type="number"
 			   name="priceMin"
 			   id="priceMin"
 			   value="<?=
-			   	isset( $filters['priceMin'] ) ? $filters['priceMin'] : ''
+			   	isset( $_GET['priceMin'] ) ? $_GET['priceMin'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -50,13 +51,13 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="priceMax"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php pll_e( 'price max', 'cyn-dm' ) ?>
+			<?php pll_e( 'price max' ) ?>
 		</span>
 		<input type="number"
 			   name="priceMax"
 			   id="priceMax"
 			   value="<?=
-			   	isset( $filters['priceMax'] ) ? $filters['priceMax'] : ''
+			   	isset( $_GET['priceMax'] ) ? $_GET['priceMax'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -67,13 +68,13 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="areaMin"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php pll_e( 'area min', 'cyn-dm' ) ?>
+			<?php pll_e( 'area min' ) ?>
 		</span>
 		<input type="number"
 			   name="areaMin"
 			   id="areaMin"
 			   value="<?=
-			   	isset( $filters['areaMin'] ) ? $filters['areaMin'] : ''
+			   	isset( $_GET['areaMin'] ) ? $_GET['areaMin'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -84,13 +85,13 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="areaMax"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php pll_e( 'area max', 'cyn-dm' ) ?>
+			<?php pll_e( 'area max' ) ?>
 		</span>
 		<input type="number"
 			   name="areaMax"
 			   id="areaMax"
 			   value="<?=
-			   	isset( $filters['areaMax'] ) ? $filters['areaMax'] : ''
+			   	isset( $_GET['areaMax'] ) ? $_GET['areaMax'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -109,8 +110,8 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 					   id="houseTypeHouse"
 					   value="house"
 					   <?=
-					   	isset( $filters['houseType'] ) &&
-					   	$filters['houseType'] == 'house' ?
+					   	isset( $_GET['houseType'] ) &&
+					   	$_GET['houseType'] == 'house' ?
 					   	'checked' : '' ?>>
 
 				<span>
@@ -125,8 +126,8 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 					   id="houseTypeVilla"
 					   value="villa"
 					   <?=
-					   	isset( $filters['houseType'] ) &&
-					   	$filters['houseType'] == 'villa' ?
+					   	isset( $_GET['houseType'] ) &&
+					   	$_GET['houseType'] == 'villa' ?
 					   	'checked' : '' ?>>
 				<span>
 					<?php pll_e( 'Villa', 'cyn-dm' ) ?>
@@ -143,11 +144,12 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 			<?php pll_e( 'Search' ) ?>
 		</button>
 
+		<!-- 
 		<button class="btn-secondary btn-full"
 				type="submit"
 				disabled>
-			<?php pll_e( 'other filters', 'cyn-dm' ) ?>
-		</button>
+			<?php pll_e( 'other filters' ) ?>
+		</button> -->
 
 	</div>
 

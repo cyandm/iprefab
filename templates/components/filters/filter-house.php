@@ -1,5 +1,5 @@
 <?php
-$filters = cyn_get_filters();
+$_GET = cyn_get_filters();
 
 $companies = get_terms( [ 
 	'taxonomy' => 'company'
@@ -30,7 +30,7 @@ $countries = array_filter( $countries );
 			   name="search"
 			   id="search"
 			   value="<?=
-			   	isset( $filters['search'] ) ? $filters['search'] : ''
+			   	isset( $_GET['search'] ) ? $_GET['search'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -56,8 +56,8 @@ $countries = array_filter( $countries );
 				<option value="<?= $material ?>"
 						<?php
 						if (
-							isset( $filters['originCompany'] ) &&
-							$filters['originCompany'] === $material
+							isset( $_GET['originCompany'] ) &&
+							$_GET['originCompany'] === $material
 						) {
 							echo 'selected';
 						}
@@ -83,7 +83,7 @@ $countries = array_filter( $countries );
 			   name="areaMin"
 			   id="areaMin"
 			   value="<?=
-			   	isset( $filters['areaMin'] ) ? $filters['areaMin'] : ''
+			   	isset( $_GET['areaMin'] ) ? $_GET['areaMin'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -100,7 +100,7 @@ $countries = array_filter( $countries );
 			   name="areaMax"
 			   id="areaMax"
 			   value="<?=
-			   	isset( $filters['areaMax'] ) ? $filters['areaMax'] : ''
+			   	isset( $_GET['areaMax'] ) ? $_GET['areaMax'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -117,7 +117,7 @@ $countries = array_filter( $countries );
 			   name="priceMin"
 			   id="priceMin"
 			   value="<?=
-			   	isset( $filters['priceMin'] ) ? $filters['priceMin'] : ''
+			   	isset( $_GET['priceMin'] ) ? $_GET['priceMin'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -134,7 +134,7 @@ $countries = array_filter( $countries );
 			   name="priceMax"
 			   id="priceMax"
 			   value="<?=
-			   	isset( $filters['priceMax'] ) ? $filters['priceMax'] : ''
+			   	isset( $_GET['priceMax'] ) ? $_GET['priceMax'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -155,7 +155,7 @@ $countries = array_filter( $countries );
 			<?php for ( $i = 1; $i <= 8; $i++ ) : ?>
 				<option value="<?= $i ?>"
 						<?php
-						if ( isset( $filters['rooms'] ) && (int) $filters['rooms'] === $i ) {
+						if ( isset( $_GET['rooms'] ) && (int) $_GET['rooms'] === $i ) {
 							echo 'selected';
 						}
 						?>>
@@ -183,7 +183,7 @@ $countries = array_filter( $countries );
 			<?php for ( $i = 1; $i <= 3; $i++ ) : ?>
 				<option value="<?= $i ?>"
 						<?php
-						if ( isset( $filters['floors'] ) && (int) $filters['floors'] === $i ) {
+						if ( isset( $_GET['floors'] ) && (int) $_GET['floors'] === $i ) {
 							echo 'selected';
 						}
 						?>>
@@ -209,8 +209,8 @@ $countries = array_filter( $countries );
 					   id="saunaNo"
 					   value="no"
 					   <?=
-					   	isset( $filters['sauna'] ) &&
-					   	$filters['sauna'] == 'no' ?
+					   	isset( $_GET['sauna'] ) &&
+					   	$_GET['sauna'] == 'no' ?
 					   	'checked' : '' ?>>
 
 				<span>no</span>
@@ -223,8 +223,8 @@ $countries = array_filter( $countries );
 					   id="saunaYes"
 					   value="yes"
 					   <?=
-					   	isset( $filters['sauna'] ) &&
-					   	$filters['sauna'] == 'yes' ?
+					   	isset( $_GET['sauna'] ) &&
+					   	$_GET['sauna'] == 'yes' ?
 					   	'checked' : '' ?>>
 				<span>
 					<?php pll_e( 'yes' ) ?>

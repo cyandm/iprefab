@@ -3,7 +3,7 @@ global $wp_query;
 $post_type = $args['post_type'] ?? 'post';
 
 
-$filters = cyn_get_filters();
+$_GET = cyn_get_filters();
 ?>
 
 
@@ -36,8 +36,8 @@ $filters = cyn_get_filters();
 								   id="priceLowest"
 								   value="lowest"
 								   <?=
-								   	isset( $filters['price-sort'] ) &&
-								   	$filters['price-sort'] == 'lowest' ?
+								   	isset( $_GET['price-sort'] ) &&
+								   	$_GET['price-sort'] == 'lowest' ?
 								   	'checked' : '' ?>>
 							<span>
 								<?php pll_e( 'lowest', 'cyn-dm' ) ?>
@@ -51,8 +51,8 @@ $filters = cyn_get_filters();
 								   name="price-sort"
 								   value="highest"
 								   <?=
-								   	isset( $filters['price-sort'] ) &&
-								   	$filters['price-sort'] == 'highest' ?
+								   	isset( $_GET['price-sort'] ) &&
+								   	$_GET['price-sort'] == 'highest' ?
 								   	'checked' : '' ?>>
 							<span>
 								<?php pll_e( 'highest', 'cyn-dm' ) ?>

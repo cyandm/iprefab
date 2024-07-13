@@ -1,54 +1,54 @@
-import {
-	activateEl,
-	deActivateEl,
-	definePopUp,
-	getCookie,
-	setCookie,
-	toggleActivateEl,
-} from '../utils/functions';
+// import {
+// 	activateEl,
+// 	deActivateEl,
+// 	definePopUp,
+// 	getCookie,
+// 	setCookie,
+// 	toggleActivateEl,
+// } from '../utils/functions';
 
-const Filters = () => {
-	const cookie = getCookie('cyn-filters');
-	filtersForm = document.querySelectorAll('#filtersForm');
-	sortForm = document.querySelector('#sortForm');
+// const Filters = () => {
+// 	const cookie = getCookie('cyn-filters');
+// 	filtersForm = document.querySelectorAll('#filtersForm');
+// 	sortForm = document.querySelector('#sortForm');
 
-	const addFormElementsToCookie = (formEl) => {
-		if (!formEl) return;
-		const inputs = formEl.querySelectorAll('input');
-		const selects = formEl.querySelectorAll('select');
+// 	const addFormElementsToCookie = (formEl) => {
+// 		if (!formEl) return;
+// 		const inputs = formEl.querySelectorAll('input');
+// 		const selects = formEl.querySelectorAll('select');
 
-		[inputs, selects].map((groupEl) => {
-			groupEl.forEach((filter) => {
-				filter.addEventListener('change', ({ target: { value } }) => {
-					cookie[filter.name] = value;
-					setCookie('cyn-filters', cookie);
-				});
-			});
-		});
-	};
+// 		[inputs, selects].map((groupEl) => {
+// 			groupEl.forEach((filter) => {
+// 				filter.addEventListener('change', ({ target: { value } }) => {
+// 					cookie[filter.name] = value;
+// 					setCookie('cyn-filters', cookie);
+// 				});
+// 			});
+// 		});
+// 	};
 
-	filtersForm.forEach((el) => {
-		addFormElementsToCookie(el);
-	});
-	addFormElementsToCookie(sortForm);
+// 	filtersForm.forEach((el) => {
+// 		addFormElementsToCookie(el);
+// 	});
+// 	addFormElementsToCookie(sortForm);
 
-	const filterBtn = document.querySelector('.filter-btn');
-	const filterPopUp = document.querySelector('#filtersPopUp');
-	const filtersPopUpCloser = document.querySelector('#filtersPopUpCloser');
+// 	const filterBtn = document.querySelector('.filter-btn');
+// 	const filterPopUp = document.querySelector('#filtersPopUp');
+// 	const filtersPopUpCloser = document.querySelector('#filtersPopUpCloser');
 
-	if (!filterBtn) return;
-	if (!filterPopUp) return;
-	if (!filtersPopUpCloser) return;
+// 	if (!filterBtn) return;
+// 	if (!filterPopUp) return;
+// 	if (!filtersPopUpCloser) return;
 
-	definePopUp(filterPopUp);
+// 	definePopUp(filterPopUp);
 
-	filterBtn.addEventListener('click', () => {
-		activateEl(filterPopUp);
-	});
+// 	filterBtn.addEventListener('click', () => {
+// 		activateEl(filterPopUp);
+// 	});
 
-	filtersPopUpCloser.addEventListener('click', () => {
-		deActivateEl(filterPopUp);
-	});
-};
+// 	filtersPopUpCloser.addEventListener('click', () => {
+// 		deActivateEl(filterPopUp);
+// 	});
+// };
 
-Filters();
+// Filters();

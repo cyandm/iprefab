@@ -1,5 +1,5 @@
 <?php
-$filters = cyn_get_filters();
+$_GET = cyn_get_filters();
 
 $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 
@@ -20,7 +20,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 			   name="search"
 			   id="search"
 			   value="<?=
-			   	isset( $filters['search'] ) ? $filters['search'] : ''
+			   	isset( $_GET['search'] ) ? $_GET['search'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -58,8 +58,8 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 					   id="permitTypeHouse"
 					   value="house"
 					   <?=
-					   	isset( $filters['permitType'] ) &&
-					   	$filters['permitType'] == 'house' ?
+					   	isset( $_GET['permitType'] ) &&
+					   	$_GET['permitType'] == 'house' ?
 					   	'checked' : '' ?>>
 
 				<span>
@@ -74,8 +74,8 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 					   id="permitTypeVilla"
 					   value="villa"
 					   <?=
-					   	isset( $filters['permitType'] ) &&
-					   	$filters['permitType'] == 'villa' ?
+					   	isset( $_GET['permitType'] ) &&
+					   	$_GET['permitType'] == 'villa' ?
 					   	'checked' : '' ?>>
 				<span>
 					<?php pll_e( 'Villa' ) ?>
@@ -94,7 +94,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 			   name="priceMin"
 			   id="priceMin"
 			   value="<?=
-			   	isset( $filters['priceMin'] ) ? $filters['priceMin'] : ''
+			   	isset( $_GET['priceMin'] ) ? $_GET['priceMin'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -111,7 +111,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 			   name="priceMax"
 			   id="priceMax"
 			   value="<?=
-			   	isset( $filters['priceMax'] ) ? $filters['priceMax'] : ''
+			   	isset( $_GET['priceMax'] ) ? $_GET['priceMax'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -128,7 +128,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 			   name="surfaceMin"
 			   id="surfaceMin"
 			   value="<?=
-			   	isset( $filters['surfaceMin'] ) ? $filters['surfaceMin'] : ''
+			   	isset( $_GET['surfaceMin'] ) ? $_GET['surfaceMin'] : ''
 			   	?>">
 
 		<span class="input-action">
@@ -145,7 +145,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 			   name="surfaceMax"
 			   id="surfaceMax"
 			   value="<?=
-			   	isset( $filters['surfaceMax'] ) ? $filters['surfaceMax'] : ''
+			   	isset( $_GET['surfaceMax'] ) ? $_GET['surfaceMax'] : ''
 			   	?>">
 
 		<span class="input-action">

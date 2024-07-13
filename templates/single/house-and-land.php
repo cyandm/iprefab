@@ -16,10 +16,10 @@ $land_id = get_field( 'related_land', $post_id );
 		, null,
 		[ 
 			'area' => get_field( 'total_area', $house_id ),
-			'price' => intval( get_field( 'price', $house_id ) ) + intval( get_field( 'price', $land_id ) ),
+			'price' => get_field( 'price', $post_id ),
 			'post_1' => $house_id,
 			'post_2' => $land_id,
-			'address' => get_field( 'neighborhood', $land_id )
+			'address' => get_field( 'rooms', $house_id ) . 'H • ' . get_the_terms( $land_id, 'company' )[0]->name . ' • ' . get_field( 'city', $land_id ) . ' • ' . get_field( 'neighborhood', $land_id )
 		] ) ?>
 
 	<div class="clear-fix-24"></div>
