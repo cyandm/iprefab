@@ -81,7 +81,10 @@
 			'type' => 'link',
 			'icon' => 'link-2'
 		],
-	]
+	],
+
+	'title' => get_field( 'contact_name' ),
+	'subtitle' => get_the_terms( get_queried_object_id(), 'company' )[0]->name,
 
 ] ) ?>
 <?php get_footer() ?>

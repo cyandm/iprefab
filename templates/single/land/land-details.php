@@ -7,10 +7,12 @@ $product_details = [
 	],
 	[ 
 		'name' => pll__( 'building right' ),
-		'value' => get_field( 'building_right' ),
+		'value' => get_field( 'building_right' ) . '<span class="unit">m<sup>2</sup></span>',
 	],
-
-
+	[ 
+		'name' => pll__( 'total area' ),
+		'value' => get_field( 'surface' ) . '<span class="unit">m<sup>2</sup></span>',
+	],
 	[ 
 		'name' => pll__( 'contact name' ),
 		'value' => get_field( 'contact_name' ),

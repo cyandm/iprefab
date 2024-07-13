@@ -6884,7 +6884,6 @@ main.contact-us .map iframe:hover {
   border: 1px solid #949494;
   border-radius: 1rem;
   flex: 3;
-  position: sticky;
   top: 16px;
 }
 .general-table-secondary-row {
@@ -6993,6 +6992,11 @@ main.contact-us .map iframe:hover {
     flex-direction: column;
     flex-wrap: nowrap;
   }
+}
+.general-details-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
 }
 .general-cta {
   display: flex;
@@ -7183,6 +7187,18 @@ main.contact-us .map iframe:hover {
 }
 .swiper-general-thumbnails .swiper-slide-thumb-active {
   opacity: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .general-card {

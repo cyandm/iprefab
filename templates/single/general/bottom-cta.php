@@ -23,8 +23,12 @@ $button_default = [
 	],
 ];
 
-$buttons = $args['buttons'] ?? $button_default;
+$title_default = $company->name;
+$subtitle = get_field( 'country', 'company_' . $company->term_id );
 
+$buttons = $args['buttons'] ?? $button_default;
+$title = $args['title'] ?? $title_default;
+$subtitle = $args['subtitle'] ?? $subtitle_default;
 ?>
 
 
@@ -38,11 +42,11 @@ $buttons = $args['buttons'] ?? $button_default;
 
 		<div>
 			<div class="general-bottom-cta-company-name">
-				<?= $company->name ?>
+				<?= $title ?>
 			</div>
 			<div class="general-bottom-cta-company-origin">
 
-				<?= get_field( 'origin_of_company', 'company_' . $company->term_id ) ?>
+				<?= $subtitle ?>
 			</div>
 		</div>
 	</div>

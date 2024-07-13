@@ -73,7 +73,7 @@ $land_id = get_field( 'related_land', $post_id );
 	get_template_part( '/templates/single/general/company',
 		null,
 		[ 
-			'company' => get_the_terms( $land_id, 'company' ),
+			'company' => get_the_terms( $house_id, 'company' ),
 			'title' => 'about builder'
 		] )
 		?>

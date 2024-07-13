@@ -21,7 +21,9 @@ $company_color = get_field( 'color', 'company_' . $company->term_id );
 	<hr />
 	<div class="house-company-wrapper">
 		<div class="house-company-logo">
-			<?= $company_logo ?>
+			<a href="<?= get_term_link( $company ) ?>">
+				<?= $company_logo ?>
+			</a>
 		</div>
 
 		<div class="house-company-description">

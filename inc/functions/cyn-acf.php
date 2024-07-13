@@ -95,7 +95,7 @@ function cyn_register_acf_lands_settings() {
 		cyn_acf_add_text( 'advertise_link', 'advertise Link', 0, 33 ),
 
 		cyn_acf_add_text( 'neighborhood', 'Neighborhood', 0, 100 ),
-		cyn_acf_add_textarea( 'address', 'Address' ),
+		cyn_acf_add_textarea( 'address_location', 'Address Location' ),
 		cyn_acf_add_wysiwyg( 'description', 'Description', 50 ),
 	];
 
