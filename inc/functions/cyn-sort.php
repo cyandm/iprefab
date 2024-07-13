@@ -285,6 +285,8 @@ function cyn_filter_house_and_lands( $query ) {
 
 }
 
+
+
 /**
  * get filters from cookie
  * @return array|bool

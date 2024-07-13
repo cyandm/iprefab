@@ -8,11 +8,52 @@ $children = $args['children'] ?? false;
 
 if ( $children ) {
 
-	$terms = get_terms( [ 
+	$args = [ 
 		'taxonomy' => 'company',
 		'hide_empty' => false,
 		'parent' => get_queried_object_id(),
-	] );
+	];
+
+	$meta_query = [];
+
+	if ( ! empty( $_GET['originCompany'] ) ) {
+		array_push( $meta_query, [ 
+			'key' => 'country',
+			'value' => $_GET['originCompany'],
+			'compare' => '='
+		] );
+	}
+
+	if ( ! empty( $_GET['material'] ) ) {
+		array_push( $meta_query, [ 
+			'key' => 'material',
+			'value' => $_GET['material'],
+			'compare' => '='
+		] );
+	}
+
+	if ( ! empty( $_GET['houseShow'] ) ) {
+		$terms_ID = [];
+		$exhibitions = get_posts( [ 
+			'post_type' => 'exhibition',
+		] );
+
+		foreach ( $exhibitions as $exhibition ) {
+			$terms = get_the_terms( $exhibition, 'company' );
+			foreach ( $terms as $term ) {
+				array_push( $terms_ID, $term->term_id );
+			}
+		}
+
+
+		$args['include'] = $terms_ID;
+
+	}
+
+
+	$args['meta_query'] = $meta_query;
+
+	$terms = get_terms( $args );
 
 } else {
 	$terms = get_terms(
@@ -22,7 +63,6 @@ if ( $children ) {
 		]
 	);
 }
-
 
 
 ?>
@@ -47,15 +87,18 @@ if ( $children ) {
 		[ 'url' => $img_top_url ]
 	) ?>
 
-	<div class="clear-fix-24"></div>
 
+	<?php if ( get_query_var( 'company' ) === 'house-builder' ) : ?>
+		<div class="clear-fix-64"></div>
 
+		<?php get_template_part( '/templates/components/filters/filter', 'company', [] ) ?>
 
-	<?php get_template_part( '/templates/components/filters/filter', 'company', [] ) ?>
+	<?php endif; ?>
+
 
 	<div class="clear-fix-64"></div>
 
-	<!-- filters -->
+
 	<h2>
 		<?php echo pll__( 'All' ) . ' ' . get_queried_object()->name ?>
 	</h2>
