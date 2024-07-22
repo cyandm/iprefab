@@ -10,23 +10,6 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	  method="get"
 	  id="filtersForm">
 
-	<!-- <label for="search"
-		   class="input-wrapper">
-		<span class="input-label">
-			<?php pll_e( 'Search', 'cyn-dm' ) ?>
-		</span>
-		<input type="text"
-			   name="search"
-			   id="search"
-			   value="<?=
-			   	isset( $_GET['search'] ) ? $_GET['search'] : ''
-			   	?>">
-
-		<span class="input-action">
-			<i class="iconsax"
-			   icon-name="search-normal-2"></i>
-		</span>
-	</label> -->
 
 	<label for="city"
 		   class="input-wrapper citySearch">
@@ -48,7 +31,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 
 	<div class="input-group">
 		<span class="input-group-label">
-			<?php pll_e( 'Permit type' ) ?>
+			<?php pll_e( 'permit type' ) ?>
 		</span>
 		<div class="input-group-wrapper">
 			<label for="permitTypeHouse">
@@ -77,7 +60,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 					   	$_GET['permitType'] == 'villa' ?
 					   	'checked' : '' ?>>
 				<span>
-					<?php pll_e( 'Villa' ) ?>
+					<?php pll_e( 'villa' ) ?>
 				</span>
 
 			</label>
@@ -156,6 +139,6 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 
 	<button class="btn-primary btn-full"
 			type="submit">
-		<?php pll_e( 'Search' ) ?>
+		<?php pll_e( 'search' ) ?>
 	</button>
 </form>

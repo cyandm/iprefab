@@ -7,7 +7,7 @@ $primary_data = [
 	],
 	[ 
 		'icon' => 'size',
-		'text' => pll__( 'Building right' ),
+		'text' => pll__( 'building right' ),
 		'value' => '<span>' . get_field( 'building_right' ) . '</span>' . '<span class="unit">m<sup>2</sup></span>',
 	],
 	[ 

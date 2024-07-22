@@ -38,7 +38,7 @@
 					<textarea name="message"
 							  required
 							  class="input-wrapper"
-							  placeholder="<?php pll_e( 'Your Message' ) ?>"></textarea>
+							  placeholder="<?php pll_e( 'your message' ) ?>"></textarea>
 
 					<div class="button">
 

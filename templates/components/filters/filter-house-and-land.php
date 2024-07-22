@@ -99,49 +99,13 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 		</span>
 	</label>
 
-	<!-- <div class="input-group">
-		<span class="input-group-label">
-			<?php pll_e( 'Permit type', 'cyn-dm' ) ?>
-		</span>
-		<div class="input-group-wrapper">
-			<label for="permitTypeHouse">
-				<input type="radio"
-					   name="houseType"
-					   id="houseTypeHouse"
-					   value="house"
-					   <?=
-					   	isset( $_GET['houseType'] ) &&
-					   	$_GET['houseType'] == 'house' ?
-					   	'checked' : '' ?>>
 
-				<span>
-					<?php pll_e( 'house', 'cyn-dm' ) ?>
-				</span>
-
-			</label>
-
-			<label for="houseTypeVilla">
-				<input type="radio"
-					   name="houseType"
-					   id="houseTypeVilla"
-					   value="villa"
-					   <?=
-					   	isset( $_GET['houseType'] ) &&
-					   	$_GET['houseType'] == 'villa' ?
-					   	'checked' : '' ?>>
-				<span>
-					<?php pll_e( 'Villa', 'cyn-dm' ) ?>
-				</span>
-
-			</label>
-		</div>
-	</div> -->
 
 	<div class="d-flex gap-16 w-full actions">
 
 		<button class="btn-primary btn-full"
 				type="submit">
-			<?php pll_e( 'Search' ) ?>
+			<?php pll_e( 'search' ) ?>
 		</button>
 
 		<!-- 

@@ -32,12 +32,12 @@ $q = new WP_Query( [
 
 			<div>
 				<div>
-					<span><?php pll_e( 'Author' ) ?> : </span>
+					<span><?php pll_e( 'author' ) ?> : </span>
 					<span><?= get_the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ); ?></span>
 				</div>
 
 				<div>
-					<span><?php pll_e( 'Date' ) ?> : </span>
+					<span><?php pll_e( 'date' ) ?> : </span>
 					<span><?= date_format( get_post_datetime(), 'Y/m/d' ) ?></span>
 				</div>
 			</div>

@@ -25,7 +25,7 @@ $post_type = $args['post_type'] ?? 'post';
 				  id="sortForm">
 				<div class="input-group">
 					<span class="input-group-label">
-						<?php pll_e( 'Price Sort' ) ?>
+						<?php pll_e( 'price sort' ) ?>
 					</span>
 					<div class="input-group-wrapper">
 						<label for="priceLowest">
@@ -69,7 +69,7 @@ $post_type = $args['post_type'] ?? 'post';
 	</a>
 
 	<span class="general-archive-found-posts">
-		<?php pll_e( 'finland:' ) ?>
+		<?php echo pll__( 'finland' ) . ':' ?>
 		<span id="foundPosts">
 			<?= $wp_query->found_posts ?>
 		</span>

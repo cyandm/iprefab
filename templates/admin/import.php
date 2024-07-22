@@ -6,14 +6,14 @@ $company_file = isset( $_GET['company_file'] );
 ?>
 
 <h1>
-	<?php pll_e( 'Import By Excel', 'cyn-dm' ) ?>
+	<?php pll_e( 'Import By Excel' ) ?>
 </h1>
 
 <?php if ( $house_file ) : ?>
 	<div class="notice notice-success is-dismissible">
-		<p><?php pll_e( 'Houses Uploaded.', 'cyn-dm' ) ?>
+		<p><?php pll_e( 'Houses Uploaded.' ) ?>
 			<a href="<?= admin_url( 'edit.php?post_type=house' ) ?>">
-				<?php pll_e( 'View', 'cyn-dm' ) ?>
+				<?php pll_e( 'View' ) ?>
 			</a>
 		</p>
 	</div>
@@ -21,15 +21,15 @@ $company_file = isset( $_GET['company_file'] );
 
 <?php if ( $land_file ) : ?>
 	<div class="notice notice-success is-dismissible">
-		<p><?php pll_e( 'Lands Uploaded.', 'cyn-dm' ) ?> <a
-			   href="<?= admin_url( 'edit.php?post_type=land' ) ?>"><?php pll_e( 'View', 'cyn-dm' ) ?></a></p>
+		<p><?php pll_e( 'Lands Uploaded.' ) ?> <a
+			   href="<?= admin_url( 'edit.php?post_type=land' ) ?>"><?php pll_e( 'View' ) ?></a></p>
 	</div>
 <?php endif; ?>
 
 <?php if ( $company_file ) : ?>
 	<div class="notice notice-success is-dismissible">
-		<p><?php pll_e( 'Companies Uploaded.', 'cyn-dm' ) ?> <a
-			   href="<?= admin_url( 'edit-tags.php?taxonomy=company' ) ?>"><?php pll_e( 'View', 'cyn-dm' ) ?></a></p>
+		<p><?php pll_e( 'Companies Uploaded.' ) ?> <a
+			   href="<?= admin_url( 'edit-tags.php?taxonomy=company' ) ?>"><?php pll_e( 'View' ) ?></a></p>
 	</div>
 <?php endif; ?>
 
@@ -42,7 +42,7 @@ $company_file = isset( $_GET['company_file'] );
 	<table class="form-table">
 		<tbody>
 			<tr>
-				<th scope="row"><?php pll_e( 'Import lands', 'cyn-dm' ) ?></th>
+				<th scope="row"><?php pll_e( 'Import lands' ) ?></th>
 				<td>
 					<input name="lands"
 						   type="file"
@@ -51,7 +51,7 @@ $company_file = isset( $_GET['company_file'] );
 			</tr>
 
 			<tr>
-				<th scope="row"><?php pll_e( 'Import House', 'cyn-dm' ) ?></th>
+				<th scope="row"><?php pll_e( 'Import House' ) ?></th>
 				<td>
 					<input name="house"
 						   type="file"
@@ -60,7 +60,7 @@ $company_file = isset( $_GET['company_file'] );
 			</tr>
 
 			<tr>
-				<th scope="row"><?php pll_e( 'Import Company', 'cyn-dm' ) ?></th>
+				<th scope="row"><?php pll_e( 'Import Company' ) ?></th>
 				<td>
 					<input name="company"
 						   type="file"
@@ -72,7 +72,7 @@ $company_file = isset( $_GET['company_file'] );
 				<th>
 					<button type="submit"
 							class="button button-primary">
-						<?php pll_e( 'Upload Files', 'cyn-dm' ) ?>
+						<?php pll_e( 'Upload Files' ) ?>
 					</button>
 				</th>
 			</tr>

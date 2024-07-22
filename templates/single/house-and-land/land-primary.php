@@ -44,7 +44,7 @@ get_template_part(
 	null,
 	[ 
 		'primary_data' => $primary_data,
-		'title' => pll__( 'Land Info' )
+		'title' => pll__( 'land info' )
 
 	] );
 

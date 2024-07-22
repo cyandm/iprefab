@@ -3,21 +3,21 @@ $personal_info = [ [
 	'name' => 'full_name',
 	'type' => 'text',
 	'class' => '',
-	'label' => pll__( 'Full Name' ),
+	'label' => pll__( 'full name' ),
 	'is_required' => true,
 	'action' => false
 ], [ 
 	'name' => 'email',
 	'type' => 'mail',
 	'class' => '',
-	'label' => pll__( 'Email' ),
+	'label' => pll__( 'email' ),
 	'is_required' => true,
 	'action' => false
 ], [ 
 	'name' => 'phone',
 	'type' => 'number',
 	'class' => '',
-	'label' => pll__( 'Phone' ),
+	'label' => pll__( 'phone' ),
 	'is_required' => false,
 	'action' => false
 ],
@@ -28,7 +28,7 @@ $get_advice = [
 		'name' => 'price',
 		'type' => 'number',
 		'class' => '',
-		'label' => pll__( 'Price' ),
+		'label' => pll__( 'price' ),
 		'is_required' => true,
 		'action' => '€'
 	],
@@ -37,7 +37,7 @@ $get_advice = [
 		'type' => 'select',
 		'class' => 'city-select-2',
 		'options' => [],
-		'label' => pll__( 'City' ),
+		'label' => pll__( 'city' ),
 		'is_required' => true,
 		'action' => '<i class="iconsax" icon-name="chevron-down"></i>'
 	],
@@ -45,11 +45,11 @@ $get_advice = [
 
 $form_sections = [ 
 	[ 
-		'label' => pll__( 'Personal Info' ),
+		'label' => pll__( 'personal info' ),
 		'inputs' => $personal_info,
 	],
 	[ 
-		'label' => pll__( 'Get Advice For' ),
+		'label' => pll__( 'get advice for' ),
 		'inputs' => $get_advice,
 	]
 ];
@@ -99,7 +99,7 @@ $checklist_sections = [
 			   id="contactFormPopupCloser"
 			   icon-name="x-circle"></i>
 
-			<h4><?php pll_e( 'Contact IPREFAB' ) ?></h4>
+			<h4><?php pll_e( 'contact iprefab' ) ?></h4>
 
 			<span></span>
 		</div>

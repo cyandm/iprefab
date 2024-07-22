@@ -3,29 +3,26 @@
 
 $chips = [ 
 	[ 
-		'title' => pll__( 'finland', 'cyn-dm' ),
+		'title' => pll__( 'finland' ),
 		'link' => '/'
 	],
 	[ 
-		'title' => wp_count_posts( 'house' )->publish . ' Houses',
+		'title' => wp_count_posts( 'house' )->publish . ' ' . pll__( 'houses' ),
 		'link' => get_post_type_archive_link( 'house' ),
 	],
 	[ 
 		'title' => wp_count_terms( 'company', [ 
 			'hide_empty' => false,
 			'parent' => 0
-		] ) . ' Suppliers',
+		] ) . ' ' . pll__( 'suppliers' ),
 		'link' => get_page_url_by_template( 'templates/suppliers.php' ),
 	],
 	[ 
-		'title' => wp_count_posts( 'land' )->publish . ' Lands',
+		'title' => wp_count_posts( 'land' )->publish . ' ' . pll__( 'lands' ),
 		'link' => get_post_type_archive_link( 'land' ),
 	],
 ];
 
-$city_options = [ 
-	'value' => 'text'
-];
 ?>
 
 
@@ -59,7 +56,7 @@ $city_options = [
 		<div class="hero_box_icon">
 			<i class="iconsax"
 			   icon-name="location"></i>
-			finland
+			<?php pll_e( 'finland' ) ?>
 		</div>
 
 
@@ -156,7 +153,7 @@ $city_options = [
 
 			<button type="submit"
 					class="btn-primary ">
-				<?php pll_e( 'Search' ) ?>
+				<?php pll_e( 'search' ) ?>
 			</button>
 
 		</div>

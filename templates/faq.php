@@ -18,7 +18,7 @@
 
 	<div class="section-card-title-wrapper">
 		<span class="h1">
-			<?php pll_e( 'Frequently Asked Questions' ) ?>
+			<?php pll_e( 'frequently asked questions' ) ?>
 		</span>
 	</div>
 	<div class="clear-fix-16"></div>

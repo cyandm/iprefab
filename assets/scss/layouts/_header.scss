@@ -60,7 +60,10 @@
 	}
 
 	&-cta {
-		text-align: end;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
 
 		@include mq('md') {
 			span {

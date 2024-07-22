@@ -368,7 +368,10 @@ h6,
   transform-origin: right;
 }
 .header-cta {
-  text-align: end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 @media screen and (max-width: 768px) {
   .header-cta span {
@@ -1644,6 +1647,37 @@ main.search button {
   border: unset;
   padding: unset;
   font-size: unset;
+}
+
+.lang-switcher {
+  position: relative;
+  text-transform: capitalize;
+  border: 1px solid #000;
+  border-radius: 100vmax;
+  padding: 0 16px;
+}
+.lang-switcher__current, .lang-switcher__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.lang-switcher__list {
+  position: absolute;
+  background-color: var(--clr-bg-500);
+  left: 0;
+  border: 1px solid #000;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.75rem);
+  transition: 0.3s;
+}
+.lang-switcher:hover .lang-switcher__list {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(0);
 }
 
 .single-company-logo {

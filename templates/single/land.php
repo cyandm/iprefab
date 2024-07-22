@@ -26,7 +26,7 @@
 		, null,
 		[ 
 			'has_brochure' => false,
-			'cta_text' => 'Call Broker',
+			'cta_text' => pll__( 'call broker' ),
 			'cta_link' => 'tel:' . get_field( 'contact_number', get_the_ID() ),
 		] ) ?>
 

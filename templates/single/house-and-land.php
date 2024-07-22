@@ -33,7 +33,7 @@ $land_id = get_field( 'related_land', $post_id );
 		, null,
 		[ 
 			'has_brochure' => true,
-			'cta_text' => pll__( 'Ask Iprefab' )
+			'cta_text' => pll__( 'ask iprefab' )
 		] ) ?>
 
 	<div class="clear-fix-24">
@@ -74,7 +74,7 @@ $land_id = get_field( 'related_land', $post_id );
 		null,
 		[ 
 			'company' => get_the_terms( $house_id, 'company' ),
-			'title' => 'about builder'
+			'title' => pll__( 'about builder' )
 		] )
 		?>
 

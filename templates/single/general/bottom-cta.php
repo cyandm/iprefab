@@ -17,7 +17,7 @@ $button_default = [
 		'icon' => 'book-with-bookmark'
 	],
 	[ 
-		'text' => pll__( 'Ask Builder' ),
+		'text' => pll__( 'ask builder' ),
 		'class' => '',
 		'type' => 'button',
 	],

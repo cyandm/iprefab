@@ -105,11 +105,12 @@ $materials = array_unique( $materials );
 			   <?php echo $_GET['houseShow'] === 'on' ? 'checked' : '' ?>
 			   name="houseShow">
 		<p>
-			featured Exhibitions Priority </p>
+			<?php pll_e( 'featured exhibitions priority' ) ?>
+		</p>
 	</div>
 
 	<button class="btn-primary"
 			type="submit">
-		<?php pll_e( 'Search' ) ?>
+		<?php pll_e( 'search' ) ?>
 	</button>
 </form>

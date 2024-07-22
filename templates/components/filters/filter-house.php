@@ -20,24 +20,6 @@ $countries = array_filter( $countries );
 	  method="GET"
 	  id="filtersForm">
 
-	<!-- <label for="search"
-		   class="input-wrapper">
-		<span class="input-label">
-			<?php pll_e( 'Search' ) ?>
-		</span>
-		<input type="text"
-			   name="search"
-			   id="search"
-			   value="<?=
-			   	isset( $_GET['search'] ) ? $_GET['search'] : ''
-			   	?>">
-
-		<span class="input-action">
-			<i class="iconsax"
-			   icon-name="search-normal-2"></i>
-		</span>
-	</label> -->
-
 	<label for="originCompany"
 		   class="input-wrapper">
 		<span class="input-label">
@@ -199,7 +181,7 @@ $countries = array_filter( $countries );
 
 	<div class="input-group">
 		<span class="input-group-label">
-			<?php pll_e( 'Sauna' ) ?>
+			<?php pll_e( 'sauna' ) ?>
 		</span>
 		<div class="input-group-wrapper">
 			<label for="saunaNo">
@@ -212,7 +194,7 @@ $countries = array_filter( $countries );
 					   	$_GET['sauna'] == 'no' ?
 					   	'checked' : '' ?>>
 
-				<span>no</span>
+				<span> <?php pll_e( 'no' ) ?></span>
 
 			</label>
 
@@ -235,6 +217,6 @@ $countries = array_filter( $countries );
 
 	<button class="btn-primary btn-full"
 			type="submit">
-		<?php pll_e( 'Search' ) ?>
+		<?php pll_e( 'search' ) ?>
 	</button>
 </form>

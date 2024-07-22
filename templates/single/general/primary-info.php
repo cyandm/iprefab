@@ -1,6 +1,6 @@
 <?php
 $primary_data = isset( $args['primary_data'] ) ? $args['primary_data'] : [];
-$title = $args['title'] ?? pll__( 'Primary' );
+$title = $args['title'] ?? pll__( 'primary' );
 ?>
 
 <?php if ( count( $primary_data ) > 0 ) : ?>

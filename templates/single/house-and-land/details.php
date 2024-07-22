@@ -42,7 +42,7 @@ $details = [
 		'value' => get_field( 'celling_style', $house_id ),
 	],
 	[ 
-		'name' => pll__( 'Facade / Material' ),
+		'name' => pll__( 'facade / material' ),
 		'value' => get_field( 'facade_material', $house_id )
 	],
 	[ 

@@ -11,7 +11,7 @@ $items = $args['items'] ?? null;
 
 		<li class="breadcrumb-item">
 			<a href="<?= site_url() ?>">
-				<?php pll_e( 'Homepage' ) ?>
+				<?php pll_e( 'homepage' ) ?>
 			</a>
 		</li>
 

@@ -3,21 +3,21 @@ $personal_info = [ [
 	'name' => 'full_name',
 	'type' => 'text',
 	'class' => '',
-	'label' => pll__( 'Full Name' ),
+	'label' => pll__( 'full name' ),
 	'is_required' => true,
 	'action' => false
 ], [ 
 	'name' => 'email',
 	'type' => 'mail',
 	'class' => '',
-	'label' => pll__( 'Email' ),
+	'label' => pll__( 'email' ),
 	'is_required' => true,
 	'action' => false
 ], [ 
 	'name' => 'phone',
 	'type' => 'number',
 	'class' => '',
-	'label' => pll__( 'Phone' ),
+	'label' => pll__( 'phone' ),
 	'is_required' => false,
 	'action' => false
 ],
@@ -36,11 +36,11 @@ $white_castle = [
 
 $form_sections = [ 
 	[ 
-		'label' => pll__( 'Personal Info' ),
+		'label' => pll__( 'personal info' ),
 		'inputs' => $personal_info,
 	],
 	[ 
-		'label' => pll__( 'White Castle' ),
+		'label' => pll__( 'white castle' ),
 		'inputs' => $white_castle,
 	]
 ];
@@ -89,7 +89,7 @@ $checklist_sections = [
 			   id="callBackPopupCloser"
 			   icon-name="x-circle"></i>
 
-			<h4><?php pll_e( 'Call Back Request' ) ?></h4>
+			<h4><?php pll_e( 'call back request' ) ?></h4>
 
 			<span></span>
 		</div>

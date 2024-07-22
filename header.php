@@ -28,6 +28,10 @@
 			</div>
 
 			<div class="header-cta">
+				<div>
+					<?php get_template_part( '/templates/components/lang-switcher' ) ?>
+				</div>
+
 				<a href="#"
 				   class="btn-secondary btn-icon-start">
 					<i class="iconsax"
@@ -36,5 +40,9 @@
 						<?php pll_e( 'profile' ) ?>
 					</span>
 				</a>
+
+
+
+
 			</div>
 		</header>

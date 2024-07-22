@@ -8,7 +8,7 @@ $product_details = isset( $args['product_details'] ) ? $args['product_details'] 
 
 <?php if ( count( $product_details ) > 0 ) : ?>
 	<div class="general-details">
-		<h4><?php pll_e( 'Details' ) ?></h4>
+		<h4><?php pll_e( 'details' ) ?></h4>
 
 		<div class="general-details-wrapper">
 			<div class="flex-3 d-flex flex-col gap-16">
@@ -68,7 +68,7 @@ $product_details = isset( $args['product_details'] ) ? $args['product_details'] 
 
 						<button class="btn-primary btn-full"
 								disabled>
-							<?php pll_e( 'Order a bank request' ) ?>
+							<?php pll_e( 'order a bank request' ) ?>
 						</button>
 					</div>
 

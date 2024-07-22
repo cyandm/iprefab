@@ -16,7 +16,7 @@
 			<div class="h5">
 				<i class="iconsax"
 				   icon-name="question-message"></i>
-				<?php pll_e( 'Guidance' ) ?>
+				<?php pll_e( 'guidance' ) ?>
 			</div>
 
 			<p>
@@ -26,7 +26,7 @@
 
 			<a href="<?= get_field( 'guidance_link' ) ?>"
 			   class="btn-small btn-link">
-				<?php pll_e( 'Visit the original invitation ' ) ?>
+				<?php pll_e( 'visit the original invitation' ) ?>
 				<i class="iconsax"
 				   icon-name="arrow-right">
 				</i>
