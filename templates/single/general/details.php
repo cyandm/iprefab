@@ -11,7 +11,7 @@ $product_details = isset( $args['product_details'] ) ? $args['product_details'] 
 		<h4><?php pll_e( 'details' ) ?></h4>
 
 		<div class="general-details-wrapper">
-			<div class="flex-3 d-flex flex-col gap-16">
+			<div class="flex-3 d-flex flex-col gap-16 h-full">
 				<div class="general-table-secondary">
 					<?php foreach ( $product_details as $row ) : ?>
 						<div class="general-table-secondary-row">
@@ -26,22 +26,20 @@ $product_details = isset( $args['product_details'] ) ? $args['product_details'] 
 				</div>
 
 				<?php if ( $post->post_type === 'land' ) : ?>
-					<div>
+					<div class="h-full">
 						<?php echo get_field( 'address_location' ) ?>
 					</div>
 				<?php endif; ?>
 			</div>
 
 			<div class="flex-1 h-full">
-				<div class="h-full">
-					<?php if ( $post->post_type === 'house-and-land' ) :
-						$land_ID = get_field( 'related_land' );
-						?>
-						<div class="h-full">
-							<?php echo get_field( 'address_location', $land_ID ) ?>
-						</div>
-					<?php endif; ?>
-				</div>
+				<?php if ( $post->post_type === 'house-and-land' ) :
+					$land_ID = get_field( 'related_land' );
+					?>
+					<div class="h-full">
+						<?php echo get_field( 'address_location', $land_ID ) ?>
+					</div>
+				<?php endif; ?>
 
 				<?php if ( $post->post_type !== 'house-and-land' ) : ?>
 
