@@ -41,7 +41,7 @@ $img_bottom_url = get_option( 'cyn_land_bottom_archive_image' );
 		   id="filtersPopUpCloser"
 		   icon-name="x-circle"></i>
 		<h3>
-			<?php pll_e( 'filters' ) ?>
+			<?php _e( 'filters', 'cyn-dm' ) ?>
 		</h3>
 	</div>
 

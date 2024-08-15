@@ -6,51 +6,51 @@ $land_id = $args['land_id'] ?? null;
 $details = [ 
 
 	[ 
-		'name' => pll__( 'neighborhood' ),
+		'name' => __( 'neighborhood', 'cyn-dm' ),
 		'value' => get_field( 'neighborhood', $land_id )
 	],
 	[ 
-		'name' => pll__( 'material' ),
+		'name' => __( 'material', 'cyn-dm' ),
 		'value' => get_field( 'material', $house_id )
 	],
 	[ 
-		'name' => pll__( 'total area' ),
+		'name' => __( 'total area', 'cyn-dm' ),
 		'value' => get_field( 'total_area', $house_id ) . '<span class="unit">m<sup>2</sup></span>'
 	],
 	[ 
-		'name' => pll__( 'house area' ),
+		'name' => __( 'house area', 'cyn-dm' ),
 		'value' => get_field( 'house_area', $house_id ) . '<span class="unit">m<sup>2</sup></span>'
 	],
 	[ 
-		'name' => pll__( 'balcony' ),
+		'name' => __( 'balcony', 'cyn-dm' ),
 		'value' => get_field( 'balcony', $house_id ) ? 'yes' : 'no'
 	],
 	[ 
-		'name' => pll__( 'garage' ),
+		'name' => __( 'garage', 'cyn-dm' ),
 		'value' => get_field( 'garage', $house_id ) ? 'yes' : 'no'
 	],
 	[ 
-		'name' => pll__( 'kitchen appliances' ),
+		'name' => __( 'kitchen appliances', 'cyn-dm' ),
 		'value' => get_field( 'kitchen_appliances', $house_id ) ? 'yes' : 'no'
 	],
 	[ 
-		'name' => pll__( 'bathroom appliances' ),
+		'name' => __( 'bathroom appliances', 'cyn-dm' ),
 		'value' => get_field( 'bathroom_appliances', $house_id ) ? 'yes' : 'no'
 	],
 	[ 
-		'name' => pll__( 'celling style' ),
+		'name' => __( 'celling style', 'cyn-dm' ),
 		'value' => get_field( 'celling_style', $house_id ),
 	],
 	[ 
-		'name' => pll__( 'facade / material' ),
+		'name' => __( 'facade / material', 'cyn-dm' ),
 		'value' => get_field( 'facade_material', $house_id )
 	],
 	[ 
-		'name' => pll__( 'garage (open or close)' ),
+		'name' => __( 'garage (open or close)', 'cyn-dm' ),
 		'value' => get_field( 'garage_mode', $house_id )
 	],
 	[ 
-		'name' => pll__( 'land details' ),
+		'name' => __( 'land details', 'cyn-dm' ),
 		'value' => "<a class=\" btn-accent btn-small \" href=\" " . get_permalink( $land_id ) . " \" > more info </a>"
 	],
 ];

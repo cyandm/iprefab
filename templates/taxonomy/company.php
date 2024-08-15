@@ -101,7 +101,7 @@ $parent_id = wp_get_term_taxonomy_parent_id( get_queried_object_id(), 'company' 
 							<i class="iconsax"
 							   icon-name="house-1"></i>
 							<span><?= $wp_query->found_posts ?></span>
-							<span><?php pll_e( 'houses' ) ?></span>
+							<span><?php _e( 'houses', 'cyn-dm' ) ?></span>
 						</div>
 					</div>
 				</div>
@@ -113,7 +113,7 @@ $parent_id = wp_get_term_taxonomy_parent_id( get_queried_object_id(), 'company' 
 			   class="btn-secondary">
 				<i class="iconsax"
 				   icon-name="eye"></i>
-				<?php pll_e( 'visit website' ) ?>
+				<?php _e( 'visit website', 'cyn-dm' ) ?>
 			</a>
 
 			<a href="<?= 'tel:' . get_field( 'phone', $company_acf_address ) ?>"
@@ -121,7 +121,7 @@ $parent_id = wp_get_term_taxonomy_parent_id( get_queried_object_id(), 'company' 
 			   style="background-color:#006553; border-color:#006553">
 				<i class="iconsax"
 				   icon-name="phone"></i>
-				<?php pll_e( 'call builder' ) ?>
+				<?php _e( 'call builder', 'cyn-dm' ) ?>
 			</a>
 
 
@@ -129,7 +129,7 @@ $parent_id = wp_get_term_taxonomy_parent_id( get_queried_object_id(), 'company' 
 			   class="btn-primary">
 				<i class="iconsax"
 				   icon-name="messages-1"></i>
-				<?php pll_e( 'write to builder' ) ?>
+				<?php _e( 'write to builder', 'cyn-dm' ) ?>
 			</a>
 		</div>
 	</section>
@@ -139,7 +139,7 @@ $parent_id = wp_get_term_taxonomy_parent_id( get_queried_object_id(), 'company' 
 	<section class="">
 
 		<div class="d-flex jc-between">
-			<h2 class="h1"><?php pll_e( 'about company' ) ?></h2>
+			<h2 class="h1"><?php _e( 'about company', 'cyn-dm' ) ?></h2>
 
 
 		</div>
@@ -166,7 +166,7 @@ $parent_id = wp_get_term_taxonomy_parent_id( get_queried_object_id(), 'company' 
 
 	<?php
 	cyn_render_section_card(
-		pll__( 'houses in IPREFAB' ),
+		__( 'houses in IPREFAB', 'cyn-dm' ),
 		[ 'link' => '#', 'title' => 'view all', 'icon' => 'eye' ],
 		$houses,
 		'house'

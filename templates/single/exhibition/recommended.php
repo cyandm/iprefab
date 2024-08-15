@@ -21,7 +21,7 @@ if ( ! $related_posts ) {
 cyn_render_section_card( 'Discover Exhibitions',
 	[ 
 		'link' => get_post_type_archive_link( 'exhibition' ),
-		'title' => pll__( 'view all' ),
+		'title' => __( 'view all', 'cyn-dm' ),
 		'icon' => 'eye'
 	], $post_ids, 'exhibition', 'exhibition-recommended', 2 );
 

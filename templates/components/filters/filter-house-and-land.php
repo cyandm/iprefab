@@ -16,7 +16,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 		   class="input-wrapper citySearch">
 
 		<span class="input-label">
-			<?php pll_e( 'city' ) ?>
+			<?php _e( 'city', 'cyn-dm' ) ?>
 		</span>
 
 		<input type="text"
@@ -34,7 +34,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="priceMin"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php pll_e( 'price min' ) ?>
+			<?php _e( 'price min', 'cyn-dm' ) ?>
 		</span>
 		<input type="number"
 			   name="priceMin"
@@ -51,7 +51,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="priceMax"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php pll_e( 'price max' ) ?>
+			<?php _e( 'price max', 'cyn-dm' ) ?>
 		</span>
 		<input type="number"
 			   name="priceMax"
@@ -68,7 +68,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="areaMin"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php pll_e( 'area min' ) ?>
+			<?php _e( 'area min', 'cyn-dm' ) ?>
 		</span>
 		<input type="number"
 			   name="areaMin"
@@ -85,7 +85,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="areaMax"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php pll_e( 'area max' ) ?>
+			<?php _e( 'area max', 'cyn-dm' ) ?>
 		</span>
 		<input type="number"
 			   name="areaMax"
@@ -105,14 +105,14 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 
 		<button class="btn-primary btn-full"
 				type="submit">
-			<?php pll_e( 'search' ) ?>
+			<?php _e( 'search', 'cyn-dm' ) ?>
 		</button>
 
 		<!-- 
 		<button class="btn-secondary btn-full"
 				type="submit"
 				disabled>
-			<?php pll_e( 'other filters' ) ?>
+			<?php _e( 'other filters', 'cyn-dm' ) ?>
 		</button> -->
 
 	</div>

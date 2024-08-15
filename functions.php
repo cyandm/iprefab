@@ -14,7 +14,6 @@ require_once( __DIR__ . '/inc/functions/cyn-sort.php' );
 require_once( __DIR__ . '/inc/functions/cyn-update-checker.php' );
 require_once( __DIR__ . '/inc/functions/cyn-api.php' );
 require_once( __DIR__ . '/inc/functions/cyn-metabox.php' );
-require_once( __DIR__ . '/inc/functions/cyn-pll.php' );
 require_once( __DIR__ . '/inc/functions/cyn-posttype.php' );
 
 //Classes

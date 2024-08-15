@@ -23,7 +23,7 @@ if ( ! $related_posts ) {
 cyn_render_section_card( 'you might like',
 	[ 
 		'link' => get_post_type_archive_link( 'house' ),
-		'title' => pll__( 'view all' ),
+		'title' => __( 'view all', 'cyn-dm' ),
 		'icon' => 'eye'
 	], $post_ids, 'house', 'product-recommended' );
 

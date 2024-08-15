@@ -2,32 +2,32 @@
 $primary_data = [ 
 	[ 
 		'icon' => 'money-4',
-		'text' => pll__( 'price' ),
+		'text' => __( 'price', 'cyn-dm' ),
 		'value' => '€' . number_format( get_field( 'price' ) ),
 	],
 	[ 
 		'icon' => 'size',
-		'text' => pll__( 'building right' ),
+		'text' => __( 'building right', 'cyn-dm' ),
 		'value' => '<span>' . get_field( 'building_right' ) . '</span>' . '<span class="unit">m<sup>2</sup></span>',
 	],
 	[ 
 		'icon' => 'size',
-		'text' => pll__( 'total area' ),
+		'text' => __( 'total area', 'cyn-dm' ),
 		'value' => '<span>' . get_field( 'surface' ) . '</span>' . '<span class="unit">m<sup>2</sup></span>',
 	],
 	[ 
 		'icon' => 'star',
-		'text' => pll__( 'permit type' ),
+		'text' => __( 'permit type', 'cyn-dm' ),
 		'value' => get_field( 'permit_type' ),
 	],
 	[ 
 		'icon' => 'map-1',
-		'text' => pll__( 'city' ),
+		'text' => __( 'city', 'cyn-dm' ),
 		'value' => get_field( 'city' ),
 	],
 	[ 
 		'icon' => 'location',
-		'text' => pll__( 'neighborhood' ),
+		'text' => __( 'neighborhood', 'cyn-dm' ),
 		'value' => str_split( get_field( 'neighborhood' ), 10 )[0] . '...',
 	],
 ];

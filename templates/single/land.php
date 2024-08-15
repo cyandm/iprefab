@@ -26,7 +26,7 @@
 		, null,
 		[ 
 			'has_brochure' => false,
-			'cta_text' => pll__( 'call broker' ),
+			'cta_text' => __( 'call broker', 'cyn-dm' ),
 			'cta_link' => 'tel:' . get_field( 'contact_number', get_the_ID() ),
 		] ) ?>
 
@@ -68,14 +68,14 @@
 <?php get_template_part( '/templates/single/general/bottom-cta', null, [ 
 	'buttons' => [ 
 		[ 
-			'text' => pll__( 'call' ),
+			'text' => __( 'call', 'cyn-dm' ),
 			'link' => 'tel:' . get_field( 'contact_number' ),
 			'class' => '',
 			'type' => 'link',
 			'icon' => 'phone'
 		],
 		[ 
-			'text' => pll__( 'visit advertise' ),
+			'text' => __( 'visit advertise', 'cyn-dm' ),
 			'link' => get_field( 'advertise_link' ),
 			'class' => '',
 			'type' => 'link',

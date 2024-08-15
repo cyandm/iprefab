@@ -7,18 +7,18 @@ add_action( 'init', 'cyn_page_register' );
 
 
 function cyn_post_type_register() {
-	cyn_make_post_type( pll__( 'land' ), 'land', 'dashicons-flag' );
-	cyn_make_post_type( pll__( 'house' ), 'house', 'dashicons-admin-home' );
-	cyn_make_post_type( pll__( 'house + land' ), 'house-and-land', 'dashicons-admin-home' );
-	cyn_make_post_type( pll__( 'exhibition' ), 'exhibition', 'dashicons-tickets-alt' );
-	cyn_make_post_type( pll__( 'question' ), 'faq', 'dashicons-editor-quote' );
-	cyn_make_post_type( pll__( 'forms' ), 'form', 'dashicons-email' );
+	cyn_make_post_type( __( 'land', 'cyn-dm' ), 'land', 'dashicons-flag' );
+	cyn_make_post_type( __( 'house', 'cyn-dm' ), 'house', 'dashicons-admin-home' );
+	cyn_make_post_type( __( 'house + land', 'cyn-dm' ), 'house-and-land', 'dashicons-admin-home' );
+	cyn_make_post_type( __( 'exhibition', 'cyn-dm' ), 'exhibition', 'dashicons-tickets-alt' );
+	cyn_make_post_type( __( 'question', 'cyn-dm' ), 'faq', 'dashicons-editor-quote' );
+	cyn_make_post_type( __( 'forms', 'cyn-dm' ), 'form', 'dashicons-email' );
 }
 
 function cyn_taxonomy_register() {
-	cyn_make_taxonomy( pll__( 'company' ), 'company', [ 'house', 'land', 'exhibition' ] );
-	cyn_make_taxonomy( pll__( 'faq category' ), 'faq-cat', [ 'faq' ] );
-	cyn_make_taxonomy( pll__( 'form category' ), 'form-cat', [ 'form' ] );
+	cyn_make_taxonomy( __( 'company', 'cyn-dm' ), 'company', [ 'house', 'land', 'exhibition' ] );
+	cyn_make_taxonomy( __( 'faq category', 'cyn-dm' ), 'faq-cat', [ 'faq' ] );
+	cyn_make_taxonomy( __( 'form category', 'cyn-dm' ), 'form-cat', [ 'form' ] );
 }
 
 function cyn_make_post_type( $name, $slug, $icon, $menu = true ) {
@@ -76,7 +76,7 @@ function cyn_page_register() {
 		$front_page_id = wp_insert_post( [ 
 			'post_type' => 'page',
 			'post_status' => 'publish',
-			'post_title' => pll__( 'Home' ),
+			'post_title' => __( 'Home', 'cyn-dm' ),
 			'post_name' => 'home-page',
 			'page_template' => 'templates/home-page.php'
 		] );
@@ -89,7 +89,7 @@ function cyn_page_register() {
 		wp_insert_post( [ 
 			'post_type' => 'page',
 			'post_status' => 'publish',
-			'post_title' => pll__( 'suppliers' ),
+			'post_title' => __( 'suppliers', 'cyn-dm' ),
 			'post_name' => 'suppliers',
 			'page_template' => 'templates/suppliers.php'
 		] );
@@ -99,7 +99,7 @@ function cyn_page_register() {
 		wp_insert_post( [ 
 			'post_type' => 'page',
 			'post_status' => 'publish',
-			'post_title' => pll__( 'Contact us' ),
+			'post_title' => __( 'Contact us', 'cyn-dm' ),
 			'post_name' => 'contact-us',
 			'page_template' => 'templates/contact-us.php'
 		] );
@@ -109,7 +109,7 @@ function cyn_page_register() {
 		wp_insert_post( [ 
 			'post_type' => 'page',
 			'post_status' => 'publish',
-			'post_title' => pll__( 'About us' ),
+			'post_title' => __( 'About us', 'cyn-dm' ),
 			'post_name' => 'about-us',
 			'page_template' => 'templates/about-us.php'
 		] );

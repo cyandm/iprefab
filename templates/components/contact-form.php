@@ -3,21 +3,21 @@ $personal_info = [ [
 	'name' => 'full_name',
 	'type' => 'text',
 	'class' => '',
-	'label' => pll__( 'full name' ),
+	'label' => __( 'full name', 'cyn-dm' ),
 	'is_required' => true,
 	'action' => false
 ], [ 
 	'name' => 'email',
 	'type' => 'mail',
 	'class' => '',
-	'label' => pll__( 'email' ),
+	'label' => __( 'email' , 'cyn-dm'),
 	'is_required' => true,
 	'action' => false
 ], [ 
 	'name' => 'phone',
 	'type' => 'number',
 	'class' => '',
-	'label' => pll__( 'phone' ),
+	'label' => __( 'phone' , 'cyn-dm'),
 	'is_required' => false,
 	'action' => false
 ],
@@ -28,7 +28,7 @@ $get_advice = [
 		'name' => 'price',
 		'type' => 'number',
 		'class' => '',
-		'label' => pll__( 'price' ),
+		'label' => __( 'price' , 'cyn-dm'),
 		'is_required' => true,
 		'action' => '€'
 	],
@@ -37,7 +37,7 @@ $get_advice = [
 		'type' => 'select',
 		'class' => 'city-select-2',
 		'options' => [],
-		'label' => pll__( 'city' ),
+		'label' => __( 'city', 'cyn-dm' ),
 		'is_required' => true,
 		'action' => '<i class="iconsax" icon-name="chevron-down"></i>'
 	],
@@ -45,11 +45,11 @@ $get_advice = [
 
 $form_sections = [ 
 	[ 
-		'label' => pll__( 'personal info' ),
+		'label' => __( 'personal info', 'cyn-dm' ),
 		'inputs' => $personal_info,
 	],
 	[ 
-		'label' => pll__( 'get advice for' ),
+		'label' => __( 'get advice for' , 'cyn-dm'),
 		'inputs' => $get_advice,
 	]
 ];
@@ -57,33 +57,33 @@ $form_sections = [
 $looking_for = [ 
 	[ 
 		'name' => 'looking-for-house',
-		'label' => pll__( 'house' ),
+		'label' => __( 'house' , 'cyn-dm'),
 	],
 	[ 
 		'name' => 'looking-for-house-plus-land',
-		'label' => pll__( 'house + land' ),
+		'label' => __( 'house + land' , 'cyn-dm'),
 	],
 ];
 
 $house_type = [ 
 	[ 
 		'name' => 'type-house',
-		'label' => pll__( 'house'),
+		'label' => __( 'house', 'cyn-dm'),
 	],
 	[ 
 		'name' => 'type-villa',
-		'label' => pll__( 'villa' ),
+		'label' => __( 'villa' , 'cyn-dm'),
 	],
 ];
 
 
 $checklist_sections = [ 
 	[ 
-		'label' => pll__( 'you looking for ... ' ),
+		'label' => __( 'you looking for ... ', 'cyn-dm' ),
 		'inputs' => $looking_for,
 	],
 	[ 
-		'label' => pll__( 'house type' ),
+		'label' => __( 'house type', 'cyn-dm' ),
 		'inputs' => $house_type,
 	]
 ]
@@ -99,7 +99,7 @@ $checklist_sections = [
 			   id="contactFormPopupCloser"
 			   icon-name="x-circle"></i>
 
-			<h4><?php pll_e( 'contact iprefab' ) ?></h4>
+			<h4><?php _e( 'contact iprefab' , 'cyn-dm') ?></h4>
 
 			<span></span>
 		</div>

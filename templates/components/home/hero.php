@@ -3,22 +3,22 @@
 
 $chips = [ 
 	[ 
-		'title' => pll__( 'finland' ),
+		'title' => __( 'finland', 'cyn-dm' ),
 		'link' => '/'
 	],
 	[ 
-		'title' => wp_count_posts( 'house' )->publish . ' ' . pll__( 'houses' ),
+		'title' => wp_count_posts( 'house' )->publish . ' ' . __( 'houses', 'cyn-dm' ),
 		'link' => get_post_type_archive_link( 'house' ),
 	],
 	[ 
 		'title' => wp_count_terms( 'company', [ 
 			'hide_empty' => false,
 			'parent' => 0
-		] ) . ' ' . pll__( 'suppliers' ),
+		] ) . ' ' . __( 'suppliers', 'cyn-dm' ),
 		'link' => get_page_url_by_template( 'templates/suppliers.php' ),
 	],
 	[ 
-		'title' => wp_count_posts( 'land' )->publish . ' ' . pll__( 'lands' ),
+		'title' => wp_count_posts( 'land' )->publish . ' ' . __( 'lands', 'cyn-dm' ),
 		'link' => get_post_type_archive_link( 'land' ),
 	],
 ];
@@ -56,7 +56,7 @@ $chips = [
 		<div class="hero_box_icon">
 			<i class="iconsax"
 			   icon-name="location"></i>
-			<?php pll_e( 'finland' ) ?>
+			<?php _e( 'finland', 'cyn-dm' ) ?>
 		</div>
 
 
@@ -71,7 +71,7 @@ $chips = [
 					   class="input-wrapper citySearch">
 
 					<span class="input-label">
-						<?php pll_e( 'city' ) ?>
+						<?php _e( 'city', 'cyn-dm' ) ?>
 					</span>
 
 					<input type="text"
@@ -90,7 +90,7 @@ $chips = [
 				<label for="areaMin"
 					   class="input-wrapper">
 					<span class="input-label">
-						<?php pll_e( 'area min' ) ?>
+						<?php _e( 'area min', 'cyn-dm' ) ?>
 					</span>
 					<input type="number"
 						   name="areaMin"
@@ -106,7 +106,7 @@ $chips = [
 
 				<button type="submit"
 						class="btn-primary ">
-					<?php pll_e( 'search' ) ?>
+					<?php _e( 'search', 'cyn-dm' ) ?>
 				</button>
 
 			</div>
@@ -123,7 +123,7 @@ $chips = [
 				   class="input-wrapper citySearch">
 
 				<span class="input-label">
-					<?php pll_e( 'city' ) ?>
+					<?php _e( 'city', 'cyn-dm' ) ?>
 				</span>
 
 				<input type="text"
@@ -142,7 +142,7 @@ $chips = [
 			<label for="areaMin"
 				   class="input-wrapper">
 				<span class="input-label">
-					<?php pll_e( 'area min' ) ?>
+					<?php _e( 'area min', 'cyn-dm' ) ?>
 				</span>
 				<input type="number"
 					   name="areaMin"
@@ -155,7 +155,7 @@ $chips = [
 
 			<button type="submit"
 					class="btn-primary ">
-				<?php pll_e( 'search' ) ?>
+				<?php _e( 'search', 'cyn-dm' ) ?>
 			</button>
 
 		</div>

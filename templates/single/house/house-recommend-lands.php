@@ -26,7 +26,7 @@ if ( ! $related_lands ) {
 cyn_render_section_card( 'Recommended lands',
 	[ 
 		'link' => get_post_type_archive_link( 'land' ),
-		'title' => pll__( 'view all' ),
+		'title' => __( 'view all', 'cyn-dm' ),
 		'icon' => 'eye'
 	], $post_ids, 'land', 'land-recommended' );
 

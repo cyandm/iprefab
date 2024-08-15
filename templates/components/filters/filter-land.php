@@ -15,7 +15,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 		   class="input-wrapper citySearch">
 
 		<span class="input-label">
-			<?php pll_e( 'city' ) ?>
+			<?php _e( 'city', 'cyn-dm' ) ?>
 		</span>
 
 		<input type="text"
@@ -31,7 +31,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 
 	<div class="input-group">
 		<span class="input-group-label">
-			<?php pll_e( 'permit type' ) ?>
+			<?php _e( 'permit type', 'cyn-dm' ) ?>
 		</span>
 		<div class="input-group-wrapper">
 			<label for="permitTypeHouse">
@@ -45,7 +45,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 					   	'checked' : '' ?>>
 
 				<span>
-					<?php pll_e( 'house' ) ?>
+					<?php _e( 'house', 'cyn-dm' ) ?>
 				</span>
 
 			</label>
@@ -60,7 +60,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 					   	$_GET['permitType'] == 'villa' ?
 					   	'checked' : '' ?>>
 				<span>
-					<?php pll_e( 'villa' ) ?>
+					<?php _e( 'villa', 'cyn-dm' ) ?>
 				</span>
 
 			</label>
@@ -70,7 +70,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="priceMin"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php pll_e( 'price min' ) ?>
+			<?php _e( 'price min', 'cyn-dm' ) ?>
 		</span>
 		<input type="number"
 			   name="priceMin"
@@ -87,7 +87,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="priceMax"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php pll_e( 'price max' ) ?>
+			<?php _e( 'price max', 'cyn-dm' ) ?>
 		</span>
 		<input type="number"
 			   name="priceMax"
@@ -104,7 +104,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="surfaceMin"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php pll_e( 'surface min' ) ?>
+			<?php _e( 'surface min', 'cyn-dm' ) ?>
 		</span>
 		<input type="number"
 			   name="surfaceMin"
@@ -121,7 +121,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 	<label for="surfaceMax"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php pll_e( 'surface max' ) ?>
+			<?php _e( 'surface max', 'cyn-dm' ) ?>
 		</span>
 		<input type="number"
 			   name="surfaceMax"
@@ -139,6 +139,6 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 
 	<button class="btn-primary btn-full"
 			type="submit">
-		<?php pll_e( 'search' ) ?>
+		<?php _e( 'search', 'cyn-dm' ) ?>
 	</button>
 </form>

@@ -10,14 +10,14 @@ $brochure_link = get_field( 'brochure', get_queried_object_id() );
 
 $button_default = [ 
 	[ 
-		'text' => pll__( 'brochure' ),
+		'text' => __( 'brochure', 'cyn-dm' ),
 		'link' => $brochure_link,
 		'class' => '',
 		'type' => 'link',
 		'icon' => 'book-with-bookmark'
 	],
 	[ 
-		'text' => pll__( 'ask builder' ),
+		'text' => __( 'ask builder', 'cyn-dm' ),
 		'class' => '',
 		'type' => 'button',
 	],

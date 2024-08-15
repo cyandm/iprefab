@@ -3,21 +3,21 @@ $personal_info = [ [
 	'name' => 'full_name',
 	'type' => 'text',
 	'class' => '',
-	'label' => pll__( 'full name' ),
+	'label' => __( 'full name', 'cyn-dm' ),
 	'is_required' => true,
 	'action' => false
 ], [ 
 	'name' => 'email',
 	'type' => 'mail',
 	'class' => '',
-	'label' => pll__( 'email' ),
+	'label' => __( 'email' , 'cyn-dm'),
 	'is_required' => true,
 	'action' => false
 ], [ 
 	'name' => 'phone',
 	'type' => 'number',
 	'class' => '',
-	'label' => pll__( 'phone' ),
+	'label' => __( 'phone' , 'cyn-dm'),
 	'is_required' => false,
 	'action' => false
 ],
@@ -28,7 +28,7 @@ $white_castle = [
 		'name' => 'description',
 		'type' => 'textarea',
 		'class' => '',
-		'label' => pll__( 'description' ),
+		'label' => __( 'description' , 'cyn-dm'),
 		'is_required' => false,
 		'action' => false
 	],
@@ -36,11 +36,11 @@ $white_castle = [
 
 $form_sections = [ 
 	[ 
-		'label' => pll__( 'personal info' ),
+		'label' => __( 'personal info', 'cyn-dm' ),
 		'inputs' => $personal_info,
 	],
 	[ 
-		'label' => pll__( 'white castle' ),
+		'label' => __( 'white castle', 'cyn-dm' ),
 		'inputs' => $white_castle,
 	]
 ];
@@ -48,33 +48,33 @@ $form_sections = [
 $looking_for = [ 
 	[ 
 		'name' => 'looking-for-customization',
-		'label' => pll__( 'customization' ),
+		'label' => __( 'customization' , 'cyn-dm'),
 	],
 	[ 
 		'name' => 'looking-for-house-details',
-		'label' => pll__( 'house details' ),
+		'label' => __( 'house details', 'cyn-dm' ),
 	],
 ];
 
 $reach_type = [ 
 	[ 
 		'name' => 'type-call',
-		'label' => pll__( 'call' ),
+		'label' => __( 'call' , 'cyn-dm'),
 	],
 	[ 
 		'name' => 'type-email',
-		'label' => pll__( 'email' ),
+		'label' => __( 'email' , 'cyn-dm'),
 	],
 ];
 
 
 $checklist_sections = [ 
 	[ 
-		'label' => pll__( 'i\'m looking for ...' ),
+		'label' => __( 'i\'m looking for ...' , 'cyn-dm'),
 		'inputs' => $looking_for,
 	],
 	[ 
-		'label' => pll__( 'how we can reach you?' ),
+		'label' => __( 'how we can reach you?' , 'cyn-dm'),
 		'inputs' => $reach_type,
 	]
 ]
@@ -89,7 +89,7 @@ $checklist_sections = [
 			   id="callBackPopupCloser"
 			   icon-name="x-circle"></i>
 
-			<h4><?php pll_e( 'call back request' ) ?></h4>
+			<h4><?php _e( 'call back request' , 'cyn-dm') ?></h4>
 
 			<span></span>
 		</div>

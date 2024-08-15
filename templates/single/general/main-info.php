@@ -1,6 +1,6 @@
 <?php
 
-$cta_text = $args['cta_text'] ?? pll__( 'Ask Builder' );
+$cta_text = $args['cta_text'] ?? __( 'Ask Builder', 'cyn-dm' );
 $cta_link = $args['cta_link'] ?? '#';
 $has_brochure = $args['has_brochure'] ?? false;
 $title = get_the_title();
@@ -60,7 +60,7 @@ $is_calender = $args['is_calender'] ?? false;
 			   class="btn-secondary btn-icon-start">
 				<i class="iconsax"
 				   icon-name="calendar-2"></i>
-				<?php pll_e( 'add to calender' ) ?>
+				<?php _e( 'add to calender', 'cyn-dm' ) ?>
 			</a>
 
 		<?php else : ?>

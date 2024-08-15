@@ -15,7 +15,7 @@ $middle_id = get_field( 'middle_banner' ) ?? 0;
 			<img src="<?php echo get_stylesheet_directory_uri() . '/assets/imgs/placeholder.webp' ?>"
 				 alt="placeholder">
 
-			<span><?php pll_e( 'please select an image' ) ?></span>
+			<span><?php _e( 'please select an image', 'cyn-dm' ) ?></span>
 
 		<?php endif; ?>
 	</div>

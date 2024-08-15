@@ -10,7 +10,7 @@ $post_type = $args['post_type'] ?? 'post';
 		endwhile;
 
 	else :
-		pll_e( 'sorry, we have not found anything!' );
+		_e( 'sorry, we have not found anything!', 'cyn-dm' );
 
 	endif; ?>
 </div>

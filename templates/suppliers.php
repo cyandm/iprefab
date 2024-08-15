@@ -99,7 +99,7 @@ if ( $children ) {
 
 
 	<h2>
-		<?php echo pll__( 'all' ) . ' ' . get_queried_object()->name ?>
+		<?php echo __( 'all', 'cyn-dm' ) . ' ' . get_queried_object()->name ?>
 	</h2>
 	<hr>
 

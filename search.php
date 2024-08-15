@@ -8,7 +8,7 @@
 			<div class="input-wrapper">
 				<Label class="input-label"
 					   for="s">
-					<?php pll_e( 'search' ) ?>
+					<?php _e( 'search', 'cyn-dm' ) ?>
 				</Label>
 
 				<button type="submit"
@@ -48,7 +48,7 @@
 		</div>
 
 	<?php else :
-		pll_e( 'sorry , no posts found' );
+		_e( 'sorry , no posts found', 'cyn-dm' );
 	endif;
 	?>
 

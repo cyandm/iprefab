@@ -2,24 +2,24 @@
 $product_details = [ 
 
 	[ 
-		'name' => pll__( 'neighborhood' ),
+		'name' => __( 'neighborhood', 'cyn-dm' ),
 		'value' => get_field( 'neighborhood' )
 	],
 	[ 
-		'name' => pll__( 'building right' ),
+		'name' => __( 'building right', 'cyn-dm' ),
 		'value' => get_field( 'building_right' ) . '<span class="unit">m<sup>2</sup></span>',
 	],
 	[ 
-		'name' => pll__( 'total area' ),
+		'name' => __( 'total area', 'cyn-dm' ),
 		'value' => get_field( 'surface' ) . '<span class="unit">m<sup>2</sup></span>',
 	],
 	[ 
-		'name' => pll__( 'contact name' ),
+		'name' => __( 'contact name', 'cyn-dm' ),
 		'value' => get_field( 'contact_name' ),
 
 	],
 	[ 
-		'name' => pll__( 'contact number' ),
+		'name' => __( 'contact number', 'cyn-dm' ),
 		'value' => get_field( 'contact_number' ),
 	],
 

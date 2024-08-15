@@ -11,7 +11,7 @@ $team_members = get_field( 'our_team' ) ?? [];
 
 <?php get_template_part( '/templates/components/breadcrumb', null, [ 'items' => [ 
 	[ 
-		'label' => pll__( 'about us' ),
+		'label' => __( 'about us', 'cyn-dm' ),
 		'link' => '#'
 	]
 ] ] ) ?>

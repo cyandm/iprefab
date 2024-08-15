@@ -20,6 +20,6 @@ cyn_render_section_card(
 	get_field( 'company_title' ),
 	[ 
 		'link' => get_term_link( get_term_by( 'slug', 'house-builder', 'company' ) ),
-		'title' => pll__( 'view all' ),
+		'title' => __( 'view all', 'cyn-dm' ),
 		'icon' => 'eye'
 	], $companies, 'company-mini', 'swiper', 5 );

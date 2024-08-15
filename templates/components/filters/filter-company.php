@@ -32,13 +32,13 @@ $materials = array_unique( $materials );
 	<label for="originCompany"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php pll_e( 'origin of company' ) ?>
+			<?php _e( 'origin of company', 'cyn-dm' ) ?>
 		</span>
 		<select name="originCompany"
 				id="originCompany">
 
 			<option value>
-				<?php pll_e( 'doesn\'t matter' ) ?>
+				<?php _e( 'doesn\'t matter', 'cyn-dm' ) ?>
 			</option>
 
 			<?php foreach ( $countries as $material ) : ?>
@@ -67,13 +67,13 @@ $materials = array_unique( $materials );
 	<label for="material"
 		   class="input-wrapper">
 		<span class="input-label">
-			<?php pll_e( 'material' ) ?>
+			<?php _e( 'material', 'cyn-dm' ) ?>
 		</span>
 		<select name="material"
 				id="material">
 
 			<option value>
-				<?php pll_e( 'doesn\'t matter' ) ?>
+				<?php _e( 'doesn\'t matter', 'cyn-dm' ) ?>
 			</option>
 
 			<?php foreach ( $materials as $material ) : ?>
@@ -105,12 +105,12 @@ $materials = array_unique( $materials );
 			   <?php echo isset( $_GET['houseShow'] ) && $_GET['houseShow'] === 'on' ? 'checked' : '' ?>
 			   name="houseShow">
 		<p>
-			<?php pll_e( 'featured exhibitions priority' ) ?>
+			<?php _e( 'featured exhibitions priority', 'cyn-dm' ) ?>
 		</p>
 	</div>
 
 	<button class="btn-primary"
 			type="submit">
-		<?php pll_e( 'search' ) ?>
+		<?php _e( 'search', 'cyn-dm' ) ?>
 	</button>
 </form>

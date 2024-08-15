@@ -22,7 +22,7 @@
 
 					<div class="date caption">
 						<span>
-							<?php pll_e( 'publish date' ) ?> :
+							<?php _e( 'publish date', 'cyn-dm' ) ?> :
 						</span>
 						<?php echo get_the_date( 'Y/M/d' ) ?>
 					</div>
