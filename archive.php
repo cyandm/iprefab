@@ -1,24 +1,29 @@
-<?php
+<?php get_header() ?>
 
-global $wp_query;
+<main class="container">
+	<?php get_template_part( '/templates/components/breadcrumb' ); ?>
 
-if ( isset( $wp_query->post->post_type ) ) {
-	get_template_part( 'templates/archive/' . $wp_query->post->post_type );
-	exit();
-}
+	<div class="clear-fix-60"></div>
 
-if ( is_category() || is_date() || is_tag() || is_author() ) {
-	get_template_part( 'templates/archive/post' );
-	exit();
-}
+	<div class="d-grid grid-col-3 gap-16">
+		<?php
 
-$query_array = explode( ' ', $wp_query->request );
-$query_array = array_splice( $query_array, 0 );
-$post_type_needle_index = array_search( '((wp_posts.post_type', $query_array );
-$req_post_type = str_replace( "'", "", $query_array[ $post_type_needle_index + 2 ] );
+		if ( have_posts() ) {
+			while ( have_posts() ) {
+				the_post();
+				get_template_part( '/templates/components/card/post' );
+			}
+		}
 
-if ( $req_post_type ) {
-	get_template_part( 'templates/archive/' . $req_post_type );
-} else {
-	wp_die( 'not template found!' );
-}
+		?>
+	</div>
+
+	<div class="clear-fix-16"></div>
+
+	<?php get_template_part( '/templates/archive/general/pagination' ) ?>
+
+	<div class="clear-fix-20"></div>
+
+</main>
+
+<?php get_footer() ?>

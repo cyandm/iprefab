@@ -20,10 +20,13 @@ $product_details = [
 		'name' => __( 'age of company', 'cyn-dm' ),
 		'value' => $age . '<span class="unit">years</span>'
 	],
-
 	[ 
 		'name' => __( 'material', 'cyn-dm' ),
 		'value' => get_field( 'material' ) ?? ''
+	],
+	[ 
+		'name' => __( 'floors', 'cyn-dm' ),
+		'value' => get_field( 'number_of_floors' ) ?? ''
 	],
 	[ 
 		'name' => __( 'total area', 'cyn-dm' ),

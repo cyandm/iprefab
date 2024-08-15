@@ -49,6 +49,9 @@
 		}
 
 		&-secondary {
+			display: flex;
+			gap: 0.5rem;
+
 			button {
 				display: inline-flex;
 			}
@@ -72,8 +75,10 @@
 			padding: $s_4 $s_6;
 			box-shadow: $shadow_1;
 			text-transform: capitalize;
+			text-align: center;
 
 			@include mq('md') {
+				text-align: left;
 				flex-direction: column;
 				align-items: flex-start;
 			}
@@ -145,12 +150,12 @@
 
 	&-feature {
 		&-box {
-			padding-inline-start: $s_8;
 			&:not(:first-child) {
 				border-inline-start: $b_2;
 			}
 
 			@include mq('md') {
+				padding-inline-start: $s_8;
 				border-inline-start: none !important;
 				padding: 0;
 
@@ -292,6 +297,15 @@
 				display: none;
 			}
 		}
+
+		#generalMainSwiper .swiper-wrapper img {
+			max-height: 600px;
+
+			@include mq('md') {
+				max-height: 200px;
+			}
+		}
+
 		.swiper-navigation {
 			--padding: 8px;
 			position: absolute;
@@ -310,7 +324,7 @@
 				backdrop-filter: blur(20px);
 				border-radius: 50%;
 				border: 1px solid #fff;
-				background: rgba(#fff, 0.2);
+				background: rgba(#000, 0.2);
 
 				@include mq('md') {
 					padding: 0.5rem;
@@ -337,7 +351,7 @@
 					bottom: 0;
 					z-index: 100;
 					transform: translate(-50%, -$s_6);
-					background-color: rgba($c_n_800, 0.5);
+					background-color: rgba(#000, 0.2);
 					color: $c_n_800;
 					backdrop-filter: blur(12px);
 					padding: $s_1 $s_6;

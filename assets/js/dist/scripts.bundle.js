@@ -5996,7 +5996,6 @@
   var generalMainSwiper = new Swiper("#generalMainSwiper", {
     modules: [Thumb, Pagination, Navigation],
     spaceBetween: 12,
-    autoHeight: true,
     thumbs: {
       swiper: generalThumbnailSwiper
     },

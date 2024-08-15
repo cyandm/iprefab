@@ -18,7 +18,6 @@ export const generalThumbnailSwiper = new Swiper('#generalThumbnailSwiper', {
 export const generalMainSwiper = new Swiper('#generalMainSwiper', {
 	modules: [Thumbs, Pagination, Navigation],
 	spaceBetween: 12,
-	autoHeight: true,
 	thumbs: {
 		swiper: generalThumbnailSwiper,
 	},

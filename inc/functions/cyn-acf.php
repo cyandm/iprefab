@@ -117,8 +117,7 @@ function cyn_register_acf_house_settings() {
 	$fields = [ 
 		cyn_acf_add_tab( 'General' ),
 		cyn_acf_add_options( 'type', 'Type', [ 'house' => 'house', 'villa' => 'villa' ], width: 50 ),
-		cyn_acf_add_options( 'material', 'Material',
-			[ 'Wooden' => 'Wooden', 'Light Steel' => 'Light Steel', 'Cement' => 'Cement', 'Other' => 'Other' ], width: 50 ),
+		cyn_acf_add_text( 'material', 'Material', width: 50 ),
 		cyn_acf_add_number( 'total_area', 'Total Area', 0, 25, 'm2' ),
 		cyn_acf_add_number( 'house_area', 'House Area', 0, 25, 'm2' ),
 		cyn_acf_add_options( 'number_of_floors', 'Number of floors', [ 1 => 1, 2 => 2 ], width: 50 ),

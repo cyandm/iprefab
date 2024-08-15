@@ -6877,6 +6877,10 @@ main.contact-us .map iframe:hover {
     justify-content: space-between;
   }
 }
+.general-actions-secondary {
+  display: flex;
+  gap: 0.5rem;
+}
 .general-actions-secondary button {
   display: inline-flex;
 }
@@ -6904,12 +6908,14 @@ main.contact-us .map iframe:hover {
   padding: 1rem 1.5rem;
   box-shadow: 0px 4px 8px 0px hsla(0, 0%, 0%, 0.04);
   text-transform: capitalize;
+  text-align: center;
 }
 .general-table-primary > * {
   flex: 1;
 }
 @media screen and (max-width: 768px) {
   .general-table-primary {
+    text-align: left;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -6984,14 +6990,12 @@ main.contact-us .map iframe:hover {
     width: 100%;
   }
 }
-.general-feature-box {
-  padding-inline-start: 2rem;
-}
 .general-feature-box:not(:first-child) {
   border-inline-start: 1px solid #dddddd;
 }
 @media screen and (max-width: 768px) {
   .general-feature-box {
+    padding-inline-start: 2rem;
     border-inline-start: none !important;
     padding: 0;
     padding-block: 1rem;
@@ -7152,6 +7156,14 @@ main.contact-us .map iframe:hover {
     display: none;
   }
 }
+.general-images #generalMainSwiper .swiper-wrapper img {
+  max-height: 600px;
+}
+@media screen and (max-width: 768px) {
+  .general-images #generalMainSwiper .swiper-wrapper img {
+    max-height: 200px;
+  }
+}
 .general-images .swiper-navigation {
   --padding: 8px;
   position: absolute;
@@ -7170,7 +7182,7 @@ main.contact-us .map iframe:hover {
   backdrop-filter: blur(20px);
   border-radius: 50%;
   border: 1px solid #fff;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 @media screen and (max-width: 768px) {
   .general-images .swiper-navigation i {
@@ -7192,7 +7204,7 @@ main.contact-us .map iframe:hover {
   bottom: 0;
   z-index: 100;
   transform: translate(-50%, -1.5rem);
-  background-color: rgba(234, 234, 234, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
   color: #eaeaea;
   backdrop-filter: blur(12px);
   padding: 0.25rem 1.5rem;

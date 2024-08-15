@@ -6,9 +6,9 @@ $title = $args['title'] ?? __( 'primary', 'cyn-dm' );
 <?php if ( count( $primary_data ) > 0 ) : ?>
 	<div class="general-primary-info">
 
-		<p class="h4">
-			<?= $title ?>
-		</p>
+		<!-- <p class="h4">
+			<?php //$title ?>
+		</p> -->
 
 		<div class="general-table-primary">
 			<?php foreach ( $primary_data as $key => $data ) : ?>

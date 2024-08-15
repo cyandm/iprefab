@@ -28,16 +28,14 @@
 			</div>
 
 			<div class="header-cta">
-				<div>
-					<?php get_template_part( '/templates/components/lang-switcher' ) ?>
-				</div>
+
 
 				<a href="#"
 				   class="btn-secondary btn-icon-start">
 					<i class="iconsax"
 					   icon-name="user-1"></i>
 					<span>
-						<?php _e( 'profile', 'cyn-dm' ) ?>
+						<?php _e( 'contact Iprefab', 'cyn-dm' ) ?>
 					</span>
 				</a>
 
