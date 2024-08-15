@@ -69,7 +69,6 @@ if ( $children ) {
 
 <?php get_header() ?>
 
-
 <main class="container general-archive">
 	<?php get_template_part( '/templates/components/breadcrumb', null, [ 'items' =>
 		[ 

@@ -63,9 +63,7 @@ $countries = array_filter( $countries );
 		<input type="number"
 			   name="areaMin"
 			   id="areaMin"
-			   value="<?=
-			   	isset( $_GET['areaMin'] ) ? $_GET['areaMin'] : ''
-			   	?>">
+			   value="<?php echo $_GET['areaMin'] ?? '' ?>">
 
 		<span class="input-action">
 			m<sup>2</sup>

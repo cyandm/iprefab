@@ -16,9 +16,9 @@ function cyn_house_plus_land_update_price( $post_id ) {
 	$house_price = get_field( 'price', get_field( 'related_house', $post_id ) );
 	$land_price = get_field( 'price', get_field( 'related_land', $post_id ) );
 
+	$house_plus_land_price = intval( $house_price ) + intval( $land_price );
 
-
-	update_post_meta( $post_id, 'price', $house_price + $land_price );
+	update_post_meta( $post_id, 'price', $house_plus_land_price );
 	update_post_meta( $post_id, 'area', get_field( 'total_area', get_field( 'related_house', $post_id ) ) );
 	update_post_meta( $post_id, 'city', get_field( 'city', get_field( 'related_land', $post_id ) ) );
 

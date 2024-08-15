@@ -25,6 +25,7 @@ $button_default = [
 
 $title_default = $company->name;
 $subtitle = get_field( 'country', 'company_' . $company->term_id );
+$subtitle_default = '';
 
 $buttons = $args['buttons'] ?? $button_default;
 $title = $args['title'] ?? $title_default;

@@ -62,7 +62,7 @@ $chips = [
 
 
 		<form class="hero_box_form only-desktop"
-			  method="post"
+			  method="get"
 			  id="filtersForm"
 			  action="<?php echo get_post_type_archive_link( 'house-and-land' ) ?>">
 			<div>
@@ -74,7 +74,8 @@ $chips = [
 						<?php pll_e( 'city' ) ?>
 					</span>
 
-					<input type="text">
+					<input type="text"
+						   name="city">
 
 
 					<span class="input-action">
@@ -113,7 +114,7 @@ $chips = [
 	</div>
 
 	<form class="hero_box_form only-mobile"
-		  method="post"
+		  method="get"
 		  id="filtersForm"
 		  action="<?php echo get_post_type_archive_link( 'house-and-land' ) ?>">
 		<div>
@@ -125,7 +126,8 @@ $chips = [
 					<?php pll_e( 'city' ) ?>
 				</span>
 
-				<input type="text">
+				<input type="text"
+					   name="city">
 
 
 				<span class="input-action">

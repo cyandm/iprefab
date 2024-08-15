@@ -2,13 +2,13 @@
 
 define( 'CYN_ACF_PATH', get_stylesheet_directory() . '/inc/acf/' );
 define( 'CYN_ACF_URL', get_stylesheet_directory_uri() . '/inc/acf/' );
-include_once ( CYN_ACF_PATH . 'acf.php' );
+include_once( CYN_ACF_PATH . 'acf.php' );
 
 add_filter( 'acf/settings/url', function ($url) {
 	return CYN_ACF_URL;
 } );
 add_filter( 'acf/settings/show_updates', '__return_false', 100 );
-// add_filter( 'acf/settings/show_admin', '__return_false', 100 );
+add_filter( 'acf/settings/show_admin', '__return_false', 100 );
 
 add_action( 'acf/include_fields', 'cyn_register_acf' );
 
@@ -68,13 +68,13 @@ function cyn_register_acf_related() {
 
 	$location = [ 
 		[ 
+
 			[ 
-				[ 
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'house',
-				],
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'house',
 			],
+
 		],
 	];
 
@@ -679,7 +679,7 @@ function cyn_acf_add_time_picker( $name, $label, $width = '' ) {
 
 function cyn_acf_add_date_picker( $name, $label, $width = '' ) {
 	return [ 
-		'key' => 'filed_' . $name . '_key' . '_' . current_time( 'timestamp' ),
+		'key' => 'filed_' . $name . '_key',
 		'label' => $label,
 		'name' => $name,
 		'aria-label' => '',

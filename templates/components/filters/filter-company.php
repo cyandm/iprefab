@@ -102,7 +102,7 @@ $materials = array_unique( $materials );
 	<div class="input-wrapper-checkbox">
 		<input type="checkbox"
 			   class="input-medium"
-			   <?php echo $_GET['houseShow'] === 'on' ? 'checked' : '' ?>
+			   <?php echo isset( $_GET['houseShow'] ) && $_GET['houseShow'] === 'on' ? 'checked' : '' ?>
 			   name="houseShow">
 		<p>
 			<?php pll_e( 'featured exhibitions priority' ) ?>

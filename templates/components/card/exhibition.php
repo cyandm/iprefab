@@ -36,8 +36,7 @@ $company_logo = isset( $company ) ? wp_get_attachment_image(
 		<div class="land-card-items">
 			<div>
 				<?php
-				cyn_render_icon_box( 'calendar-2', date_format( date_create( get_field( 'date', $post_id ) ), 'm/d' )
-				);
+				cyn_render_icon_box( 'calendar-2', date_create( get_field( 'date', $post_id ) ) ? date_format( date_create( get_field( 'date', $post_id ) ), 'm/d' ) : 'no-date' );
 
 				cyn_render_icon_box(
 					'clock',

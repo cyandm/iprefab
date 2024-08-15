@@ -20,7 +20,7 @@ $cities = get_field_object( 'single_land_city' )['choices'] ?? [];
 		</span>
 
 		<input type="text"
-			   value="<?php echo $_GET['city'] ?>"
+			   value="<?php echo $_GET['city'] ?? '' ?>"
 			   name="city">
 
 
