@@ -23,7 +23,13 @@ $company_logo = isset( $term ) ? wp_get_attachment_image(
 			</h4>
 
 			<div class="company-card-content-inner">
-				<?= cyn_render_icon_box( 'house-1', get_term( $term )->count . ' houses' ) ?>
+				<?php
+				if ( $args['parent'] === 'house-builder' ) :
+					echo cyn_render_icon_box( 'house-1', get_term( $term )->count . ' houses' );
+				elseif ( $args['parent'] === 'land-advertiser' ) :
+					echo cyn_render_icon_box( 'lifebuoy', get_term( $term )->count . ' lands' );
+				endif;
+				?>
 
 				<div class="d-flex ai-center gap-4">
 					<span class="single-company-flag">

@@ -27,7 +27,11 @@ function cyn_render_btn( $btn, $is_desktop ) { ?>
  * @return void 
  */
 function cyn_render_section_card( $title, $btn, $items, $post_type, $additional_class = '', $col = '3', $has_swiper = false ) {
+
+	if ( count( $items ) === 0 )
+		return;
 	?>
+
 
 	<section class="section-card <?= $additional_class ?>">
 		<div class="section-card-title-wrapper">

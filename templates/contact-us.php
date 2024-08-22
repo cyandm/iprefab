@@ -51,7 +51,7 @@
 		</div>
 
 		<div class="map">
-			<?php the_field( 'location' ) ?>
+			<?php echo get_field( 'location' ) ?>
 		</div>
 	</div>
 </main>

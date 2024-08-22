@@ -11,7 +11,7 @@ $brands_logo_group = array_filter( $brands_logo_group );
 
 		<div class="brands_box_header">
 			<div class="h1">
-				<?php the_field( 'brands_title' ) ?>
+				<?php echo get_field( 'brands_title' ) ?>
 			</div>
 
 			<div class="swiper-navigation">

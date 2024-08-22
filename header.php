@@ -31,16 +31,14 @@
 
 
 				<a href="#"
-				   class="btn-secondary btn-icon-start">
+				   id="contactFormOpener"
+				   class="btn-secondary btn-icon-start btn-small ">
 					<i class="iconsax"
 					   icon-name="user-1"></i>
 					<span>
 						<?php _e( 'contact Iprefab', 'cyn-dm' ) ?>
 					</span>
 				</a>
-
-
-
 
 			</div>
 		</header>

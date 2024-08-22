@@ -15,7 +15,7 @@ $land_id = get_field( 'related_land', $post_id );
 		'/templates/single/general/info'
 		, null,
 		[ 
-			'area' => get_field( 'total_area', $house_id ),
+			'area' => get_field( 'house_area', $house_id ),
 			'price' => get_field( 'price', $post_id ),
 			'post_1' => $house_id,
 			'post_2' => $land_id,

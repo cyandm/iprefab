@@ -90,23 +90,17 @@ function cyn_filter_houses( $query ) {
 	)
 		return;
 
-
 	if ( count( $_GET ) === 0 )
 		return;
 
 	$meta_query = [];
 
-
 	add_to_meta_query( 'floors', 'number_of_floors', 'numeric', '=', $meta_query, $_GET, false );
 	add_to_meta_query( 'rooms', 'rooms', 'numeric', '=', $meta_query, $_GET, false );
-	add_to_meta_query( [ 'areaMin', 'areaMax' ], 'total_area', 'numeric', 'between', $meta_query, $_GET, true );
+	add_to_meta_query( [ 'areaMin', 'areaMax' ], 'house_area', 'numeric', 'between', $meta_query, $_GET, true );
 	add_to_meta_query( [ 'priceMin', 'priceMax' ], 'price', 'numeric', 'between', $meta_query, $_GET, true );
 
-
-
-
 	$query->set( 'meta_query', $meta_query );
-	// $query->set( 's', $filters['search'] );
 
 
 	if ( isset( $_GET['originCompany'] ) && 'null' !== $_GET['originCompany'] ) {
@@ -114,8 +108,8 @@ function cyn_filter_houses( $query ) {
 			'taxonomy' => 'company',
 			'meta_query' => [ 
 				[ 
-					'key' => 'origin_of_company',
-					'value' => $_GET['originCompany'],
+					'key' => 'country',
+					'value' => strtolower( $_GET['originCompany'] ),
 					'compare' => '='
 				]
 			]
@@ -134,7 +128,6 @@ function cyn_filter_houses( $query ) {
 			]
 		] );
 	}
-
 
 }
 
@@ -168,7 +161,6 @@ function cyn_filter_lands( $query ) {
 }
 
 add_filter( 'pre_get_posts', 'cyn_filter_house_and_lands' );
-
 function cyn_filter_house_and_lands( $query ) {
 	if (
 		is_admin() ||
@@ -234,18 +226,3 @@ function cyn_filter_house_and_lands( $query ) {
 }
 
 
-/**
- * get filters from cookie
- * @return array|bool
- * return array from filters if cookie is set
- * return bool if cookie not set
- */
-function cyn_get_filters() {
-	if ( ! isset( $_COOKIE['cyn-filters'] ) ) {
-		return false;
-	}
-
-	$filters = (array) json_decode( stripslashes( $_COOKIE['cyn-filters'] ) );
-
-	return $filters;
-}

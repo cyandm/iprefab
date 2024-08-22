@@ -40,9 +40,9 @@ if ( ! class_exists( 'cyn_upload_excel' ) ) {
 
 		public function cyn_form_post() {
 
-			require_once ( ABSPATH . 'wp-admin/includes/media.php' );
-			require_once ( ABSPATH . 'wp-admin/includes/file.php' );
-			require_once ( ABSPATH . 'wp-admin/includes/image.php' );
+			require_once( ABSPATH . 'wp-admin/includes/media.php' );
+			require_once( ABSPATH . 'wp-admin/includes/file.php' );
+			require_once( ABSPATH . 'wp-admin/includes/image.php' );
 
 			$land_file = SimpleXLSX::parse( $_FILES['lands']['tmp_name'] );
 			$house_file = SimpleXLSX::parse( $_FILES['house']['tmp_name'] );
@@ -82,7 +82,7 @@ if ( ! class_exists( 'cyn_upload_excel' ) ) {
 
 
 
-					$new_land = wp_insert_post( [ 
+					$new_house = wp_insert_post( [ 
 						'post_title' => $name,
 						'post_type' => 'land',
 						'post_status' => 'publish',
@@ -102,46 +102,46 @@ if ( ! class_exists( 'cyn_upload_excel' ) ) {
 
 
 					//upload feature image
-					$feature_image_id = media_sideload_image( $feature_image_url, $new_land, null, 'id' );
-					set_post_thumbnail( $new_land, $feature_image_id );
+					$feature_image_id = media_sideload_image( $feature_image_url, $new_house, null, 'id' );
+					set_post_thumbnail( $new_house, $feature_image_id );
 
 
 					//gallery
-					$gallery_1_id = media_sideload_image( $gallery_1, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_1", $gallery_1_id );
+					$gallery_1_id = media_sideload_image( $gallery_1, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_1", $gallery_1_id );
 
-					$gallery_2_id = media_sideload_image( $gallery_2, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_2", $gallery_2_id );
+					$gallery_2_id = media_sideload_image( $gallery_2, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_2", $gallery_2_id );
 
-					$gallery_3_id = media_sideload_image( $gallery_3, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_3", $gallery_3_id );
+					$gallery_3_id = media_sideload_image( $gallery_3, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_3", $gallery_3_id );
 
-					$gallery_4_id = media_sideload_image( $gallery_4, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_4", $gallery_4_id );
+					$gallery_4_id = media_sideload_image( $gallery_4, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_4", $gallery_4_id );
 
-					$gallery_5_id = media_sideload_image( $gallery_5, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_5", $gallery_5_id );
+					$gallery_5_id = media_sideload_image( $gallery_5, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_5", $gallery_5_id );
 
-					$gallery_6_id = media_sideload_image( $gallery_6, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_6", $gallery_6_id );
+					$gallery_6_id = media_sideload_image( $gallery_6, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_6", $gallery_6_id );
 
-					$gallery_7_id = media_sideload_image( $gallery_7, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_7", $gallery_7_id );
+					$gallery_7_id = media_sideload_image( $gallery_7, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_7", $gallery_7_id );
 
-					$gallery_8_id = media_sideload_image( $gallery_8, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_8", $gallery_8_id );
+					$gallery_8_id = media_sideload_image( $gallery_8, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_8", $gallery_8_id );
 
-					$gallery_9_id = media_sideload_image( $gallery_9, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_9", $gallery_9_id );
+					$gallery_9_id = media_sideload_image( $gallery_9, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_9", $gallery_9_id );
 
-					$gallery_10_id = media_sideload_image( $gallery_10, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_10", $gallery_10_id );
+					$gallery_10_id = media_sideload_image( $gallery_10, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_10", $gallery_10_id );
 
-					$gallery_11_id = media_sideload_image( $gallery_11, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_11", $gallery_11_id );
+					$gallery_11_id = media_sideload_image( $gallery_11, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_11", $gallery_11_id );
 
-					$gallery_12_id = media_sideload_image( $gallery_12, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_12", $gallery_12_id );
+					$gallery_12_id = media_sideload_image( $gallery_12, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_12", $gallery_12_id );
 
 
 
@@ -156,7 +156,7 @@ if ( ! class_exists( 'cyn_upload_excel' ) ) {
 					$name = $row[0];
 					$type = $row[1];
 					$material = $row[2];
-					$total_area = $row[3];
+					$living_area = $row[3];
 					$house_area = $row[4];
 					$price = $row[5];
 					$number_of_floors = $row[6];
@@ -186,14 +186,14 @@ if ( ! class_exists( 'cyn_upload_excel' ) ) {
 					$gallery_12 = $row[30];
 
 
-					$new_land = wp_insert_post( [ 
+					$new_house = wp_insert_post( [ 
 						'post_title' => $name,
 						'post_type' => 'house',
 						'post_status' => 'publish',
 						'meta_input' => [ 
 							'type' => $type,
 							'material' => $material,
-							'total_area' => $total_area,
+							'living_area' => $living_area,
 							'house_area' => $house_area,
 							'price' => $price,
 							'number_of_floors' => $number_of_floors,
@@ -214,46 +214,46 @@ if ( ! class_exists( 'cyn_upload_excel' ) ) {
 
 
 					//upload feature image
-					$feature_image_id = media_sideload_image( $feature_image_url, $new_land, null, 'id' );
-					set_post_thumbnail( $new_land, $feature_image_id );
+					$feature_image_id = media_sideload_image( $feature_image_url, $new_house, null, 'id' );
+					set_post_thumbnail( $new_house, $feature_image_id );
 
 
 					//gallery
-					$gallery_1_id = media_sideload_image( $gallery_1, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_1", $gallery_1_id );
+					$gallery_1_id = media_sideload_image( $gallery_1, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_1", $gallery_1_id );
 
-					$gallery_2_id = media_sideload_image( $gallery_2, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_2", $gallery_2_id );
+					$gallery_2_id = media_sideload_image( $gallery_2, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_2", $gallery_2_id );
 
-					$gallery_3_id = media_sideload_image( $gallery_3, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_3", $gallery_3_id );
+					$gallery_3_id = media_sideload_image( $gallery_3, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_3", $gallery_3_id );
 
-					$gallery_4_id = media_sideload_image( $gallery_4, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_4", $gallery_4_id );
+					$gallery_4_id = media_sideload_image( $gallery_4, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_4", $gallery_4_id );
 
-					$gallery_5_id = media_sideload_image( $gallery_5, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_5", $gallery_5_id );
+					$gallery_5_id = media_sideload_image( $gallery_5, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_5", $gallery_5_id );
 
-					$gallery_6_id = media_sideload_image( $gallery_6, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_6", $gallery_6_id );
+					$gallery_6_id = media_sideload_image( $gallery_6, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_6", $gallery_6_id );
 
-					$gallery_7_id = media_sideload_image( $gallery_7, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_7", $gallery_7_id );
+					$gallery_7_id = media_sideload_image( $gallery_7, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_7", $gallery_7_id );
 
-					$gallery_8_id = media_sideload_image( $gallery_8, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_8", $gallery_8_id );
+					$gallery_8_id = media_sideload_image( $gallery_8, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_8", $gallery_8_id );
 
-					$gallery_9_id = media_sideload_image( $gallery_9, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_9", $gallery_9_id );
+					$gallery_9_id = media_sideload_image( $gallery_9, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_9", $gallery_9_id );
 
-					$gallery_10_id = media_sideload_image( $gallery_10, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_10", $gallery_10_id );
+					$gallery_10_id = media_sideload_image( $gallery_10, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_10", $gallery_10_id );
 
-					$gallery_11_id = media_sideload_image( $gallery_11, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_11", $gallery_11_id );
+					$gallery_11_id = media_sideload_image( $gallery_11, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_11", $gallery_11_id );
 
-					$gallery_12_id = media_sideload_image( $gallery_12, $new_land, null, 'id' );
-					update_post_meta( $new_land, "images_img_12", $gallery_12_id );
+					$gallery_12_id = media_sideload_image( $gallery_12, $new_house, null, 'id' );
+					update_post_meta( $new_house, "images_img_12", $gallery_12_id );
 
 
 
@@ -276,7 +276,7 @@ if ( ! class_exists( 'cyn_upload_excel' ) ) {
 					$color = $row[7];
 					$description = $row[8];
 					$feature_image_url = $row[9];
-					$gallery = $row[10];
+					$flag_image_url = $row[10];
 
 					$new_company = wp_insert_term( $name, 'company', [ 
 						'description' => $description
@@ -293,19 +293,15 @@ if ( ! class_exists( 'cyn_upload_excel' ) ) {
 					update_term_meta( $new_company_ID, 'color', $color );
 
 					//upload feature image
-					$feature_image_id = media_sideload_image( $feature_image_url, $new_land, null, 'id' );
-					set_post_thumbnail( $new_land, $feature_image_id );
+					$feature_image_id = media_sideload_image( $feature_image_url, $new_house, null, 'id' );
+					set_post_thumbnail( $new_house, $feature_image_id );
 
-					$gallery = explode( ';', $gallery );
+					//upload flag image
+					$flag_image_id = media_sideload_image( $flag_image_url, $new_house, null, 'id' );
+					set_post_thumbnail( $new_house, $flag_image_id );
 
-					if ( count( $gallery ) > 0 ) {
-						foreach ( $gallery as $index => $img_url ) {
-							$index++;
 
-							$gallery_img_id = media_sideload_image( $img_url, $new_land, null, 'id' );
-							update_post_meta( $new_land, "images_img_$index", $gallery_img_id );
-						}
-					}
+
 				}
 			}
 

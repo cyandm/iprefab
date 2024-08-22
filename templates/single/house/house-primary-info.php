@@ -17,18 +17,18 @@ $primary_data = [
 		'text' => __( 'house area', 'cyn-dm' ),
 		'value' => '<span>' . get_field( 'house_area' ) . '</span>' . '<span class="unit">m<sup>2</sup></span>',
 	],
-
+	[ 
+		'icon' => 'size',
+		'text' => __( 'living area', 'cyn-dm' ),
+		'value' => '<span>' . get_field( 'living_area' ) . '</span>' . '<span class="unit">m<sup>2</sup></span>',
+	],
 	[ 
 		'icon' => 'bed',
 		'text' => __( 'rooms', 'cyn-dm' ),
 		'value' => get_field( 'rooms' ),
 		'is_svg' => true,
 	],
-	[ 
-		'icon' => 'layers-1',
-		'text' => __( 'floors', 'cyn-dm' ),
-		'value' => get_field( 'number_of_floors' ),
-	],
+
 
 ];
 

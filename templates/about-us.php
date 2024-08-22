@@ -21,7 +21,7 @@ $team_members = get_field( 'our_team' ) ?? [];
 	<div class="clear-fix-24"></div>
 
 	<h1>
-		<?php the_field( 'title' ) ?>
+		<?php echo get_field( 'title' ) ?>
 	</h1>
 	<div class="clear-fix-16"></div>
 
@@ -32,7 +32,7 @@ $team_members = get_field( 'our_team' ) ?? [];
 	<div class="clear-fix-24"></div>
 
 	<div>
-		<?php the_field( 'hero_text' ) ?>
+		<?php echo get_field( 'hero_text' ) ?>
 	</div>
 
 	<div class="clear-fix-64"></div>
@@ -41,7 +41,7 @@ $team_members = get_field( 'our_team' ) ?? [];
 	<?php if ( get_field( 'our_team_title' ) ) : ?>
 		<div>
 			<div>
-				<h2><?php the_field( 'our_team_title' ) ?></h2>
+				<h2><?php echo get_field( 'our_team_title' ) ?></h2>
 				<hr />
 			</div>
 
@@ -76,14 +76,14 @@ $team_members = get_field( 'our_team' ) ?? [];
 	<?php if ( get_field( 'perspective_title' ) ) : ?>
 		<div class="perspective-section">
 			<div>
-				<h2><?php the_field( 'perspective_title' ) ?></h2>
+				<h2><?php echo get_field( 'perspective_title' ) ?></h2>
 				<hr />
 				<div class="clear-fix-24"></div>
 			</div>
 
 			<div class="perspective | d-flex gap-24">
 				<div>
-					<?php the_field( 'perspective_text' ) ?>
+					<?php echo get_field( 'perspective_text' ) ?>
 				</div>
 
 				<div>

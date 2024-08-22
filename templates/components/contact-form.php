@@ -34,14 +34,14 @@ $get_advice = [
 	],
 	[ 
 		'name' => 'city',
-		'type' => 'select',
-		'class' => 'city-select-2',
-		'options' => [],
+		'type' => 'text',
+		'class' => 'citySearch',
 		'label' => __( 'city', 'cyn-dm' ),
 		'is_required' => true,
-		'action' => '<i class="iconsax" icon-name="chevron-down"></i>'
+		'action' => '<i class="iconsax" icon-name="search-normal-2"></i>'
 	],
 ];
+
 
 $form_sections = [ 
 	[ 
@@ -49,7 +49,7 @@ $form_sections = [
 		'inputs' => $personal_info,
 	],
 	[ 
-		'label' => __( 'get advice for' , 'cyn-dm'),
+		'label' => __( 'I want free offers for' , 'cyn-dm'),
 		'inputs' => $get_advice,
 	]
 ];
@@ -83,7 +83,7 @@ $checklist_sections = [
 		'inputs' => $looking_for,
 	],
 	[ 
-		'label' => __( 'house type', 'cyn-dm' ),
+		'label' => __( 'building types', 'cyn-dm' ),
 		'inputs' => $house_type,
 	]
 ]
@@ -99,7 +99,7 @@ $checklist_sections = [
 			   id="contactFormPopupCloser"
 			   icon-name="x-circle"></i>
 
-			<h4><?php _e( 'contact iprefab' , 'cyn-dm') ?></h4>
+			<h4><?php _e( 'Dream Home Offer' , 'cyn-dm') ?></h4>
 
 			<span></span>
 		</div>
@@ -112,7 +112,7 @@ $checklist_sections = [
 					<div class="d-grid gap-16">
 						<?php foreach ( $section['inputs'] as $input ) : ?>
 								<label for="<?php echo $input['name'] ?>"
-									   class="input-wrapper">
+									   class="input-wrapper <?php echo $input['class']?>">
 
 									<span class="input-label">
 										<?php echo $input['label'] ?>
@@ -120,7 +120,7 @@ $checklist_sections = [
 									</span>
 
 									<input type="<?php echo $input['type'] ?>"
-										   class="<?php echo $input['class'] ?>"
+										   
 										   name="<?php echo $input['name'] ?>"
 								   		<?php echo $input['is_required'] ? 'required' : '' ?>
 										   id="<?php echo $input['name'] ?>">

@@ -112,7 +112,8 @@ if ( $children ) {
 
 			get_template_part( '/templates/components/card/company', null,
 				[ 
-					'term' => $term
+					'term' => $term,
+					'parent' => get_query_var( 'company' ),
 				]
 			);
 

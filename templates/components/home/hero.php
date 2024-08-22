@@ -28,10 +28,10 @@ $chips = [
 
 <section class="hero">
 	<h1 class="title">
-		<?php the_field( 'hero_title' ) ?>
+		<?php echo get_field( 'hero_title' ) ?>
 	</h1>
 	<p class="h2">
-		<?php the_field( 'hero_description' ) ?>
+		<?php echo get_field( 'hero_description' ) ?>
 	</p>
 
 	<div class="clear-fix-12"></div>

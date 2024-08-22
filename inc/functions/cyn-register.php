@@ -12,7 +12,7 @@ function cyn_post_type_register() {
 	cyn_make_post_type( __( 'house + land', 'cyn-dm' ), 'house-and-land', 'dashicons-admin-home' );
 	cyn_make_post_type( __( 'exhibition', 'cyn-dm' ), 'exhibition', 'dashicons-tickets-alt' );
 	cyn_make_post_type( __( 'question', 'cyn-dm' ), 'faq', 'dashicons-editor-quote' );
-	cyn_make_post_type( __( 'forms', 'cyn-dm' ), 'form', 'dashicons-email' );
+	cyn_make_post_type( __( 'forms', 'cyn-dm' ), 'form', 'dashicons-email', true, [ 'title' ] );
 }
 
 function cyn_taxonomy_register() {
@@ -21,7 +21,7 @@ function cyn_taxonomy_register() {
 	cyn_make_taxonomy( __( 'form category', 'cyn-dm' ), 'form-cat', [ 'form' ] );
 }
 
-function cyn_make_post_type( $name, $slug, $icon, $menu = true ) {
+function cyn_make_post_type( $name, $slug, $icon, $menu = true, $supports = [ 'title', 'thumbnail', 'editor' ] ) {
 
 	$args = [ 
 		'label' => $name,
@@ -36,7 +36,7 @@ function cyn_make_post_type( $name, $slug, $icon, $menu = true ) {
 		'hierarchical' => false,
 		'menu_position' => null,
 		'menu_icon' => $icon,
-		'supports' => [ 'title', 'thumbnail', 'editor' ],
+		'supports' => $supports,
 
 	];
 

@@ -16,9 +16,12 @@ get_header() ?>
 		'/templates/single/general/info'
 		, null,
 		[ 
-			'area' => get_field( 'total_area' ),
+			'area' => get_field( 'house_area' ),
 			'price' => get_field( 'price' ),
-			'address' => get_field( 'rooms', get_queried_object_id() ) . __( ' Room', 'cyn-dm' ) . ' • ' . get_field( 'balcony', get_the_ID() ) . __( ' Balcony', 'cyn-dm' ) . ' • ' . get_field( 'garage', get_the_ID() ) . __( ' Garage', 'cyn-dm' )
+			'address' =>
+				get_field( 'rooms', get_queried_object_id() ) . __( ' Room', 'cyn-dm' ) . ' • ' .
+				( get_field( 'balcony', get_the_ID() ) ? 1 : 0 ) . __( ' Balcony', 'cyn-dm' ) . ' • ' .
+				( get_field( 'garage', get_the_ID() ) ? 1 : 0 ) . __( ' Garage', 'cyn-dm' )
 		] ) ?>
 
 	<div class="clear-fix-24"></div>
@@ -32,6 +35,9 @@ get_header() ?>
 		, null,
 		[ 
 			'has_brochure' => true,
+			'cta_text' => 'message',
+			'cta_2_text' => 'call',
+			'cta_2_link' => 'tel:' . get_field( 'phone', 'company_' . $company->term_id ),
 		] ) ?>
 
 	<div class="clear-fix-24">

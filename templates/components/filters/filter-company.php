@@ -38,7 +38,7 @@ $materials = array_unique( $materials );
 				id="originCompany">
 
 			<option value>
-				<?php _e( 'doesn\'t matter', 'cyn-dm' ) ?>
+				<?php _e( 'all', 'cyn-dm' ) ?>
 			</option>
 
 			<?php foreach ( $countries as $material ) : ?>
@@ -73,7 +73,7 @@ $materials = array_unique( $materials );
 				id="material">
 
 			<option value>
-				<?php _e( 'doesn\'t matter', 'cyn-dm' ) ?>
+				<?php _e( 'all', 'cyn-dm' ) ?>
 			</option>
 
 			<?php foreach ( $materials as $material ) : ?>

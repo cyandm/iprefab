@@ -29,7 +29,7 @@ $countries = array_filter( $countries );
 				id="originCompany">
 
 			<option value="null">
-				<?php _e( 'doesn\'t matter', 'cyn-dm' ) ?>
+				<?php _e( 'all', 'cyn-dm' ) ?>
 			</option>
 
 			<?php foreach ( $countries as $material ) : ?>
@@ -129,7 +129,7 @@ $countries = array_filter( $countries );
 		<select name="rooms"
 				id="rooms">
 			<option value="null">
-				<?php _e( 'doesn\'t matter', 'cyn-dm' ) ?>
+				<?php _e( 'all', 'cyn-dm' ) ?>
 			</option>
 			<?php for ( $i = 1; $i <= 8; $i++ ) : ?>
 				<option value="<?= $i ?>"
@@ -157,7 +157,7 @@ $countries = array_filter( $countries );
 		<select name="floors"
 				id="floors">
 			<option value="null">
-				<?php _e( 'doesn\'t matter', 'cyn-dm' ) ?>
+				<?php _e( 'all', 'cyn-dm' ) ?>
 			</option>
 			<?php for ( $i = 1; $i <= 3; $i++ ) : ?>
 				<option value="<?= $i ?>"

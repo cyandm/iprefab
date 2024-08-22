@@ -17,9 +17,15 @@ $button_default = [
 		'icon' => 'book-with-bookmark'
 	],
 	[ 
-		'text' => __( 'ask builder', 'cyn-dm' ),
+		'text' => __( 'message', 'cyn-dm' ),
 		'class' => '',
 		'type' => 'button',
+	],
+	[ 
+		'text' => __( 'call', 'cyn-dm' ),
+		'link' => 'tel:' . get_field( 'phone', 'company_' . $company->term_id ),
+		'class' => 'btn-cta btn-green',
+		'type' => 'link',
 	],
 ];
 
@@ -64,9 +70,9 @@ $subtitle = $args['subtitle'] ?? $subtitle_default;
 					<?= $button['text'] ?>
 				</a>
 			<?php elseif ( $button['type'] === 'button' ) : ?>
-				<button class="btn-cta callback-opener <?= $button['class'] ?>">
+				<a class="btn-cta callback-opener <?= $button['class'] ?>">
 					<?= $button['text'] ?>
-				</button>
+				</a>
 			<?php endif; ?>
 
 		<?php endforeach; ?>

@@ -1,7 +1,7 @@
 <?php
 $img_url = $args['url'] !== '' ? $args['url'] : get_stylesheet_directory_uri() . '/assets/imgs/placeholder.webp';
 
-if ( $args['url'] === '' )
+if ( empty( $args['url'] ) )
 	return;
 ?>
 

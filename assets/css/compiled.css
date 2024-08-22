@@ -1085,6 +1085,10 @@ hr {
   padding: 0 !important;
   color: #0b99ff;
 }
+.btn-green {
+  background-color: #006553;
+  color: #fff;
+}
 .btn-icon {
   padding: 0.75rem;
   width: 48px;
@@ -7006,7 +7010,7 @@ main.contact-us .map iframe:hover {
   }
 }
 .general-feature-top {
-  color: #a4a4a3;
+  color: #6f6f6f;
 }
 .general-feature-value {
   font-size: 20px;

@@ -29,12 +29,12 @@ $product_details = [
 		'value' => get_field( 'number_of_floors' ) ?? ''
 	],
 	[ 
-		'name' => __( 'total area', 'cyn-dm' ),
-		'value' => get_field( 'total_area' ) . '<span class="unit">m<sup>2</sup></span>',
-	],
-	[ 
 		'name' => __( 'house area', 'cyn-dm' ),
 		'value' => get_field( 'house_area' ) . '<span class="unit">m<sup>2</sup></span>',
+	],
+	[ 
+		'name' => __( 'living area', 'cyn-dm' ),
+		'value' => get_field( 'living_area' ) . '<span class="unit">m<sup>2</sup></span>',
 	],
 	[ 
 		'name' => __( 'storage', 'cyn-dm' ),

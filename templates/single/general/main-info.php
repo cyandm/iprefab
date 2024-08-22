@@ -39,11 +39,14 @@ $is_calender = $args['is_calender'] ?? false;
 
 	<div class="general-actions-primary">
 		<?php if ( $has_brochure ) : ?>
-			<button class="btn-secondary-icon-start">
+			<a href="<?php echo get_field( 'brochure' ) ? get_field( 'brochure' )['url'] : '#' ?>"
+			   class="btn-cta icon-start"
+			   style="background-color:transparent; border-color:#000; color:#000; border:1px solid;">
+
 				<i class="iconsax"
 				   icon-name="book-with-bookmark"></i>
 				brochure
-			</button>
+			</a>
 		<?php endif; ?>
 
 		<?php if ( $is_calender ) : ?>
@@ -68,7 +71,14 @@ $is_calender = $args['is_calender'] ?? false;
 			   class="btn-cta callback-opener">
 				<?php echo $cta_text ?>
 			</a>
+		<?php endif; ?>
 
+		<?php if ( isset( $args['cta_2_text'] ) ) : ?>
+			<a href="<?php echo $args['cta_2_link'] ?>"
+			   style="background-color:#006553; border-color:#006553"
+			   class="btn-cta">
+				<?php echo $args['cta_2_text'] ?>
+			</a>
 		<?php endif; ?>
 	</div>
 

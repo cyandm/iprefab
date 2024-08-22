@@ -38,10 +38,6 @@ $form_sections = [
 	[ 
 		'label' => __( 'personal info', 'cyn-dm' ),
 		'inputs' => $personal_info,
-	],
-	[ 
-		'label' => __( 'white castle', 'cyn-dm' ),
-		'inputs' => $white_castle,
 	]
 ];
 
@@ -89,7 +85,7 @@ $checklist_sections = [
 			   id="callBackPopupCloser"
 			   icon-name="x-circle"></i>
 
-			<h4><?php _e( 'call back request' , 'cyn-dm') ?></h4>
+			<h4><?php _e( 'Contact Iprefab' , 'cyn-dm') ?></h4>
 
 			<span></span>
 		</div>
@@ -105,7 +101,7 @@ $checklist_sections = [
 							   class="input-wrapper">
 
 							<span class="input-label">
-								<?php echo $input['label'] ?>
+								<?php echo $input['is_required'] ? $input['label'] . ' *' : $input['label']  ?>
 							</span>
 
 							<?php if ( $input['type'] === 'textarea' ) : ?>
@@ -116,8 +112,7 @@ $checklist_sections = [
 									   class="<?php echo $input['class'] ?>"
 									   name="<?php echo $input['name'] ?>"
 						   			<?php echo $input['is_required'] ? 'required' : '' ?>
-						   			<?php echo $input['is_required'] ? ' *' : '' ?>
-									   id="<?php echo $input['name'] ?>">
+									   id="<?php echo $input['name'] ?>" />
 							<?php endif; ?>
 
 

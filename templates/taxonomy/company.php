@@ -21,6 +21,16 @@ foreach ( $wp_query->posts as $post ) {
 	}
 }
 
+
+$lands = [];
+
+foreach ( $wp_query->posts as $post ) {
+	if ( count( $lands ) < 3 && $post->post_type === 'land' ) {
+		array_push( $lands, $post->ID );
+	}
+}
+
+
 $supplier_page_link =
 	count( $supplier_page_q->posts ) === 0 ?
 	'#' :
@@ -28,6 +38,7 @@ $supplier_page_link =
 
 $company_acf_address = 'company_' . $current_term->term_id;
 $parent_id = wp_get_term_taxonomy_parent_id( get_queried_object_id(), 'company' );
+$parent_slug = get_term( $parent_id, 'company' )->slug;
 
 ?>
 
@@ -85,7 +96,7 @@ $parent_id = wp_get_term_taxonomy_parent_id( get_queried_object_id(), 'company' 
 					<div class="d-grid gap-4">
 						<div class="d-flex ai-center gap-4">
 							<span class="single-company-flag">
-								<?= wp_get_attachment_image( get_field( 'flag', $company_acf_address ), [ 'full' ] ) ?>
+								<?= wp_get_attachment_image( get_field( 'flag', $company_acf_address ), 'full' ) ?>
 							</span>
 
 							<div class="single-company-country d-flex gap-4">
@@ -98,18 +109,23 @@ $parent_id = wp_get_term_taxonomy_parent_id( get_queried_object_id(), 'company' 
 						</div>
 
 						<div class="single-company-detail | d-flex gap-4">
-							<i class="iconsax"
-							   icon-name="house-1"></i>
-							<span><?= $wp_query->found_posts ?></span>
-							<span><?php _e( 'houses', 'cyn-dm' ) ?></span>
+							<?php
+							if ( $parent_slug === 'house-builder' ) :
+								echo cyn_render_icon_box( 'house-1', $wp_query->found_posts . ' houses' );
+							elseif ( $parent_slug === 'land-advertiser' ) :
+								echo cyn_render_icon_box( 'lifebuoy', $wp_query->found_posts . ' lands' );
+							endif;
+							?>
 						</div>
+
+
 					</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="single-company-cta | d-flex flex-col ai-center jc-center gap-12">
-			<a href="#"
+			<a href="<?= get_field( 'website', $company_acf_address ) ?>"
 			   class="btn-secondary">
 				<i class="iconsax"
 				   icon-name="eye"></i>
@@ -121,16 +137,9 @@ $parent_id = wp_get_term_taxonomy_parent_id( get_queried_object_id(), 'company' 
 			   style="background-color:#006553; border-color:#006553">
 				<i class="iconsax"
 				   icon-name="phone"></i>
-				<?php _e( 'call builder', 'cyn-dm' ) ?>
+				<?php _e( 'call company', 'cyn-dm' ) ?>
 			</a>
 
-
-			<a href="<?= 'tel:' . get_field( 'phone', $company_acf_address ) ?>"
-			   class="btn-primary">
-				<i class="iconsax"
-				   icon-name="messages-1"></i>
-				<?php _e( 'write to builder', 'cyn-dm' ) ?>
-			</a>
 		</div>
 	</section>
 
@@ -165,12 +174,22 @@ $parent_id = wp_get_term_taxonomy_parent_id( get_queried_object_id(), 'company' 
 	<div class="clear-fix-24"></div>
 
 	<?php
-	cyn_render_section_card(
-		__( 'houses in IPREFAB', 'cyn-dm' ),
-		[ 'link' => '#', 'title' => 'view all', 'icon' => 'eye' ],
-		$houses,
-		'house'
-	);
+
+	if ( $parent_slug === 'land-advertiser' ) :
+		cyn_render_section_card(
+			__( 'lands at IPREFAB', 'cyn-dm' ),
+			[ 'link' => '#', 'title' => 'view all', 'icon' => 'eye' ],
+			$lands,
+			'land'
+		);
+	elseif ( $parent_slug === 'house-builder' ) :
+		cyn_render_section_card(
+			__( 'houses in IPREFAB', 'cyn-dm' ),
+			[ 'link' => '#', 'title' => 'view all', 'icon' => 'eye' ],
+			$houses,
+			'house'
+		);
+	endif;
 	?>
 
 	<div class="clear-fix-120"></div>
