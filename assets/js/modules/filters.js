@@ -1,54 +1,23 @@
-// import {
-// 	activateEl,
-// 	deActivateEl,
-// 	definePopUp,
-// 	getCookie,
-// 	setCookie,
-// 	toggleActivateEl,
-// } from '../utils/functions';
+import { activateEl, deActivateEl, definePopUp } from '../utils/functions';
 
-// const Filters = () => {
-// 	const cookie = getCookie('cyn-filters');
-// 	filtersForm = document.querySelectorAll('#filtersForm');
-// 	sortForm = document.querySelector('#sortForm');
+const Filters = () => {
+	const filterBtn = document.querySelector('.filter-btn');
+	const filterPopUp = document.querySelector('#filtersPopUp');
+	const filtersPopUpCloser = document.querySelector('#filtersPopUpCloser');
 
-// 	const addFormElementsToCookie = (formEl) => {
-// 		if (!formEl) return;
-// 		const inputs = formEl.querySelectorAll('input');
-// 		const selects = formEl.querySelectorAll('select');
+	if (!filterBtn) return;
+	if (!filterPopUp) return;
+	if (!filtersPopUpCloser) return;
 
-// 		[inputs, selects].map((groupEl) => {
-// 			groupEl.forEach((filter) => {
-// 				filter.addEventListener('change', ({ target: { value } }) => {
-// 					cookie[filter.name] = value;
-// 					setCookie('cyn-filters', cookie);
-// 				});
-// 			});
-// 		});
-// 	};
+	definePopUp(filterPopUp);
 
-// 	filtersForm.forEach((el) => {
-// 		addFormElementsToCookie(el);
-// 	});
-// 	addFormElementsToCookie(sortForm);
+	filterBtn.addEventListener('click', () => {
+		activateEl(filterPopUp);
+	});
 
-// 	const filterBtn = document.querySelector('.filter-btn');
-// 	const filterPopUp = document.querySelector('#filtersPopUp');
-// 	const filtersPopUpCloser = document.querySelector('#filtersPopUpCloser');
+	filtersPopUpCloser.addEventListener('click', () => {
+		deActivateEl(filterPopUp);
+	});
+};
 
-// 	if (!filterBtn) return;
-// 	if (!filterPopUp) return;
-// 	if (!filtersPopUpCloser) return;
-
-// 	definePopUp(filterPopUp);
-
-// 	filterBtn.addEventListener('click', () => {
-// 		activateEl(filterPopUp);
-// 	});
-
-// 	filtersPopUpCloser.addEventListener('click', () => {
-// 		deActivateEl(filterPopUp);
-// 	});
-// };
-
-// Filters();
+Filters();

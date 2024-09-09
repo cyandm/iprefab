@@ -26,7 +26,8 @@
 		, null,
 		[ 
 			'has_brochure' => false,
-			'cta_text' => __( 'call broker', 'cyn-dm' ),
+			'cta_icon' => 'phone',
+			'cta_text' => __( 'call', 'cyn-dm' ),
 			'cta_link' => 'tel:' . get_field( 'contact_number', get_the_ID() ),
 		] ) ?>
 

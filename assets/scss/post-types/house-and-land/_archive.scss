@@ -9,11 +9,19 @@
 	border-radius: 1rem;
 	align-items: center;
 
+	@include mq('md') {
+		grid-template-columns: 1fr;
+	}
+
 	.actions {
 		grid-column: 1 / 6;
 		align-items: center;
 		max-width: 30%;
 		justify-content: center;
 		margin-inline: auto;
+
+		@include mq('md') {
+			grid-column: 1 / 1;
+		}
 	}
 }

@@ -21,24 +21,23 @@ $personal_info = [ [
 	'is_required' => false,
 	'action' => false
 ],
+[ 
+	'name' => 'description',
+	'type' => 'textarea',
+	'class' => '',
+	'label' => __( 'description' , 'cyn-dm'),
+	'is_required' => false,
+	'action' => false
+],
 ];
 
-$white_castle = [ 
-	[ 
-		'name' => 'description',
-		'type' => 'textarea',
-		'class' => '',
-		'label' => __( 'description' , 'cyn-dm'),
-		'is_required' => false,
-		'action' => false
-	],
-];
+
 
 $form_sections = [ 
 	[ 
 		'label' => __( 'personal info', 'cyn-dm' ),
 		'inputs' => $personal_info,
-	]
+	],
 ];
 
 $looking_for = [ 
@@ -105,7 +104,7 @@ $checklist_sections = [
 							</span>
 
 							<?php if ( $input['type'] === 'textarea' ) : ?>
-								<textarea></textarea>
+								<textarea name="<?php echo $input['name']?>"></textarea>
 
 							<?php else : ?>
 								<input type="<?php echo $input['type'] ?>"

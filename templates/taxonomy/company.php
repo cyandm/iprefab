@@ -133,8 +133,7 @@ $parent_slug = get_term( $parent_id, 'company' )->slug;
 			</a>
 
 			<a href="<?= 'tel:' . get_field( 'phone', $company_acf_address ) ?>"
-			   class="btn-primary"
-			   style="background-color:#006553; border-color:#006553">
+			   class="btn-primary btn-green">
 				<i class="iconsax"
 				   icon-name="phone"></i>
 				<?php _e( 'call company', 'cyn-dm' ) ?>

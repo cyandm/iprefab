@@ -1,31 +1,3 @@
-<?php
-
-
-$chips = [ 
-	[ 
-		'title' => __( 'finland', 'cyn-dm' ),
-		'link' => '/'
-	],
-	[ 
-		'title' => wp_count_posts( 'house' )->publish . ' ' . __( 'houses', 'cyn-dm' ),
-		'link' => get_post_type_archive_link( 'house' ),
-	],
-	[ 
-		'title' => wp_count_terms( 'company', [ 
-			'hide_empty' => false,
-			'parent' => 0
-		] ) . ' ' . __( 'suppliers', 'cyn-dm' ),
-		'link' => get_page_url_by_template( 'templates/suppliers.php' ),
-	],
-	[ 
-		'title' => wp_count_posts( 'land' )->publish . ' ' . __( 'lands', 'cyn-dm' ),
-		'link' => get_post_type_archive_link( 'land' ),
-	],
-];
-
-?>
-
-
 <section class="hero">
 	<h1 class="title">
 		<?php echo get_field( 'hero_title' ) ?>
@@ -35,16 +7,6 @@ $chips = [
 	</p>
 
 	<div class="clear-fix-12"></div>
-
-	<div class="d-flex gap-12">
-		<?php foreach ( $chips as $i => $chip ) : ?>
-			<a class="btn-secondary btn-small"
-			   href="<?= $chip['link'] ?>">
-				<?= $chip['title'] ?>
-			</a>
-		<?php endforeach; ?>
-	</div>
-	<div class="clear-fix-24"></div>
 
 	<hr>
 
@@ -71,11 +33,12 @@ $chips = [
 					   class="input-wrapper citySearch">
 
 					<span class="input-label">
-						<?php _e( 'city', 'cyn-dm' ) ?>
+						<?php _e( 'location', 'cyn-dm' ) ?>
 					</span>
 
 					<input type="text"
-						   name="city">
+						   name="city"
+						   placeholder="city">
 
 
 					<span class="input-action">
@@ -90,11 +53,12 @@ $chips = [
 				<label for="areaMin"
 					   class="input-wrapper">
 					<span class="input-label">
-						<?php _e( 'area min', 'cyn-dm' ) ?>
+						<?php _e( 'living area', 'cyn-dm' ) ?>
 					</span>
 					<input type="number"
 						   name="areaMin"
-						   id="areaMin">
+						   id="areaMin"
+						   placeholder="min">
 
 					<span class="input-action">
 						m <sup>2</sup>
@@ -123,11 +87,12 @@ $chips = [
 				   class="input-wrapper citySearch">
 
 				<span class="input-label">
-					<?php _e( 'city', 'cyn-dm' ) ?>
+					<?php _e( 'location', 'cyn-dm' ) ?>
 				</span>
 
 				<input type="text"
-					   name="city">
+					   name="city"
+					   placeholder="city">
 
 
 				<span class="input-action">
@@ -142,10 +107,11 @@ $chips = [
 			<label for="areaMin"
 				   class="input-wrapper">
 				<span class="input-label">
-					<?php _e( 'area min', 'cyn-dm' ) ?>
+					<?php _e( 'living area', 'cyn-dm' ) ?>
 				</span>
 				<input type="number"
 					   name="areaMin"
+					   placeholder="min"
 					   id="areaMin">
 
 

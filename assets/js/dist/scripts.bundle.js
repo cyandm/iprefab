@@ -6076,6 +6076,27 @@
     return JSON.parse("{}");
   };
 
+  // assets/js/modules/filters.js
+  var Filters = () => {
+    const filterBtn = document.querySelector(".filter-btn");
+    const filterPopUp = document.querySelector("#filtersPopUp");
+    const filtersPopUpCloser = document.querySelector("#filtersPopUpCloser");
+    if (!filterBtn)
+      return;
+    if (!filterPopUp)
+      return;
+    if (!filtersPopUpCloser)
+      return;
+    definePopUp(filterPopUp);
+    filterBtn.addEventListener("click", () => {
+      activateEl(filterPopUp);
+    });
+    filtersPopUpCloser.addEventListener("click", () => {
+      deActivateEl(filterPopUp);
+    });
+  };
+  Filters();
+
   // assets/js/modules/variable.js
   var rootEl = document.querySelector(":root");
   var containerEL = document.querySelector(".container");
@@ -6278,8 +6299,10 @@
         searchResults.classList.remove("active");
       });
       input.addEventListener("keyup", (e) => {
-        if (e.target.value < 3)
+        if (e.target.value.length < 3) {
+          searchResults.innerHTML = "search input must be more than 3 character.";
           return;
+        }
         jQuery(($) => {
           $.ajax({
             type: "GET",
@@ -6290,7 +6313,7 @@
             success: function(response) {
               searchResults.innerHTML = "";
               if (response.length === 0) {
-                searchResults.innerHTML = "Sorry We Not Found Anything!";
+                searchResults.innerHTML = "Sorry! we not found your city in our database";
               }
               response.forEach((resItem) => {
                 const div = document.createElement("div");

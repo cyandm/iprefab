@@ -28,7 +28,7 @@ function cyn_render_btn( $btn, $is_desktop ) { ?>
  */
 function cyn_render_section_card( $title, $btn, $items, $post_type, $additional_class = '', $col = '3', $has_swiper = false ) {
 
-	if ( count( $items ) === 0 )
+	if ( empty( $items ) )
 		return;
 	?>
 

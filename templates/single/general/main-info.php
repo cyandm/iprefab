@@ -2,6 +2,7 @@
 
 $cta_text = $args['cta_text'] ?? __( 'Ask Builder', 'cyn-dm' );
 $cta_link = $args['cta_link'] ?? '#';
+$cta_icon = $args['cta_icon'] ?? '';
 $has_brochure = $args['has_brochure'] ?? false;
 $title = get_the_title();
 
@@ -68,15 +69,17 @@ $is_calender = $args['is_calender'] ?? false;
 
 		<?php else : ?>
 			<a href="<?php echo $cta_link ?>"
-			   class="btn-cta callback-opener">
+			   class="btn-cta btn-black callback-opener">
+				<i class="iconsax"
+				   icon-name="<?php echo $cta_icon ?>"></i>
 				<?php echo $cta_text ?>
 			</a>
 		<?php endif; ?>
 
 		<?php if ( isset( $args['cta_2_text'] ) ) : ?>
 			<a href="<?php echo $args['cta_2_link'] ?>"
-			   style="background-color:#006553; border-color:#006553"
-			   class="btn-cta">
+			   style="min-width:120px;text-align:center"
+			   class="btn-cta btn-green">
 				<?php echo $args['cta_2_text'] ?>
 			</a>
 		<?php endif; ?>

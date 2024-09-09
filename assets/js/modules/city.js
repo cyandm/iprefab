@@ -44,7 +44,10 @@ export function city() {
 		});
 
 		input.addEventListener('keyup', (e) => {
-			if (e.target.value < 3) return;
+			if (e.target.value.length < 3) {
+				searchResults.innerHTML = 'search input must be more than 3 character.';
+				return;
+			}
 			jQuery(($) => {
 				$.ajax({
 					type: 'GET',
@@ -57,7 +60,8 @@ export function city() {
 						searchResults.innerHTML = '';
 
 						if (response.length === 0) {
-							searchResults.innerHTML = 'Sorry We Not Found Anything!';
+							searchResults.innerHTML =
+								'Sorry! we not found your city in our database';
 						}
 
 						response.forEach((resItem) => {

@@ -260,4 +260,8 @@ select.city-select-2 {
 	button {
 		padding-inline: 4rem;
 	}
+
+	@media screen and (max-width: 768px) {
+		flex-direction: column;
+	}
 }

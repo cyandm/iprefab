@@ -21,6 +21,14 @@ $personal_info = [ [
 	'is_required' => false,
 	'action' => false
 ],
+[ 
+	'name' => 'description',
+	'type' => 'textarea',
+	'class' => '',
+	'label' => __( 'description' , 'cyn-dm'),
+	'is_required' => false,
+	'action' => false
+],
 ];
 
 $get_advice = [ 
@@ -35,7 +43,7 @@ $get_advice = [
 	[ 
 		'name' => 'city',
 		'type' => 'text',
-		'class' => 'citySearch',
+		'class' => '',
 		'label' => __( 'city', 'cyn-dm' ),
 		'is_required' => true,
 		'action' => '<i class="iconsax" icon-name="search-normal-2"></i>'
@@ -119,11 +127,16 @@ $checklist_sections = [
 										<?php echo $input['is_required'] ? ' *' : '' ?>
 									</span>
 
-									<input type="<?php echo $input['type'] ?>"
-										   
-										   name="<?php echo $input['name'] ?>"
-								   		<?php echo $input['is_required'] ? 'required' : '' ?>
-										   id="<?php echo $input['name'] ?>">
+									<?php if ( $input['type'] === 'textarea' ) : ?>
+								<textarea name="<?php echo $input['name']?>"></textarea>
+
+							<?php else : ?>
+								<input type="<?php echo $input['type'] ?>"
+									   class="<?php echo $input['class'] ?>"
+									   name="<?php echo $input['name'] ?>"
+						   			<?php echo $input['is_required'] ? 'required' : '' ?>
+									   id="<?php echo $input['name'] ?>" />
+							<?php endif; ?>
 
 									<?php if ( $input['action'] !== '' ) : ?>
 											<span class="input-action">

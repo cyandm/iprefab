@@ -179,3 +179,9 @@ hr {
 .w-full {
 	width: 100%;
 }
+
+.md-width-full {
+	@include mq('md') {
+		width: 100%;
+	}
+}

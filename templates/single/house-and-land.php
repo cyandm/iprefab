@@ -33,7 +33,9 @@ $land_id = get_field( 'related_land', $post_id );
 		, null,
 		[ 
 			'has_brochure' => true,
-			'cta_text' => __( 'ask iprefab', 'cyn-dm' )
+			'cta_text' => 'message',
+			'cta_2_text' => 'call',
+			'cta_2_link' => 'tel:00358452307290',
 		] ) ?>
 
 	<div class="clear-fix-24">
@@ -82,20 +84,35 @@ $land_id = get_field( 'related_land', $post_id );
 
 	<?php get_template_part( '/templates/single/house-and-land/recommended' ) ?>
 
-	<!-- <div class="clear-fix-80"> </div>
-
-	<?php get_template_part(
-		'/templates/single/general/recommend-by-company', null,
-		[ 
-			'post_type' => 'house-and-land',
-			'company' => get_the_terms( $house_id, 'company' )[0]
-		]
-	) ?> -->
 
 	<div class="clear-fix-80"> </div>
 
 
 
 </main>
+
+<?php get_template_part( '/templates/single/general/bottom-cta', null, [ 
+	'buttons' => [ 
+		[ 
+			'text' => __( 'brochure', 'cyn-dm' ),
+			'link' => get_field( 'brochure', $house_id ) ? get_field( 'brochure', $house_id )['url'] : '#',
+			'class' => 'btn-medium',
+			'type' => 'link',
+			'icon' => 'book-with-bookmark'
+		],
+		[ 
+			'text' => __( 'message', 'cyn-dm' ),
+			'class' => 'btn-black min-120',
+			'type' => 'button',
+		],
+		[ 
+			'text' => __( 'call', 'cyn-dm' ),
+			'link' => 'tel:00358452307290',
+			'class' => 'btn-cta btn-green min-120',
+			'type' => 'link',
+		],
+	]
+] ) ?>
+
 
 <?php get_footer() ?>

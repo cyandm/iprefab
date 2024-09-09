@@ -145,8 +145,7 @@ function cities() {
 		$table = $wpdb->prefix . 'postmeta';
 		$cities = $wpdb->get_results( "SELECT * FROM $table WHERE `meta_key` = 'city'  AND `meta_value` LIKE '$term' " );
 
-		$cities = array_column( $cities, 'meta_value' );
-		$cities = array_unique( $cities );
+		$cities = array_unique( array_map( 'trim', array_map( 'strtolower', array_column( $cities, 'meta_value' ) ) ) );
 
 		foreach ( $cities as $i => $city ) {
 			array_push( $result, [ 

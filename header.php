@@ -29,14 +29,22 @@
 
 			<div class="header-cta">
 
+				<div>
+					<?php echo do_shortcode( '[gtranslate]' ) ?>
+				</div>
+
 
 				<a href="#"
 				   id="contactFormOpener"
-				   class="btn-secondary btn-icon-start btn-small ">
+				   class="btn-secondary btn-icon-start btn-small btn-black">
+
 					<i class="iconsax"
-					   icon-name="user-1"></i>
+					   icon-name="user-1">
+
+					</i>
+
 					<span>
-						<?php _e( 'contact Iprefab', 'cyn-dm' ) ?>
+						<?php _e( 'Offers for you', 'cyn-dm' ) ?>
 					</span>
 				</a>
 

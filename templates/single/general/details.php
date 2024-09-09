@@ -11,7 +11,7 @@ $product_details = isset( $args['product_details'] ) ? $args['product_details'] 
 		<h4><?php _e( 'details', 'cyn-dm' ) ?></h4>
 
 		<div class="general-details-wrapper">
-			<div class="flex-3 d-flex flex-col gap-16 h-full">
+			<div class="flex-3 d-flex flex-col gap-16 h-full md-width-full">
 				<div class="general-table-secondary">
 					<?php foreach ( $product_details as $row ) : ?>
 						<div class="general-table-secondary-row">

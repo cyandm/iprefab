@@ -28,7 +28,7 @@
 				<a href="#"
 				   id="contactFormOpener"
 				   class="btn-cta btn-square">
-					<?php _e( 'Ask Iprefab', 'cyn-dm' ) ?>
+					<?php _e( 'Offers for you', 'cyn-dm' ) ?>
 				</a>
 
 				<div class="site-footer-follow">

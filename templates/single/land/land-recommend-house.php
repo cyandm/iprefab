@@ -28,6 +28,6 @@ cyn_render_section_card( __( 'houses that are suitable for the land', 'cyn-dm' )
 		'link' => get_post_type_archive_link( 'land' ),
 		'title' => __( 'view all', 'cyn-dm' ),
 		'icon' => 'eye'
-	], $post_ids, 'land', 'land-recommended' );
+	], $post_ids, 'house', 'land-recommended' );
 
 

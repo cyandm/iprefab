@@ -5,26 +5,26 @@ $company_logo = wp_get_attachment_image(
 	[ 300, 300 ], false,
 	[ 'style' => '--logo-color:' . get_field( 'color', 'company_' . $company->term_id ) ] );
 
-$brochure_link = get_field( 'brochure', get_queried_object_id() );
+$brochure_link = get_field( 'brochure', get_queried_object_id() ) ? get_field( 'brochure', get_queried_object_id() )['url'] : '#';
 
 
 $button_default = [ 
 	[ 
 		'text' => __( 'brochure', 'cyn-dm' ),
 		'link' => $brochure_link,
-		'class' => '',
+		'class' => 'btn-medium',
 		'type' => 'link',
 		'icon' => 'book-with-bookmark'
 	],
 	[ 
 		'text' => __( 'message', 'cyn-dm' ),
-		'class' => '',
+		'class' => 'btn-black min-120',
 		'type' => 'button',
 	],
 	[ 
 		'text' => __( 'call', 'cyn-dm' ),
 		'link' => 'tel:' . get_field( 'phone', 'company_' . $company->term_id ),
-		'class' => 'btn-cta btn-green',
+		'class' => 'btn-cta btn-green min-120',
 		'type' => 'link',
 	],
 ];

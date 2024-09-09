@@ -67,18 +67,19 @@ if ( ! class_exists( 'cyn_upload_excel' ) ) {
 					$advertiser = $row[8];
 					$neighborhood = $row[9];
 					$description = $row[10];
-					$feature_image_url = $row[11];
-					$gallery_1 = $row[12];
-					$gallery_2 = $row[13];
-					$gallery_4 = $row[14];
-					$gallery_5 = $row[15];
-					$gallery_6 = $row[16];
-					$gallery_7 = $row[17];
-					$gallery_8 = $row[18];
-					$gallery_9 = $row[19];
-					$gallery_10 = $row[20];
-					$gallery_11 = $row[21];
-					$gallery_12 = $row[22];
+					$location = $row[11];
+					$feature_image_url = $row[12];
+					$gallery_1 = $row[13];
+					$gallery_2 = $row[14];
+					$gallery_4 = $row[15];
+					$gallery_5 = $row[16];
+					$gallery_6 = $row[17];
+					$gallery_7 = $row[18];
+					$gallery_8 = $row[19];
+					$gallery_9 = $row[20];
+					$gallery_10 = $row[21];
+					$gallery_11 = $row[22];
+					$gallery_12 = $row[23];
 
 
 
@@ -96,7 +97,8 @@ if ( ! class_exists( 'cyn_upload_excel' ) ) {
 							'contact_number' => $contact_number,
 							'neighborhood' => $neighborhood,
 							'description' => $description,
-							'advertise_link' => $advertiser
+							'advertise_link' => $advertiser,
+							'address_location' => $location,
 						]
 					] );
 
