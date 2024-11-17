@@ -42,6 +42,10 @@ $land_id = get_field( 'related_land', $post_id );
 		<hr />
 	</div>
 
+	<h4>
+		house offer
+	</h4>
+
 	<?php get_template_part( '/templates/single/house-and-land/house-primary', null,
 		[ 
 			'house_id' => $house_id
@@ -49,6 +53,10 @@ $land_id = get_field( 'related_land', $post_id );
 		?>
 
 	<div class="clear-fix-24"> </div>
+
+	<h4>
+		land offer
+	</h4>
 
 	<?php get_template_part( '/templates/single/house-and-land/land-primary', null,
 		[ 

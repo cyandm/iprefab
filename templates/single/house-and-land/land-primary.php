@@ -26,7 +26,7 @@ $primary_data = [
 	[ 
 		'icon' => 'size',
 		'text' => __( 'permit size', 'cyn-dm' ),
-		'value' => '<span>' . get_field( 'surface', $land_id ) . '</span>' . '<span class="unit">m<sup>2</sup></span>',
+		'value' => '<span>' . get_field( 'building_right', $land_id ) . '</span>' . '<span class="unit">m<sup>2</sup></span>',
 	],
 	[ 
 		'icon' => 'size',

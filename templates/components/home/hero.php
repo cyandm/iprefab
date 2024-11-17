@@ -29,26 +29,6 @@
 			  action="<?php echo get_post_type_archive_link( 'house' ) ?>">
 			<div>
 
-				<label for="city"
-					   class="input-wrapper citySearch">
-
-					<span class="input-label">
-						<?php _e( 'location', 'cyn-dm' ) ?>
-					</span>
-
-					<input type="text"
-						   name="city"
-						   placeholder="city">
-
-
-					<span class="input-action">
-						<i class="iconsax"
-						   icon-name="search-normal-2"></i>
-					</span>
-
-				</label>
-
-
 
 				<label for="areaMin"
 					   class="input-wrapper">
@@ -59,6 +39,22 @@
 						   name="areaMin"
 						   id="areaMin"
 						   placeholder="min">
+
+					<span class="input-action">
+						m <sup>2</sup>
+					</span>
+				</label>
+
+
+				<label for="areaMax"
+					   class="input-wrapper">
+					<span class="input-label">
+						<?php _e( 'living area', 'cyn-dm' ) ?>
+					</span>
+					<input type="number"
+						   name="areaMax"
+						   id="areaMax"
+						   placeholder="max">
 
 					<span class="input-action">
 						m <sup>2</sup>
@@ -83,26 +79,6 @@
 		  action="<?php echo get_post_type_archive_link( 'house' ) ?>">
 		<div>
 
-			<label for="city"
-				   class="input-wrapper citySearch">
-
-				<span class="input-label">
-					<?php _e( 'location', 'cyn-dm' ) ?>
-				</span>
-
-				<input type="text"
-					   name="city"
-					   placeholder="city">
-
-
-				<span class="input-action">
-					<i class="iconsax"
-					   icon-name="search-normal-2"></i>
-				</span>
-
-			</label>
-
-
 
 			<label for="areaMin"
 				   class="input-wrapper">
@@ -113,9 +89,24 @@
 					   name="areaMin"
 					   placeholder="min"
 					   id="areaMin">
-
-
 			</label>
+
+
+			<label for="areaMax"
+				   class="input-wrapper">
+				<span class="input-label">
+					<?php _e( 'living area', 'cyn-dm' ) ?>
+				</span>
+				<input type="number"
+					   name="areaMax"
+					   id="areaMax"
+					   placeholder="max">
+
+				<span class="input-action">
+					m <sup>2</sup>
+				</span>
+			</label>
+
 
 
 
