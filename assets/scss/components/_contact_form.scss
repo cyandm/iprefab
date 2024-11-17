@@ -1,0 +1,60 @@
+@use '../utils' as *;
+
+.form-wrapper {
+	--padding-inline: 1rem;
+	position: fixed;
+	top: 2rem;
+	left: 50%;
+	transform: translateX(-50%);
+	width: calc(100% - var(--padding-inline) * 2);
+	background-color: $c_bg_paper;
+	z-index: 1000;
+	opacity: 0;
+	pointer-events: none;
+	border-radius: 8px;
+	overflow-y: auto;
+	max-height: calc(100vh - 3rem);
+	max-width: 420px;
+	transition: opacity 0.3s ease;
+
+	&[data-active='true'] {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	.form {
+		padding: 24px 20px;
+
+		&_header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			i {
+				font-size: 20px;
+			}
+
+			span {
+				width: 20px;
+			}
+		}
+
+		&_section {
+			margin-block-start: 1rem;
+
+			h4 {
+				margin-block-end: 1rem;
+				@include mq('md') {
+					@include fs('h5');
+				}
+			}
+		}
+
+		&_checklist {
+			padding-block: 0.5rem;
+			h3 {
+				@include fs('h6');
+			}
+		}
+	}
+}

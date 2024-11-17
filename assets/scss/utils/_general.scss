@@ -1,0 +1,39 @@
+@use './variables' as *;
+@use './functions' as *;
+@use './mixins' as *;
+
+.even-columns {
+	--min-width: 200px;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(var(--min-width), 1fr));
+}
+
+body {
+	background-color: $c_bg_default;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	text-transform: capitalize;
+}
+
+.unit {
+	text-transform: lowercase !important;
+	margin-inline-start: $s_1;
+	display: inline-block;
+}
+
+sup {
+	font-size: 60%;
+}

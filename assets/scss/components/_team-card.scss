@@ -1,0 +1,44 @@
+@use '../utils/index' as *;
+
+.team-card {
+	padding: 0.5rem;
+	box-shadow: 0px 4px 8px 0px #0000001f;
+	border-radius: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	min-width: 15rem;
+
+	img {
+		border-radius: 0.5rem;
+	}
+}
+
+.overflow-y-scroll {
+	overflow-y: scroll;
+}
+
+.custom-scrollbar {
+	//Chrome & Safari
+	&::-webkit-scrollbar {
+		height: 2px;
+
+		&-track {
+			background: #f1f1f1;
+		}
+
+		&-thumb {
+			background: $c_se_dark;
+		}
+	}
+}
+
+.perspective {
+	> * {
+		flex: 1;
+	}
+
+	@include mq('md') {
+		flex-direction: column-reverse;
+	}
+}

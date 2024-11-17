@@ -1,0 +1,187 @@
+@use '../utils/index' as *;
+@use 'sass:math';
+
+body {
+	@include pseudo(0, 100%, 50) {
+		transition: background-color 0.3s ease;
+		pointer-events: none;
+	}
+
+	&[data-popup-open='true'] {
+		overflow: hidden;
+		&::after {
+			background-color: rgba($c_n_100, 0.3);
+		}
+	}
+}
+
+hr {
+	border-top: $b_1;
+	border-inline: 0;
+}
+
+.container {
+	max-width: 1440px;
+	margin-inline: auto;
+
+	@include mq('xxl') {
+		padding-inline: 1rem;
+	}
+}
+
+@for $i from 1 through 120 {
+	@if ($i % 4 == 0) {
+		.clear-fix-#{$i} {
+			padding-block-start: #{math.div($i, 2)}px;
+			padding-block-end: #{math.div($i, 2)}px;
+		}
+
+		.gap-#{$i} {
+			gap: #{$i}px;
+		}
+
+		.flex-#{$i} {
+			flex: #{$i};
+		}
+	}
+}
+
+.d {
+	&-flex {
+		display: flex;
+	}
+
+	&-grid {
+		display: grid;
+	}
+
+	&-none {
+		display: none;
+	}
+
+	&-inline-b {
+		display: inline-block;
+	}
+}
+
+.jc {
+	&-between {
+		justify-content: space-between;
+	}
+
+	&-center {
+		justify-content: center;
+	}
+
+	&-start {
+		justify-content: flex-start;
+	}
+
+	&-around {
+		justify-content: space-around;
+	}
+}
+
+.ai {
+	&-center {
+		align-items: center;
+	}
+
+	&-start {
+		align-items: flex-start;
+	}
+}
+
+.flex {
+	&-col {
+		flex-direction: column;
+	}
+
+	&-col-rev {
+		flex-direction: column-reverse;
+	}
+
+	&-row {
+		flex-direction: row;
+	}
+
+	&-row-rev {
+		flex-direction: row-reverse;
+	}
+}
+
+.only {
+	&-desktop {
+		@include mq('md') {
+			display: none !important;
+		}
+	}
+
+	&-mobile {
+		display: none !important;
+
+		@include mq('md') {
+			display: inherit !important;
+		}
+	}
+}
+
+.grid-col {
+	@at-root [class*='grid-col'] {
+		grid-template-columns: repeat(var(--col, 1), 1fr);
+		display: grid;
+	}
+
+	&-2 {
+		--col: 2;
+
+		@include mq('sm') {
+			--col: 1;
+		}
+	}
+
+	&-3 {
+		--col: 3;
+
+		@include mq('md') {
+			--col: 2;
+		}
+
+		@include mq('sm') {
+			--col: 1;
+		}
+	}
+
+	&-4 {
+		--col: 4;
+
+		@include mq('md') {
+			--col: 2;
+		}
+
+		@include mq('sm') {
+			--col: 1;
+		}
+	}
+
+	&-5 {
+		--col: 5;
+	}
+}
+
+.box {
+	background-color: $c_bg_paper;
+	padding: $s_4 $s_5;
+	box-shadow: 0px 4px 8px 0px #0000000a;
+	border-radius: $r_1;
+}
+
+.w-full {
+	width: 100%;
+}
+
+.md-width-full {
+	@include mq('md') {
+		width: 100%;
+	}
+}

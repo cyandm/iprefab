@@ -1,0 +1,51 @@
+@use '../../utils/' as *;
+
+.house {
+	&-company {
+		hr {
+			margin-block: $s_4 $s_6;
+		}
+
+		&-logo {
+			display: flex;
+			position: sticky;
+			top: 0;
+		}
+
+		&-wrapper {
+			display: flex;
+			// grid-template-columns: repeat(4, 1fr);
+			gap: $s_4;
+
+			> * {
+				flex: 1;
+			}
+
+			.house-company-logo {
+				@include d_flex(row, center, center);
+				width: 100%;
+				height: 100%;
+				grid-column: 1 / 2;
+				background-color: var(--company-color);
+				border-radius: $r_1;
+				img {
+					height: 45%;
+					width: 80%;
+					object-fit: contain;
+				}
+			}
+
+			.house-company-description {
+				grid-column: 2 / 5;
+			}
+
+			@include mq('md') {
+				flex-direction: column;
+			}
+		}
+
+		&-description {
+			flex: 3;
+		}
+	}
+}

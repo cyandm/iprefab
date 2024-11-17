@@ -1,0 +1,406 @@
+@use '../../utils/' as *;
+
+.general {
+	&-info {
+		@include d_flex(row, space-between, center);
+		background: $c_bg_paper;
+		padding: $s_4 $s_6;
+		border-radius: $s_3;
+		box-shadow: 0px 4px 8px 0px hsla(0, 0%, 0%, 0.04);
+
+		&-short {
+			padding-inline-start: $s_4;
+			color: $c_t_main;
+		}
+	}
+
+	&-main-info {
+		display: flex;
+		justify-content: space-between;
+		@include mq('md') {
+			flex-direction: column;
+			gap: $s_3;
+		}
+
+		.product-info-short {
+			padding: 0;
+			@include mq('md') {
+				display: none;
+			}
+		}
+	}
+
+	&-title {
+		&-wrapper {
+			@include d_flex($gap: $s_3);
+			@include mq('md') {
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
+	}
+
+	&-actions {
+		&-primary {
+			@include d_flex(row, center, center, nowrap, false, $s_2);
+			@include mq('md') {
+				flex-direction: row;
+				justify-content: start;
+				flex-wrap: wrap;
+				align-items: start;
+			}
+		}
+
+		&-secondary {
+			display: flex;
+			gap: 0.5rem;
+
+			button {
+				display: inline-flex;
+			}
+
+			svg {
+				width: 20px;
+				height: 20px;
+			}
+		}
+	}
+
+	&-primary-info {
+		@include d_flex(column, $gap: $s_3);
+	}
+
+	&-table {
+		&-primary {
+			@include d_flex(row, space-between, center, $even_column: true);
+			width: 100%;
+			border-radius: $s_3;
+			padding: $s_4 $s_6;
+			box-shadow: $shadow_1;
+			text-transform: capitalize;
+			text-align: center;
+
+			@include mq('md') {
+				text-align: left;
+				flex-direction: column;
+				align-items: flex-start;
+			}
+		}
+
+		&-secondary {
+			border: $b_1;
+			border-radius: $s_4;
+			flex: 3;
+
+			top: 16px;
+
+			&-row {
+				@include d_flex(row, space-between, center, nowrap, true);
+				text-transform: capitalize;
+
+				&:nth-child(2n) {
+					background-color: rgba($c_n_100, 0.04);
+				}
+
+				> * {
+					@include d_flex(row, flex-start, center);
+					min-height: 4rem;
+					padding: $s_3;
+				}
+
+				@include mq('md') {
+					flex-direction: column;
+					align-items: flex-start;
+					padding: $s_3;
+
+					> * {
+						min-height: auto;
+						padding: 0;
+					}
+				}
+			}
+
+			&-name {
+				@include mq('md') {
+					color: $c_p_main;
+				}
+			}
+
+			&-value {
+				width: 100%;
+				height: 100%;
+				border-inline-start: $b_1;
+
+				img {
+					height: 45px;
+					width: 130px;
+					object-fit: contain;
+					background-color: var(--logo-color);
+					border-radius: 0.5rem;
+				}
+
+				@include mq('md') {
+					border-inline-start: none;
+					color: $c_n_100;
+				}
+			}
+
+			@include mq('md') {
+				width: 100%;
+			}
+		}
+	}
+
+	&-feature {
+		&-box {
+			&:not(:first-child) {
+				border-inline-start: $b_2;
+			}
+
+			@include mq('md') {
+				padding-inline-start: $s_8;
+				border-inline-start: none !important;
+				padding: 0;
+
+				padding-block: $s_4;
+				width: 100%;
+
+				&:not(:last-child) {
+					border-block-end: $b_2;
+				}
+			}
+		}
+		&-top {
+			color: $c_t_main;
+		}
+		&-value {
+			@include fs('h5');
+		}
+	}
+
+	&-details {
+		display: grid;
+		gap: $s_4;
+
+		&-wrapper {
+			@include d_flex($gap: $s_4);
+
+			@include mq('md') {
+				flex-direction: column;
+				flex-wrap: nowrap;
+			}
+
+			iframe {
+				width: 100%;
+				height: 100%;
+				border-radius: $s_4;
+			}
+		}
+	}
+
+	&-cta {
+		@include d_flex(row, flex-start, center);
+		flex: 1;
+		height: 100%;
+		background-color: $c_n_200;
+		border-radius: $s_3;
+		padding: $s_4;
+		color: $c_a_text_contrast;
+
+		.img-wrapper {
+			@include d_flex(row, center, center);
+			--max-height: 320px;
+			object-fit: contain;
+			width: 100%;
+		}
+
+		@include mq('md') {
+			p {
+				margin-block: $s_4;
+			}
+		}
+	}
+
+	&-company {
+		&-logo {
+			@include d_flex($gap: $s_2);
+
+			div {
+				@include d_flex();
+
+				img {
+					height: 45px;
+					width: 150px;
+					object-fit: contain;
+					background-color: var(--logo-color);
+					border-radius: 0.5rem;
+				}
+			}
+		}
+	}
+
+	&-bottom-cta {
+		@include d_flex(row, space-between, center);
+		position: fixed;
+		inset: 0;
+		top: unset;
+		background-color: $c_bg_default;
+		padding: $s_9 $s_8;
+		border: $b_1;
+		border-color: $c_p_dark;
+		transition: transform 0.3s ease;
+		transform: translateY(100%);
+		z-index: 500;
+
+		&[data-active='true'] {
+			transform: translateY(0);
+		}
+
+		@media print {
+			display: none;
+		}
+
+		&-company {
+			@include d_flex(row, flex-start, center, nowrap, false, $s_4);
+			text-transform: capitalize;
+
+			img {
+				height: 70px;
+				width: 200px;
+				object-fit: contain;
+				background-color: var(--logo-color);
+				border-radius: 0.5rem;
+			}
+
+			&-name {
+				@include fs('h4');
+				min-width: max-content;
+			}
+
+			&-origin {
+				color: $c_t_main;
+			}
+		}
+
+		@include mq('md') {
+			padding: $s_4 $s_4;
+			&-company {
+				display: none;
+			}
+
+			.product-actions-primary {
+				width: 100%;
+			}
+		}
+	}
+
+	&-images {
+		@include mq('md') {
+			.swiper-pagination {
+				display: none;
+			}
+		}
+
+		#generalMainSwiper .swiper-wrapper img {
+			max-height: 600px;
+
+			@include mq('md') {
+				max-height: 200px;
+			}
+		}
+
+		.swiper-navigation {
+			--padding: 8px;
+			position: absolute;
+			top: 50%;
+			left: var(--padding);
+			right: var(--padding);
+			transform: translateY(-50%);
+			z-index: 1000;
+			display: flex;
+			justify-content: space-between;
+
+			i {
+				cursor: pointer;
+				padding: 1rem;
+				color: #fff;
+				backdrop-filter: blur(20px);
+				border-radius: 50%;
+				border: 1px solid #fff;
+				background: rgba(#000, 0.2);
+
+				@include mq('md') {
+					padding: 0.5rem;
+				}
+			}
+		}
+	}
+}
+
+.swiper {
+	&-general {
+		&-main {
+			img {
+				width: 100%;
+				object-fit: cover;
+				border-radius: $s_2;
+			}
+
+			.swiper {
+				position: relative;
+				&-pagination {
+					position: absolute;
+					left: 50%;
+					bottom: 0;
+					z-index: 100;
+					transform: translate(-50%, -$s_6);
+					background-color: rgba(#000, 0.2);
+					color: $c_n_800;
+					backdrop-filter: blur(12px);
+					padding: $s_1 $s_6;
+					border-radius: $s_3;
+				}
+			}
+
+			@include mq('md') {
+				img {
+					max-height: 12.5rem;
+				}
+			}
+		}
+
+		&-thumbnails {
+			img {
+				width: 100%;
+				object-fit: cover;
+				height: 200px;
+				border-radius: $s_2;
+
+				@include mq('md') {
+					max-height: 4rem;
+				}
+			}
+
+			.swiper-slide {
+				opacity: 0.3;
+				cursor: pointer;
+				transition: opacity 0.3s ease-in;
+
+				&-thumb-active {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+.flex-3 {
+	flex: 3;
+}
+.flex-1 {
+	flex: 1;
+}
+
+.h-full {
+	height: 100%;
+}

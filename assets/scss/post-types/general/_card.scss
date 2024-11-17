@@ -1,0 +1,52 @@
+@use '../../utils' as *;
+
+.general-card {
+	background-color: $c_bg_paper;
+	box-shadow: $shadow_1;
+	border-radius: $s_4;
+	overflow: hidden;
+
+	&-image {
+		position: relative;
+
+		.img-wrapper {
+			--max-height: 300px;
+		}
+
+		.company-logo {
+			@include d_flex(column, $gap: $s_2);
+			position: absolute;
+			top: $s_4;
+			left: $s_4;
+
+			img {
+				height: 40px;
+				background-color: var(--logo-color);
+				width: 120px;
+				object-fit: contain;
+				object-position: center;
+				border-radius: 0.5rem;
+			}
+		}
+	}
+
+	&-content {
+		padding: $s_4;
+	}
+
+	&-title {
+		text-transform: capitalize;
+		@include d_flex(row, space-between);
+	}
+
+	&-price {
+		@include fs('h4');
+	}
+
+	&.exhibition-card {
+		.company-logo {
+			top: unset;
+			bottom: $s_4;
+		}
+	}
+}

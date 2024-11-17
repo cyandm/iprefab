@@ -1,0 +1,101 @@
+@use '../utils/' as *;
+
+.header {
+	&-site {
+		@include d_flex(row, space-between, center);
+		border-block-end: $b_2;
+		margin-block: $s_6 $s_4;
+		z-index: 110;
+		position: relative;
+		isolation: isolate;
+
+		@include mq('xl') {
+			> * {
+				flex: 1;
+			}
+		}
+	}
+
+	&-logo {
+		img {
+			max-width: 130px;
+			max-height: 60px;
+			object-fit: contain;
+			object-position: center center;
+			filter: grayscale(1);
+		}
+		@include mq('xl') {
+			text-align: center;
+		}
+	}
+
+	&-desktop-menu {
+		@include mq('xl') {
+			display: none;
+		}
+		ul.menu {
+			@include d_flex($gap: $s_11);
+			@include fs('h5');
+
+			> li {
+				@include pseudo(0 0 0 0, 100%) {
+					height: 1px;
+					top: unset;
+					background-color: $c_n_100;
+					bottom: -$s_6;
+					transform: scaleX(0);
+					transition: transform 0.3s ease-in;
+					transform-origin: left;
+				}
+
+				&.current-menu-item,
+				&:hover {
+					&:after {
+						transform: scaleX(1);
+						transform-origin: right;
+					}
+				}
+			}
+		}
+	}
+
+	&-cta {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+
+		@include mq('md') {
+			span {
+				display: none;
+			}
+
+			a {
+				padding: 0.25rem 0.5rem;
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	&-mobile-menu {
+		display: none;
+
+		@include mq('xl') {
+			display: block;
+		}
+
+		> i {
+			padding: 0;
+			font-size: 1.5rem;
+			width: 2.5rem;
+			height: 2.5rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&::before {
+				transform: translateY(1px);
+			}
+		}
+	}
+}

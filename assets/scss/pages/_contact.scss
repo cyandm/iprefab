@@ -1,0 +1,54 @@
+@use '../utils' as *;
+
+main.contact-us {
+	> div {
+		@include mq('md') {
+			flex-direction: column;
+		}
+
+		> * {
+			flex: 1;
+		}
+	}
+
+	.button {
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+
+		input {
+			display: inline;
+			width: min-content;
+			padding: 0.5rem;
+
+			@include mq('md') {
+				width: 100%;
+			}
+		}
+	}
+
+	input,
+	textarea {
+		border: $b_1;
+		border-radius: 1rem;
+		padding: 1rem;
+		background-color: transparent;
+		width: 100%;
+	}
+
+	form {
+		display: grid;
+		gap: 1rem;
+	}
+
+	.map iframe {
+		border-radius: 1rem;
+		overflow: hidden;
+		filter: grayscale(100%);
+		transition: all 0.3s ease-in-out;
+
+		&:hover {
+			filter: grayscale(0);
+		}
+	}
+}

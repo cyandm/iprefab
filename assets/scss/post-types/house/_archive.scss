@@ -1,0 +1,31 @@
+@use '../../utils' as *;
+
+.product-archive {
+	&-filters {
+		position: fixed;
+		inset: $s_5;
+		bottom: unset;
+		background-color: $c_bg_paper;
+		margin: $s_1;
+		z-index: 1000;
+		padding: $s_4 $s_6;
+		opacity: 0;
+		pointer-events: none;
+		border-radius: $s_3;
+		transition: opacity 0.3s ease-in-out;
+
+		&[data-active='true'] {
+			opacity: 1;
+			pointer-events: all;
+		}
+
+		&-title {
+			@include d_flex(row, space-between, center);
+			margin-block-end: $s_4;
+
+			i {
+				font-size: 2rem;
+			}
+		}
+	}
+}

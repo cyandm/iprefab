@@ -1,0 +1,27 @@
+@use '../../utils' as *;
+
+.row-form {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 2rem;
+	border: $b_2;
+	padding: 2rem;
+	border-radius: 1rem;
+	align-items: center;
+
+	@include mq('md') {
+		grid-template-columns: 1fr;
+	}
+
+	.actions {
+		grid-column: 1 / 6;
+		align-items: center;
+		max-width: 30%;
+		justify-content: center;
+		margin-inline: auto;
+
+		@include mq('md') {
+			grid-column: 1 / 1;
+		}
+	}
+}

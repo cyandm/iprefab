@@ -1,0 +1,21 @@
+@use '../utils' as *;
+
+.icon-box {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: $s_1;
+
+	span {
+		transform: translateY(2px);
+	}
+
+	svg {
+		width: 20px;
+		height: 20px;
+
+		path {
+			fill: #a4a4a3;
+		}
+	}
+}

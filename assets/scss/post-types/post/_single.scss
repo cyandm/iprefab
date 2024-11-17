@@ -1,0 +1,29 @@
+@use '../../utils' as *;
+
+.single-post {
+	&-sidebar {
+		width: 25%;
+		@include mq('md') {
+			width: 100%;
+		}
+	}
+
+	&-content {
+		width: 75%;
+		@include mq('md') {
+			width: 100%;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			border-radius: 0.75rem;
+		}
+	}
+
+	&-container {
+		@include mq('md') {
+			flex-direction: column;
+		}
+	}
+}

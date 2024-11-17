@@ -1,0 +1,12 @@
+@use '../../utils/' as *;
+
+.single-land {
+	.general-actions-primary {
+		.btn-cta {
+			background-color: #28a745;
+			font-weight: 400;
+			min-width: 120px;
+			text-align: center;
+		}
+	}
+}
